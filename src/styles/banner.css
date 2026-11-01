@@ -1,0 +1,11 @@
+/* banner */
+#banner:empty{display:none}
+.banner{display:flex;gap:12px;align-items:center;flex-wrap:wrap;padding:12px 16px;border-radius:12px;border:1px solid var(--gold-deep);
+  background:linear-gradient(90deg,var(--gold-soft),transparent 80%),var(--panel);margin-top:12px}
+.banner .ic{font-size:22px;flex:none}
+.banner .tx{flex:1;min-width:200px}
+.banner .tx b{display:block;font-family:var(--display);font-weight:700;color:var(--gold2)}
+.banner .tx span{font-size:14px;color:var(--muted)}
+.banner .acts{display:flex;gap:8px;align-items:center}
+.btnG{font:700 13px var(--body);border-radius:8px;padding:7px 12px;cursor:pointer;border:1px solid var(--gold-deep);background:var(--gold);color:var(--on-gold)}
+.btnQ{font:600 13px var(--body);border-radius:8px;padding:7px 10px;cursor:pointer;border:1px solid var(--line);background:none;color:var(--muted)}

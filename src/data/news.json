@@ -1,0 +1,141 @@
+[
+ {
+  "d": "2026-10-26",
+  "approx": 1,
+  "ty": "balance",
+  "cls": [
+   "Arcana Invoker"
+  ],
+  "src": "https://www.aq.com/gamedesignnotes/aqw-balance-patchnotes-9515",
+  "pt": {
+   "t": "Arcana Invoker ficou mais forte",
+   "x": "Arcana Invocation passou a causar dano mágico e The World (Reversed) ganhou o debuff de redução de dano que faltava. A classe causa um pouco mais de dano que antes."
+  },
+  "en": {
+   "t": "Arcana Invoker got stronger",
+   "x": "Arcana Invocation now deals magic damage and The World (Reversed) gained its missing damage-reduction debuff. The class deals a bit more damage than before."
+  }
+ },
+ {
+  "d": "2026-10-17",
+  "ty": "new",
+  "cls": [
+   "Kathool Adept"
+  ],
+  "src": "https://www.aq.com/gamedesignnotes/aqw-kathoolclasspreview-17oct26-10496",
+  "pt": {
+   "t": "Kathool Adept, a classe de 18 anos do AQW",
+   "x": "Farmer e debuffer que acumula Madness no alvo e invoca um pet tentáculo. No rank 10 estende a defesa aos aliados. Disponível em /callofkathool."
+  },
+  "en": {
+   "t": "Kathool Adept, AQW's 18th birthday class",
+   "x": "A farmer and debuffer that stacks Madness on the target and summons a tentacle pet. At rank 10 it extends defense to allies. Available in /callofkathool."
+  }
+ },
+ {
+  "d": "2026-08-07",
+  "ty": "rework",
+  "cls": [
+   "PaladinSlayer",
+   "CardClasher"
+  ],
+  "src": "https://www.aq.com/gamedesignnotes/aqw-heromartclassupdates-30jul26-10415",
+  "pt": {
+   "t": "Reworks do PaladinSlayer e do CardClasher",
+   "x": "PaladinSlayer ganhou o Detect Living (+500% de crit em 20 stacks). CardClasher agora compra cartas aleatórias para buffs, debuffs ou dano. Quem tinha o CardClasher antigo ganha o pet Pyramid Box."
+  },
+  "en": {
+   "t": "PaladinSlayer and CardClasher reworks",
+   "x": "PaladinSlayer gained Detect Living (+500% crit at 20 stacks). CardClasher now draws random cards for buffs, debuffs or damage. Owners of the old CardClasher get the Pyramid Box pet."
+  }
+ },
+ {
+  "d": "2026-07-17",
+  "ty": "skin",
+  "cls": [
+   "Void Highlord"
+  ],
+  "src": "https://www.aq.com/gamedesignnotes/date/2026/07",
+  "pt": {
+   "t": "Primeira skin de classe: Darkon's Debris High Lord",
+   "x": "Donos do Void Highlord (ou da versão IoDA) podem comprar a skin, que troca animações, ícones e armadura sem mudar as skills."
+  },
+  "en": {
+   "t": "First class skin: Darkon's Debris High Lord",
+   "x": "Void Highlord (or IoDA) owners can buy the skin, which changes animations, icons and armor without touching the skills."
+  }
+ },
+ {
+  "d": "2025-12-01",
+  "approx": 1,
+  "ty": "new",
+  "cls": [
+   "Archivist of Time"
+  ],
+  "src": "https://www.aq.com/gamedesignnotes/aqw-15nov25-2026classpreview-8277",
+  "pt": {
+   "t": "Archivist of Time, classe do calendário 2026",
+   "x": "Sem auto-ataque e com 9 combinações de Index. Uma variante por AC ou HeroPoints está prevista para o fim de 2026."
+  },
+  "en": {
+   "t": "Archivist of Time, the 2026 calendar class",
+   "x": "No auto-attack and 9 Index combinations. An AC or HeroPoints variant is planned for late 2026."
+  }
+ },
+ {
+  "d": "2025-09-01",
+  "approx": 1,
+  "ty": "rework",
+  "cls": [
+   "DeathKnight Lord",
+   "Naval Commander",
+   "Chaos Slayer",
+   "Phantom Chronomancer"
+  ],
+  "src": "https://www.aq.com/gamedesignnotes/date/2026/01",
+  "pt": {
+   "t": "Pacote de reworks de setembro",
+   "x": "Alpha Omega, Chaos Slayer, DeathKnight Lord, Dragon Knight, Hollowborn Vindicator, Naval Commander e Phantom Chronomancer foram reworkadas. O DeathKnight Lord deixou de exigir daily."
+  },
+  "en": {
+   "t": "September rework batch",
+   "x": "Alpha Omega, Chaos Slayer, DeathKnight Lord, Dragon Knight, Hollowborn Vindicator, Naval Commander and Phantom Chronomancer were reworked. DeathKnight Lord no longer requires a daily."
+  }
+ },
+ {
+  "d": "2025-08-01",
+  "approx": 1,
+  "ty": "new",
+  "cls": [
+   "Lich"
+  ],
+  "src": "https://www.aq.com/gamedesignnotes/date/2026/01",
+  "pt": {
+   "t": "Lich chega ao /moreskulls",
+   "x": "Sazonal na sexta-feira 13 para quem não é member; members acessam sempre."
+  },
+  "en": {
+   "t": "Lich arrives in /moreskulls",
+   "x": "Seasonal on Friday the 13th for non-members; members can get it anytime."
+  }
+ },
+ {
+  "d": "2025-06-01",
+  "approx": 1,
+  "ty": "rework",
+  "cls": [
+   "Bard",
+   "Necromancer",
+   "Thief of Hours"
+  ],
+  "src": "https://www.aq.com/gamedesignnotes/date/2026/01",
+  "pt": {
+   "t": "Revisão de classes antigas",
+   "x": "Bard, Troll Spellsmith, Horc Evader, Thief of Hours, Ranger, Necromancer e Guardian receberam ajustes."
+  },
+  "en": {
+   "t": "Older classes refreshed",
+   "x": "Bard, Troll Spellsmith, Horc Evader, Thief of Hours, Ranger, Necromancer and Guardian were adjusted."
+  }
+ }
+]

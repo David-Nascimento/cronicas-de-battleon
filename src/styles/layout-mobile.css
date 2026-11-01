@@ -1,0 +1,10 @@
+@media (max-width:899px){
+  .shell{display:block}.side{display:none}
+  .topbar .brand.mini{display:flex}.topbar .brand.mini b{display:none}.topbar .brand.mini svg{width:30px;height:34px}
+  .topbar .sp{display:none}.gsearch{max-width:none}.gsearch kbd{display:none}
+  .bnav{display:grid}
+  .main{padding-bottom:calc(96px + env(safe-area-inset-bottom,0px))}
+  body .toasts{bottom:calc(84px + env(safe-area-inset-bottom,0px))}
+}
+@media (max-width:899px){.topbar .seg button{padding:6px 9px}.topbar{gap:8px}}
+@media (max-width:360px){.bnav .nv{font-size:9px}}

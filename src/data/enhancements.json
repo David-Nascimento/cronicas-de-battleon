@@ -1,0 +1,184 @@
+[
+ [
+  "Lucky",
+  "Classe",
+  5,
+  "Muito Luck (chance de crítico) e um pouco de todos os outros atributos. Serve para qualquer classe.",
+  "Todas as classes, principalmente as de Game of Chance"
+ ],
+ [
+  "Wizard",
+  "Classe",
+  4,
+  "Intellect, Wisdom, Luck e Endurance: aumenta o dano mágico. Para classes de magia.",
+  "Legion Revenant, ArchMage, Blaze Binder"
+ ],
+ [
+  "Hybrid",
+  "Classe",
+  3,
+  "Strength, Intellect, Dexterity e Endurance: sobe Attack Power, Spell Power, Haste, acerto e HP. Para classes que misturam corpo a corpo e magia.",
+  "Legion Paladin, ShadowScythe General, Ninja"
+ ],
+ [
+  "Fighter",
+  "Classe",
+  3,
+  "Strength, Dexterity e Endurance: sobe Attack Power, acerto e HP. Para classes corpo a corpo.",
+  "Drakel Warlord, DoomKnights, Blood Ancient"
+ ],
+ [
+  "Thief",
+  "Classe",
+  2,
+  "Dexterity (principal) com um pouco de Strength e Endurance: sobe Haste e acerto. Para classes furtivas e de esquiva.",
+  "DeathKnight, Dragonlord, Rogue"
+ ],
+ [
+  "Healer",
+  "Classe",
+  2,
+  "Intellect, bastante Endurance e um pouco de Wisdom. Para casters de cura.",
+  "Acolyte, Bard, Elemental Dracomancer"
+ ],
+ [
+  "Spellbreaker",
+  "Classe",
+  2,
+  "Intellect, Dexterity, Endurance e Luck: sobe o dano mágico e a chance de crítico. Para casters que dependem de crítico.",
+  "MindBreaker, Shaman, Sorcerer"
+ ],
+ [
+  "Valiance",
+  "Arma",
+  5,
+  "Grande bônus em todos os atributos base. Sempre entre as 3 melhores opções de qualquer classe.",
+  "Universal"
+ ],
+ [
+  "Dauntless",
+  "Arma",
+  5,
+  "Ativa na skill 2: mais Haste e Crit. Ótimo para classes que jogam com HP baixo e Chronomancers.",
+  "Verus DoomKnight, Void Highlord, calendários"
+ ],
+ [
+  "Arcana's Concerto",
+  "Arma",
+  4,
+  "Acumula debuff de dano físico e mágico recebido no alvo. Feito para ultras.",
+  "Legion Revenant (aplicador principal)"
+ ],
+ [
+  "Elysium",
+  "Arma",
+  4,
+  "Recupera mana. Não melhora classes boas, transforma classes fracas em boas.",
+  "ArchMage, Arcana Invoker, Ultra OmniKnight"
+ ],
+ [
+  "Ravenous",
+  "Arma",
+  4,
+  "Muito usado em solo e farm longo; combina com skills spammadas.",
+  "Arcana Invoker, Verus DoomKnight, Martial Artist"
+ ],
+ [
+  "Smite",
+  "Arma",
+  3,
+  "Rende em classes com grande buff de dano e skill 5 com recarga de 15 s.",
+  "Void Highlord, LightCaster, ShadowStalker of Time"
+ ],
+ [
+  "Lacerate",
+  "Arma",
+  3,
+  "Reduz a chance de acerto do inimigo, ajudando a chegar no dodge máximo.",
+  "Classes de dodge e de calendário"
+ ],
+ [
+  "Praxis",
+  "Arma",
+  3,
+  "Dano crescente com Spinning Dragon; útil em lutas longas.",
+  "Lutas longas (Ultra Speaker)"
+ ],
+ [
+  "Acheron",
+  "Arma",
+  2,
+  "Muito forte, mas exige manter um auto-DoT para ciclar os buffs.",
+  "ArchMage"
+ ],
+ [
+  "Vim",
+  "Capacete",
+  4,
+  "Muito Luck; ideal para dodge e classes de crit físico. Não use em mágicos.",
+  "Void Highlord, ShadowStalker, ArchPaladin"
+ ],
+ [
+  "Pneuma",
+  "Capacete",
+  4,
+  "Para classes mágicas, mesmo as que dependem de crit.",
+  "Legion Revenant (fora de ultra), ArchMage, Blaze Binder"
+ ],
+ [
+  "Anima",
+  "Capacete",
+  3,
+  "Para classes físicas; compare com Vim caso a caso.",
+  "Chaos Avenger, Verus DoomKnight"
+ ],
+ [
+  "Forge (base)",
+  "Capacete",
+  3,
+  "Mais STR/INT que Luck e sem penalidade de HP. Seguro para ultras.",
+  "Qualquer classe em ultra"
+ ],
+ [
+  "Examen",
+  "Capacete",
+  1,
+  "Poucas classes aproveitam muito Wisdom.",
+  "Arcana Invoker é exceção"
+ ],
+ [
+  "Vainglory",
+  "Capa",
+  5,
+  "+15% de dano; a penalidade de cura só pesa em ultras. Equipe e esqueça.",
+  "Universal fora de ultra"
+ ],
+ [
+  "Penitence",
+  "Capa",
+  5,
+  "De ótima a obrigatória em ultra bosses.",
+  "Todas as classes em ultra"
+ ],
+ [
+  "Lament",
+  "Capa",
+  3,
+  "Mais Crit para quem já tem Haste de sobra. Dispensável se usar Dauntless.",
+  "Calendários"
+ ],
+ [
+  "Absolution",
+  "Capa",
+  2,
+  "Para quem cura, mas não o bastante sozinho.",
+  "Lord of Order, StoneCrusher/Infinity Titan"
+ ],
+ [
+  "Avarice",
+  "Capa",
+  2,
+  "Leva Haste de 40% a 50%, ao custo de defesa.",
+  "Farmers sem Haste máxima"
+ ]
+]

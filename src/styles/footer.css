@@ -1,0 +1,7 @@
+.vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.foot{margin-top:36px;padding:22px 0 8px;border-top:1px solid var(--line2);display:flex;gap:16px;align-items:flex-start;color:var(--muted);font-size:12.5px;line-height:1.6}
+.foot .fmark{width:34px;height:38px;flex:none;opacity:.75}
+.foot p{margin:0 0 7px;max-width:84ch}
+.foot p:last-child{margin:0}
+.foot .fline{color:var(--ink);font-weight:600;font-size:13px}
+@media (max-width:520px){.foot .fmark{display:none}}

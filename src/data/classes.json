@@ -1,0 +1,1734 @@
+[
+ [
+  "Legion Revenant",
+  "free",
+  "S",
+  "A",
+  "S",
+  "mag",
+  "DPS em área e o melhor aplicador de Arcana's Concerto em ultras.",
+  {
+   "ultra": "Wizard|Arcana's Concerto|Forge|Penitence",
+   "awe": "Wizard + Spiral Carve"
+  }
+ ],
+ [
+  "ArchPaladin",
+  "free",
+  "B",
+  "A",
+  "S",
+  "sup",
+  "Suporte com cura em grupo e redução de dano do boss; presente em quase todo time de ultra.",
+  {
+   "farm": "Lucky|Valiance|Vim|Avarice",
+   "solo": "Lucky|Valiance|Anima|Vainglory",
+   "ultra": "Lucky|Arcana's Concerto|Forge|Penitence",
+   "skills": [
+    "Auto",
+    "Commandment (área, debuffs)",
+    "Hymn of Light (cura em área +DEF)",
+    "Righteous Seal (-90% dano do alvo)",
+    "Sacred Magic: Eden (nuke, dobra com o 4)"
+   ],
+   "rot": [
+    [
+     "Rotação principal",
+     "3 → 4 → 2 2 2 → 5 → 3 (cura) → 4",
+     "h",
+     "Use 3 antes da luta, abra com 4, spam 2 até o 4 quase acabar, solte 5 antes dele expirar, 3 quando precisar curar e repita."
+    ],
+    [
+     "Champion Drakath",
+     "Mesma rotação, com Lacerate · Forge · Penitence",
+     "h",
+     "Build específica do guia para essa luta."
+    ]
+   ],
+   "src": "archpaladin/"
+  }
+ ],
+ [
+  "Alpha Omega",
+  "acs",
+  "B",
+  "B",
+  "C",
+  "phys",
+  "Híbrida de dano e cura leve: Double Strike enfraquece o alvo, Maul atordoa e Field Medic cura o grupo. Nota estimada a partir das skills.",
+  {
+   "skills": [
+    "Auto Attack",
+    "Double Strike (-15% resistência do alvo)",
+    "Maul (stun de 3s)",
+    "Field Medic (cura o grupo)",
+    "Bunker Buster (dano verdadeiro, sempre crita)"
+   ]
+  }
+ ],
+ [
+  "Blood Titan",
+  "acs",
+  "C",
+  "A",
+  "B",
+  "phys",
+  "Tanque que paga HP por skill: Crimson Shield reduz 80% do dano e as skills curam. Titan's Curse segura o boss. Nota estimada a partir das skills.",
+  {
+   "skills": [
+    "Gilded Crusher (auto, dano pelo seu HP)",
+    "Titanic Smash (-60% dano do alvo)",
+    "Titan's Fury (+30% dano no alvo)",
+    "Titan's Curse (taunt de 4s)",
+    "Blood Rage (+100% dano físico)"
+   ]
+  }
+ ],
+ [
+  "Dark Harbinger",
+  "acs",
+  "B",
+  "B",
+  "C",
+  "phys",
+  "Dano alto à custa de vida: Blood Price gasta 50% do HP para +125% de dano e Soul Leech devolve vida. Nota estimada a partir das skills.",
+  {
+   "skills": [
+    "Soul Breaker (auto)",
+    "Soul Rend (mais dano com HP baixo)",
+    "Soul Leech (dano e cura)",
+    "Soul Pact (+50% defesa)",
+    "Blood Price (+125% dano por 10s)"
+   ]
+  }
+ ],
+ [
+  "Daimon",
+  "acs",
+  "A",
+  "B",
+  "C",
+  "mag",
+  "Dano mágico em área (até 3 alvos) com cura de grupo e burn; ótimo para limpar mobs. Nota estimada a partir das skills.",
+  {
+   "skills": [
+    "Actual Attack (auto)",
+    "BrainWave (3 alvos + burn)",
+    "Mass Affect (cura e buff aleatório)",
+    "Shattered Reality (-40% dano dos alvos)",
+    "Mind... BLOWN (3 alvos, +30% haste e crit)"
+   ]
+  }
+ ],
+ [
+  "Drakel Warlord",
+  "acs",
+  "C",
+  "B",
+  "B",
+  "phys",
+  "Tanque físico sem mana: Enter the Arena dá taunt e -50% de dano físico, e Strengthened Strike empilha debuff. Nota estimada a partir das skills.",
+  {
+   "skills": [
+    "Drakel's Crushing Strike (auto)",
+    "Strengthened Strike (debuff empilhável)",
+    "Raged Strike (stun em 3 alvos)",
+    "Strikes of Expertise (próximos 2 autos crítam)",
+    "Enter the Arena (taunt e -50% dano físico)"
+   ]
+  }
+ ],
+ [
+  "Abyssal Angel",
+  "acs",
+  "A",
+  "B",
+  "C",
+  "phys",
+  "Dano em vários alvos com DoT empilhável; Flight e Crystallis Veil reforçam esquiva, crítico e defesa. Nota estimada a partir das skills.",
+  {
+   "skills": [
+    "Vice Bolt (auto, 3 alvos + DoT)",
+    "Flight (+acerto e esquiva)",
+    "Aphotic Overdrive (4 alvos, stun)",
+    "Fallen's Judgement (4x Endurance + cura)",
+    "Crystallis Veil (+25% resistência, +15% crit)"
+   ]
+  }
+ ],
+ [
+  "Scarlet Sorceress",
+  "acs",
+  "A",
+  "B",
+  "C",
+  "mag",
+  "Feiticeira de sangue: Sanguine Pulse acerta 3 alvos com DoC e anti-cura, Malevolence faz dano em área e Crimson Ritual troca vida por +50% de dano mágico. Nota estimada a partir das skills.",
+  {
+   "skills": [
+    "Blood Lust (auto, cura no acerto)",
+    "Sanguine Pulse (3 alvos, decay e anti-cura)",
+    "Mirroring Arcane (3 alvos, stun e +20% haste)",
+    "Malevolence (área, cura e dano atrasado)",
+    "Crimson Ritual (+50% dano mágico)"
+   ]
+  }
+ ],
+ [
+  "Vindicator of They",
+  "acs",
+  "B",
+  "B",
+  "C",
+  "mag",
+  "Caster com DoT, roubo de vida e petrificação; a skill 4 dá 40% de resistência quando o alvo resiste. Nota estimada a partir das skills.",
+  {
+   "skills": [
+    "Auto Attack",
+    "Super Taster (DoT e -20% haste e esquiva)",
+    "I Just Want Your Half (roubo de vida)",
+    "We Want a Rock (petrifica por 3s)",
+    "Mass Of Incandescent Gas (dano alto e DoT)"
+   ]
+  }
+ ],
+ [
+  "Troll Spellsmith",
+  "acs",
+  "A",
+  "B",
+  "C",
+  "mag",
+  "Caster ofensivo que acumula Sigils: Energy Arc acerta 4 alvos e reduz haste, e Spellsmith Sigil cura e reforça o dano. Nota estimada a partir das skills.",
+  {
+   "skills": [
+    "Spellsmith Blade (auto, dano por Sigils)",
+    "Energy Arc (4 alvos, reduz haste)",
+    "Frostflame (stun e -20% dano do alvo)",
+    "Sigil Overload (+10% dano por 15s)",
+    "Spellsmith Sigil (cura e escudo)"
+   ]
+  }
+ ],
+ [
+  "SkyGuard Grenadier",
+  "acs",
+  "B",
+  "B",
+  "C",
+  "phys",
+  "Dano físico à distância: Flashbang e Sleeping Gas aplicam debuffs e Reactive Grenade é um golpe forte que sempre crita. Nota estimada a partir das skills.",
+  {
+   "skills": [
+    "Bombard (auto à distância)",
+    "Flashbang (-20% dano e acerto do alvo)",
+    "Sleeping Gas (-20% defesa, chance de stun)",
+    "Reload (recupera toda a mana)",
+    "Reactive Grenade (sempre crita)"
+   ]
+  }
+ ],
+ [
+  "Royal Vampire Lord",
+  "acs",
+  "A",
+  "B",
+  "C",
+  "mag",
+  "Dano em até 3 alvos com cura: Devour Blood rouba vida e reduz o dano dos inimigos, e Aspect of The Bat dá +500% de haste e crítico. Nota estimada a partir das skills.",
+  {
+   "skills": [
+    "Slash (auto, 3 alvos)",
+    "Sonar Scream (alvos recebem +30% de dano)",
+    "Devour Blood (cura e -50% dano dos alvos)",
+    "Ghoul Gouge (3 alvos e DoT)",
+    "Aspect of The Bat (+500% haste e crítico)"
+   ]
+  }
+ ],
+ [
+  "ShadowScythe General",
+  "acs",
+  "A",
+  "A",
+  "C",
+  "mag",
+  "Hybrid de área com até 80% de resistência: acerta até 6 alvos, acumula Consuming Shadows e fecha com Shadow Void. A wiki recomenda Lucky e Hybrid. Nota estimada a partir das skills.",
+  {
+   "skills": [
+    "Shadow Slam (auto, acumula Shadows)",
+    "Shadow Blast (6 alvos, chance de petrificar)",
+    "Bone Picker (6 alvos, buff acumulável)",
+    "Undead Rebirth (cura e anti-cura)",
+    "Shadow Void (finalizador, sempre crita)"
+   ]
+  }
+ ],
+ [
+  "Shadow Dragon Shinobi",
+  "acs",
+  "B",
+  "B",
+  "C",
+  "dodge",
+  "Ninja de DoT e esquiva: Shadow Kunai empilha veneno, Chi Heal cura e Flaming Dragon queima e anula o próximo golpe do alvo. Nota estimada a partir das skills.",
+  {
+   "skills": [
+    "Auto Attack",
+    "Shadow Kunai (veneno de até 10 stacks)",
+    "Chi Heal (cura e +50% Endurance)",
+    "Shadow Soul (recupera mana, -80% dano)",
+    "Flaming Dragon (queimadura e anula o próximo golpe)"
+   ]
+  }
+ ],
+ [
+  "Silver Paladin",
+  "acs",
+  "B",
+  "B",
+  "B",
+  "sup",
+  "Paladino híbrido de cura e defesa: Healing Word cura 3 aliados, Exorcise causa 306% contra mortos-vivos e Divine Recovery pode deixar o time invulnerável. Nota estimada a partir das skills.",
+  {
+   "skills": [
+    "Auto Attack",
+    "Abolish (dano e redução de dano acumulável)",
+    "Healing Word (cura você e 2 aliados)",
+    "Exorcise (3 alvos, 306% contra mortos-vivos)",
+    "Blinding Light (4 alvos, -50% acerto)"
+   ]
+  }
+ ],
+ [
+  "Legion Paladin",
+  "hero",
+  "B",
+  "A",
+  "B",
+  "sup",
+  "Híbrida: acumula Souls para dano e converte em Spirits para curar, taunt e debuffs. As Design Notes indicam Lucky e Hybrid.",
+  {
+   "awe": "Lucky + Spiral Carve",
+   "skills": [
+    "Desecration (auto, dá Soul)",
+    "Blasphemous Battleaxe (dano por Souls, Defiled com Spirits)",
+    "Soul Convertor (cura 7 aliados, Souls viram Spirits)",
+    "Incantation of Sin (150%, taunt com Spirits)",
+    "Shadowblight (350%, DoT que reduz resistências)"
+   ],
+   "rot": [
+    [
+     "Rotação com Spirits",
+     "auto até 10+ Souls → 3 → 2 · 4 · 5",
+     "g",
+     "Acumule Souls com o auto e o 2, converta em Spirits com o 3 e então use 2, 4 e 5 para ganhar os debuffs, o taunt e o DoT. Rotação deduzida das descrições, sem guia de comunidade."
+    ]
+   ]
+  }
+ ],
+ [
+  "Lord of Order",
+  "free",
+  "B",
+  "A",
+  "S",
+  "sup",
+  "Suporte e taunt; aplica Quixotic e segura stacks de Order em ultras.",
+  {
+   "ultra": "Lucky|Arcana's Concerto|Forge|Absolution",
+   "awe": "Lucky + Awe Blast"
+  }
+ ],
+ [
+  "Chaos Avenger",
+  "free",
+  "B",
+  "S",
+  "S",
+  "phys",
+  "Dano físico pesado e taunt; um dos melhores tanques de ultra e ótimo para solo.",
+  {
+   "awe": "Lucky + Awe Blast"
+  }
+ ],
+ [
+  "Void Highlord",
+  "free",
+  "S",
+  "A",
+  "B",
+  "phys",
+  "Clássico do farm e do solo: crit alto e fica mais forte com HP baixo.",
+  {
+   "farm": "Lucky|Smite|Vim|Vainglory",
+   "solo": "Lucky|Dauntless|Anima|Vainglory",
+   "skills": [
+    "Contract (auto)",
+    "Shackle",
+    "Highlord's Gaze",
+    "Unshackled",
+    "Armageddon (nuke)"
+   ],
+   "rot": [
+    [
+     "Dano geral",
+     "2345 · 234 · 234 · 2345",
+     "h",
+     "Spam 2, 3 e 4 por recarga e sempre use o 4 antes do 5 para o nuke sair com o buff."
+    ],
+    [
+     "Boss que bate forte",
+     "5234 · 234 · 234 · 2345",
+     "h",
+     "Comece pelo 5 para pegar os buffs defensivos logo de cara."
+    ],
+    [
+     "Boss muito forte",
+     "2 3 5 (sem o 4)",
+     "h",
+     "Mantém a cura do auto e as defesas do Shackle."
+    ],
+    [
+     "Com Dauntless",
+     "2 3 4 até ~500 HP · depois spam 2 e 5",
+     "h",
+     "Fica em Shackled, derruba o próprio HP e passa a spammar 2 e 5."
+    ]
+   ],
+   "src": "void-highlord/"
+  }
+ ],
+ [
+  "Verus DoomKnight",
+  "free",
+  "A",
+  "S",
+  "A",
+  "phys",
+  "Solo excelente com dano sustentado; em grupo vira burst com Ravenous.",
+  {
+   "solo": "Lucky|Dauntless|Anima|Vainglory",
+   "ultra": "Lucky|Ravenous|Forge|Penitence",
+   "skills": [
+    "Necrotic Blade (auto)",
+    "Soul Fracture (-defesa)",
+    "Life Carve",
+    "Doom Spikes",
+    "Unleash Doom"
+   ],
+   "rot": [
+    [
+     "Solo",
+     "2 → 234 · 234 … → 5 com 10 stacks",
+     "h",
+     "Abra com 2 para baixar a defesa, repita 234 até 10 stacks de Doom e ative o 5. Gaste Darkness no 3 (defesa) ou no 2 (crit)."
+    ]
+   ],
+   "src": "verus-doomknight/"
+  }
+ ],
+ [
+  "Dragon of Time",
+  "free",
+  "A",
+  "S",
+  "B",
+  "mag",
+  "Classe do /timeinn: sustain alto no solo e boa no farm.",
+  {
+   "farm": "Wizard|Ravenous|Pneuma|Vainglory",
+   "solo": "Wizard|Valiance|Pneuma|Vainglory",
+   "awe": "Healer ou Wizard + Health Vamp (farm) / Awe Blast (solo)",
+   "rot": [
+    [
+     "Farm",
+     "3 4 5",
+     "c",
+     "Spam 3, 4 e 5."
+    ],
+    [
+     "Solo",
+     "2 3 5 4",
+     "c",
+     "Repetir o ciclo; 2 primeiro para os buffs."
+    ]
+   ]
+  }
+ ],
+ [
+  "Arcana Invoker",
+  "free",
+  "S",
+  "A",
+  "B",
+  "mag",
+  "Endgame de Darkon com ciclo de cartas; um dos maiores DPS do jogo.",
+  {
+   "farm": "Wizard|Elysium|Examen|Vainglory",
+   "solo": "Wizard|Ravenous|Examen|Lament",
+   "skills": [
+    "Auto",
+    "The Beginning and the End",
+    "Arcana Invocation",
+    "Arcana Revocation",
+    "One with the Cycle"
+   ],
+   "rot": [
+    [
+     "Ciclo completo",
+     "2 → 3 (4/5 entre) → Judgement → 2 → spam 3 4 5 → 2",
+     "h",
+     "Comece com 2, priorize 3 para chegar no Judgement, use 2 para entrar em The World, spam 3-4-5 e use 2 de novo quando o World estiver acabando."
+    ]
+   ],
+   "src": "arcana-invoker/"
+  }
+ ],
+ [
+  "ArchMage",
+  "free",
+  "S",
+  "S",
+  "B",
+  "mana",
+  "Gasta mana muito rápido; vira top farmer com Elysium e top solo com Acheron.",
+  {
+   "solo": "Wizard|Acheron|Pneuma|Penitence",
+   "rot": [
+    [
+     "Solo (Acheron ou Valiance)",
+     "3542423423 · 542423 (repetir)",
+     "c",
+     "Combo compartilhado por jogadores; sem Acheron, use Valiance."
+    ]
+   ]
+  }
+ ],
+ [
+  "Yami no Ronin",
+  "free",
+  "A",
+  "A",
+  "B",
+  "phys",
+  "Burst físico rápido para solo e farm de curto alcance.",
+  {
+   "awe": "Lucky + Awe Blast"
+  }
+ ],
+ [
+  "Martial Artist",
+  "free",
+  "C",
+  "A",
+  "C",
+  "dodge",
+  "Dodge e auto-ataques rápidos; ping alto atrapalha.",
+  {
+   "solo": "Lucky|Ravenous|Vim|Lament",
+   "skills": [
+    "Pummel (auto)",
+    "Frogzard's Crushing Jaw",
+    "Gorillaphant Beatdown",
+    "Soaring Dragon",
+    "Concentration"
+   ],
+   "rot": [
+    [
+     "Dano máximo",
+     "5 3 4 · 32 32 34 · 23 23",
+     "h",
+     "Combos com muito 3 combinam com Ravenous."
+    ],
+    [
+     "Dodge simples",
+     "4 2 5 3 2 3 · loop 4 2 3 2 3 (5 por recarga)",
+     "h",
+     "Versão fácil para não morrer."
+    ]
+   ],
+   "src": "martial-artist/"
+  }
+ ],
+ [
+  "Blaze Binder",
+  "free",
+  "A",
+  "B",
+  "C",
+  "mag",
+  "Farmer mágico de área.",
+  {}
+ ],
+ [
+  "Kathool Adept",
+  "free",
+  "A",
+  "B",
+  "B",
+  "sup",
+  "Classe de aniversário de 18 anos: farmer e debuffer com stacks de Madness e pet tentáculo.",
+  {},
+  1
+ ],
+ [
+  "StoneCrusher",
+  "free",
+  "C",
+  "B",
+  "A",
+  "sup",
+  "Suporte de cura com DoT/HoT; usa Absolution em ultras.",
+  {
+   "ultra": "Lucky|Valiance|Forge|Absolution",
+   "awe": "Lucky + Spiral Carve"
+  }
+ ],
+ [
+  "Legion DoomKnight",
+  "free",
+  "B",
+  "A",
+  "A",
+  "phys",
+  "Dano em grupo com Decay em ultras; anula a cura do Dage.",
+  {}
+ ],
+ [
+  "Exalted Harbinger",
+  "free",
+  "B",
+  "A",
+  "B",
+  "phys",
+  "Joga com HP baixo; ótimo com Dauntless.",
+  {
+   "solo": "Lucky|Dauntless|Anima|Vainglory"
+  }
+ ],
+ [
+  "Exalted Soul Cleaver",
+  "free",
+  "C",
+  "A",
+  "B",
+  "phys",
+  "Solo resistente com suporte leve.",
+  {}
+ ],
+ [
+  "Legion SwordMaster Assassin",
+  "free",
+  "C",
+  "A",
+  "C",
+  "dodge",
+  "Dodge para solo.",
+  {}
+ ],
+ [
+  "SwordMaster",
+  "free",
+  "C",
+  "B",
+  "C",
+  "dodge",
+  "Dodge e solo intermediário.",
+  {}
+ ],
+ [
+  "Infinite Legion Dark Caster",
+  "free",
+  "A",
+  "C",
+  "C",
+  "mana",
+  "Farm de área.",
+  {}
+ ],
+ [
+  "Archfiend",
+  "free",
+  "A",
+  "B",
+  "C",
+  "mag",
+  "Farmer da Nation.",
+  {}
+ ],
+ [
+  "King's Echo",
+  "free",
+  "B",
+  "A",
+  "B",
+  "phys",
+  "Solo e tanque; o 3 exige cuidado em grupo.",
+  {}
+ ],
+ [
+  "Collector",
+  "free",
+  "C",
+  "B",
+  "B",
+  "sup",
+  "Solo e tanque.",
+  {}
+ ],
+ [
+  "Shaman",
+  "free",
+  "A",
+  "C",
+  "C",
+  "mag",
+  "Farm de área para o começo do jogo.",
+  {}
+ ],
+ [
+  "Master Ranger",
+  "free",
+  "A",
+  "C",
+  "C",
+  "phys",
+  "Farm de área para o começo do jogo.",
+  {}
+ ],
+ [
+  "Dark Lord",
+  "free",
+  "B",
+  "B",
+  "C",
+  "mag",
+  "Farm e solo intermediários.",
+  {}
+ ],
+ [
+  "Vampire Lord",
+  "free",
+  "B",
+  "B",
+  "C",
+  "phys",
+  "Farm e solo com lifesteal no início do jogo.",
+  {}
+ ],
+ [
+  "Dragonslayer General",
+  "free",
+  "C",
+  "B",
+  "B",
+  "phys",
+  "Taunt alternativo para ultras e solo.",
+  {}
+ ],
+ [
+  "Chaos Slayer",
+  "free",
+  "C",
+  "B",
+  "C",
+  "phys",
+  "Forte só contra monstros Chaos. Reworkada em 2025.",
+  {}
+ ],
+ [
+  "Necromancer",
+  "free",
+  "B",
+  "B",
+  "C",
+  "mana",
+  "Pet e DoTs; revisada em 2025.",
+  {}
+ ],
+ [
+  "Imperial Chunin",
+  "free",
+  "B",
+  "C",
+  "C",
+  "phys",
+  "Farm cedo, depois de Vath/Kitsune.",
+  {}
+ ],
+ [
+  "Frostval Barbarian",
+  "free",
+  "B",
+  "B",
+  "C",
+  "sup",
+  "Farm, solo e suporte; usado no time do Exaltia.",
+  {}
+ ],
+ [
+  "DragonSoul Shinobi",
+  "free",
+  "C",
+  "B",
+  "C",
+  "dodge",
+  "Solo com esquiva.",
+  {}
+ ],
+ [
+  "Ninja",
+  "free",
+  "C",
+  "B",
+  "C",
+  "dodge",
+  "Dodge básico.",
+  {}
+ ],
+ [
+  "Pyromancer",
+  "free",
+  "C",
+  "B",
+  "C",
+  "mag",
+  "Pré-requisito do Blaze Binder (rank 10).",
+  {}
+ ],
+ [
+  "Cryomancer",
+  "free",
+  "C",
+  "B",
+  "C",
+  "mag",
+  "Solo inicial.",
+  {}
+ ],
+ [
+  "Lycan",
+  "free",
+  "C",
+  "B",
+  "C",
+  "phys",
+  "Solo no começo do jogo.",
+  {}
+ ],
+ [
+  "Bard",
+  "free",
+  "C",
+  "C",
+  "B",
+  "sup",
+  "Suporte de buffs; revisada em 2025.",
+  {}
+ ],
+ [
+  "Arachnomancer",
+  "free",
+  "C",
+  "C",
+  "B",
+  "sup",
+  "Suporte.",
+  {}
+ ],
+ [
+  "Northlands Monk",
+  "free",
+  "C",
+  "B",
+  "C",
+  "sup",
+  "Solo e suporte iniciais.",
+  {}
+ ],
+ [
+  "Blood Sorceress",
+  "free",
+  "B",
+  "C",
+  "C",
+  "mag",
+  "Farm inicial; difícil de conseguir cedo.",
+  {}
+ ],
+ [
+  "Oracle",
+  "free",
+  "C",
+  "B",
+  "C",
+  "sup",
+  "Uma das primeiras classes úteis.",
+  {}
+ ],
+ [
+  "Enforcer",
+  "free",
+  "C",
+  "B",
+  "C",
+  "phys",
+  "Solo inicial.",
+  {}
+ ],
+ [
+  "Dragonslayer",
+  "free",
+  "C",
+  "B",
+  "C",
+  "phys",
+  "Solo inicial.",
+  {}
+ ],
+ [
+  "Healer",
+  "free",
+  "C",
+  "C",
+  "C",
+  "sup",
+  "Classe inicial de cura.",
+  {}
+ ],
+ [
+  "Mage",
+  "free",
+  "C",
+  "C",
+  "C",
+  "mag",
+  "Classe inicial de farm.",
+  {}
+ ],
+ [
+  "Rogue",
+  "free",
+  "C",
+  "C",
+  "C",
+  "dodge",
+  "Classe inicial; arriscada.",
+  {}
+ ],
+ [
+  "Thief of Hours",
+  "free",
+  "C",
+  "C",
+  "C",
+  "phys",
+  "Pré-requisito do Dragon of Time; obtenha, mas não use.",
+  {}
+ ],
+ [
+  "Lich",
+  "member",
+  "A",
+  "A",
+  "B",
+  "mag",
+  "Lançada em 2025; sazonal (sexta-feira 13) para quem não é member.",
+  {}
+ ],
+ [
+  "Legendary Elemental Warrior",
+  "member",
+  "A",
+  "B",
+  "C",
+  "phys",
+  "Muito rápido em salas com dois monstros (ex.: sevencircleswar).",
+  {
+   "farm": "Lucky|Valiance|Vim|Avarice",
+   "solo": "Lucky|Dauntless|Anima|Vainglory",
+   "skills": [
+    "Blizzard (passiva)",
+    "Elemental Invocation",
+    "Blaze",
+    "Stoneskin",
+    "Voltaic Overlord"
+   ],
+   "rot": [
+    [
+     "Combo inicial",
+     "2 5 3 2 3 4",
+     "h",
+     "O guia sugere começar por este combo e ajustar conforme o mapa."
+    ]
+   ],
+   "src": "legendary-elemental-warrior/"
+  }
+ ],
+ [
+  "Glacial Berserker",
+  "member",
+  "A",
+  "B",
+  "C",
+  "phys",
+  "Farmer de área recomendado em guias de boss farm.",
+  {
+   "farm": "Lucky|Valiance|Anima|Avarice"
+  }
+ ],
+ [
+  "DeathKnight Lord",
+  "member",
+  "B",
+  "A",
+  "B",
+  "phys",
+  "Taunt alternativo em ultras; sem daily desde 2025.",
+  {}
+ ],
+ [
+  "Naval Commander",
+  "member",
+  "C",
+  "B",
+  "A",
+  "sup",
+  "Tanque com taunt ideal para Champion Drakath; reworkada em 2025.",
+  {}
+ ],
+ [
+  "Sentinel",
+  "member",
+  "C",
+  "B",
+  "B",
+  "sup",
+  "Solo e tanque; sazonal.",
+  {}
+ ],
+ [
+  "Undead Slayer",
+  "member",
+  "B",
+  "B",
+  "C",
+  "phys",
+  "Forte só contra Undead.",
+  {}
+ ],
+ [
+  "Paladin",
+  "member",
+  "C",
+  "B",
+  "C",
+  "sup",
+  "Forte só contra Undead.",
+  {}
+ ],
+ [
+  "Evolved Pumpkin Lord",
+  "member",
+  "C",
+  "B",
+  "C",
+  "mag",
+  "Solo sazonal.",
+  {}
+ ],
+ [
+  "Chrono Assassin",
+  "member",
+  "C",
+  "B",
+  "C",
+  "dodge",
+  "Dodge; difícil de conseguir.",
+  {}
+ ],
+ [
+  "Beastmaster",
+  "member",
+  "C",
+  "B",
+  "C",
+  "dodge",
+  "Dodge com pets.",
+  {}
+ ],
+ [
+  "Blood Ancient",
+  "member",
+  "C",
+  "B",
+  "C",
+  "dodge",
+  "Dodge arriscado.",
+  {}
+ ],
+ [
+  "LightCaster",
+  "acs",
+  "S",
+  "B",
+  "C",
+  "phys",
+  "Um dos farmers mais rápidos; combina com Smite.",
+  {
+   "farm": "Lucky|Smite|Vim|Vainglory"
+  }
+ ],
+ [
+  "Chrono ShadowSlayer",
+  "acs",
+  "B",
+  "A",
+  "B",
+  "chrono",
+  "Pistoleiro do tempo: dano alto e modo Gunslinger.",
+  {
+   "farm": "Lucky|Valiance|Vim|Lament",
+   "solo": "Lucky|Valiance|Vim|Lament",
+   "ultra": "Lucky|Arcana's Concerto|Forge|Lament",
+   "skills": [
+    "Fire! (auto)",
+    "Reload (Gunslinger com 4+ Rift)",
+    "Tracer Rounds (dodge)",
+    "FMJ Rounds (dano principal)",
+    "Silver Bullet (nuke)"
+   ],
+   "rot": [
+    [
+     "DPS padrão",
+     "4 4 4 4 4 4 5 2",
+     "h",
+     "Rotação base com Temporal Rift."
+    ],
+    [
+     "Dodge",
+     "3 → 4 3 → 4 3 → 4 5 2",
+     "h",
+     "Espere um dodge ou erro antes de cada trecho."
+    ],
+    [
+     "Ultras",
+     "DPS padrão, trocando um 4 por 3 quando precisar de cura",
+     "h",
+     "Ex.: Ultra Darkon."
+    ]
+   ],
+   "src": "chrono-shadow-slayer/"
+  }
+ ],
+ [
+  "ShadowStalker of Time",
+  "acs",
+  "A",
+  "A",
+  "B",
+  "chrono",
+  "Variante AC da classe de calendário; crit alto com Vim.",
+  {
+   "farm": "Lucky|Smite|Vim|Vainglory",
+   "solo": "Lucky|Dauntless|Vim|Vainglory",
+   "skills": [
+    "Rift of Shadows (auto)",
+    "Exude/Devour (DoT/HoT)",
+    "Vendetta/Umbral Stigma",
+    "Silhouette/Shadow Warp (dodge, taunta)",
+    "Temporal Eclipse (haste e crit)"
+   ],
+   "rot": [
+    [
+     "Solo com dodge",
+     "4 2 3 5 2 3",
+     "h",
+     "Espere o 5 acabar antes de repetir."
+    ],
+    [
+     "Solo só dano",
+     "3 2 5 4 3 2",
+     "h",
+     "Sem foco em esquiva."
+    ],
+    [
+     "Chainkill",
+     "4235232 · após respawn 435232",
+     "h",
+     "Para matar o mesmo boss várias vezes."
+    ]
+   ],
+   "src": "shadow-stalker-of-time/"
+  }
+ ],
+ [
+  "Necrotic Chronomancer",
+  "acs",
+  "A",
+  "B",
+  "C",
+  "chrono",
+  "Farm fácil com spam de skills.",
+  {
+   "rot": [
+    [
+     "Farm",
+     "2 3 4 (spam) · 5 com HP baixo",
+     "c",
+     "Dica de jogadores."
+    ]
+   ]
+  }
+ ],
+ [
+  "Ultra OmniKnight",
+  "acs",
+  "A",
+  "B",
+  "C",
+  "mana",
+  "Ganha muito com Elysium.",
+  {}
+ ],
+ [
+  "SwordMaster Assassin",
+  "acs",
+  "C",
+  "A",
+  "C",
+  "dodge",
+  "Versão AC do SwordMaster Assassin.",
+  {}
+ ],
+ [
+  "Abyssal Angel's Shadow",
+  "acs",
+  "A",
+  "B",
+  "C",
+  "mag",
+  "Farm e solo da Nation.",
+  {}
+ ],
+ [
+  "Berserker",
+  "acs",
+  "C",
+  "B",
+  "C",
+  "phys",
+  "Arriscada; exige habilidade.",
+  {}
+ ],
+ [
+  "Infinity Titan",
+  "hero",
+  "C",
+  "B",
+  "A",
+  "sup",
+  "Skin do StoneCrusher: mesmas skills, nova arte.",
+  {
+   "ultra": "Lucky|Valiance|Forge|Absolution",
+   "awe": "Lucky + Spiral Carve"
+  }
+ ],
+ [
+  "Archivist of Time",
+  "hero",
+  "B",
+  "A",
+  "B",
+  "chrono",
+  "Calendário 2026: sem auto-ataque e 9 combinações de Index.",
+  {
+   "farm": "Wizard|Valiance|Pneuma|Lament",
+   "solo": "Wizard|Valiance|Pneuma|Lament",
+   "ultra": "Wizard|Arcana's Concerto|Forge|Penitence",
+   "rot": [
+    [
+     "Estrutura",
+     "Lorebook of Beginnings → combinação de Index",
+     "g",
+     "Sempre abra com o Lorebook; cada Index muda conforme o Index ativo (dano, crit, defesa ou cura)."
+    ]
+   ]
+  },
+  1
+ ],
+ [
+  "ShadowWeaver of Time",
+  "hero",
+  "B",
+  "A",
+  "A",
+  "chrono",
+  "Calendário com taunt e dano; tanque do Ultra Tyndarius.",
+  {}
+ ],
+ [
+  "Timeless Chronomancer",
+  "acs",
+  "C",
+  "A",
+  "C",
+  "chrono",
+  "Para bosses; não use para farm de mobs. Tem versão AC e versão Merge.",
+  {
+   "solo": "Lucky|Dauntless|Anima|Vainglory",
+   "skills": [
+    "Corrupted Sand Strike (auto)",
+    "Sand Rift (stacks)",
+    "Hourglass Inversion (cura)",
+    "Corruption Through Time (buff)",
+    "Temporal Collapse (nuke)"
+   ],
+   "rot": [
+    [
+     "Solo",
+     "4 2 2 2 4 2 5 3",
+     "h",
+     "Em bosses, solte o nuke com 3 stacks de Rift."
+    ]
+   ],
+   "src": "timeless-chronomancer/"
+  }
+ ],
+ [
+  "Continuum Chronomancer",
+  "hero",
+  "B",
+  "B",
+  "A",
+  "chrono",
+  "Suporte e dano em times de ultra.",
+  {
+   "ultra": "Lucky|Arcana's Concerto|Forge|Penitence"
+  }
+ ],
+ [
+  "Paladin Chronomancer",
+  "hero",
+  "C",
+  "B",
+  "A",
+  "sup",
+  "Substitui o ArchPaladin como curandeiro em ultras.",
+  {}
+ ],
+ [
+  "PaladinSlayer",
+  "hero",
+  "B",
+  "A",
+  "B",
+  "phys",
+  "Rework de ago/2026: Detect Living em 20 stacks dá +500% de crit.",
+  {},
+  1
+ ],
+ [
+  "CardClasher",
+  "hero",
+  "B",
+  "B",
+  "C",
+  "chrono",
+  "Rework de 2026: cartas aleatórias viram buffs, debuffs ou dano.",
+  {},
+  1
+ ],
+ [
+  "Psionic Mindbreaker",
+  "hero",
+  "B",
+  "B",
+  "C",
+  "mag",
+  "Solo e farm intermediários.",
+  {}
+ ],
+ [
+  "Firelord Summoner",
+  "hero",
+  "A",
+  "C",
+  "C",
+  "mag",
+  "Farmer com invocações.",
+  {}
+ ],
+ [
+  "Mythic Elemental Warrior",
+  "hero",
+  "C",
+  "B",
+  "B",
+  "phys",
+  "Versão HeroMart do Legendary Elemental Warrior.",
+  {}
+ ],
+ [
+  "Brutal Berserker",
+  "hero",
+  "C",
+  "B",
+  "C",
+  "phys",
+  "Versão HeroMart do Berserker.",
+  {}
+ ],
+ [
+  "Chronomancer Prime",
+  "hero",
+  "C",
+  "B",
+  "C",
+  "chrono",
+  "Versão atual do Chronomancer original, com rifts e nuke de até 4 stacks.",
+  {
+   "solo": "Lucky|Dauntless|Anima|Vainglory",
+   "farm": "Lucky|Lacerate|Anima|Vainglory",
+   "skills": [
+    "Auto",
+    "Temporal Strike (acumula Rift)",
+    "Rift Inversion (cura + 15% haste)",
+    "Rift Collapse (nuke, até 4 rifts)",
+    "Rift Burn (DoT, -15% dodge)"
+   ],
+   "rot": [
+    [
+     "Com Dauntless ou suporte",
+     "5 2 2 2 2 4",
+     "h",
+     "Evite o 3, porque você já tem haste. Diminua os 2 se precisar."
+    ],
+    [
+     "Com Lacerate",
+     "(5) 3 2 2 2 2 4",
+     "h",
+     "O 5 vira opcional, já que o Lacerate reduz o dodge do alvo; o 3 dá a haste."
+    ]
+   ],
+   "src": "chronomancer-prime/"
+  }
+ ],
+ [
+  "Chronomancer",
+  "hero",
+  "C",
+  "B",
+  "C",
+  "chrono",
+  "A primeira classe de calendário.",
+  {
+   "like": "Chronomancer Prime"
+  }
+ ],
+ [
+  "ChronoCorruptor",
+  "hero",
+  "C",
+  "B",
+  "C",
+  "chrono",
+  "Calendário antigo; pré-requisito de algumas quests.",
+  {}
+ ],
+ [
+  "Chrono Chaorruptor",
+  "hero",
+  "C",
+  "B",
+  "C",
+  "chrono",
+  "Mesmas skills do ChronoCorruptor.",
+  {
+   "like": "ChronoCorruptor"
+  }
+ ],
+ [
+  "TimeKiller",
+  "hero",
+  "C",
+  "B",
+  "C",
+  "chrono",
+  "Calendário 2013.",
+  {}
+ ],
+ [
+  "TimeKeeper",
+  "hero",
+  "C",
+  "B",
+  "C",
+  "chrono",
+  "Mesmas skills do TimeKiller.",
+  {
+   "like": "TimeKiller"
+  }
+ ],
+ [
+  "ChronoCommander",
+  "hero",
+  "C",
+  "B",
+  "B",
+  "phys",
+  "Calendário 2014: tanque corpo a corpo (stat model Tank Melee).",
+  {
+   "awe": "Fighter + Awe Blast"
+  }
+ ],
+ [
+  "Chrono Commandant",
+  "hero",
+  "C",
+  "B",
+  "B",
+  "phys",
+  "Mesmas skills do ChronoCommander.",
+  {
+   "like": "ChronoCommander"
+  }
+ ],
+ [
+  "Chrono DragonKnight",
+  "hero",
+  "B",
+  "B",
+  "C",
+  "mag",
+  "Calendário 2015: caster ofensivo.",
+  {}
+ ],
+ [
+  "Chrono DataKnight",
+  "hero",
+  "B",
+  "B",
+  "C",
+  "mag",
+  "Mesmas skills do Chrono DragonKnight.",
+  {
+   "like": "Chrono DragonKnight"
+  }
+ ],
+ [
+  "Infinity Knight",
+  "hero",
+  "C",
+  "B",
+  "C",
+  "mag",
+  "Calendário 2016: caster ofensivo híbrido.",
+  {
+   "awe": "Hybrid + Awe Blast"
+  }
+ ],
+ [
+  "Interstellar Knight",
+  "hero",
+  "C",
+  "B",
+  "C",
+  "mag",
+  "Mesmas skills do Infinity Knight.",
+  {
+   "like": "Infinity Knight"
+  }
+ ],
+ [
+  "ShadowWalker of Time",
+  "hero",
+  "B",
+  "A",
+  "A",
+  "chrono",
+  "Calendário 2017; mesmas skills do ShadowWeaver e do ShadowStalker.",
+  {
+   "like": "ShadowStalker of Time"
+  }
+ ],
+ [
+  "Empyrean Chronomancer",
+  "acs",
+  "B",
+  "A",
+  "B",
+  "chrono",
+  "Crit consistente e recargas rápidas; ótima em grupo com Valiance.",
+  {
+   "solo": "Lucky|Dauntless|Anima|Lament",
+   "farm": "Lucky|Valiance|Anima|Vainglory",
+   "ultra": "Lucky|Valiance|Forge|Penitence",
+   "skills": [
+    "Time Strike (auto)",
+    "Eternal Deadlock",
+    "The Fourth Dimension",
+    "Speed Abrasion (nuke)",
+    "Taking Eternity (buff/HoT)"
+   ],
+   "rot": [
+    [
+     "Grupo",
+     "5 2 · 3 2 3 2 3 2 5 2 3 4",
+     "h",
+     "Abre com 5-2 e aplica o buff The Fourth Dimension."
+    ],
+    [
+     "Solo (crit constante)",
+     "5 2 · 3 2 3 2 3 2 3 2 4",
+     "h",
+     "Abre com 5-2 e aplica o buff Enter Infinity."
+    ]
+   ],
+   "src": "empyrean-chronomancer/"
+  }
+ ],
+ [
+  "Eternal Chronomancer",
+  "hero",
+  "B",
+  "A",
+  "B",
+  "chrono",
+  "Calendário 2018; mesmas skills do Empyrean e do Immortal.",
+  {
+   "like": "Empyrean Chronomancer"
+  }
+ ],
+ [
+  "Immortal Chronomancer",
+  "acs",
+  "B",
+  "A",
+  "B",
+  "chrono",
+  "Versão AC do Eternal Chronomancer.",
+  {
+   "like": "Empyrean Chronomancer"
+  }
+ ],
+ [
+  "Corrupted Chronomancer",
+  "hero",
+  "C",
+  "A",
+  "C",
+  "chrono",
+  "Calendário 2019; usa pet de ampulheta. Mesmas skills do Timeless.",
+  {
+   "like": "Timeless Chronomancer"
+  }
+ ],
+ [
+  "Underworld Chronomancer",
+  "hero",
+  "C",
+  "A",
+  "C",
+  "chrono",
+  "Calendário 2020; variante do Corrupted Chronomancer.",
+  {
+   "like": "Timeless Chronomancer"
+  }
+ ],
+ [
+  "Overworld Chronomancer",
+  "acs",
+  "C",
+  "A",
+  "C",
+  "chrono",
+  "Versão AC/Merge da família do Timeless.",
+  {
+   "like": "Timeless Chronomancer"
+  }
+ ],
+ [
+  "Nechronomancer",
+  "hero",
+  "A",
+  "B",
+  "C",
+  "chrono",
+  "Calendário 2021 (Power Melee); mesmas skills do Necrotic Chronomancer.",
+  {
+   "like": "Necrotic Chronomancer"
+  }
+ ],
+ [
+  "Quantum Chronomancer",
+  "hero",
+  "B",
+  "B",
+  "A",
+  "chrono",
+  "Calendário 2022; usado no setup mais rápido do Ultra Nulgath.",
+  {
+   "like": "Continuum Chronomancer"
+  }
+ ],
+ [
+  "Obsidian Paladin Chronomancer",
+  "hero",
+  "C",
+  "B",
+  "A",
+  "sup",
+  "Mesmas skills do Paladin Chronomancer.",
+  {
+   "like": "Paladin Chronomancer"
+  }
+ ],
+ [
+  "Chrono ShadowHunter",
+  "hero",
+  "B",
+  "A",
+  "B",
+  "chrono",
+  "Calendário 2024; mesmas skills do Chrono ShadowSlayer.",
+  {
+   "like": "Chrono ShadowSlayer"
+  }
+ ],
+ [
+  "Phantom Chronomancer",
+  "hero",
+  "B",
+  "B",
+  "C",
+  "mag",
+  "Calendário 2025 (Power Caster); reworkada em 2025.",
+  {}
+ ],
+ [
+  "Phantasm Chronomancer",
+  "hero",
+  "B",
+  "B",
+  "C",
+  "mag",
+  "Mesmas skills do Phantom Chronomancer.",
+  {
+   "like": "Phantom Chronomancer"
+  }
+ ],
+ [
+  "Archivist of Temporis",
+  "hero",
+  "B",
+  "A",
+  "B",
+  "chrono",
+  "Calendário 2026; mesmas skills do Archivist of Time.",
+  {
+   "like": "Archivist of Time"
+  }
+ ]
+]

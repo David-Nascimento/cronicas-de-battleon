@@ -1,0 +1,21 @@
+/* comparar */
+.cmpPick{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-bottom:16px}
+.cmpSlot{display:flex;gap:6px;align-items:center;min-width:0}
+.cmpSlot input{flex:1;min-width:0;width:auto}
+.cmpSlot button{border:1px solid var(--line);background:var(--panel);color:var(--muted);border-radius:8px;width:36px;height:36px;cursor:pointer;flex:none;font-size:16px}
+@media (max-width:640px){.cmpPick{grid-template-columns:1fr}}
+.cmpWrap{overflow-x:auto;border:1px solid var(--line2);border-radius:10px;background:var(--panel)}
+.cmpT{border-collapse:collapse;width:100%;min-width:620px;font-size:14px}
+.cmpT th,.cmpT td{padding:10px 12px;border-bottom:1px solid var(--line2);vertical-align:top;text-align:left}
+.cmpT tr:last-child td,.cmpT tr:last-child th{border-bottom:0}
+.cmpT th[scope=row]{font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:700;background:var(--bg2);white-space:nowrap;width:120px}
+.cmpT thead td{background:var(--panel2)}
+.cmpHead{display:flex;gap:10px;align-items:center}
+.cmpHead b{font-family:var(--display);font-weight:700;font-size:16px;color:var(--ink);display:block}
+.cmpT .b.best{box-shadow:0 0 0 2px var(--gold2)}
+.cmpT .bl{display:flex;flex-wrap:wrap;gap:4px}
+.cmpT .bl span{background:var(--bg2);border:1px solid var(--line2);border-radius:5px;padding:1px 6px;font-size:12px}
+.cmpEmpty{padding:28px;text-align:center;color:var(--muted)}
+.addCmp{font:600 14px var(--body);color:var(--gold);background:none;border:1px solid var(--gold-deep);border-radius:8px;padding:6px 12px;cursor:pointer}
+.addCmp[disabled]{opacity:.55;cursor:default}
+

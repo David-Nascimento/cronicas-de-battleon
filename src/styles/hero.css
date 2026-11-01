@@ -1,0 +1,7 @@
+.stats{display:flex;flex-wrap:wrap;gap:8px 18px;margin-top:12px;font-size:13px;color:var(--muted)}
+.stats b{color:var(--ink);font-weight:700;font-size:17px;margin-right:4px;font-variant-numeric:tabular-nums}
+.orn{display:flex;align-items:center;gap:12px;color:var(--gold)}
+.orn::before,.orn::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,transparent,var(--gold-deep),transparent)}
+.orn svg{width:22px;height:22px}
+@media (max-width:520px){.hero{grid-template-columns:1fr;text-align:left}.crest{width:64px;height:72px}}
+

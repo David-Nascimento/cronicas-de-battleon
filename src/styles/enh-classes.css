@@ -1,0 +1,21 @@
+/* enhancement → classes */
+.usedBtn{align-self:flex-start;margin-top:4px;font:600 13px var(--body);color:var(--gold);background:none;border:1px solid var(--gold-deep);border-radius:8px;padding:5px 10px;cursor:pointer}
+.usedList{display:flex;flex-wrap:wrap;gap:6px;margin-top:4px}
+.ecWrap{display:flex;flex-direction:column;gap:6px;margin-top:auto}
+.eGrp{display:flex;flex-direction:column;gap:8px}
+.eGrp h4{margin:0;font:700 12px var(--body);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);display:flex;align-items:center;gap:8px}
+.eGrp h4 .dot{flex:none}
+.eCtl{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+#eBody .db{max-height:none}
+.usedList button{display:inline-flex;align-items:center;gap:6px;font:600 12px var(--body);border:1px solid var(--line);background:var(--bg2);color:var(--ink);border-radius:999px;padding:3px 9px;cursor:pointer}
+.usedList button:hover{border-color:var(--gold-deep)}
+.usedList i{font-style:normal;font-weight:700;color:var(--muted);font-size:10px;letter-spacing:.04em}
+
+/* índice */
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px}
+.card{padding:12px;display:flex;gap:12px;align-items:center;min-width:0;width:100%}
+.card:hover{border-color:var(--gold-deep)}
+.card .info{min-width:0;flex:1;display:flex;flex-direction:column;gap:6px}
+.card h4{margin:0;font-size:15px}
+.count{font-size:12px;color:var(--muted)}
+

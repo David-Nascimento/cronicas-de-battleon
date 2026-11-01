@@ -1,0 +1,12 @@
+/* topo seguro */
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
+
+h2{font-family:var(--display);font-weight:700;font-size:22px;margin:0;letter-spacing:-.01em;color:var(--ink)}
+.sub{color:var(--muted);margin:2px 0 0;font-size:14px}
+.head{display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;align-items:flex-end;margin-bottom:14px}
+.controls{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.seg{display:inline-flex;flex-wrap:wrap;gap:4px;background:var(--panel);border:1px solid var(--line2);border-radius:9px;padding:4px}
+.seg button{font:600 13px var(--body);border:0;background:none;color:var(--muted);padding:6px 12px;border-radius:7px;cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--gold);color:var(--on-gold);font-weight:700}
+input[type=search]{font:500 14px var(--body);padding:8px 12px;border:1px solid var(--line);border-radius:9px;background:var(--bg2);color:var(--ink);width:240px;max-width:100%}
+

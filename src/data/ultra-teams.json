@@ -1,0 +1,259 @@
+[
+ {
+  "n": "Champion Drakath",
+  "map": "/championdrakath",
+  "tag": "Semanal",
+  "team": [
+   [
+    "Void Highlord",
+    "Dano"
+   ],
+   [
+    "StoneCrusher",
+    "Suporte + DPS em grupo"
+   ],
+   [
+    "Lord of Order",
+    "Taunt (Scroll of Enrage) + suporte"
+   ],
+   [
+    "ArchPaladin",
+    "Cura"
+   ]
+  ],
+  "tips": [
+   "Ele solta um ataque enorme a cada 2M de HP (18M, 16M, 14M…; menos em 10M e 2M). Taunte logo antes de cada marca.",
+   "São 7 Scrolls of Enrage para a luta toda.",
+   "Use armas com boost contra Chaos; StoneCrusher não ganha com boost (DoT/HoT)."
+  ],
+  "alt": "Naval Commander como tanque é a escolha ideal segundo outro guia; DeathKnight Lord também serve."
+ },
+ {
+  "n": "Ultra Nulgath",
+  "map": "/ultranulgath",
+  "tag": "Mecânica difícil",
+  "team": [
+   [
+    "Void Highlord",
+    "Taunter 1"
+   ],
+   [
+    "Void Highlord",
+    "Taunter 2"
+   ],
+   [
+    "Lord of Order",
+    "Suporte"
+   ],
+   [
+    "Legion Revenant",
+    "Suporte + tanque"
+   ]
+  ],
+  "tips": [
+   "Os contratos Frailty → Despair → Stagnation precisam ficar alternando entre os dois taunters.",
+   "Taunter 1 usa Enrage 6 s após o início; taunter 2 na fala 'Behold the power of the Abyss'.",
+   "Overfiend Blade mata o time se ficar vivo 45 s; mate só para evitar o nuke (0 a 2 vezes)."
+  ],
+  "alt": "Chaos Avenger ×2 + Lord of Order + Legion Revenant dispensa scrolls, mas o timing é mais rígido. Com 3 pessoas: Lord of Order, ArchPaladin e Legion Revenant."
+ },
+ {
+  "n": "Ultra King Drago",
+  "map": "/ultradrago",
+  "tag": "Semanal",
+  "team": [
+   [
+    "Chaos Avenger",
+    "Taunt + dano"
+   ],
+   [
+    "Legion Revenant",
+    "Suporte + DPS em grupo"
+   ],
+   [
+    "Lord of Order",
+    "Suporte + Quixotic"
+   ],
+   [
+    "ArchPaladin",
+    "Cura"
+   ]
+  ],
+  "tips": [
+   "Ordem: Bowmaster, Executioner, Drago.",
+   "Se os dois primeiros levarem mais de 3 min, o Drago mata o time.",
+   "Lord of Order fica no Executioner e usa Quixotic logo antes do Bowmaster morrer.",
+   "Use boost contra Humanos."
+  ],
+  "alt": "Recompensa: Prince Darkon's Poleaxe."
+ },
+ {
+  "n": "Ultra Dage",
+  "map": "/ultradage",
+  "tag": "Semanal",
+  "team": [
+   [
+    "Chaos Avenger",
+    "Taunt + dano"
+   ],
+   [
+    "Legion DoomKnight",
+    "DPS em grupo + Decay"
+   ],
+   [
+    "Lord of Order",
+    "Suporte + Quixotic"
+   ],
+   [
+    "ArchPaladin",
+    "Cura"
+   ]
+  ],
+  "tips": [
+   "Noxious Decay inverte a cura; lifesteal não é invertido, então Health Vamp ajuda.",
+   "A cada 15 s, corra para a zona marcada (3 s). Morrer devolve 500k de HP ao Dage.",
+   "O Decay do Legion DoomKnight anula a cura do Dage; Legion Revenant deve spammar o 2.",
+   "Lord of Order usa Quixotic no Energy Blast (ou ArchPaladin usa Righteous Seal)."
+  ],
+  "alt": "Sem Legion DoomKnight, leve Scroll of Decay. Consumíveis: Endurance Draught + Body Tonic."
+ },
+ {
+  "n": "Ultra Tyndarius",
+  "map": "/ultratyndarius",
+  "tag": "Story",
+  "team": [
+   [
+    "ShadowWeaver of Time",
+    "Taunt + dano"
+   ],
+   [
+    "Legion Revenant",
+    "Suporte + DPS em grupo"
+   ],
+   [
+    "Lord of Order",
+    "Quixotic nos orbs + stacks de Order"
+   ],
+   [
+    "ArchPaladin",
+    "Cura"
+   ]
+  ],
+  "tips": [
+   "Mate um orb por vez: orb esquerdo, orb direito, Tyndarius e repete.",
+   "O taunter mantém o taunt ou Scrolls of Enrage o tempo todo."
+  ],
+  "alt": "Recompensas: Infernal Flame Pyromancer e Infernal Flame Khopesh."
+ },
+ {
+  "n": "Ultra Speaker (Malgor)",
+  "map": "/ultraspeaker",
+  "tag": "Semanal",
+  "team": [
+   [
+    "Chaos Avenger",
+    "Taunt + dano"
+   ],
+   [
+    "Legion Revenant",
+    "DPS em grupo + Decay"
+   ],
+   [
+    "Lord of Order",
+    "Suporte + Quixotic"
+   ],
+   [
+    "ArchPaladin",
+    "Cura (ou Paladin Chronomancer)"
+   ]
+  ],
+  "tips": [
+   "Penitence é praticamente obrigatório nessa luta.",
+   "Praxis rende bem por ser uma luta longa."
+  ],
+  "alt": "Setup de 4 taunts: Legion Revenant, Lord of Order, ArchPaladin e StoneCrusher. Recompensa: Radiant Goddess of War."
+ },
+ {
+  "n": "Exaltia (Ezrajal, Warden, Engineer)",
+  "map": "/ultraezrajal · /ultrawarden · /ultraengineer",
+  "tag": "Story",
+  "team": [
+   [
+    "Void Highlord",
+    "Dano"
+   ],
+   [
+    "Legion Revenant",
+    "Suporte + DPS + taunt no Warden"
+   ],
+   [
+    "Lord of Order",
+    "Suporte"
+   ],
+   [
+    "Frostval Barbarian",
+    "Suporte (ou Continuum Chronomancer)"
+   ]
+  ],
+  "tips": [
+   "Ezrajal: aperte ESC quando ele preparar o Counter Attack e volte quando passar.",
+   "Warden: Legion Revenant usa Scroll of Enrage perto de 450k de HP.",
+   "Engineer: não ande para frente ao entrar. Mate Defense Drone, Attack Drone e depois o Engineer."
+  ],
+  "alt": "Recompensa: Exalted Apotheosis. Em sala pública, um ArchPaladin a mais ajuda a sobreviver."
+ },
+ {
+  "n": "Ultra Kala",
+  "map": "/ultrakala",
+  "tag": "Agosto",
+  "team": [
+   [
+    "Void Highlord",
+    "Dano (ou outro DPS de grupo)"
+   ],
+   [
+    "Legion Revenant",
+    "Suporte + DPS em grupo"
+   ],
+   [
+    "Lord of Order",
+    "Suporte"
+   ],
+   [
+    "ArchPaladin",
+    "Cura"
+   ]
+  ],
+  "tips": [
+   "Sem mecânicas especiais: com o time certo, é só spammar."
+  ],
+  "alt": "Sazonal de agosto."
+ },
+ {
+  "n": "Ultra Iara",
+  "map": "/ultraiara",
+  "tag": "Setembro",
+  "team": [
+   [
+    "Void Highlord",
+    "Dano"
+   ],
+   [
+    "Void Highlord",
+    "Dano"
+   ],
+   [
+    "Legion Revenant",
+    "Suporte + DPS em grupo"
+   ],
+   [
+    "Lord of Order",
+    "Suporte"
+   ]
+  ],
+  "tips": [
+   "Tire os debuffs da Iara saindo da tela do boss e trocando de classe."
+  ],
+  "alt": "Sazonal de setembro."
+ }
+]

@@ -1,0 +1,92 @@
+{
+ "phys": {
+  "n": "Físico",
+  "farm": "Lucky|Valiance|Vim|Vainglory",
+  "solo": "Lucky|Valiance|Anima|Vainglory",
+  "ultra": "Lucky|Valiance|Forge|Penitence",
+  "awe": "Lucky + Awe Blast",
+  "rot": [
+   [
+    "Padrão de dano",
+    "2 3 4 5 · 2 3 4",
+    "g",
+    "Abra com a skill que aplica buff ou debuff, use o restante por recarga e guarde o 5 para quando os buffs estiverem ativos."
+   ]
+  ]
+ },
+ "mag": {
+  "n": "Mágico",
+  "farm": "Wizard|Valiance|Pneuma|Vainglory",
+  "solo": "Wizard|Valiance|Pneuma|Vainglory",
+  "ultra": "Wizard|Valiance|Forge|Penitence",
+  "awe": "Wizard + Awe Blast",
+  "rot": [
+   [
+    "Padrão mágico",
+    "2 3 4 5 · 2 3 4",
+    "g",
+    "Mantenha DoTs e debuffs ativos e solte o 5 quando o dano acumulado estiver no máximo."
+   ]
+  ]
+ },
+ "mana": {
+  "n": "Mágico (mana)",
+  "farm": "Wizard|Elysium|Pneuma|Vainglory",
+  "solo": "Wizard|Valiance|Pneuma|Vainglory",
+  "ultra": "Wizard|Valiance|Forge|Penitence",
+  "awe": "Wizard + Health Vamp",
+  "rot": [
+   [
+    "Padrão de farm",
+    "2 3 4 5 (spam)",
+    "g",
+    "Gasta muita mana: com Elysium dá para usar tudo por recarga sem parar."
+   ]
+  ]
+ },
+ "sup": {
+  "n": "Suporte",
+  "farm": "Lucky|Valiance|Vim|Vainglory",
+  "solo": "Lucky|Valiance|Anima|Vainglory",
+  "ultra": "Lucky|Arcana's Concerto|Forge|Penitence",
+  "awe": "Lucky + Spiral Carve",
+  "rot": [
+   [
+    "Padrão de suporte",
+    "3 · 4 · 2 2 · 5",
+    "g",
+    "Aplique buffs e curas antes da luta, mantenha o debuff no boss e encaixe o dano entre as recargas."
+   ]
+  ]
+ },
+ "dodge": {
+  "n": "Dodge",
+  "farm": "Lucky|Lacerate|Vim|Vainglory",
+  "solo": "Lucky|Lacerate|Vim|Vainglory",
+  "ultra": "Lucky|Valiance|Forge|Penitence",
+  "awe": "Lucky + Awe Blast",
+  "rot": [
+   [
+    "Padrão de dodge",
+    "buff · 2 3 · 2 3 · 5",
+    "g",
+    "Mantenha o buff de esquiva ativo antes de gastar as skills de dano."
+   ]
+  ]
+ },
+ "chrono": {
+  "n": "Calendário",
+  "farm": "Lucky|Dauntless|Vim|Lament",
+  "solo": "Lucky|Dauntless|Vim|Lament",
+  "ultra": "Lucky|Valiance|Forge|Penitence",
+  "awe": "Lucky + Awe Blast",
+  "rot": [
+   [
+    "Padrão de calendário",
+    "2 2 2 · 4 · 5",
+    "g",
+    "A maioria dos Chronomancers acumula stacks com a skill 2 (por isso Dauntless e Lacerate) e gasta no nuke."
+   ]
+  ]
+ }
+}

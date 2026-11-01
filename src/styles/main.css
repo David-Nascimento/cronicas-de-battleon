@@ -1,0 +1,22 @@
+/* ordem importa: a cascata é a mesma do style.css original */
+@import "./tokens.css";
+@import "./base.css";
+@import "./layout.css";
+@import "./home.css";
+@import "./layout-mobile.css";
+@import "./footer.css";
+@import "./notifications.css";
+@import "./banner.css";
+@import "./feed.css";
+@import "./toasts.css";
+@import "./hero.css";
+@import "./controls.css";
+@import "./frame.css";
+@import "./best.css";
+@import "./tiers.css";
+@import "./ultras.css";
+@import "./agenda.css";
+@import "./compare.css";
+@import "./enh-classes.css";
+@import "./enhancements.css";
+@import "./class-dialog.css";
