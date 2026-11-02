@@ -41,10 +41,10 @@ export function renderTiers(){
   seg("segTsrc",[["portal",L("tl_portal")],["mine",L("tl_mine")]],"tsrc",()=>{sel=null;renderTiers()});
   const edit=st.tsrc==="mine",box=document.getElementById("tiers");
   document.getElementById("segCat").hidden=edit;
-  const qi=document.getElementById("tierQ") as HTMLInputElement;qi.hidden=!edit;qi.placeholder=L("tl_q");qi.setAttribute("aria-label",L("tl_q"));
+  const pool=document.getElementById("tierPool"),qi=document.getElementById("tierQ") as HTMLInputElement;pool.hidden=!edit;qi.placeholder=L("tl_q");qi.setAttribute("aria-label",L("tl_q"));
   const nq=nrm(q.trim()),hit=(c:Klass)=>!nq||nrm(c.name).includes(nq);
   const tools=document.getElementById("tierTools");
-  if(!edit){sel=null;tools.innerHTML="";
+  if(!edit){sel=null;tools.innerHTML="";document.getElementById("tierPool").hidden=true;
     box.innerHTML=TIERS.map(t=>{const xs=list().filter(c=>tierOf(c)===t);
       return `<div class="tier"><div class="tl" style="background:${tColor(t)}">${t}</div><div class="tr">${xs.length?xs.map(c=>card(c,false)).join(""):`<span class="empty">${L("empty",{c:catName(st.cat)})}</span>`}</div></div>`}).join("");
     return}
@@ -54,10 +54,12 @@ export function renderTiers(){
     ${s?`<div class="tlMove"><b>${L("tl_move",{c:esc(s.name)})}</b><span class="tlBtns">${ROWS.map(r=>`<button class="tlTo t${r}" data-tto="${r}">${r==="N"?L("tl_none"):r}</button>`).join("")}<button class="linkBtn open" data-i="${idx(s)}">${L("tl_card")}</button><button class="linkBtn" data-tcancel>${L("tl_cancel")}</button></span></div>`
       :`<p class="tlHint">${L("tl_hint")}${custom?"":` <span class="pill soon">${L("tl_from_portal")}</span>`}</p>`}
     <div class="tlActs"><button class="btnQ" data-treset>${L("tl_reset")}</button><button class="btnQ" data-tzero>${L("tl_zero")}</button><button class="btnQ" data-tcopy>${L("tl_copy")}</button></div></div>`;
-  /* "Sem tier" vem primeiro: é de lá que se tiram as classes, e a busca filtra só ela */
-  box.innerHTML=(["N",...TIERS] as Row[]).map(r=>{const xs=m[r].map(n=>D[byName[n]]).filter(Boolean);
-    const vis=r==="N"?xs.filter(hit):xs,f=r==="N"&&nq;
-    return `<div class="tier${r==="N"?" none":""}" data-trow="${r}"><div class="tl" style="background:${r==="N"?"var(--line)":tColor(r)}">${r==="N"?`<small>${L("tl_none")}</small>`:r}<em class="tlN">${f?`${vis.length}/`:""}${xs.length}</em></div><div class="tr">${vis.length?vis.map(c=>card(c,true)).join(""):`<span class="empty">${f&&xs.length?L("tl_nohit"):L(r==="N"?"tl_none_empty":"tl_drop")}</span>`}</div></div>`}).join("");
+  /* os tiers em cima; "Sem tier" embaixo, com a própria busca (que procura só ali) */
+  box.innerHTML=TIERS.map(r=>{const xs=m[r as Tier].map(n=>D[byName[n]]).filter(Boolean);
+    return `<div class="tier" data-trow="${r}"><div class="tl" style="background:${tColor(r)}">${r}<em class="tlN">${xs.length}</em></div><div class="tr">${xs.length?xs.map(c=>card(c,true)).join(""):`<span class="empty">${L("tl_drop")}</span>`}</div></div>`}).join("");
+  const xs=m.N.map(n=>D[byName[n]]).filter(Boolean),vis=xs.filter(hit);
+  document.getElementById("poolT").innerHTML=`${L("tl_none")} <small>${nq?`${vis.length}/`:""}${xs.length}</small>`;
+  document.getElementById("poolList").innerHTML=vis.length?vis.map(c=>card(c,true)).join(""):`<span class="empty">${nq&&xs.length?L("tl_nohit"):L("tl_none_empty")}</span>`;
 }
 
 /* eventos da edição */
@@ -71,15 +73,15 @@ root.addEventListener("click",e=>{if(st.tsrc!=="mine")return;const t=e.target as
   if(t.closest("[data-tcopy]")){const m=mine(),txt=`${L("tl_mine")}, ${st.mode==="geral"?L("overall"):st.mode}\n`+TIERS.map(r=>`${r}: ${m[r as Tier].join(", ")||"—"}`).join("\n");
     try{const w=navigator.clipboard&&navigator.clipboard.writeText(txt);if(w&&w.catch)w.catch(()=>{})}catch(_){}toast("✓",L("tl_copied"));return}
   /* com uma classe escolhida, tocar numa linha de tier também move */
-  const row=t.closest<HTMLElement>("[data-trow]");if(row&&sel){move(sel,row.dataset.trow as Row);sel=null;renderTiers()}
+  const row=t.closest<HTMLElement>("[data-trow]");if(row&&sel&&!t.closest("input")){move(sel,row.dataset.trow as Row);sel=null;renderTiers()}
 });
 let drag:string|null=null;
 root.addEventListener("dragstart",e=>{const c=(e.target as HTMLElement).closest<HTMLElement>("[data-tname]");if(!c)return;drag=c.dataset.tname;e.dataTransfer.effectAllowed="move";e.dataTransfer.setData("text/plain",drag)});
 root.addEventListener("dragover",e=>{const row=(e.target as HTMLElement).closest<HTMLElement>("[data-trow]");if(!row||!drag)return;e.preventDefault();
-  root.querySelectorAll(".tier.over").forEach(x=>x!==row&&x.classList.remove("over"));row.classList.add("over")});
+  root.querySelectorAll(".over").forEach(x=>x!==row&&x.classList.remove("over"));row.classList.add("over")});
 root.addEventListener("dragleave",e=>{const row=(e.target as HTMLElement).closest<HTMLElement>("[data-trow]");if(row&&!row.contains(e.relatedTarget as Node))row.classList.remove("over")});
 root.addEventListener("drop",e=>{const row=(e.target as HTMLElement).closest<HTMLElement>("[data-trow]");if(!row||!drag)return;e.preventDefault();
   const before=(e.target as HTMLElement).closest<HTMLElement>("[data-tname]");
   move(drag,row.dataset.trow as Row,before&&before.dataset.tname!==drag?before.dataset.tname:undefined);drag=null;sel=null;renderTiers()});
-root.addEventListener("dragend",()=>{drag=null;root.querySelectorAll(".tier.over").forEach(x=>x.classList.remove("over"))});
+root.addEventListener("dragend",()=>{drag=null;root.querySelectorAll(".over").forEach(x=>x.classList.remove("over"))});
 document.getElementById("tierQ").addEventListener("input",e=>{q=(e.target as HTMLInputElement).value;renderTiers()});
