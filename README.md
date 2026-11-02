@@ -32,7 +32,7 @@ A tier list do portal separa por loja (Free, Member, ACS, HeroMart, Calendário)
 
 ### Diárias
 
-105 quests diárias conferidas no AQW Wiki, cada uma com o `/join` (quando confirmado), quem dá a quest, o que é preciso, a recompensa e para que serve. Grupos: início, meio e fim do jogo, HardFarm, chefes (incluindo os 6 Daily Exercises da Legion), reputação, sazonais e antigas. Marque o que já fez; as marcações voltam do zero na virada do dia, no horário que você escolher. As que você não faz podem ser ocultadas e saem da contagem.
+107 quests diárias conferidas no AQW Wiki, cada uma com o `/join` (quando confirmado), quem dá a quest, o que é preciso, a recompensa e para que serve. Grupos: início, meio e fim do jogo, HardFarm, chefes (incluindo os 6 Daily Exercises da Legion), reputação, sazonais e antigas. Marque o que já fez; as marcações voltam do zero na virada do dia, no horário que você escolher. As que você não faz podem ser ocultadas e saem da contagem.
 
 ![Diárias](docs/screenshots/diarias.png)
 

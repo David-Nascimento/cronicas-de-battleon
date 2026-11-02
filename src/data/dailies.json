@@ -2328,5 +2328,44 @@
     },
     "src": "https://aqwwiki.wikidot.com/jon-jett-s-quests",
     "sn": "AQW Wiki: Jon Jett's Quests"
+  },
+  {
+    "id": "rep-chaos",
+    "g": "rep",
+    "n": "Chaorruption Destruction",
+    "who": {
+      "pt": "Warlic, em Into Chaos",
+      "en": "Warlic, in Into Chaos"
+    },
+    "req": {
+      "pt": "13 Solid Chaos (Chaos Crystal e Chaos Gemrald, drop raro). Legends têm a \"Legendary Chaorruption Investigation\" (2.500 gold e XP)",
+      "en": "13 Solid Chaos (Chaos Crystal and Chaos Gemrald, rare drop). Legends get \"Legendary Chaorruption Investigation\" (2,500 gold and XP)"
+    },
+    "rw": {
+      "pt": "1.500 gold, 1.500 XP e 1.500 de reputação Chaos",
+      "en": "1,500 gold, 1,500 XP and 1,500 Chaos rep"
+    },
+    "src": "https://aqwwiki.wikidot.com/warlic-s-quests",
+    "sn": "AQW Wiki: Warlic's Quests"
+  },
+  {
+    "id": "rep-elemental",
+    "g": "rep",
+    "n": "Elemental Mastery: Study Session",
+    "who": {
+      "pt": "Warlic, em Dragonrune Hall",
+      "en": "Warlic, in Dragonrune Hall"
+    },
+    "req": {
+      "pt": "Ter concluído \"Welcome to Dragonrune Hall\"; 6 Flame (Fire Elemental), 6 Water Drop (Water Elemental), 6 Breeze (Wind Elemental) e 6 Stone (Earth Elemental)",
+      "en": "Completed \"Welcome to Dragonrune Hall\"; 6 Flame (Fire Elemental), 6 Water Drop (Water Elemental), 6 Breeze (Wind Elemental) and 6 Stone (Earth Elemental)"
+    },
+    "rw": {
+      "pt": "1.500 gold, 1.500 XP e 3.500 de reputação Elemental Master",
+      "en": "1,500 gold, 1,500 XP and 3,500 Elemental Master rep"
+    },
+    "mem": "l",
+    "src": "https://aqwwiki.wikidot.com/warlic-s-quests",
+    "sn": "AQW Wiki: Warlic's Quests"
   }
 ]
