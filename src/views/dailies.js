@@ -59,6 +59,7 @@ function item(x,d,h){
   return `<article class="dItem frame${on?" done":""}${hid?" off":""}">
     <button class="dChk" role="checkbox" aria-checked="${on}" data-dtoggle="${x.id}" aria-label="${esc(name)} — ${L(on?"daily_unmark":"daily_mark")}"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5 L10 17.5 L19 7" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
     <div class="dBody"><h4>${esc(name)} ${mem}</h4>
+      <div class="dRow"><span>${L("daily_join")}</span>${x.j?x.j.map(m=>`<code class="jn" data-j="${m}" title="${esc(L("farm_copied"))}">/join ${m}</code>`).join(" "):`<em class="dNoJ">${L("daily_nojoin")}</em>`}</div>
       ${x.who?`<div class="dRow"><span>${L("daily_also")}</span>${esc(x.who[l])}</div>`:""}
       <div class="dRow"><span>${L("daily_req")}</span>${x.req?esc(x.req[l]):L("daily_noreq")}</div>
       <div class="dRow"><span>${L("daily_rw")}</span>${esc(x.rw[l])}</div>
