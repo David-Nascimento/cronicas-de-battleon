@@ -41,3 +41,5 @@ td:first-child{font-weight:700;white-space:nowrap}
 .links a:hover{text-decoration:underline}
 @media (max-width:480px){.tc{width:80px}.tier{grid-template-columns:46px 1fr}.tl{font-size:21px}.dh{padding:16px 14px 12px}.db{padding:14px 14px 22px}.sig.xl{width:58px;height:58px}.dh h3{font-size:20px}}
 @media (prefers-reduced-motion:no-preference){dialog[open]{animation:rise .18s ease-out}@keyframes rise{from{transform:translateY(10px);opacity:.6}to{transform:none;opacity:1}}}
+.cdRel{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:6px}
+.dItem.flash{box-shadow:0 0 0 2px var(--glow)}

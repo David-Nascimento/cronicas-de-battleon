@@ -320,7 +320,12 @@
   "farm_prog": "{n} de {t} etapas",
   "farm_done": "Concluído",
   "farm_step": "Etapa {n} feita",
-  "farm_started": "Em andamento"
+  "farm_started": "Em andamento",
+  "cd_rel": "No portal",
+  "cd_farm": "Como farmar (HardFarm)",
+  "cd_daily": "Diária que ajuda",
+  "cd_news": "Notícia",
+  "cd_newitem": "Saiu na atualização de"
  },
  "en": {
   "title": "Chronicles of Battleon",
@@ -643,6 +648,11 @@
   "farm_prog": "{n} of {t} steps",
   "farm_done": "Done",
   "farm_step": "Step {n} done",
-  "farm_started": "In progress"
+  "farm_started": "In progress",
+  "cd_rel": "Elsewhere in the portal",
+  "cd_farm": "How to farm (HardFarm)",
+  "cd_daily": "Daily that helps",
+  "cd_news": "News",
+  "cd_newitem": "Released in the update of"
  }
 }
