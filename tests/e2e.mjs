@@ -34,7 +34,7 @@ try {
     await p.click('#sideNav [data-sec="classes"]'); await wait(p);
     check((await hash(p)) === "#tier", "destino Classes abre a tier list");
     const sel = { inicio: "#modes .rank", tier: "#tiers .tc", todas: "#cards .card", comparar: "#cmpPick input", enh: "#enh .ec", ultras: "#teams .team",
-      montador: "#pkGrid .pk", diarias: "#dList .dItem", itens: "#farms .fcard", lancamentos: "#relList .ri", novidades: "#feed .post" };
+      montador: "#pkGrid .pk", diarias: "#dList .dItem, #dList .dIntro", itens: "#farms .fcard", lancamentos: "#relList .ri", novidades: "#feed .post" };
     for (const [v, s] of Object.entries(sel)) { await go(p, v); check((await p.locator(s).count()) > 0, `aba ${v} monta conteúdo`); }
     await p.click('#sideNav [data-sec="classes"]'); await wait(p);
     await p.click('#sideNav [data-sub="enh"]'); await wait(p);
@@ -80,8 +80,13 @@ try {
   {
     const p = await page();
     await go(p, "diarias");
-    const ids = await p.$$eval("#dList [data-dstar]", e => e.slice(0, 3).map(x => x.dataset.dstar));
-    for (const id of ids) await p.click(`[data-dstar="${id}"]`);
+    check(await p.locator(".dIntro").isVisible(), "primeira visita: convite para escolher as diárias");
+    await p.click(".dIntro [data-dpick]"); await wait(p);
+    const ids = await p.$$eval("#pkList [data-pkid]", e => e.slice(0, 3).map(x => x.dataset.pkid));
+    for (const id of ids) await p.click(`#pkList [data-pkid="${id}"]`);
+    check((await p.locator("#pkSave").innerText()).includes("3"), "seletor conta as marcadas");
+    await p.click("#pkSave"); await wait(p);
+    check((await p.locator("#dList .dItem").count()) === 3, "aba Minhas mostra só as escolhidas");
     await p.click(`[data-dtoggle="${ids[0]}"]`); await wait(p);
     check((await p.locator("#dBar .dProg b").innerText()).startsWith("1 de 3"), "minhas diárias: só as escolhidas contam");
     await go(p, "inicio");

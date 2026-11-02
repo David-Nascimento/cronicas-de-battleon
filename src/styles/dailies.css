@@ -43,3 +43,22 @@
 .dStar[aria-pressed="true"]{color:var(--member);border-color:color-mix(in oklab,var(--member) 50%,transparent);background:color-mix(in oklab,var(--member) 10%,transparent)}
 #segDaily b{font-weight:700;margin-left:3px;opacity:.85}
 @media (max-width:520px){.dSide{grid-column:2;flex-direction:row;justify-content:flex-start}}
+.dIntro{padding:20px;display:flex;flex-direction:column;gap:10px;margin-top:16px;border-color:var(--glow-dim);background:radial-gradient(520px 220px at 100% 0,var(--glow-soft),transparent 70%),var(--panel)}
+.dIntro h3{margin:0;font:700 22px var(--deco)}
+.dIntro ol{margin:0;padding-left:22px;display:flex;flex-direction:column;gap:6px;max-width:70ch}
+.dIntroActs{display:flex;flex-wrap:wrap;gap:8px;margin-top:4px}
+.dIntroActs .btnG{font-size:15px;padding:10px 16px}
+.dGrp h3 .dEdit{margin-left:auto;font-family:var(--body)}
+.pkDlg{width:min(720px,calc(100vw - 24px))}
+.pkTop{padding:12px 20px 0}
+.pkTop input{width:100%}
+.pkList{padding:8px 20px 12px;display:flex;flex-direction:column;gap:14px;max-height:min(58vh,560px);overflow:auto}
+.pkGh{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:4px;position:sticky;top:0;background:var(--panel);padding:4px 0}
+.pkGh b{font:700 16px var(--deco)}
+.pkRow{display:grid;grid-template-columns:22px minmax(0,1fr);gap:10px;align-items:start;padding:7px 8px;border-radius:var(--r-sm);cursor:pointer}
+.pkRow:hover{background:var(--bg2)}
+.pkRow input{width:18px;height:18px;margin-top:2px;accent-color:var(--glow)}
+.pkRow b{font-weight:600}
+.pkRow small{display:block;color:var(--muted);font-size:12px}
+.pkFoot{display:flex;justify-content:flex-end;gap:8px;padding:12px 20px 18px;border-top:1px solid var(--line2)}
+.pkFoot .btnG{font-size:14px;padding:9px 16px}

@@ -34,12 +34,15 @@ export function dailyProgress(){
 function fmtLeft(ms){const m=Math.max(0,Math.ceil(ms/6e4)),h=Math.floor(m/60);return h?`${h}h ${pad(m%60)}min`:`${m}min`}
 
 export function renderDailies(){
-  if(!st.df)st.df="all";
+  if(!st.df)st.df="mine";
   const d=sync(),h=hidden(),en=lg()==="en";
-  const m=mine();if(st.df==="mine"&&!m.size)st.df="all";
-  seg("segDaily",[["all",L("daily_g_all")],...(m.size?[["mine",`★ ${L("daily_g_mine")} <b>${m.size}</b>`]]:[]),...GROUPS.map(g=>[g,L("daily_g_"+g)])],"df",renderDailies);
+  const m=mine();
+  /* "Minhas diárias" vem sempre primeiro, mesmo vazia: é por ela que a pessoa começa */
+  seg("segDaily",[["mine",`★ ${L("daily_g_mine")}${m.size?` <b>${m.size}</b>`:""}`],["all",L("daily_g_all")],...GROUPS.map(g=>[g,L("daily_g_"+g)])],"df",renderDailies);
   const p=dailyProgress(),pct=p.total?Math.round(p.done/p.total*100):0,reset=nextReset();
   const hours=Array.from({length:24},(_,i)=>`<option value="${i}"${i===hour()?" selected":""}>${pad(i)}:00</option>`).join("");
+  /* primeira visita: só o convite, sem barra de contagem para não confundir */
+  document.getElementById("dBar").hidden=st.df==="mine"&&!m.size;
   document.getElementById("dBar").innerHTML=`
     <div class="dTop"><div class="dProg"><b>${L("daily_prog",{n:p.done,t:p.total})}</b>${p.total&&p.done===p.total?` <span class="pill on">${L("daily_all_done")}</span>`:""}</div>
       <span class="pill soon" id="dLeft">${L("daily_resets",{t:fmtLeft(reset.getTime()-Date.now())})}</span></div>
@@ -48,12 +51,16 @@ export function renderDailies(){
       <button class="linkBtn" data-dclear>${L("daily_clear")}</button>
       <label class="dHour"><input type="checkbox" id="dRem"${st.drem?" checked":""}> ${L("daily_rem")}</label>
       ${h.size?`<button class="linkBtn" data-dshow>${st.dsh?L("daily_hide_hidden"):L("daily_show_hidden",{n:h.size})}</button>`:""}</div>
-    <p class="dHint">${m.size?L("daily_scope_mine",{n:m.size}):L("daily_scope_all")} ${L("daily_hour_tip")}</p>`;
+    <p class="dHint">${m.size?L("daily_scope_mine",{n:m.size}):L("daily_scope_all")} <button class="linkBtn" data-dpick>${L(m.size?"daily_pick_edit":"daily_pick_btn")}</button></p>
+    <p class="dHint">${L("daily_hour_tip")}</p>`;
   const f=st.df,groups=f==="mine"?[]:GROUPS.filter(g=>f==="all"?g!=="old"&&g!=="season"&&g!=="rep":f===g);
   const jn=`<code class="jn" data-j="yulgar" title="${esc(L("farm_copied"))}">/join yulgar</code>`;
   let html=["boss","old","season","hf","rep"].includes(f)?"":`<p class="dBoard">${L("daily_board")} ${jn}</p>`;
-  if(f==="mine"){const xs=DAILIES.filter(x=>m.has(x.id)&&(st.dsh||!h.has(x.id)));
-    html+=`<section class="dGrp"><h3>★ ${L("daily_g_mine")}<small>${xs.filter(x=>d.done.includes(x.id)).length}/${xs.length}</small></h3><div class="dGrid">${xs.map(x=>item(x,d,h)).join("")}</div></section>`}
+  if(f==="mine"&&!m.size)html=`<section class="dIntro frame"><h3>${L("daily_intro_h")}</h3>
+      <ol><li>${L("daily_intro_1")}</li><li>${L("daily_intro_2")}</li><li>${L("daily_intro_3")}</li></ol>
+      <div class="dIntroActs"><button class="btnG" data-dpick>${L("daily_pick_btn")}</button><button class="btnQ" data-dpick-all>${L("daily_intro_all")}</button></div></section>`;
+  else if(f==="mine"){const xs=DAILIES.filter(x=>m.has(x.id)&&(st.dsh||!h.has(x.id)));
+    html+=`<section class="dGrp"><h3>★ ${L("daily_g_mine")}<small>${xs.filter(x=>d.done.includes(x.id)).length}/${xs.length}</small><button class="linkBtn dEdit" data-dpick>${L("daily_pick_edit")}</button></h3><div class="dGrid">${xs.map(x=>item(x,d,h)).join("")}</div></section>`}
   for(const g of groups){
     const all=DAILIES.filter(x=>x.g===g),items=all.filter(x=>st.dsh||!h.has(x.id));
     const nDone=all.filter(x=>!h.has(x.id)&&d.done.includes(x.id)).length,nTot=all.filter(x=>!h.has(x.id)).length;
@@ -85,7 +92,7 @@ function item(x,d,h){
       ${x.for?`<div class="dRow"><span>${L("daily_for")}</span>${esc(x.for[l])}</div>`:""}
       ${x.hf?`<button class="dHf" data-dhf="${esc(x.hf)}">${L("daily_open_hf")}</button>`:""}
       <div class="fsrc">${L("daily_src")}: <a href="${x.src}" target="_blank" rel="noopener">${esc(x.sn)} ↗</a></div></div>
-    <span class="dSide"><button class="dStar" data-dstar="${x.id}" aria-pressed="${mine().has(x.id)}" title="${L(mine().has(x.id)?"daily_unstar":"daily_star")}">${mine().has(x.id)?"★":"☆"} <span>${L(mine().has(x.id)?"daily_starred":"daily_star_short")}</span></button>
+    <span class="dSide"><button class="dStar" data-dstar="${x.id}" aria-pressed="${mine().has(x.id)}">${mine().has(x.id)?`★ ${L("daily_starred")}`:`☆ ${L("daily_star")}`}</button>
     <button class="dHide" data-dhide="${x.id}" title="${L(hid?"daily_unhide":"daily_hide")}">${L(hid?"daily_unhide":"daily_hide")}</button></span></article>`;
 }
 
@@ -99,6 +106,8 @@ root.addEventListener("click",e=>{
   const hf=(e.target as HTMLElement).closest<HTMLElement>("[data-dhf]");
   if(hf){const i=FARMS.findIndex(x=>x.n===hf.dataset.dhf);if(i<0)return;st.fk=FARMS[i].k;save();show("itens");renderFarms();
     const el=document.getElementById("farm-"+i);if(el){el.scrollIntoView({behavior:"smooth",block:"center"});el.classList.add("flash");setTimeout(()=>el.classList.remove("flash"),1600)}return}
+  if((e.target as HTMLElement).closest("[data-dpick]")){openPick();return}
+  if((e.target as HTMLElement).closest("[data-dpick-all]")){st.df="all";save();renderDailies();return}
   const sr=(e.target as HTMLElement).closest<HTMLElement>("[data-dstar]");
   if(sr){const s=mine(),id=sr.dataset.dstar;s.has(id)?s.delete(id):s.add(id);st.dmine=[...s];save();renderDailies();renderHome();schedRem();return}
   if((e.target as HTMLElement).closest<HTMLElement>("[data-dclear]")){sync().done=[];save();renderDailies();return}
@@ -130,3 +139,27 @@ export function schedRem(){clearTimeout(remTimer);if(!st.drem||!("Notification" 
     const n=new Notification(L("title"),{body:L("daily_rem_body",{n:p.total-p.done}),icon:"icons/icon-192.png",tag:"battleon-daily"});
     n.onclick=()=>{window.focus();show("diarias")}}},at)}
 setTimeout(schedRem,1500);
+
+/* seletor "Escolher minhas diárias": uma lista só, com caixas de marcar, busca e "marcar o grupo todo" */
+const pick=document.getElementById("dlgPick") as HTMLDialogElement;
+let pickSel=new Set<string>(),pickQ="";
+function renderPick(){const l=lg(),q=pickQ.trim().toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"");
+  const nm=x=>l==="en"&&x.ne?x.ne:x.n,hit=x=>!q||(nm(x)+" "+(x.who?x.who[l]:"")).toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"").includes(q);
+  document.getElementById("pkList").innerHTML=GROUPS.map(g=>{const xs=DAILIES.filter(x=>x.g===g&&hit(x));if(!xs.length)return "";
+    const all=xs.every(x=>pickSel.has(x.id));
+    return `<section class="pkGrp"><div class="pkGh"><b>${L("daily_g_"+g)}</b><button class="linkBtn" data-pkg="${g}" data-on="${all?0:1}">${L(all?"daily_pick_none":"daily_pick_group")}</button></div>
+      ${xs.map(x=>`<label class="pkRow"><input type="checkbox" data-pkid="${x.id}"${pickSel.has(x.id)?" checked":""}><span><b>${esc(nm(x))}</b>${x.mem==="m"?` <span class="pill">${L("daily_member")}</span>`:x.mem==="l"?` <span class="pill">${L("daily_legend")}</span>`:""}<small>${esc(x.who?x.who[l]:"")}</small></span></label>`).join("")}</section>`}).join("")||`<p class="dNote">${L("daily_empty")}</p>`;
+  (document.getElementById("pkSave") as HTMLButtonElement).textContent=L("daily_pick_save",{n:pickSel.size})}
+export function openPick(){pickSel=new Set(st.dmine||[]);pickQ="";
+  pick.innerHTML=`<div class="dh"><div class="info"><h3>${L("daily_pick_h")}</h3><p class="dNote" style="margin:0">${L("daily_pick_sub")}</p></div><button class="x" data-pkclose aria-label="${L("close")}">×</button></div>
+    <div class="pkTop"><input type="search" id="pkQ" placeholder="${esc(L("daily_pick_q"))}" aria-label="${esc(L("daily_pick_q"))}" autocomplete="off"></div>
+    <div class="pkList" id="pkList"></div>
+    <div class="pkFoot"><button class="btnQ" data-pkclose>${L("tl_cancel")}</button><button class="btnG" id="pkSave" data-pksave></button></div>`;
+  renderPick();pick.showModal();(document.getElementById("pkQ") as HTMLInputElement).focus()}
+pick.addEventListener("input",e=>{const t=e.target as HTMLInputElement;if(t.id==="pkQ"){pickQ=t.value;renderPick()}});
+pick.addEventListener("change",e=>{const t=e.target as HTMLInputElement;if(t.dataset.pkid){t.checked?pickSel.add(t.dataset.pkid):pickSel.delete(t.dataset.pkid);renderPick()}});
+pick.addEventListener("click",e=>{const t=e.target as HTMLElement;
+  if(t===pick||t.closest("[data-pkclose]")){pick.close();return}
+  const g=t.closest<HTMLElement>("[data-pkg]");if(g){const on=g.dataset.on==="1";DAILIES.filter(x=>x.g===g.dataset.pkg).forEach(x=>on?pickSel.add(x.id):pickSel.delete(x.id));renderPick();return}
+  if(t.closest("[data-pksave]")){st.dmine=[...pickSel];st.df=pickSel.size?"mine":"all";save();pick.close();renderDailies();renderHome();schedRem();
+    toast("★",L(pickSel.size?"daily_pick_done":"daily_pick_cleared",{n:pickSel.size}))}});

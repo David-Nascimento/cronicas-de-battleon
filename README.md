@@ -2,7 +2,7 @@
 
 Guia de AdventureQuest Worlds feito por fãs, em português e inglês: qual classe usar, o que farmar hoje, como montar time de ultra e o que entrou no jogo em cada atualização.
 
-Versão atual: **2.2.0**. Projeto não oficial; AdventureQuest Worlds e as marcas relacionadas pertencem à Artix Entertainment, LLC.
+Versão atual: **2.3.0**. Projeto não oficial; AdventureQuest Worlds e as marcas relacionadas pertencem à Artix Entertainment, LLC.
 
 ![Página Hoje](docs/screenshots/hoje.png)
 
@@ -32,7 +32,11 @@ A tier list do portal separa por loja (Free, Member, ACS, HeroMart, Calendário)
 
 ### Diárias
 
-107 quests diárias conferidas no AQW Wiki, cada uma com o `/join` (quando confirmado), quem dá a quest, o que é preciso, a recompensa e para que serve. Grupos: início, meio e fim do jogo, HardFarm, chefes (incluindo os 6 Daily Exercises da Legion), reputação, sazonais e antigas. Marque o que já fez; as marcações voltam do zero na virada do dia, no horário que você escolher. Toque em **★ Minhas** nas diárias que você faz: a contagem passa a ser só delas ("3 de 12"), com uma aba própria. Dá para ligar um lembrete 1 hora antes da virada, que aparece enquanto o portal está aberto. As que você não faz podem ser ocultadas.
+107 quests diárias conferidas no AQW Wiki, cada uma com o `/join` (quando confirmado), quem dá a quest, o que é preciso, a recompensa e para que serve. Grupos: início, meio e fim do jogo, HardFarm, chefes (incluindo os 6 Daily Exercises da Legion), reputação, sazonais e antigas. Marque o que já fez; as marcações voltam do zero na virada do dia, no horário que você escolher. Na primeira visita, a aba **★ Minhas diárias** explica em 3 passos o que fazer e abre o seletor **Escolher minhas diárias**: uma lista com caixas de marcar, busca e "marcar todas do grupo". A contagem passa a ser só das escolhidas ("3 de 12"), e dá para mudar depois em **Editar minhas diárias** ou no botão **☆ Adicionar às minhas** de cada diária. Dá para ligar um lembrete 1 hora antes da virada, que aparece enquanto o portal está aberto. As que você não faz podem ser ocultadas.
+
+| Primeira visita | Escolher minhas diárias (celular) |
+|---|---|
+| ![Primeira visita às Diárias](docs/screenshots/diarias-comeco.png) | ![Seletor de diárias](docs/screenshots/escolher-diarias.png) |
 
 ![Diárias](docs/screenshots/diarias.png)
 
