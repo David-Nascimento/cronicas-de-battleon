@@ -7,10 +7,12 @@
   "scripts": {
     "dev": "node tools/build.mjs --dev",
     "build": "node tools/build.mjs",
-    "typecheck": "tsc -p ."
+    "typecheck": "tsc -p .",
+    "test": "node tests/e2e.mjs"
   },
   "devDependencies": {
     "esbuild": "^0.28.0",
-    "typescript": "^6.0.3"
+    "typescript": "^6.0.3",
+    "playwright": "^1.63.0"
   }
 }

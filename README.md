@@ -73,6 +73,7 @@ As capturas foram feitas num ambiente sem acesso ao Google Fonts; no navegador o
   - `npm run dev`: recompila ao salvar e serve em http://localhost:5173
   - `npm run build`: gera `dist/` otimizado
   - `npm run typecheck`: confere os tipos com o TypeScript (`tsc`)
+  - `npm test`: abre o portal num Chromium e confere navegação, itens novos, tier list, diárias, HardFarm, idioma e celular (precisa de `npx playwright install chromium` uma vez). O GitHub roda build, tipos e testes a cada mudança na `main` (`.github/workflows/ci.yml`).
 
 ### App instalável e offline
 
