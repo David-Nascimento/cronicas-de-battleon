@@ -9,22 +9,23 @@ Projeto não oficial; AdventureQuest Worlds e as marcas relacionadas pertencem �
 - **Mexer no código:** instale uma vez com `npm install`, depois:
   - `npm run dev`: recompila ao salvar e serve em http://localhost:5173
   - `npm run build`: gera `dist/` otimizado
+  - `npm run typecheck`: confere os tipos com o TypeScript (`tsc`)
 
 ## Onde fica cada coisa
 
 ```
 index.html            estrutura da página (menus, seções, diálogos)
-src/
-  main.js             ponto de entrada: carrega tudo e inicia a página
-  config.js           categorias, modos, rotas e ícones fixos
-  state.js            estado salvo no navegador, idioma (L, T) e estado da interface (ui)
-  render-all.js       redesenha a página inteira (usado ao trocar de idioma)
-  events.js           cliques globais (abrir ficha, comparar, navegação...)
+src/                  (TypeScript; tipos dos dados e do estado em types.ts)
+  main.ts             ponto de entrada: carrega tudo e inicia a página
+  config.ts           categorias, modos, rotas e ícones fixos
+  state.ts            estado salvo no navegador, idioma (L, T) e estado da interface (ui)
+  render-all.ts       redesenha a página inteira (usado ao trocar de idioma)
+  events.ts           cliques globais (abrir ficha, comparar, navegação...)
   data/               conteúdo em JSON: classes, ultras, enhancements, HardFarm, novidades
     i18n/             textos da interface (ui.json) e traduções (en.json)
-    index.js          junta os JSON e monta a lista final de classes
-  lib/util.js         funções pequenas (escape de HTML, busca sem acento, brasão da classe)
-  components/shared.js  pedaços de interface reutilizados
+    index.ts          junta os JSON e monta a lista final de classes
+  lib/util.ts         funções pequenas (escape de HTML, busca sem acento, brasão da classe)
+  components/shared.ts  pedaços de interface reutilizados
   views/              uma por aba: home, tiers, classes, comparar, ultras, montador, enhancements, hardfarm, diárias, itens novos (releases.js)
   features/           novidades, alertas e notificações, avisos na tela, busca global, cor dos olhos (eye.js)
   styles/             CSS dividido por área; main.css define a ordem (a ordem importa)

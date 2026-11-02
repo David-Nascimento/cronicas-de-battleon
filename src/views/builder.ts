@@ -11,7 +11,7 @@ export function bestSub(own,role,except){let best=null,bs=-1;
     if(sc>bs){bs=sc;best=c}});return best}
 export const bList=f=>[...D].sort((a,b)=>a.name.localeCompare(b.name)).filter(c=>(st.bcat==="all"||c.cat===st.bcat)&&(!f||nrm(c.name).includes(f)));
 export function renderBuilder(){
-  const own=ownSet(),f=nrm(document.getElementById("bq").value.trim());
+  const own=ownSet(),f=nrm((document.getElementById("bq") as HTMLInputElement).value.trim());
   document.getElementById("bCount").textContent=L("bld_n",{n:[...own].filter(n=>n in byName).length});
   document.getElementById("bActs").innerHTML=`<button data-bmark="1">${L("bld_markall")}</button><button data-bclear="1">${L("bld_p_clear")}</button>`;
   document.getElementById("pkGrid").innerHTML=bList(f)

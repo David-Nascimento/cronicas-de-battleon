@@ -7,7 +7,7 @@ export const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":
 export const wikiSlug=n=>n.normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-+|-+$/g,"");
 export const wiki=n=>"https://aqwwiki.wikidot.com/"+wikiSlug(n);
 export const initials=n=>n.replace(/'s\b/g,"").split(/\s+/).filter(w=>!/^(of|no|the)$/i.test(w)).map(w=>w[0]).join("").slice(0,3).toUpperCase();
-export function sigil(c,sz){
+export function sigil(c,sz?:string){
   const col=`var(${CATS[c.cat].c})`,ini=initials(c.name);
   return `<svg class="sig ${sz||""}" viewBox="0 0 48 48" aria-hidden="true">
   <path d="M24 2 L44 13 L44 35 L24 46 L4 35 L4 13 Z" fill="var(--bg2)"/>

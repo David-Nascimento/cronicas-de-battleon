@@ -5,7 +5,7 @@ import { copyFileSync, mkdirSync, rmSync } from "node:fs";
 
 const dev = process.argv.includes("--dev");
 const options = {
-  entryPoints: { app: "src/main.js" },
+  entryPoints: { app: "src/main.ts" },
   bundle: true,
   format: "iife",
   outdir: "dist",

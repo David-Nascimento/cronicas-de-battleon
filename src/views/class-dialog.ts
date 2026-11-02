@@ -1,15 +1,16 @@
 import {badges, catChip, newTag} from "../components/shared.js";
+import type {Team} from "../types.js";
 import {MODES, STORE} from "../config.js";
 import {D, TEAMS, TYPES, byName} from "../data/index.js";
 import {esc, sigil, tColor, wiki} from "../lib/util.js";
 import {L, T, st, ui} from "../state.js";
 
 export function keys(seq){return T(seq).split(/\s+/).map(tok=>/^\d+$/.test(tok)?tok.split("").map(d=>`<span class="k">${d}</span>`).join(""):`<span class="k txt">${esc(tok)}</span>`).join("")}
-export const dlg=document.getElementById("dlg");
+export const dlg=document.getElementById("dlg") as HTMLDialogElement;
 export function openClass(i){
   const c=D[i];ui.curClass=i;
   const rows=Object.keys(MODES).map(m=>{const p=c.b[m].split("|");return `<tr><td>${MODES[m]} <span class="b" style="background:${tColor(c[m])};margin-left:4px">${c[m]}</span></td>${p.map(x=>`<td>${esc(x)}</td>`).join("")}</tr>`}).join("");
-  const inTeams=TEAMS.map((t,ti)=>[t,ti]).filter(([t])=>t.team.some(([n])=>n===c.name));
+  const inTeams=TEAMS.map((t,ti)=>[t,ti] as [Team,number]).filter(([t])=>t.team.some(([n])=>n===c.name));
   const SRC={h:L("src_h"),c:L("src_c"),g:L("src_g")};
   document.getElementById("dBody").innerHTML=`
   <div class="dh">${sigil(c,"xl")}<div class="info"><h3 id="dName">${esc(c.name)}${newTag(c)}</h3><div class="badges">${catChip(c)}<span class="chip">${T(TYPES[c.type].n)}</span>${badges(c)}</div></div>

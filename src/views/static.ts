@@ -8,12 +8,12 @@ import {renderNav} from "./nav.js";
 export function renderStatic(){
   document.documentElement.lang=st.lang==="en"?"en":"pt-BR";
   document.title=L("title");
-  document.querySelectorAll("[data-i18n]").forEach(el=>el.textContent=L(el.dataset.i18n));
-  document.querySelectorAll("[data-i18n-html]").forEach(el=>el.innerHTML=L(el.dataset.i18nHtml));
-  const q=document.getElementById("q");q.placeholder=L("search");q.setAttribute("aria-label",L("search"));
-  document.getElementById("bq").placeholder=L("bld_search");
-  const eqi=document.getElementById("enq");eqi.placeholder=L("enh_q");eqi.setAttribute("aria-label",L("enh_q"));
-  const g=document.getElementById("gq");g.placeholder=L("gsearch");g.setAttribute("aria-label",L("gsearch"));
+  document.querySelectorAll<HTMLElement>("[data-i18n]").forEach(el=>el.textContent=L(el.dataset.i18n));
+  document.querySelectorAll<HTMLElement>("[data-i18n-html]").forEach(el=>el.innerHTML=L(el.dataset.i18nHtml));
+  const q=document.getElementById("q") as HTMLInputElement;q.placeholder=L("search");q.setAttribute("aria-label",L("search"));
+  (document.getElementById("bq") as HTMLInputElement).placeholder=L("bld_search");
+  const eqi=document.getElementById("enq") as HTMLInputElement;eqi.placeholder=L("enh_q");eqi.setAttribute("aria-label",L("enh_q"));
+  const g=document.getElementById("gq") as HTMLInputElement;g.placeholder=L("gsearch");g.setAttribute("aria-label",L("gsearch"));
   renderNav();
   document.getElementById("stats").innerHTML=
     `<span><b>${D.length}</b>${L("st_classes")}</span><span><b>${TEAMS.length}</b>${L("st_ultras")}</span><span><b>${ENH.length}</b>${L("st_enh")}</span><span><b>${D.filter(c=>!c.generic).length}</b>${L("st_rot")}</span>`;

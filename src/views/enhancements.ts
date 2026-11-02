@@ -15,7 +15,7 @@ export const chipU=u=>`<button class="open" data-i="${idx(u.c)}">${esc(u.c.name)
 export function renderEnh(){
   const SL=["Classe","Arma","Capacete","Capa"];
   seg("segSlot",[["all",L("slot_all")],...SL.map(k=>[k,L("slot_"+k)])],"eslot",renderEnh);
-  const eqv=nrm(document.getElementById("enq").value.trim()),hits=eqv?D.filter(c=>nrm(c.name).includes(eqv)).slice(0,3):[],hitK=new Set();
+  const eqv=nrm((document.getElementById("enq") as HTMLInputElement).value.trim()),hits=eqv?D.filter(c=>nrm(c.name).includes(eqv)).slice(0,3):[],hitK=new Set();
   hits.forEach(c=>Object.keys(MODES).forEach(m=>c.b[m].split("|").forEach((v,si)=>hitK.add(si+":"+v))));
   const isHit=e=>hitK.has(SLOTIDX[e[1]]+":"+(e[0]==="Forge (base)"?"Forge":e[0]));
   const qpanel=!eqv?"":hits.length?hits.map(c=>`<div class="qcard frame"><div class="qh">${sigil(c)}<button class="open" data-i="${idx(c)}">${esc(c.name)}</button>${catChip(c)}</div>
@@ -28,7 +28,7 @@ export function renderEnh(){
   ${us.length?`<div class="ecWrap"><div class="usedList" aria-label="${L("enh_top")}">${us.slice(0,5).map(chipU).join("")}</div>
   ${us.length>5?`<button class="usedBtn" data-enhall="${ei}">${L("enh_all",{n:us.length})}</button>`:""}</div>`:`<p style="font-size:12px">${L("enh_none")}</p>`}</div>`}).join("")+`</div></div>`}).join("");
 }
-export const dlgE=document.getElementById("dlgE");
+export const dlgE=document.getElementById("dlgE") as HTMLDialogElement;
 export function openEnh(ei){ui.eIdx=ei;ui.eCat="all";const e=ENH[ei];
   document.getElementById("eBody").innerHTML=`<div class="dh"><div class="info"><h3 id="eName">${e[0]}</h3><div class="badges"><span class="chip">${L("slot_"+e[1])}</span><span class="stars">${"★".repeat(e[2])}${"☆".repeat(5-e[2])}</span></div></div><button class="x" id="eClose" aria-label="${L("close")}">×</button></div>
   <div class="db"><p style="margin:0">${esc(T(e[3]))}</p>
@@ -37,11 +37,11 @@ export function openEnh(ei){ui.eIdx=ei;ui.eCat="all";const e=ENH[ei];
   document.getElementById("eClose").onclick=()=>dlgE.close();
   document.getElementById("eq").addEventListener("input",updEnh);
   updEnh();if(!dlgE.open)dlgE.showModal();dlgE.scrollTop=0}
-export function updEnh(){const us=usersOf(ENH[ui.eIdx]),q=nrm(document.getElementById("eq").value.trim());
+export function updEnh(){const us=usersOf(ENH[ui.eIdx]),q=nrm((document.getElementById("eq") as HTMLInputElement).value.trim());
   const cats=Object.keys(CATS).filter(k=>us.some(u=>u.c.cat===k));
   const sg=document.getElementById("eCatSeg");
   sg.innerHTML=[["all",L("all")],...cats.map(k=>[k,catName(k)])].map(([v,l])=>`<button data-v="${v}" aria-pressed="${ui.eCat===v}">${l}</button>`).join("");
-  sg.onclick=ev=>{const b=ev.target.closest("button");if(!b)return;ui.eCat=b.dataset.v;updEnh()};
+  sg.onclick=ev=>{const b=(ev.target as HTMLElement).closest<HTMLElement>("button");if(!b)return;ui.eCat=b.dataset.v;updEnh()};
   document.getElementById("eList").innerHTML=cats.filter(k=>ui.eCat==="all"||k===ui.eCat).map(k=>{
     const xs=us.filter(u=>u.c.cat===k&&(!q||nrm(u.c.name).includes(q)));
     return xs.length?`<div class="eGrp"><h4><span class="dot" style="background:var(${CATS[k].c})"></span>${catName(k)} · ${xs.length}</h4><div class="usedList">${xs.map(chipU).join("")}</div></div>`:""}).join("")||`<p class="npEmpty">${L("gnores")}</p>`}

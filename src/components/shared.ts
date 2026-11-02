@@ -9,5 +9,5 @@ export const newTag=c=>c.nw?`<span class="new">${L("nw")}</span>`:"";
 export function seg(id,opts,key,cb){
   const el=document.getElementById(id);
   el.innerHTML=opts.map(([v,l])=>`<button data-v="${v}" aria-pressed="${st[key]===v}">${l}</button>`).join("");
-  el.onclick=e=>{const b=e.target.closest("button");if(!b)return;st[key]=b.dataset.v;save();[...el.children].forEach(x=>x.setAttribute("aria-pressed",x===b));cb()};
+  el.onclick=e=>{const b=(e.target as HTMLElement).closest<HTMLElement>("button");if(!b)return;st[key]=b.dataset.v;save();[...el.children].forEach(x=>x.setAttribute("aria-pressed",String(x===b)));cb()};
 }

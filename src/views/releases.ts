@@ -15,14 +15,14 @@ export function fmtRange(r){const a=parse(r.from),b=parse(r.to),same=a.getMonth(
   return same?`${a.getDate()} a ${b.getDate()} ${mon(b)}`:`${a.getDate()} ${mon(a)} a ${b.getDate()} ${mon(b)}`}
 export function relCounts(r){const c={total:0};RTYPES.forEach(t=>{c[t]=(r.items[t]||[]).length;c.total+=c[t]});return c}
 const cur=()=>REL.find(x=>x.id===st.rel)||REL[0];
-export const ricon=(t,cls)=>`<svg class="${cls||"riIc"}" viewBox="0 0 24 24" aria-hidden="true"><path d="${RICO[t]}" fill="currentColor" fill-rule="evenodd"/></svg>`;
+export const ricon=(t:string,cls?:string)=>`<svg class="${cls||"riIc"}" viewBox="0 0 24 24" aria-hidden="true"><path d="${RICO[t]}" fill="currentColor" fill-rule="evenodd"/></svg>`;
 export const jn=j=>`<code class="jn" data-j="${esc(j)}" title="${esc(L("farm_copied"))}">/join ${esc(j)}</code>`;
 
 /* aviso de atualização nova: vale por 10 dias, até a pessoa abrir a aba ou dispensar */
 export function relUnseen(){const r=REL[0];if(!r||st.relSeen===r.id)return false;
   if((st.dis||[]).includes("rel-"+r.id))return false;
   const now=new Date(),d0=new Date(now.getFullYear(),now.getMonth(),now.getDate());
-  return (d0-parse(r.from))/DAY<=10}
+  return (d0.getTime()-parse(r.from).getTime())/DAY<=10}
 export function markReleaseSeen(){const r=REL[0];if(!r||st.relSeen===r.id)return false;st.relSeen=r.id;save();return true}
 export const navCount=()=>unreadNews().length+(relUnseen()?1:0);
 
@@ -74,7 +74,7 @@ export function relSummary(){const r=REL[0];if(!r)return `<h3>${L("home_rel")}</
     <div class="hrFoot">${r.until?`<span class="pill soon">${L("rel_until",{d:fmtDay(r.until)})}</span>`:"<span></span>"}<button class="btnG" data-relt="all">${L("rel_open",{n:c.total})}</button></div>`}
 /* leva até um item (vindo da busca global) */
 export function focusItem(rid,name){st.rel=rid;st.rt="all";ui.relQ="";save();renderReleases();
-  const el=[...document.querySelectorAll("#relList .ri")].find(x=>x.dataset.ri===name);
+  const el=[...document.querySelectorAll<HTMLElement>("#relList .ri")].find(x=>x.dataset.ri===name);
   if(el){el.classList.add("hit");el.scrollIntoView({behavior:"smooth",block:"center"});setTimeout(()=>el.classList.remove("hit"),2400)}}
 
-document.addEventListener("input",e=>{if(e.target.id==="relQ"){ui.relQ=e.target.value;renderRelList()}});
+document.addEventListener("input",e=>{if((e.target as HTMLElement).id==="relQ"){ui.relQ=(e.target as HTMLInputElement).value;renderRelList()}});

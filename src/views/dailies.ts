@@ -36,7 +36,7 @@ export function renderDailies(){
   const hours=Array.from({length:24},(_,i)=>`<option value="${i}"${i===hour()?" selected":""}>${pad(i)}:00</option>`).join("");
   document.getElementById("dBar").innerHTML=`
     <div class="dTop"><div class="dProg"><b>${L("daily_prog",{n:p.done,t:p.total})}</b>${p.total&&p.done===p.total?` <span class="pill on">${L("daily_all_done")}</span>`:""}</div>
-      <span class="pill soon" id="dLeft">${L("daily_resets",{t:fmtLeft(reset-new Date())})}</span></div>
+      <span class="pill soon" id="dLeft">${L("daily_resets",{t:fmtLeft(reset.getTime()-Date.now())})}</span></div>
     <div class="dMeter" role="progressbar" aria-valuemin="0" aria-valuemax="${p.total}" aria-valuenow="${p.done}"><i style="width:${pct}%"></i></div>
     <div class="dTools"><label class="dHour" title="${esc(L("daily_hour_tip"))}">${L("daily_hour")} <select id="dHour" aria-label="${esc(L("daily_hour"))}">${hours}</select></label>
       <button class="linkBtn" data-dclear>${L("daily_clear")}</button>
@@ -72,25 +72,25 @@ function item(x,d,h){
 /* cliques e troca da hora de virada */
 const root=document.getElementById("v-diarias");
 root.addEventListener("click",e=>{
-  const t=e.target.closest("[data-dtoggle]");
+  const t=(e.target as HTMLElement).closest<HTMLElement>("[data-dtoggle]");
   if(t){const d=sync(),id=t.dataset.dtoggle;d.done=d.done.includes(id)?d.done.filter(x=>x!==id):[...d.done,id];save();renderDailies();return}
-  const hd=e.target.closest("[data-dhide]");
+  const hd=(e.target as HTMLElement).closest<HTMLElement>("[data-dhide]");
   if(hd){const s=hidden(),id=hd.dataset.dhide;s.has(id)?s.delete(id):s.add(id);st.dhide=[...s];save();renderDailies();return}
-  const hf=e.target.closest("[data-dhf]");
+  const hf=(e.target as HTMLElement).closest<HTMLElement>("[data-dhf]");
   if(hf){const i=FARMS.findIndex(x=>x.n===hf.dataset.dhf);if(i<0)return;st.fk=FARMS[i].k;save();show("itens");renderFarms();
     const el=document.getElementById("farm-"+i);if(el){el.scrollIntoView({behavior:"smooth",block:"center"});el.classList.add("flash");setTimeout(()=>el.classList.remove("flash"),1600)}return}
-  if(e.target.closest("[data-dclear]")){sync().done=[];save();renderDailies();return}
-  if(e.target.closest("[data-dshow]")){st.dsh=!st.dsh;save();renderDailies();return}
+  if((e.target as HTMLElement).closest<HTMLElement>("[data-dclear]")){sync().done=[];save();renderDailies();return}
+  if((e.target as HTMLElement).closest<HTMLElement>("[data-dshow]")){st.dsh=!st.dsh;save();renderDailies();return}
 });
 root.addEventListener("change",e=>{
-  if(e.target.id!=="dHour")return;
-  const keep=sync().done;st.dh=Number(e.target.value);st.dly={k:dayKey(),done:keep};save();renderDailies();
+  if((e.target as HTMLElement).id!=="dHour")return;
+  const keep=sync().done;st.dh=Number((e.target as HTMLInputElement).value);st.dly={k:dayKey(),done:keep};save();renderDailies();
 });
 /* contagem regressiva e virada do dia, sem redesenhar tudo a cada minuto */
 function tick(){
   const left=document.getElementById("dLeft");
   if(st.dly&&st.dly.k!==dayKey()){renderDailies();renderHome();return}
-  if(left)left.textContent=L("daily_resets",{t:fmtLeft(nextReset()-new Date())});
+  if(left)left.textContent=L("daily_resets",{t:fmtLeft(nextReset().getTime()-Date.now())});
 }
 setInterval(tick,30000);
 document.addEventListener("visibilitychange",()=>{if(!document.hidden)tick()});

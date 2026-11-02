@@ -5,11 +5,11 @@ import {L} from "../state.js";
 import {show} from "../views/nav.js";
 
 export const toasted=new Set();
-export function toast(ic,t,x,onGo){
+export function toast(ic:string,t:string,x?:string,onGo?:()=>void){
   const box=document.getElementById("toasts");const el=document.createElement("div");el.className="toast";
   el.innerHTML=`<span class="ic" aria-hidden="true">${ic}</span><span class="tx"><b>${esc(t)}</b>${x?esc(x):""}${onGo?`<div style="margin-top:6px"><button class="btnQ" style="padding:4px 10px">${L("view")}</button></div>`:""}</span><button class="x2" aria-label="${L("close")}">×</button>`;
-  const kill=()=>el.remove();el.querySelector(".x2").onclick=kill;
-  if(onGo)el.querySelector(".btnQ").onclick=()=>{onGo();kill()};
+  const kill=()=>el.remove();el.querySelector<HTMLElement>(".x2").onclick=kill;
+  if(onGo)el.querySelector<HTMLElement>(".btnQ").onclick=()=>{onGo();kill()};
   box.appendChild(el);while(box.children.length>3)box.firstChild.remove();setTimeout(kill,9000);
   const b=document.getElementById("bell");b.classList.remove("ring");void b.offsetWidth;b.classList.add("ring");
 }

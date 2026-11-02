@@ -8,7 +8,7 @@ export const iso=d=>`${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,"0")
 export const parseD=s=>{const [y,m,dd]=s.split("-").map(Number);return new Date(y,m-1,dd)};
 export function newsSeen(){if(!st.newsSeen){const d=new Date();d.setDate(d.getDate()-21);st.newsSeen=iso(d);save()}return st.newsSeen}
 export const unreadNews=()=>NEWS.filter(n=>n.d>newsSeen());
-export const fmtD=(n,o)=>parseD(n.d).toLocaleDateString(loc(),n.approx?{month:"short",year:"numeric"}:(o||{day:"numeric",month:"short"}));
+export const fmtD=(n,o?:Intl.DateTimeFormatOptions)=>parseD(n.d).toLocaleDateString(loc(),n.approx?{month:"short",year:"numeric"}:(o||{day:"numeric",month:"short"}));
 export function renderFeed(){
   const f=st.nf||"all";
   seg("segNews",[["all",L("f_all")],["new",L("ty_new")],["rework",L("ty_rework")],["balance",L("ty_balance")]],"nf",renderFeed);

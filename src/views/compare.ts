@@ -10,7 +10,7 @@ export function renderCompare(){
   document.getElementById("classList").innerHTML=D.map(c=>`<option value="${esc(c.name)}"></option>`).join("");
   const pick=document.getElementById("cmpPick");
   pick.innerHTML=[0,1,2].map(k=>`<div class="cmpSlot"><input type="search" id="cmp${k}" list="classList" placeholder="${esc(L("cmp_ph",{n:k+1}))}" aria-label="${esc(L("cmp_ph",{n:k+1}))}" value="${esc(st.cmp[k]||"")}"><button data-cmpclear="${k}" aria-label="${esc(L("cmp_clear"))}" title="${esc(L("cmp_clear"))}">×</button></div>`).join("");
-  [0,1,2].forEach(k=>{const inp=document.getElementById("cmp"+k);
+  [0,1,2].forEach(k=>{const inp=document.getElementById("cmp"+k) as HTMLInputElement;
     inp.addEventListener("change",()=>{const v=inp.value.trim();const hit=D.find(c=>c.name.toLowerCase()===v.toLowerCase());
       const arr=[st.cmp[0]||"",st.cmp[1]||"",st.cmp[2]||""];arr[k]=hit?hit.name:"";st.cmp=arr.filter(Boolean);save();renderCompare()})});
   const cs=st.cmp.map(n=>D[byName[n]]);

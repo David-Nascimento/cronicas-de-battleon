@@ -4,7 +4,7 @@ import {esc, idx, sigil, total} from "../lib/util.js";
 import {L, T, st} from "../state.js";
 
 export function renderCards(){
-  const q=(document.getElementById("q").value||"").toLowerCase().trim();
+  const q=((document.getElementById("q") as HTMLInputElement).value||"").toLowerCase().trim();
   const xs=D.filter(c=>(st.all==="todas"||c.cat===st.all)&&c.name.toLowerCase().includes(q)).sort((a,b)=>total(b)-total(a)||a.name.localeCompare(b.name));
   document.getElementById("countAll").textContent=L("count",{n:xs.length,t:D.length});
   document.getElementById("cards").innerHTML=xs.length?xs.map(c=>`

@@ -22,7 +22,7 @@ import {renderEye} from "./features/eye.js";
 const VIEWR={inicio:renderModes,tier:renderTiers,todas:renderCards,comparar:renderCompare,enh:renderEnh,
   ultras:()=>{renderAgenda();renderTeams()},montador:renderBuilder,diarias:renderDailies,itens:renderFarms,lancamentos:renderReleases,novidades:renderFeed};
 const dirty=new Set(Object.keys(VIEWR));
-export function renderView(v,force){if((force||dirty.has(v))&&VIEWR[v]){dirty.delete(v);VIEWR[v]()}}
+export function renderView(v:string,force?:boolean){if((force||dirty.has(v))&&VIEWR[v]){dirty.delete(v);VIEWR[v]()}}
 export function renderAll(){
   renderStatic();
   seg("segCat",Object.keys(CATS).map(k=>[k,catName(k)]),"cat",renderTiers);
