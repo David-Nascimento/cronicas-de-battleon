@@ -220,7 +220,12 @@
   "daily_hidden_n": "ocultas",
   "daily_empty": "Nada para mostrar aqui.",
   "home_daily": "Diárias de hoje",
-  "home_daily_sub": "{n} de {t} feitas"
+  "home_daily_sub": "{n} de {t} feitas",
+  "daily_g_hf": "HardFarm",
+  "daily_g_season": "Sazonais",
+  "daily_hf_note": "Quests diárias que fazem parte dos farms da aba HardFarm e que não estão no Quadro de Quests Diárias.",
+  "daily_season_note": "Só valem enquanto a ultra está no ar. Elas não entram na contagem do dia.",
+  "daily_open_hf": "Ver no HardFarm"
  },
  "en": {
   "title": "Chronicles of Battleon",
@@ -443,6 +448,11 @@
   "daily_hidden_n": "hidden",
   "daily_empty": "Nothing to show here.",
   "home_daily": "Today's dailies",
-  "home_daily_sub": "{n} of {t} done"
+  "home_daily_sub": "{n} of {t} done",
+  "daily_g_hf": "HardFarm",
+  "daily_g_season": "Seasonal",
+  "daily_hf_note": "Daily quests that are part of the farms in the HardFarm tab and are not on the Daily Quest Board.",
+  "daily_season_note": "They only count while the ultra is on. They don't count toward today's total.",
+  "daily_open_hf": "See in HardFarm"
  }
 }

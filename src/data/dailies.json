@@ -17,7 +17,8 @@
    "en": "Zorbak, Twilly and Twig pets (they need 30 Moglin MEALs)"
   },
   "src": "https://aqwwiki.wikidot.com/daily-quest-board-s-quests",
-  "sn": "AQW Wiki"
+  "sn": "AQW Wiki",
+  "hf": "Pets Zorbak, Twilly e Twig"
  },
  {
   "id": "elder",
@@ -37,7 +38,8 @@
    "en": "Void Highlord class"
   },
   "src": "https://aqwwiki.wikidot.com/daily-quest-board-s-quests",
-  "sn": "AQW Wiki"
+  "sn": "AQW Wiki",
+  "hf": "Reputação Arcangrove"
  },
  {
   "id": "sparrow",
@@ -93,7 +95,8 @@
    "en": "The Collector class (needs 90 Tokens of Collection)"
   },
   "src": "https://aqwwiki.wikidot.com/daily-quest-board-s-quests",
-  "sn": "AQW Wiki"
+  "sn": "AQW Wiki",
+  "hf": "The Collector"
  },
  {
   "id": "embargo",
@@ -109,7 +112,8 @@
    "en": "5,000 gold, 5,000 XP, 5,000 Yokai rep and 1 Shadow Shroud"
   },
   "src": "https://aqwwiki.wikidot.com/daily-quest-board-s-quests",
-  "sn": "AQW Wiki"
+  "sn": "AQW Wiki",
+  "hf": "Reputação Yokai"
  },
  {
   "id": "bugged",
@@ -129,7 +133,8 @@
    "en": "The Collector class"
   },
   "src": "https://aqwwiki.wikidot.com/daily-quest-board-s-quests",
-  "sn": "AQW Wiki"
+  "sn": "AQW Wiki",
+  "hf": "The Collector"
  },
  {
   "id": "rarely",
@@ -149,7 +154,8 @@
    "en": "The Collector class"
   },
   "src": "https://aqwwiki.wikidot.com/daily-quest-board-s-quests",
-  "sn": "AQW Wiki"
+  "sn": "AQW Wiki",
+  "hf": "The Collector"
  },
  {
   "id": "mine",
@@ -172,7 +178,8 @@
    "en": "Metals for BLoD, Necrotic Sword of Doom and SDKA"
   },
   "src": "https://aqwwiki.wikidot.com/daily-quest-board-s-quests",
-  "sn": "AQW Wiki"
+  "sn": "AQW Wiki",
+  "hf": "Quests diárias que alimentam outros farms"
  },
  {
   "id": "hardcore",
@@ -195,7 +202,8 @@
    "en": "Metals for BLoD, Necrotic Sword of Doom and SDKA"
   },
   "src": "https://aqwwiki.wikidot.com/daily-quest-board-s-quests",
-  "sn": "AQW Wiki"
+  "sn": "AQW Wiki",
+  "hf": "Quests diárias que alimentam outros farms"
  },
  {
   "id": "glacera",
@@ -219,7 +227,8 @@
   },
   "mem": "l",
   "src": "https://aqwwiki.wikidot.com/daily-quest-board-s-quests",
-  "sn": "AQW Wiki"
+  "sn": "AQW Wiki",
+  "hf": "Cryomancer"
  },
  {
   "id": "shurpu",
@@ -243,7 +252,8 @@
   },
   "mem": "m",
   "src": "https://aqwwiki.wikidot.com/daily-quest-board-s-quests",
-  "sn": "AQW Wiki"
+  "sn": "AQW Wiki",
+  "hf": "Pyromancer"
  },
  {
   "id": "sol",
@@ -266,7 +276,8 @@
    "en": "Bright Knight class (needs 50 Seals of Light)"
   },
   "src": "https://aqwwiki.wikidot.com/daily-quest-board-s-quests",
-  "sn": "AQW Wiki"
+  "sn": "AQW Wiki",
+  "hf": "Bright Knight"
  },
  {
   "id": "sod",
@@ -289,7 +300,8 @@
    "en": "Bright Knight class (needs 50 Seals of Darkness)"
   },
   "src": "https://aqwwiki.wikidot.com/daily-quest-board-s-quests",
-  "sn": "AQW Wiki"
+  "sn": "AQW Wiki",
+  "hf": "Bright Knight"
  },
  {
   "id": "chaos",
@@ -308,7 +320,8 @@
    "en": "1,000 gold, 1,000 XP, 5,000 Chaos rep and 1 Dage's Scroll Fragment"
   },
   "src": "https://aqwwiki.wikidot.com/daily-quest-board-s-quests",
-  "sn": "AQW Wiki"
+  "sn": "AQW Wiki",
+  "hf": "Reputação Chaos"
  },
  {
   "id": "shadows",
@@ -327,7 +340,8 @@
    "en": "50,000 gold, 100,000 XP and 50 Void Aura; you may also get 1 (Necro) Scroll of Dark Arts"
   },
   "src": "https://aqwwiki.wikidot.com/daily-quest-board-s-quests",
-  "sn": "AQW Wiki"
+  "sn": "AQW Wiki",
+  "hf": "Void Aura"
  },
  {
   "id": "glimpse",
@@ -346,7 +360,8 @@
    "en": "100,000 gold, 150,000 XP and 100 Void Aura; you may also get 1 (Necro) Scroll of Dark Arts"
   },
   "src": "https://aqwwiki.wikidot.com/daily-quest-board-s-quests",
-  "sn": "AQW Wiki"
+  "sn": "AQW Wiki",
+  "hf": "Void Aura"
  },
  {
   "id": "voidbuq",
@@ -444,6 +459,254 @@
   "sn": "AQW Wiki"
  },
  {
+  "id": "dkl",
+  "g": "hf",
+  "n": "DeathKnight Lord",
+  "req": {
+   "pt": "Só member. 30 dias de quest diária, juntando 30 Shadow Skulls em merge.",
+   "en": "Members only. 30 days of the daily quest, merging 30 Shadow Skulls."
+  },
+  "rw": {
+   "pt": "Classe DeathKnight Lord (serve sobretudo para ultra bosses)",
+   "en": "DeathKnight Lord class (mostly useful for ultra bosses)"
+  },
+  "hf": "DeathKnight Lord",
+  "src": "https://sites.google.com/view/aqwg-net/farming-list",
+  "sn": "AQWG"
+ },
+ {
+  "id": "ssg",
+  "g": "hf",
+  "n": "ShadowScythe General",
+  "req": {
+   "pt": "17 dias com member, 50 dias sem member.",
+   "en": "17 days with membership, 50 days without."
+  },
+  "rw": {
+   "pt": "Classe ShadowScythe General",
+   "en": "ShadowScythe General class"
+  },
+  "hf": "ShadowScythe General",
+  "src": "https://sites.google.com/view/aqwg-net/farming-list",
+  "sn": "AQWG"
+ },
+ {
+  "id": "madweapon",
+  "g": "hf",
+  "n": "Mad Weaponsmith",
+  "req": {
+   "pt": "30 dias com member, 90 sem member. Pede 90 C-Armour Tokens.",
+   "en": "30 days with membership, 90 without. Needs 90 C-Armour Tokens."
+  },
+  "rw": {
+   "pt": "Item Mad Weaponsmith",
+   "en": "Mad Weaponsmith item"
+  },
+  "hf": "Mad Weaponsmith e Cysero's SUPER Hammer",
+  "src": "https://sites.google.com/view/aqwg-net/farming-list",
+  "sn": "AQWG"
+ },
+ {
+  "id": "hammer",
+  "g": "hf",
+  "n": "Cysero's SUPER Hammer",
+  "req": {
+   "pt": "30 dias com member, 90 sem member. Pede 90 C-Hammer Tokens e exige a Mad Weaponsmith antes.",
+   "en": "30 days with membership, 90 without. Needs 90 C-Hammer Tokens and the Mad Weaponsmith first."
+  },
+  "rw": {
+   "pt": "Item Cysero's SUPER Hammer",
+   "en": "Cysero's SUPER Hammer item"
+  },
+  "hf": "Mad Weaponsmith e Cysero's SUPER Hammer",
+  "src": "https://sites.google.com/view/aqwg-net/farming-list",
+  "sn": "AQWG"
+ },
+ {
+  "id": "golden",
+  "g": "hf",
+  "n": "Golden Inquisitor of Shadowfall",
+  "req": {
+   "pt": "Até 12 dias, para member e não-member.",
+   "en": "Up to 12 days, for members and non-members."
+  },
+  "rw": {
+   "pt": "Item Golden Inquisitor of Shadowfall",
+   "en": "Golden Inquisitor of Shadowfall item"
+  },
+  "hf": "Golden Inquisitor of Shadowfall",
+  "src": "https://sites.google.com/view/aqwg-net/farming-list",
+  "sn": "AQWG"
+ },
+ {
+  "id": "loo",
+  "g": "hf",
+  "n": "Lord of Order",
+  "who": {
+   "pt": "Mirror Drakath, em /battleoff",
+   "en": "Mirror Drakath, in /battleoff"
+  },
+  "req": {
+   "pt": "Nível 85 e Rank 7 Fishing. São 10 quests (Heart of Servitude até The Final Challenge) e só dá para fazer 1 por dia, então o mínimo é 10 dias.",
+   "en": "Level 85 and Fishing Rank 7. There are 10 quests (Heart of Servitude to The Final Challenge) and you can only do 1 a day, so 10 days is the minimum."
+  },
+  "rw": {
+   "pt": "Classe Lord of Order",
+   "en": "Lord of Order class"
+  },
+  "hf": "Lord of Order",
+  "src": "https://sites.google.com/view/aqwg-net/classes/lord-of-order",
+  "sn": "AQWG: Lord of Order"
+ },
+ {
+  "id": "diamonds",
+  "g": "hf",
+  "n": "Daily Diamonds",
+  "who": {
+   "pt": "Crag",
+   "en": "Crag"
+  },
+  "req": null,
+  "rw": {
+   "pt": "30 Diamond of Nulgath por dia, com chance de Blood Gem",
+   "en": "30 Diamond of Nulgath a day, with a chance at a Blood Gem"
+  },
+  "hf": "Quests diárias que alimentam outros farms",
+  "src": "https://sites.google.com/view/aqwg-net/farming-list",
+  "sn": "AQWG"
+ },
+ {
+  "id": "evil1",
+  "g": "hf",
+  "n": "Slithering Shadows",
+  "who": {
+   "pt": "Em /bludrut4",
+   "en": "In /bludrut4"
+  },
+  "req": null,
+  "rw": {
+   "pt": "Reputação Evil",
+   "en": "Evil reputation"
+  },
+  "hf": "Reputação Evil",
+  "src": "https://sites.google.com/view/aqwg-net/reputation/evil-rep",
+  "sn": "AQWG: Evil"
+ },
+ {
+  "id": "evil2",
+  "g": "hf",
+  "n": "Sea No Evil",
+  "who": {
+   "pt": "Em /voltaire",
+   "en": "In /voltaire"
+  },
+  "req": {
+   "pt": "Rank 4 ou mais de Evil",
+   "en": "Evil rank 4 or higher"
+  },
+  "rw": {
+   "pt": "Reputação Evil",
+   "en": "Evil reputation"
+  },
+  "hf": "Reputação Evil",
+  "src": "https://sites.google.com/view/aqwg-net/reputation/evil-rep",
+  "sn": "AQWG: Evil"
+ },
+ {
+  "id": "evil3",
+  "g": "hf",
+  "n": "Inquisitor Inquiry",
+  "who": {
+   "pt": "Em /citadel",
+   "en": "In /citadel"
+  },
+  "req": {
+   "pt": "Só para não-members",
+   "en": "Non-members only"
+  },
+  "rw": {
+   "pt": "Reputação Evil",
+   "en": "Evil reputation"
+  },
+  "hf": "Reputação Evil",
+  "src": "https://sites.google.com/view/aqwg-net/reputation/evil-rep",
+  "sn": "AQWG: Evil"
+ },
+ {
+  "id": "good1",
+  "g": "hf",
+  "n": "Brace-r Yourself!",
+  "who": {
+   "pt": "Em /mobius",
+   "en": "In /mobius"
+  },
+  "req": null,
+  "rw": {
+   "pt": "Reputação Good",
+   "en": "Good reputation"
+  },
+  "hf": "Reputação Good",
+  "src": "https://sites.google.com/view/aqwg-net/reputation/good-rep",
+  "sn": "AQWG: Good"
+ },
+ {
+  "id": "good2",
+  "g": "hf",
+  "n": "Skele-Tongue",
+  "who": {
+   "pt": "Em /graveyard",
+   "en": "In /graveyard"
+  },
+  "req": {
+   "pt": "Rank 4 ou mais de Good",
+   "en": "Good rank 4 or higher"
+  },
+  "rw": {
+   "pt": "Reputação Good",
+   "en": "Good reputation"
+  },
+  "hf": "Reputação Good",
+  "src": "https://sites.google.com/view/aqwg-net/reputation/good-rep",
+  "sn": "AQWG: Good"
+ },
+ {
+  "id": "good3",
+  "g": "hf",
+  "n": "Prevent the Return",
+  "who": {
+   "pt": "Em /doomwood",
+   "en": "In /doomwood"
+  },
+  "req": null,
+  "rw": {
+   "pt": "Reputação Good",
+   "en": "Good reputation"
+  },
+  "hf": "Reputação Good",
+  "src": "https://sites.google.com/view/aqwg-net/reputation/good-rep",
+  "sn": "AQWG: Good"
+ },
+ {
+  "id": "pvp",
+  "g": "hf",
+  "n": "Victory Most Honourable",
+  "who": {
+   "pt": "Dumoose, em /doomarena",
+   "en": "Dumoose, in /doomarena"
+  },
+  "req": {
+   "pt": "10 vitórias em PvP 1v1, uma vez por dia",
+   "en": "10 wins in 1v1 PvP, once a day"
+  },
+  "rw": {
+   "pt": "1 PvP Trophy (limite de 100)",
+   "en": "1v1 PvP Trophy (cap of 100)"
+  },
+  "hf": "Combat Trophy e PvP Trophy",
+  "src": "https://sites.google.com/view/aqwg-net/items/nation/reagent-library",
+  "sn": "AQWG: Reagent Library"
+ },
+ {
   "id": "ezrajal",
   "g": "boss",
   "n": "UltraEzrajal",
@@ -457,7 +720,8 @@
    "en": "Exalted Apotheosis (one Insignia a day)"
   },
   "src": "https://www.aqwhub.com/other-guides/weeklies-and-dailies/",
-  "sn": "AQWHub"
+  "sn": "AQWHub",
+  "hf": "Exalted Apotheosis"
  },
  {
   "id": "warden",
@@ -473,7 +737,8 @@
    "en": "Exalted Apotheosis (one Insignia a day)"
   },
   "src": "https://www.aqwhub.com/other-guides/weeklies-and-dailies/",
-  "sn": "AQWHub"
+  "sn": "AQWHub",
+  "hf": "Exalted Apotheosis"
  },
  {
   "id": "engineer",
@@ -485,7 +750,8 @@
    "en": "Daily reward: Insignia"
   },
   "src": "https://www.aqwhub.com/other-guides/weeklies-and-dailies/",
-  "sn": "AQWHub"
+  "sn": "AQWHub",
+  "hf": "Exalted Apotheosis"
  },
  {
   "id": "astral",
@@ -521,7 +787,8 @@
    "en": "Daily reward: Insignia"
   },
   "src": "https://www.aqwhub.com/other-guides/weeklies-and-dailies/",
-  "sn": "AQWHub"
+  "sn": "AQWHub",
+  "hf": "Infernal Flame Pyromancer"
  },
  {
   "id": "azalith",
@@ -558,6 +825,47 @@
   },
   "src": "https://www.aqwhub.com/other-guides/weeklies-and-dailies/",
   "sn": "AQWHub"
+ },
+ {
+  "id": "kasuko",
+  "g": "season",
+  "n": "Kasuko",
+  "req": null,
+  "rw": {
+   "pt": "Recompensa diária: Volcanic Essence",
+   "en": "Daily reward: Volcanic Essence"
+  },
+  "src": "https://www.aqwhub.com/other-guides/weeklies-and-dailies/",
+  "sn": "AQWHub"
+ },
+ {
+  "id": "kala",
+  "g": "season",
+  "n": "UltraKala",
+  "req": null,
+  "rw": {
+   "pt": "Recompensa diária: Insignia (ultra de agosto)",
+   "en": "Daily reward: Insignia (August ultra)"
+  },
+  "src": "https://www.aqwhub.com/other-guides/weeklies-and-dailies/",
+  "sn": "AQWHub"
+ },
+ {
+  "id": "iara",
+  "g": "season",
+  "n": "UltraIara",
+  "req": null,
+  "rw": {
+   "pt": "Recompensa diária: Insignia (ultra de setembro)",
+   "en": "Daily reward: Insignia (September ultra)"
+  },
+  "hf": "Armas de merge da Iara",
+  "src": "https://www.aqwhub.com/other-guides/weeklies-and-dailies/",
+  "sn": "AQWHub",
+  "for": {
+   "pt": "Armas de merge da Iara (5 Iara Insignias por arma)",
+   "en": "Iara merge weapons (5 Iara Insignias per weapon)"
+  }
  },
  {
   "id": "hay",
