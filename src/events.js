@@ -6,7 +6,8 @@ import {bList, ownSet, renderBuilder} from "./views/builder.js";
 import {dlg, openClass} from "./views/class-dialog.js";
 import {addCompare, renderCompare} from "./views/compare.js";
 import {openEnh} from "./views/enhancements.js";
-import {closePanel, show} from "./views/nav.js";
+import {closePanel, secHome, show} from "./views/nav.js";
+import {REL} from "./data/index.js";
 import {goTeam} from "./views/teams.js";
 
 document.addEventListener("click",e=>{
@@ -19,7 +20,8 @@ document.addEventListener("click",e=>{
   const ow=e.target.closest("[data-own]");if(ow){const n=ow.dataset.own,o=ownSet();o.has(n)?o.delete(n):o.add(n);st.own=[...o];save();renderBuilder();return}
   if(e.target.closest("[data-bmark]")){const o=ownSet();bList(nrm(document.getElementById("bq").value.trim())).forEach(c=>o.add(c.name));st.own=[...o];save();renderBuilder();return}
   if(e.target.closest("[data-bclear]")){st.own=[];save();renderBuilder();return}
-  const sc=e.target.closest("[data-sec]");if(sc){closePanel();show(sc.dataset.sec);return}
+  const sc=e.target.closest("[data-sec]");if(sc){closePanel();show(secHome(sc.dataset.sec));return}
+  const rt=e.target.closest("[data-relt]");if(rt&&REL.length){st.rt=rt.dataset.relt;st.rel=REL[0].id;ui.relQ="";save();show("lancamentos");return}
   const sb=e.target.closest("[data-sub]");if(sb){show(sb.dataset.sub);return}
   const gv=e.target.closest("[data-goview]");if(gv){closePanel();show(gv.dataset.goview);return}
   const gm=e.target.closest("[data-gomode]");if(gm){st.mode=gm.dataset.gomode;save();renderAll();show("tier");return}

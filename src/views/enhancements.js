@@ -26,7 +26,7 @@ export function renderEnh(){
   return `<div class="ec frame ${hits.length?(isHit(e)?"hit":"dim"):""}"><div class="top"><span class="slot">${L("slot_"+e[1])}</span><span class="stars" aria-label="${e[2]} ${L("of5")}">${"★".repeat(e[2])}${"☆".repeat(5-e[2])}</span></div>
   <b>${e[0]}</b><p>${esc(T(e[3]))}</p><div class="use"><strong>${L("bestOn")}</strong> ${esc(T(e[4]))}</div>
   ${us.length?`<div class="ecWrap"><div class="usedList" aria-label="${L("enh_top")}">${us.slice(0,5).map(chipU).join("")}</div>
-  ${us.length>5?`<button class="usedBtn" data-enhall="${ei}">${L("enh_all",{n:us.length})} →</button>`:""}</div>`:`<p style="font-size:12px">${L("enh_none")}</p>`}</div>`}).join("")+`</div></div>`}).join("");
+  ${us.length>5?`<button class="usedBtn" data-enhall="${ei}">${L("enh_all",{n:us.length})}</button>`:""}</div>`:`<p style="font-size:12px">${L("enh_none")}</p>`}</div>`}).join("")+`</div></div>`}).join("");
 }
 export const dlgE=document.getElementById("dlgE");
 export function openEnh(ei){ui.eIdx=ei;ui.eCat="all";const e=ENH[ei];

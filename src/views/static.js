@@ -22,6 +22,6 @@ export function renderModes(){
   document.getElementById("modes").innerHTML=Object.keys(MODES).map(m=>{
     const top=[...D].sort((a,b)=>score(b[m])-score(a[m])||total(b)-total(a)).slice(0,5);
     return `<div class="mode frame"><h3>${MODES[m]}</h3><div class="why">${L("mi_"+m)}</div>`+top.map((c,i)=>`
-      <button class="open rank" data-i="${idx(c)}"><span class="n">${i+1}</span>${sigil(c)}<span class="nm"><b>${esc(c.name)}</b><span>${catName(c.cat)} · ${c.b[m].split("|").join(" · ")}</span></span><span class="b" style="background:${tColor(c[m])}">${c[m]}</span></button>`).join("")+`<button class="linkBtn" data-gomode="${m}">${L("home_tier",{m:MODES[m]})} →</button></div>`;
+      <button class="open rank" data-i="${idx(c)}"><span class="n">${i+1}</span>${sigil(c)}<span class="nm"><b>${esc(c.name)}</b><span>${catName(c.cat)}, ${c.b[m].split("|").join(", ")}</span></span><span class="b" style="background:${tColor(c[m])}">${c[m]}</span></button>`).join("")+`<button class="linkBtn" data-gomode="${m}">${L("home_tier",{m:MODES[m]})}</button></div>`;
   }).join("");
 }

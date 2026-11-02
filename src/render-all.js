@@ -14,6 +14,8 @@ import {renderFarms} from "./views/farms.js";
 import {renderModes, renderStatic} from "./views/static.js";
 import {renderTeams} from "./views/teams.js";
 import {renderTiers} from "./views/tiers.js";
+import {renderReleases} from "./views/releases.js";
+import {renderEye} from "./features/eye.js";
 
 export function renderAll(){
   renderStatic();renderModes();
@@ -21,7 +23,7 @@ export function renderAll(){
   seg("segMode",[["geral",L("overall")],["farm","Farm"],["solo","Solo"],["ultra","Ultras"]],"mode",renderTiers);
   seg("bCat",[["all",L("all")],...Object.keys(CATS).map(k=>[k,catName(k)])],"bcat",renderBuilder);
   seg("segAll",[["todas",L("all")],...Object.keys(CATS).map(k=>[k,catName(k)])],"all",renderCards);
-  renderTiers();renderAgenda();renderTeams();renderBuilder();renderFarms();renderDailies();renderCards();renderCompare();renderEnh();renderFeed();refreshNotif();
+  renderTiers();renderAgenda();renderTeams();renderBuilder();renderFarms();renderDailies();renderCards();renderCompare();renderEnh();renderFeed();renderReleases();renderEye();refreshNotif();
   if(dlg.open&&ui.curClass!=null)openClass(ui.curClass);
   if(dlgE.open&&ui.eIdx!=null)openEnh(ui.eIdx);
 }

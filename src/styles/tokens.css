@@ -1,24 +1,36 @@
-/* Layout: salão de guilda — faixa de brasão no topo, abas como placas de madeira, painéis com moldura dourada; ficha da classe em diálogo de pergaminho.
-   Dark-first (o jogo é escuro); tema claro em pedra fria. */
+/* Tema Hollowborn: o ShadowRealm à noite. Fundo de tinta violeta, texto cor de osso e um único brilho,
+   o "dos olhos", que a pessoa escolhe (como o equipamento Hollowborn, que muda junto com a cor dos olhos).
+   Tudo que brilha deriva de --eye; o tema claro é a luz da manhã sobre o mesmo mundo. */
+@property --eyeOn{syntax:"<number>";inherits:true;initial-value:1}
+:root{--eye:#5FE0CF}
+:root[data-eye="vazio"]{--eye:#B898FF}
+:root[data-eye="sangue"]{--eye:#FF6B7E}
+:root[data-eye="brasa"]{--eye:#FFB45A}
+:root[data-eye="osso"]{--eye:#E6DDC6}
 :root{
-  --bg:#0A1322; --bg2:#0F1B2E; --panel:#142238; --panel2:#1B2D47; --ink:#E6EDF8; --muted:#93A7C4; --line:#28405E; --line2:#1E3450;
-  --gold:#EFB63C; --gold2:#FFD47A; --gold-deep:#9A6E15; --gold-soft:rgba(239,182,60,.13); --scrim:rgba(4,8,18,.74);
-  --blood:#E0455A;
-  --free:#3CC9B4; --member:#EFB63C; --acs:#A78BFA; --hero:#F472A6; --cal:#60B4F5;
-  --tS:#E04A34; --tA:#D08C1C; --tB:#3DA06A; --tC:#5D86AE;
-  --deco:"Grenze Gotisch",Georgia,serif; --display:"Barlow",system-ui,-apple-system,"Segoe UI",sans-serif; --body:"Barlow",system-ui,-apple-system,"Segoe UI",sans-serif;
-  --lift:inset 0 1px 0 rgba(255,255,255,.05); --on-gold:#17120A;
+  --bg:#110D18; --bg2:#161120; --panel:#1B1526; --panel2:#231B31; --ink:#EFE9DF; --muted:#A99FB8; --line:#382C4B; --line2:#291F38;
+  --glow:var(--eye); --glow-hi:color-mix(in oklab,var(--eye) 62%,#fff); --glow-dim:color-mix(in oklab,var(--eye) 40%,#110D18);
+  --glow-soft:color-mix(in oklab,var(--eye) 12%,transparent); --on-glow:#0B0812; --scrim:rgba(7,4,12,.78);
+  --blood:#FF5C72;
+  --free:#62D88E; --member:#F2BE4B; --acs:#B392FF; --hero:#F47AB0; --cal:#69B7F7;
+  --tS:#E5533D; --tA:#D69222; --tB:#3FA56C; --tC:#5F86B0;
+  --deco:"Texturina",Georgia,serif; --display:"Barlow",system-ui,-apple-system,"Segoe UI",sans-serif; --body:"Barlow",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --lift:inset 0 1px 0 rgba(255,255,255,.04); --halo:0 0 0 1px var(--glow-dim),0 8px 28px -14px var(--glow);
+  --r-lg:14px; --r-md:10px; --r-sm:7px;
+  --crest-hood:#0C0912; --eye-core:color-mix(in oklab,var(--eye) 58%,#fff);
   color-scheme:dark;
 }
 @media (prefers-color-scheme:light){:root:not([data-theme="dark"]){
-  --bg:#EDF0F5; --bg2:#E2E7EF; --panel:#FFFFFF; --panel2:#F5F7FA; --ink:#15202F; --muted:#54657C; --line:#C9D4E2; --line2:#DCE3EC;
-  --gold:#8A5E07; --gold2:#6E4A05; --gold-deep:#C79A33; --gold-soft:rgba(138,94,7,.1); --scrim:rgba(10,19,34,.5);
-  --blood:#B22338;
-  --free:#0D8576; --member:#8A5E07; --acs:#6136C0; --hero:#B82F60; --cal:#15618F;
-  --tS:#C23A22; --tA:#A9700C; --tB:#2A7F47; --tC:#476A8E; --lift:none; --on-gold:#FFFFFF; color-scheme:light}}
+  --bg:#F3F0F6; --bg2:#EAE5F0; --panel:#FFFFFF; --panel2:#F7F4FA; --ink:#1B1524; --muted:#5E5570; --line:#D6CEE1; --line2:#E5DFEC;
+  --glow:color-mix(in oklab,var(--eye) 45%,#1B1524); --glow-hi:color-mix(in oklab,var(--eye) 38%,#1B1524); --glow-dim:color-mix(in oklab,var(--eye) 52%,#fff);
+  --glow-soft:color-mix(in oklab,var(--eye) 14%,transparent); --on-glow:#FFFFFF; --scrim:rgba(27,21,36,.48);
+  --blood:#C2283F;
+  --free:#16804A; --member:#8A5E07; --acs:#6136C0; --hero:#B82F60; --cal:#15618F;
+  --tS:#C23A22; --tA:#A9700C; --tB:#2A7F47; --tC:#476A8E; --lift:none; --halo:0 0 0 1px var(--glow-dim),0 8px 24px -16px var(--glow); --crest-hood:#2A2236; color-scheme:light}}
 :root[data-theme="light"]{
-  --bg:#EDF0F5; --bg2:#E2E7EF; --panel:#FFFFFF; --panel2:#F5F7FA; --ink:#15202F; --muted:#54657C; --line:#C9D4E2; --line2:#DCE3EC;
-  --gold:#8A5E07; --gold2:#6E4A05; --gold-deep:#C79A33; --gold-soft:rgba(138,94,7,.1); --scrim:rgba(10,19,34,.5);
-  --blood:#B22338;
-  --free:#0D8576; --member:#8A5E07; --acs:#6136C0; --hero:#B82F60; --cal:#15618F;
-  --tS:#C23A22; --tA:#A9700C; --tB:#2A7F47; --tC:#476A8E; --lift:none; --on-gold:#FFFFFF; color-scheme:light}
+  --bg:#F3F0F6; --bg2:#EAE5F0; --panel:#FFFFFF; --panel2:#F7F4FA; --ink:#1B1524; --muted:#5E5570; --line:#D6CEE1; --line2:#E5DFEC;
+  --glow:color-mix(in oklab,var(--eye) 45%,#1B1524); --glow-hi:color-mix(in oklab,var(--eye) 38%,#1B1524); --glow-dim:color-mix(in oklab,var(--eye) 52%,#fff);
+  --glow-soft:color-mix(in oklab,var(--eye) 14%,transparent); --on-glow:#FFFFFF; --scrim:rgba(27,21,36,.48);
+  --blood:#C2283F;
+  --free:#16804A; --member:#8A5E07; --acs:#6136C0; --hero:#B82F60; --cal:#15618F;
+  --tS:#C23A22; --tA:#A9700C; --tB:#2A7F47; --tC:#476A8E; --lift:none; --halo:0 0 0 1px var(--glow-dim),0 8px 24px -16px var(--glow); --crest-hood:#2A2236; color-scheme:light}

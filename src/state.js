@@ -3,7 +3,7 @@ import {EN, UI} from "./data/index.js";
 /* estado de interface que muda ao longo do uso (antes: variáveis soltas) */
 export const ui={curView:"inicio",feedSeen:null,ALERTS:[],curClass:null,eIdx:null,eCat:"all"};
 
-export const st={cat:"free",mode:"geral",all:"todas",lang:"pt",nf:"all",bcat:"all",eslot:"all",fk:"all"};
+export const st={cat:"free",mode:"geral",all:"todas",lang:"pt",nf:"all",bcat:"all",eslot:"all",fk:"all",eye:"espectral",subs:{},rt:"all"};
 try{Object.assign(st,JSON.parse(localStorage.getItem("aqwTier")||"{}"))}catch(e){}
 if(st.lang!=="pt"&&st.lang!=="en")st.lang="pt";
 export const save=()=>{try{localStorage.setItem("aqwTier",JSON.stringify(st))}catch(e){}};

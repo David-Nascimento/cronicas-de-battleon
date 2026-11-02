@@ -4,7 +4,7 @@ import {toast} from "../features/toasts.js";
 import {esc, idx, sigil} from "../lib/util.js";
 import {L, st} from "../state.js";
 
-document.addEventListener("click",e=>{const c=e.target.closest&&e.target.closest("code.jn");if(!c)return;const t="/join "+c.dataset.j;try{navigator.clipboard.writeText(t)}catch(_){}toast("✓",t,L("farm_copied"))});
+document.addEventListener("click",e=>{const c=e.target.closest&&e.target.closest("code.jn");if(!c)return;const t="/join "+c.dataset.j;try{const w=navigator.clipboard&&navigator.clipboard.writeText(t);if(w&&w.catch)w.catch(()=>{})}catch(_){}toast("✓",t,L("farm_copied"))});
 export function renderFarms(){
   seg("segFarm",[["all",L("farm_all")],["class",L("farm_class")],["gear",L("farm_gear")],["mat",L("farm_mat")],["rep",L("farm_rep")],["daily",L("farm_daily")],["season",L("farm_season")]],"fk",renderFarms);
   const f=st.fk||"all",lg=st.lang==="en"?"en":"pt";

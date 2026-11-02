@@ -13,9 +13,12 @@ import DAILIES from "./dailies.json";
 import FARMS from "./hardfarm.json";
 import SCHED from "./ultra-schedule.json";
 import NEWS from "./news.json";
+import RELDATA from "./releases.json";
 import {HUB} from "../config.js";
 
 export {TYPES, RAW, FAMS, CALYR, OBTAIN, CONS, TEAMS, ITEMS, ENH, UI, EN, DAILIES, FARMS, SCHED, NEWS};
+/* itens novos: uma entrada por atualização, a mais recente primeiro */
+export const REL=RELDATA.list;
 
 export const RAWBY=Object.fromEntries(RAW.map(r=>[r[0],r]));
 export const D=RAW.map(r=>{const t=TYPES[r[5]];let o=r[7]||{};

@@ -5,6 +5,6 @@
 .tr{display:flex;flex-wrap:wrap;gap:8px;padding:10px;min-height:84px;align-items:flex-start;min-width:0}
 .tr .empty{color:var(--muted);font-size:13px;align-self:center}
 .tc{display:flex;flex-direction:column;align-items:center;gap:4px;width:94px;text-align:center;border-radius:8px;padding:6px 2px}
-.tc:hover{background:var(--gold-soft)}
+.tc:hover{background:var(--glow-soft)}
 .tc span{font-size:12px;font-weight:600;line-height:1.2}
 

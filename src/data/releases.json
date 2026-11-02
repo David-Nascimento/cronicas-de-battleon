@@ -1,0 +1,500 @@
+{
+  "updated": "2026-11-02",
+  "list": [
+    {
+      "id": "2026-10-30",
+      "from": "2026-10-30",
+      "to": "2026-11-02",
+      "t": {
+        "pt": "Mogloween: o final da Eternal Night em Walpurgisnacht e os raros do evento",
+        "en": "Mogloween: the Eternal Night finale in Walpurgisnacht and the event rares"
+      },
+      "x": {
+        "pt": "Parte 3 da Eternal Night Trilogy, com o chefe Father Forest. Os drops saem dos monstros de Walpurgisnacht, os raros de Mogloween estão na Featured Gear Shop e chegaram a PaladinSlayer (2) e a linha CardChaser e CardClasher Ace. As três partes do evento e as recompensas ficam até sexta, 13 de novembro.",
+        "en": "Part 3 of the Eternal Night Trilogy, with the boss Father Forest. Drops come from the monsters in Walpurgisnacht, the Mogloween rares are in the Featured Gear Shop, and PaladinSlayer (2) plus the CardChaser and CardClasher Ace line arrived. All three parts of the event and their rewards stay until Friday, November 13."
+      },
+      "until": "2026-11-13",
+      "maps": [
+        {
+          "j": "walpurgisnacht",
+          "n": "Walpurgisnacht",
+          "w": {
+            "pt": "Drops dos monstros (Witchy Rewards) e as lojas Gourd Ol' Gear e Witch's Charms",
+            "en": "Monster drops (Witchy Rewards) and the Gourd Ol' Gear and Witch's Charms shops"
+          },
+          "v": "wiki"
+        },
+        {
+          "j": "elodeatemple",
+          "n": "Elodea Temple",
+          "w": {
+            "pt": "Merge do Elodea's Dress (Eldritch Elodea Gear)",
+            "en": "Merge for Elodea's Dress (Eldritch Elodea Gear)"
+          },
+          "v": "dn"
+        },
+        {
+          "j": "birgittamogloween",
+          "n": "Birgitta Mogloween",
+          "w": {
+            "pt": "Festival das Bruxas e as quests da Lady Laidronette Cavendish",
+            "en": "Festival of Witches and Lady Laidronette Cavendish's quests"
+          },
+          "v": "dn"
+        }
+      ],
+      "shops": ["Featured Gear Shop","Gourd Ol' Gear","Witch's Charms","Mog-GLOW-ween Merge","PaladinSlayer Gear","PaladinSlayer Combo","CardClasher Shop","HeroPoints Merge","Feast of the Depths","Anything Goes Battle Cards Bundle","Anything Goes Battle Deck","Anything Goes Chaos Battle Pack","Anything Goes Doomwood Battle Pack","Anything Goes Doomwood Battle Merge Shop","Anything Goes Series Battle Combo"],
+      "srcs": {
+        "fgs": {
+          "pt": "Featured Gear Shop (raro do evento)",
+          "en": "Featured Gear Shop (event rare)"
+        },
+        "wd": {
+          "pt": "Drop em Walpurgisnacht",
+          "en": "Drop in Walpurgisnacht",
+          "j": "walpurgisnacht"
+        },
+        "mg": {
+          "pt": "Merge da Eternal Night",
+          "en": "Eternal Night merge"
+        },
+        "el": {
+          "pt": "Merge em Elodea Temple",
+          "en": "Merge in Elodea Temple",
+          "j": "elodeatemple"
+        },
+        "gg": {
+          "pt": "Gourd Ol' Gear, em Walpurgisnacht",
+          "en": "Gourd Ol' Gear, in Walpurgisnacht",
+          "j": "walpurgisnacht"
+        }
+      },
+      "src": [
+        {
+          "n": "AQW Wiki: New Releases",
+          "u": "https://aqwwiki.wikidot.com/new-releases"
+        },
+        {
+          "n": "Design Notes: Mogloween Rares Set",
+          "u": "https://www.aq.com/gamedesignnotes/aqw-31oct26-mogloweenrares-10508"
+        },
+        {
+          "n": "Design Notes: Blood, Bones & Shadows",
+          "u": "https://www.aq.com/gamedesignnotes/aqw-16oct26-mogloween26pt1-10495"
+        },
+        {
+          "n": "AQW Wiki: Walpurgisnacht",
+          "u": "https://aqwwiki.wikidot.com/walpurgisnacht"
+        }
+      ],
+      "items": {
+        "class": [
+          ["Cardclasher Ace (Class)","a"],
+          ["PaladinSlayer (2)","a"]
+        ],
+        "armor": [
+          ["Undead Blood Paladin","a"],
+          ["Dread Devil","a"],
+          ["Blood Lineage Hunter","a","mg"],
+          ["CardChaser","a"],
+          ["CardClasher Ace (Armor)","a"],
+          ["Corpse Paladin Armor",""],
+          ["Elodea's Dress","a","el"],
+          ["Empire Dread Devil","a","fgs"],
+          ["Father Forest","a","wd"],
+          ["Hallows Eve Witch","a","fgs"],
+          ["MogloBeast","a","fgs"],
+          ["MogloFiend","a","fgs"],
+          ["PaladinSlayer Enraged","a"],
+          ["PumpkinLord of Infinity",""],
+          ["Rotting Pumpkin Lord",""],
+          ["ShadowSlayer Z (Armor)","a","mg"],
+          ["Witch Queen Cavendish","a","fgs"],
+          ["Witch Queen Talia (Armor)","a","mg"]
+        ],
+        "helm": [
+          ["Undead Blood Paladin Helm","a"],
+          ["Dread Devil Cowl","a"],
+          ["Dread Devil Grin","a"],
+          ["Dread Devil Mask","a"],
+          ["Dread Devil Morph","a"],
+          ["Dread Devil Visage","a"],
+          ["Ace Tarpaulin Hat","a"],
+          ["Blood Lineage Hat","a","mg"],
+          ["Blood Lineage Locks","a","mg"],
+          ["Blood Lineage Morph","a","mg"],
+          ["Blood Lineage Visage","a","mg"],
+          ["CardChaser Beret","a"],
+          ["CardChaser Hair","a"],
+          ["CardChaser Hat","a"],
+          ["CardChaser Locks","a"],
+          ["CardChaser Morph","a"],
+          ["CardChaser Visage","a"],
+          ["CardChaser's Tarpaulin Hat","a"],
+          ["CardClasher's Tarpaulin Hat","a"],
+          ["Crowned MogloBeast Hair","a","fgs"],
+          ["Crowned MogloBeast Locks","a","fgs"],
+          ["Crowned MogloBeast Morph","a"],
+          ["Empire Dread Devil Cowl","l"],
+          ["Empire Dread Devil Grin","a","fgs"],
+          ["Empire Dread Devil Mask","a","fgs"],
+          ["Father Forest Morph","a","wd"],
+          ["Great Pumpkin Helm",""],
+          ["Hallows Eve Glasses","l","fgs"],
+          ["Hallows Eve Hair","","fgs"],
+          ["Hallows Eve Locks","","fgs"],
+          ["Hallows Eve Spectacles","l","fgs"],
+          ["MogloBeast Cowl","a","fgs"],
+          ["MogloBeast Hair","a","fgs"],
+          ["MogloBeast Hood","a"],
+          ["MogloBeast Horn","l","fgs"],
+          ["MogloBeast Locks","a","fgs"],
+          ["MogloBeast Shadow Horns","a","fgs"],
+          ["MogloBeast Shadow Morph","a","fgs"],
+          ["Mystcraft Cap","a","fgs"],
+          ["Mystcraft Glasses","l","fgs"],
+          ["Mystcraft Hat","a","fgs"],
+          ["Mystcraft Spectacles","l","fgs"],
+          ["Rotting Great Pumpkin Helm",""],
+          ["ShadowSlayer Z Morph","a","mg"],
+          ["ShadowSlayer Z Visage","a","mg"],
+          ["Witch Queen Talia Hat","a","mg"],
+          ["Witch Queen Talia Locks","a","mg"]
+        ],
+        "cape": [
+          ["CardChaser Winglets","a"],
+          ["CardChaser Wings","a"],
+          ["CardChaser's Ascended Deck","a"],
+          ["Darkovia's Dusk and Dawn","a","mg"],
+          ["Empire Dread Devil Sonar","a","fgs"],
+          ["Father Forest's Coat","a","wd"],
+          ["MogloBeast Cape","","fgs"],
+          ["MogloBeast Wing","l","fgs"],
+          ["MogloBeast Winged Cape","a","fgs"],
+          ["MogloBeast Wings","","fgs"],
+          ["MogloFiend Cape","a","fgs"],
+          ["Mogloween Witch's Pouch","a","fgs"],
+          ["Ornate Gold Coffin","a","fgs"],
+          ["Sunchild's Cloak","a","wd"]
+        ],
+        "weapon": [
+          ["Dual Devilish Nunchucks","a","","dagger"],
+          ["Mogloween Prop Sai","a","","dagger"],
+          ["Mogloween Safety Batons","a","","dagger"],
+          ["Mogloween Safety Sticks","a","","dagger"],
+          ["Ace of Blades","a","","dagger"],
+          ["Dual Cardsharp Fan Cards","a","","dagger"],
+          ["Dual Darkovia Dolore","a","mg","dagger"],
+          ["Enchanted Dual Devilish Nunchucks","l","fgs","dagger"],
+          ["Enchanted Dual Toy Sai","l","fgs","dagger"],
+          ["Enchanted Prop Sai","l","fgs","dagger"],
+          ["Enchanted Safety Batons","l","fgs","dagger"],
+          ["Enchanted Safety Sticks","l","fgs","dagger"],
+          ["Enchanted Toy Nunchucks","a","fgs","dagger"],
+          ["Greater Pumpkin Swords","","","dagger"],
+          ["Rotting Great Pumpkin Swords","","","dagger"],
+          ["Sauin's Geist Armaments","l","fgs","dagger"],
+          ["Sauin's Geist Blades","l","fgs","dagger"],
+          ["Sauin's Geist Sickles","l","fgs","dagger"],
+          ["Sventura's Hunting Gear","a","mg","dagger"],
+          ["Vordred's Sword + ShadowReaper","a","","dagger"],
+          ["Mogloween Boxing Gloves","a","","gauntlet"],
+          ["Enchanted Toy Boxing Glove","a","fgs","gauntlet"],
+          ["Devilish Nunchucks","a","","mace"],
+          ["Mogloween Safety Baton","a","","mace"],
+          ["Mogloween Safety Stick","a","","mace"],
+          ["CardChaser Deck","a","","mace"],
+          ["Cardsharp Fan Cards","a","","mace"],
+          ["Enchanted Devilish Nunchucks","a","fgs","mace"],
+          ["Enchanted Safety Baton","a","fgs","mace"],
+          ["Enchanted Safety Stick","a","fgs","mace"],
+          ["SkullCrusher Bouquet","a","","mace"],
+          ["CardChaser Scythe","a","","polearm"],
+          ["Sauin's Geist Scythe","a","fgs","polearm"],
+          ["Sauin's Geist Sickle","a","fgs","polearm"],
+          ["Spirit of Fear Scythe","a","fgs","polearm"],
+          ["Sventura","a","wd","polearm"],
+          ["Darkovia Dolore","a","mg","rifle"],
+          ["Cardseeker Staff","a","","staff"],
+          ["Great Pumpkin Staff","","","staff"],
+          ["Obscuritas","a","mg","staff"],
+          ["Rotting Great Pumpkin Staff","","","staff"],
+          ["Ace of Swords","a","","sword"],
+          ["Enchanted Toy Sai","a","fgs","sword"],
+          ["Greater Pumpkin Sword of Infinity","","","sword"],
+          ["Rotting Great Pumpkin Sword","","","sword"],
+          ["Sauin's Geist Blade","a","fgs","sword"],
+          ["Silverblood Blade","a","wd","sword"],
+          ["Silversun Blade","a","mg","sword"]
+        ],
+        "pet": [
+          ["Beastly Omen of Wrath","a","fgs"],
+          ["CardClasher Box Set","a"],
+          ["PaladinSlayer Skull","a"]
+        ],
+        "ground": [
+          ["CardChaser Invocation","a"],
+          ["Vampire Blood Oath","a"],
+          ["Witch's Catastrophe","a"],
+          ["Witch's Mayhem","a"]
+        ],
+        "house": [
+          ["Father Forest's Entrance","a"],
+          ["Wulpurga Pumpkin Jamboree","a","gg"],
+          ["Wulpurga Witch o' Lantern","a","wd"]
+        ],
+        "misc": [
+          ["Gold Voucher 25k",""],
+          ["Luna Dial",""]
+        ]
+      }
+    },
+    {
+      "id": "2026-10-23",
+      "from": "2026-10-23",
+      "to": "2026-10-29",
+      "t": {
+        "pt": "Mogloween: ShadowSlayer War, a classe Kathool Adept e a coleção de 18 anos",
+        "en": "Mogloween: ShadowSlayer War, the Kathool Adept class and the 18th Birthday Collection"
+      },
+      "x": {
+        "pt": "Parte 2 da Eternal Night Trilogy, contra os ShadowSlayers do Allfather. Saíram a classe Kathool Adept (Kathool Adept Shop), o mapa Call of Kathool, as lojas Hunter's Reward e Smashin' Pumpkins, e itens novos na 18th Birthday Collection Chest e no Quibble Coinbiter.",
+        "en": "Part 2 of the Eternal Night Trilogy, against the Allfather's ShadowSlayers. Out this week: the Kathool Adept class (Kathool Adept Shop), the Call of Kathool map, the Hunter's Reward and Smashin' Pumpkins shops, and new items in the 18th Birthday Collection Chest and from Quibble Coinbiter."
+      },
+      "until": "2026-11-13",
+      "maps": [
+        {
+          "j": "shadowslayerwar",
+          "n": "ShadowSlayer War",
+          "w": {
+            "pt": "Guerra da Eternal Night, parte 2",
+            "en": "Eternal Night war, part 2"
+          },
+          "v": "dn"
+        },
+        {
+          "j": "",
+          "n": "Call of Kathool",
+          "w": {
+            "pt": "Mapa novo da Kathool Adept; join ainda não confirmado",
+            "en": "New Kathool Adept map; join not confirmed yet"
+          },
+          "v": ""
+        }
+      ],
+      "shops": ["Kathool Adept Shop","Hunter's Reward","Hunter's Reward 75%","Hunter's Reward 25%","Smashin' Pumpkins","18th Birthday Collection Chest","Quibble Coinbiter's Eighty-Second Shop","Feast of the Depths"],
+      "srcs": {
+        "ka": {
+          "pt": "Kathool Adept Shop",
+          "en": "Kathool Adept Shop"
+        }
+      },
+      "src": [
+        {
+          "n": "AQW Wiki: Last Week",
+          "u": "https://aqwwiki.wikidot.com/last-week"
+        },
+        {
+          "n": "Design Notes: Kathool Adept Class",
+          "u": "https://www.aq.com/gamedesignnotes/aqw-kathoolclasspreview-17oct26-10496"
+        },
+        {
+          "n": "Design Notes: 18th Birthday Collection",
+          "u": "https://www.aq.com/gamedesignnotes/aqw-16oct26-18thbirthdaycollection-10494"
+        },
+        {
+          "n": "Design Notes: Blood, Bones & Shadows",
+          "u": "https://www.aq.com/gamedesignnotes/aqw-16oct26-mogloween26pt1-10495"
+        }
+      ],
+      "items": {
+        "class": [
+          ["Kathool Adept","a","ka"]
+        ],
+        "armor": [
+          ["Arachno SwarmLord (0 AC)","a"],
+          ["Arachno SwarmLord (AC)","a"],
+          ["Fiend Guardian of Nuglath (0 AC)","a"],
+          ["Fiend Guardian of Nuglath (AC)","a"],
+          ["Kathool's Eminence","a"],
+          ["Kathool's Primacy","a"],
+          ["Mystical Void Spider Warrior (0 AC)","a"],
+          ["Mystical Void Spider Warrior (AC)","a"],
+          ["Neo ShadowSlayer","a"],
+          ["Sanguine Endura ShadowSlayer","a"],
+          ["Soulweaver Tomix (0 AC)","a"],
+          ["Soulweaver Tomix (AC)","a"]
+        ],
+        "helm": [
+          ["Beastly Omen of Wrath Morph","a"],
+          ["Darkovian Hound Morph","a"],
+          ["Darkovian Pup Hair","a"],
+          ["Darkovian Pup Locks","a"],
+          ["Arachno SwarmLord Helm (0 AC)","a"],
+          ["Arachno SwarmLord Helm (AC)","a"],
+          ["Contemporary Hunter's Cap","a"],
+          ["Contemporary Hunter's Fedora","a"],
+          ["Darkovian Nobility Hair","a"],
+          ["Darkovian Nobility Locks","a"],
+          ["Darkovian Nobility Morph","al"],
+          ["Darkovian Nobility Visage","al"],
+          ["Darkovian Pup Morph","al"],
+          ["Darkovian Pup Visage","al"],
+          ["Elodea Morph","a"],
+          ["Elodea Visage","a"],
+          ["Elodea's Befuddlement","al"],
+          ["Elodea's Gloom","a"],
+          ["Elodea's Joy","al"],
+          ["Elodea's Locks","a"],
+          ["Elodea's Pout","a"],
+          ["Elodea's Surprise","a"],
+          ["Elodea's Tears","al"],
+          ["Fiend Guardian Beacon (0 AC)","a"],
+          ["Fiend Guardian Beacon (AC)","a"],
+          ["Fiend Guardian Helm (0 AC)","a"],
+          ["Fiend Guardian Helm (AC)","a"],
+          ["Fiendish Dragon of Nulgath (0 AC)","a"],
+          ["Fiendish Dragon of Nulgath (AC)","a"],
+          ["Kathool Adept Morph","a"],
+          ["Mystical Void Spider Hair (0 AC)","a"],
+          ["Mystical Void Spider Hair (AC)","a"],
+          ["Mystical Void Spider Locks (0 AC)","a"],
+          ["Mystical Void Spider Locks (AC)","a"],
+          ["Mystical Void Spider Morph (0 AC)","a"],
+          ["Mystical Void Spider Morph (AC)","a"],
+          ["Mystical Void Spider Souleater (0 AC)","a"],
+          ["Mystical Void Spider Souleater (AC)","a"],
+          ["Noire Tragique Headpiece (0 AC)","a"],
+          ["Noire Tragique Headpiece (AC)","a"],
+          ["Noire Tragique Shades (0 AC)","a"],
+          ["Noire Tragique Shades (AC)","a"],
+          ["Primal SwarmLord Morph (0 AC)","a"],
+          ["Primal SwarmLord Morph (AC)","a"],
+          ["Sanguine Endura Cap","a"],
+          ["Sanguine Endura Hat","a"],
+          ["Soulweaver Tomix Morph (0 AC)","a"],
+          ["Soulweaver Tomix Morph (AC)","a"],
+          ["Soulweaver Tomix Visage (0 AC)","a"],
+          ["Soulweaver Tomix Visage (AC)","a"],
+          ["Wretched SwarmLord Morph (0 AC)","a"],
+          ["Wretched SwarmLord Morph (AC)","a"]
+        ],
+        "cape": [
+          ["Arachno SwarmLord Cape (AC)","a"],
+          ["Arachno SwarmLord Cape (Non-AC)",""],
+          ["ArachnoTerror (0 AC)","a"],
+          ["ArachnoTerror (AC)","a"],
+          ["ArachnoTerror Cape (0 AC)","a"],
+          ["ArachnoTerror Cape (AC)","a"],
+          ["Back-up Painkiller Mk.II","a"],
+          ["Fiend Guardian Cape (AC)","a"],
+          ["Fiend Guardian Cape (Legend)","l"],
+          ["Fiend Guardian Cloak (AC)","a"],
+          ["Fiend Guardian Cloak (Non-AC)",""],
+          ["Guardian Fiend Dragon (0 AC)","a"],
+          ["Guardian Fiend Dragon (AC)","a"],
+          ["Guardian Fiend Dragon Cape (Legend)","al"],
+          ["Guardian Fiend Dragon Cape (Non-Legend)","a"],
+          ["Guardian Fiend Dragon Cloak (0 AC)","a"],
+          ["Guardian Fiend Dragon Cloak (AC)","a"],
+          ["Sacrosanct Tentacles","a"],
+          ["ShadowSlayer's Duster","a"],
+          ["Shadowslayer's Trench Coat","a"],
+          ["Tomix's Virtue Key (0 AC)","a"],
+          ["Tomix's Virtue Key (AC)","a"],
+          ["Void Arachnid Parasite (0 AC)","a"],
+          ["Void Arachnid Parasite (AC)","a"]
+        ],
+        "weapon": [
+          ["Balor's Resurgence Blades","al","","dagger"],
+          ["Elodea Plushies","a","","dagger"],
+          ["Chelicera Scythes (AC)","a","","dagger"],
+          ["Chelicera Scythes (Legend)","l","","dagger"],
+          ["Dual Moonspring Katana","al","","dagger"],
+          ["Dual Transcendence","l","","dagger"],
+          ["Nation Blades of Awe (0 AC)","a","","dagger"],
+          ["Nation Blades of Awe (AC)","a","","dagger"],
+          ["Nation Guardian Blades (0 AC)","a","","dagger"],
+          ["Nation Guardian Blades (AC)","a","","dagger"],
+          ["Rasoir Gothique (AC)","a","","dagger"],
+          ["Rasoir Gothique (Legend)","l","","dagger"],
+          ["Swarmlord's Cheliceras (AC)","a","","dagger"],
+          ["Swarmlord's Cheliceras (Legend)","l","","dagger"],
+          ["Thorn Catharsis Chainblades","al","","dagger"],
+          ["Beastly Omen Claw","a","","gauntlet"],
+          ["Beastly Omen Claws","al","","gauntlet"],
+          ["Mystical Void Spider Claw (0 AC)","a","","gauntlet"],
+          ["Mystical Void Spider Claw (AC)","a","","gauntlet"],
+          ["Mystical Void Spider Claws (0 AC)","a","","gauntlet"],
+          ["Mystical Void Spider Claws (AC)","a","","gauntlet"],
+          ["Screaming Spider Void Claw (0 AC)","a","","gauntlet"],
+          ["Screaming Spider Void Claw (AC)","a","","gauntlet"],
+          ["Screaming Spider Void Claws (0 AC)","a","","gauntlet"],
+          ["Screaming Spider Void Claws (AC)","a","","gauntlet"],
+          ["Tomix's Spirit Looms (0 AC)","a","","gauntlet"],
+          ["Tomix's Spirit Looms (AC)","a","","gauntlet"],
+          ["ShadowSlayer Z's Arrow","a","","mace"],
+          ["ShadowSlayer Z's Blessed Arrow","al","","mace"],
+          ["ShadowSlayer Z's Silver Arrow","a","","mace"],
+          ["Elodea Plush","a","","mace"],
+          ["Elodea Plushie","a","","mace"],
+          ["Ciseaux Gothiques (AC)","a","","mace"],
+          ["Ciseaux Gothiques (Non-AC)","","","mace"],
+          ["BloodRain Royale","a","","polearm"],
+          ["Chelicera Scythe (0 AC)","a","","polearm"],
+          ["Chelicera Scythe (AC)","a","","polearm"],
+          ["Dreamspeaker","a","","staff"],
+          ["Balor's Resurgence Blade","a","","sword"],
+          ["Bloodrite Lilium Blade","al","","sword"],
+          ["Bloodrite Lilium Sword","a","","sword"],
+          ["Bloodrite Lilium Naginata","a","","sword"],
+          ["Moonspring Katana","a","","sword"],
+          ["Nation Blade of Awe (0 AC)","a","","sword"],
+          ["Nation Blade of Awe (AC)","a","","sword"],
+          ["Nation Guardian Blade (0 AC)","a","","sword"],
+          ["Nation Guardian Blade (AC)","a","","sword"],
+          ["Swarmlord's Chelicera (0 AC)","a","","sword"],
+          ["Swarmlord's Chelicera (AC)","a","","sword"],
+          ["Transcendence (0 AC)","a","","sword"],
+          ["Transcendence (AC)","a","","sword"],
+          ["Aquarium of Dreams","a","","wand"],
+          ["Thorn Catharsis Chainblade","a","","whip"]
+        ],
+        "pet": [
+          ["Elodea the Goldfish","al"],
+          ["Sacrosanct Tendrils","al"]
+        ],
+        "house": [
+          ["Beastly Omen of Wrath Guest","a"],
+          ["Darling of the Depths Guest","a"],
+          ["Elodea and Melody Guests","a"],
+          ["Elodea and Melody Plush","a"],
+          ["Festive Wulpurga Pumpkins","a"],
+          ["Wulpurga Jack o'Lantern","a"],
+          ["Wulpurga Pumpkin Festa","a"],
+          ["Wulpurga Pumpkin Jubilee","a"],
+          ["Wulpurga Pumpkin Patch","a"],
+          ["Arachno Swarm Duchess (AC)","a"],
+          ["Arachno Swarm Duchess (Non-AC)",""],
+          ["Arachno Swarm Duke (AC)","a"],
+          ["Arachno Swarm Duke (Legend)","l"],
+          ["ArachnoTerror Guard (0 AC)","a"],
+          ["ArachnoTerror Guard (AC)","a"],
+          ["Elodea the Goldie","a"],
+          ["Fiend Guardian Attendant (AC)","a"],
+          ["Fiend Guardian Attendant (Non-AC)",""],
+          ["Fiend Guardian Guest (AC)","a"],
+          ["Fiend Guardian Guest (Legend)","l"],
+          ["Guardian Fiend Dragon Head (0 AC)","a"],
+          ["Guardian Fiend Dragon Head (AC)","a"]
+        ],
+        "misc": [
+          ["Gold Voucher 25k",""],
+          ["Johnnyfish",""],
+          ["Kultist's Morsel",""],
+          ["Silver Stake",""]
+        ]
+      }
+    }
+  ]
+}
