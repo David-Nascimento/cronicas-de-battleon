@@ -32,7 +32,7 @@ A tier list do portal separa por loja (Free, Member, ACS, HeroMart, Calendário)
 
 ### Diárias
 
-107 quests diárias conferidas no AQW Wiki, cada uma com o `/join` (quando confirmado), quem dá a quest, o que é preciso, a recompensa e para que serve. Grupos: início, meio e fim do jogo, HardFarm, chefes (incluindo os 6 Daily Exercises da Legion), reputação, sazonais e antigas. Marque o que já fez; as marcações voltam do zero na virada do dia, no horário que você escolher. As que você não faz podem ser ocultadas e saem da contagem.
+107 quests diárias conferidas no AQW Wiki, cada uma com o `/join` (quando confirmado), quem dá a quest, o que é preciso, a recompensa e para que serve. Grupos: início, meio e fim do jogo, HardFarm, chefes (incluindo os 6 Daily Exercises da Legion), reputação, sazonais e antigas. Marque o que já fez; as marcações voltam do zero na virada do dia, no horário que você escolher. Toque em **★ Minhas** nas diárias que você faz: a contagem passa a ser só delas ("3 de 12"), com uma aba própria. Dá para ligar um lembrete 1 hora antes da virada, que aparece enquanto o portal está aberto. As que você não faz podem ser ocultadas.
 
 ![Diárias](docs/screenshots/diarias.png)
 
@@ -42,9 +42,13 @@ Na aba **Sazonais** aparece o evento que está no ar, com a data de fim e os map
 
 ### HardFarm
 
-99 farms longos (classes, armas e armaduras, materiais, reputação, diárias e sazonais), com o esforço estimado, onde começar (`/join`), o que é preciso em cada etapa e a fonte.
+99 farms longos (classes, armas e armaduras, materiais, reputação, diárias e sazonais), com o esforço estimado, onde começar (`/join`), o que é preciso em cada etapa e a fonte. Marque as etapas que já concluiu: a barra mostra o progresso, fica salva no navegador e o filtro **Em andamento** junta os farms que você começou.
 
 ![HardFarm](docs/screenshots/hardfarm.png)
+
+### Ficha de classe
+
+Cada classe abre uma ficha com como obter, consumíveis, as melhores combinações de enhancement, sequências de skills e, na seção **No portal**, o farm dela no HardFarm, as diárias que ajudam, as notícias e a atualização em que saiu.
 
 ### Ultras
 
