@@ -23,3 +23,7 @@
 .tier.over{border-color:var(--glow);box-shadow:var(--halo)}
 .tier.none .tl small{font:700 12px var(--body);text-align:center;line-height:1.1;padding:4px}
 @media (max-width:899px){.tlBar{top:64px}}
+.tl{position:relative}
+.tlN{position:absolute;bottom:6px;left:0;right:0;text-align:center;font:600 11px var(--body);font-style:normal;color:#fff;opacity:.85;text-shadow:none}
+#tierQ{width:260px}
+@media (max-width:640px){#tierQ{width:100%}}

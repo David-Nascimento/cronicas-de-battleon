@@ -2,7 +2,7 @@ import {catName, seg} from "../components/shared.js";
 import {TIERS} from "../config.js";
 import {D, byName} from "../data/index.js";
 import {toast} from "../features/toasts.js";
-import {esc, idx, score, sigil, tColor, total} from "../lib/util.js";
+import {esc, idx, nrm, score, sigil, tColor, total} from "../lib/util.js";
 import {L, T, save, st} from "../state.js";
 import type {Klass, Tier} from "../types.js";
 
@@ -12,13 +12,14 @@ import type {Klass, Tier} from "../types.js";
 type Row = Tier | "N";
 type Mine = Record<Row, string[]>;
 const ROWS: Row[] = [...(TIERS as Tier[]), "N"];
-let sel: string | null = null, lastKey = "";
+let sel: string | null = null, lastKey = "", q = "";
 
 export const overall=(c:Klass)=>{const s=Math.max(score(c.farm),score(c.solo),score(c.ultra)),sum=total(c);
   if(s===4&&sum>=10)return"S";if(s===4||sum>=9)return"A";if(sum>=6)return"B";return"C"};
-const list=()=>D.filter(c=>c.cat===st.cat).sort((a,b)=>total(b)-total(a));
+/* a do portal mostra uma loja por vez; a sua junta todas as classes (quem monta tier list compara tudo) */
+const list=()=>(st.tsrc==="mine"?[...D]:D.filter(c=>c.cat===st.cat)).sort((a,b)=>total(b)-total(a));
 const tierOf=(c:Klass)=>st.mode==="geral"?overall(c):c[st.mode as "farm"|"solo"|"ultra"];
-const key=()=>st.cat+"|"+st.mode;
+const key=()=>"all|"+st.mode;
 const store=()=>(st.mytier||(st.mytier={})) as Record<string,Mine>;
 function portalMine():Mine{const m:Mine={S:[],A:[],B:[],C:[],N:[]};list().forEach(c=>m[tierOf(c) as Tier].push(c.name));return m}
 /* a sua lista, já conciliada com as classes atuais (novas entram em "sem tier", removidas somem) */
@@ -39,6 +40,9 @@ export function renderTiers(){
   if(key()!==lastKey){sel=null;lastKey=key()}
   seg("segTsrc",[["portal",L("tl_portal")],["mine",L("tl_mine")]],"tsrc",()=>{sel=null;renderTiers()});
   const edit=st.tsrc==="mine",box=document.getElementById("tiers");
+  document.getElementById("segCat").hidden=edit;
+  const qi=document.getElementById("tierQ") as HTMLInputElement;qi.hidden=!edit;qi.placeholder=L("tl_q");qi.setAttribute("aria-label",L("tl_q"));
+  const nq=nrm(q.trim()),hit=(c:Klass)=>!nq||nrm(c.name).includes(nq);
   const tools=document.getElementById("tierTools");
   if(!edit){sel=null;tools.innerHTML="";
     box.innerHTML=TIERS.map(t=>{const xs=list().filter(c=>tierOf(c)===t);
@@ -51,7 +55,8 @@ export function renderTiers(){
       :`<p class="tlHint">${L("tl_hint")}${custom?"":` <span class="pill soon">${L("tl_from_portal")}</span>`}</p>`}
     <div class="tlActs"><button class="btnQ" data-treset>${L("tl_reset")}</button><button class="btnQ" data-tzero>${L("tl_zero")}</button><button class="btnQ" data-tcopy>${L("tl_copy")}</button></div></div>`;
   box.innerHTML=ROWS.map(r=>{const xs=m[r].map(n=>D[byName[n]]).filter(Boolean);
-    return `<div class="tier${r==="N"?" none":""}" data-trow="${r}"><div class="tl" style="background:${r==="N"?"var(--line)":tColor(r)}">${r==="N"?`<small>${L("tl_none")}</small>`:r}</div><div class="tr">${xs.length?xs.map(c=>card(c,true)).join(""):`<span class="empty">${L(r==="N"?"tl_none_empty":"tl_drop")}</span>`}</div></div>`}).join("");
+    const vis=xs.filter(hit);
+    return `<div class="tier${r==="N"?" none":""}" data-trow="${r}"><div class="tl" style="background:${r==="N"?"var(--line)":tColor(r)}">${r==="N"?`<small>${L("tl_none")}</small>`:r}<em class="tlN">${nq?`${vis.length}/`:""}${xs.length}</em></div><div class="tr">${vis.length?vis.map(c=>card(c,true)).join(""):`<span class="empty">${nq&&xs.length?L("tl_nohit"):L(r==="N"?"tl_none_empty":"tl_drop")}</span>`}</div></div>`}).join("");
 }
 
 /* eventos da edição */
@@ -62,7 +67,7 @@ root.addEventListener("click",e=>{if(st.tsrc!=="mine")return;const t=e.target as
   if(t.closest("[data-tcancel]")){sel=null;renderTiers();return}
   if(t.closest("[data-treset]")){delete store()[key()];save();sel=null;renderTiers();toast("↺",L("tl_reset_done"));return}
   if(t.closest("[data-tzero]")){put({S:[],A:[],B:[],C:[],N:list().map(c=>c.name)});sel=null;renderTiers();return}
-  if(t.closest("[data-tcopy]")){const m=mine(),txt=`${L("tl_mine")} — ${catName(st.cat)}, ${st.mode==="geral"?L("overall"):st.mode}\n`+TIERS.map(r=>`${r}: ${m[r as Tier].join(", ")||"—"}`).join("\n");
+  if(t.closest("[data-tcopy]")){const m=mine(),txt=`${L("tl_mine")}, ${st.mode==="geral"?L("overall"):st.mode}\n`+TIERS.map(r=>`${r}: ${m[r as Tier].join(", ")||"—"}`).join("\n");
     try{const w=navigator.clipboard&&navigator.clipboard.writeText(txt);if(w&&w.catch)w.catch(()=>{})}catch(_){}toast("✓",L("tl_copied"));return}
   /* com uma classe escolhida, tocar numa linha de tier também move */
   const row=t.closest<HTMLElement>("[data-trow]");if(row&&sel){move(sel,row.dataset.trow as Row);sel=null;renderTiers()}
@@ -76,3 +81,4 @@ root.addEventListener("drop",e=>{const row=(e.target as HTMLElement).closest<HTM
   const before=(e.target as HTMLElement).closest<HTMLElement>("[data-tname]");
   move(drag,row.dataset.trow as Row,before&&before.dataset.tname!==drag?before.dataset.tname:undefined);drag=null;sel=null;renderTiers()});
 root.addEventListener("dragend",()=>{drag=null;root.querySelectorAll(".tier.over").forEach(x=>x.classList.remove("over"))});
+document.getElementById("tierQ").addEventListener("input",e=>{q=(e.target as HTMLInputElement).value;renderTiers()});

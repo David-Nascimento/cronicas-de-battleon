@@ -68,7 +68,7 @@
   "tab_ultras": "Times de ultra",
   "tab_all": "Todas as classes",
   "tab_enh": "Enhancements",
-  "tier_sub": "Escolha a loja e o modo. Em \"Minha tier list\" você monta a sua a partir da do portal.",
+  "tier_sub": "Escolha a loja e o modo. Em \"Minha tier list\" você monta a sua com todas as classes, a partir da do portal.",
   "ultras_sub": "Composições de 4 classes usadas pela comunidade, com a função de cada um e o que fazer na luta.",
   "items_h": "Itens de dano e consumíveis",
   "items_sub": "Boosts contra o tipo do monstro fazem mais diferença em ultras do que trocar de classe.",
@@ -288,9 +288,9 @@
   "tl_portal": "Do portal",
   "tl_mine": "Minha tier list",
   "tl_none": "Sem tier",
-  "tl_none_empty": "Todas as classes desta loja já estão num tier.",
+  "tl_none_empty": "Todas as classes já estão num tier.",
   "tl_drop": "Arraste uma classe para cá.",
-  "tl_hint": "Arraste as classes entre os tiers, ou toque numa classe e depois no tier. Ela fica salva neste navegador, uma por loja e modo.",
+  "tl_hint": "Aqui entram todas as classes, de todas as lojas. Arraste entre os tiers, ou toque numa classe e depois no tier. Use a busca para achar uma classe. Fica salva neste navegador, uma por modo.",
   "tl_from_portal": "Começando pela do portal",
   "tl_move": "Mover {c} para:",
   "tl_card": "Ver ficha",
@@ -299,7 +299,9 @@
   "tl_zero": "Começar do zero",
   "tl_copy": "Copiar como texto",
   "tl_copied": "Tier list copiada",
-  "tl_reset_done": "Tier list voltou para a do portal"
+  "tl_reset_done": "Tier list voltou para a do portal",
+  "tl_q": "Buscar classe pelo nome…",
+  "tl_nohit": "Nenhuma classe com esse nome aqui."
  },
  "en": {
   "title": "Chronicles of Battleon",
@@ -370,7 +372,7 @@
   "tab_ultras": "Ultra teams",
   "tab_all": "All classes",
   "tab_enh": "Enhancements",
-  "tier_sub": "Pick a store and a mode. In \"My tier list\" you build your own starting from the portal's.",
+  "tier_sub": "Pick a store and a mode. In \"My tier list\" you build your own with every class, starting from the portal's.",
   "ultras_sub": "Four-class lineups used by the community, with each role and what to do in the fight.",
   "items_h": "Damage items and consumables",
   "items_sub": "Boosts against the monster's type matter more in ultras than switching classes.",
@@ -590,9 +592,9 @@
   "tl_portal": "Portal's",
   "tl_mine": "My tier list",
   "tl_none": "Unranked",
-  "tl_none_empty": "Every class in this store is already in a tier.",
+  "tl_none_empty": "Every class is already in a tier.",
   "tl_drop": "Drag a class here.",
-  "tl_hint": "Drag classes between tiers, or tap a class and then a tier. It's saved in this browser, one per store and mode.",
+  "tl_hint": "Every class from every store is here. Drag between tiers, or tap a class and then a tier. Use the search to find a class. It's saved in this browser, one per mode.",
   "tl_from_portal": "Starting from the portal's",
   "tl_move": "Move {c} to:",
   "tl_card": "Open card",
@@ -601,6 +603,8 @@
   "tl_zero": "Start from scratch",
   "tl_copy": "Copy as text",
   "tl_copied": "Tier list copied",
-  "tl_reset_done": "Tier list is back to the portal's"
+  "tl_reset_done": "Tier list is back to the portal's",
+  "tl_q": "Search a class by name…",
+  "tl_nohit": "No class with that name here."
  }
 }
