@@ -8,3 +8,18 @@
 .tc:hover{background:var(--glow-soft)}
 .tc span{font-size:12px;font-weight:600;line-height:1.2}
 
+/* minha tier list */
+#tierTools:empty{display:none}
+.tlBar{padding:12px 14px;margin-bottom:12px;display:flex;flex-wrap:wrap;gap:10px 16px;align-items:center;justify-content:space-between;position:sticky;top:76px;z-index:5}
+.tlHint{margin:0;font-size:13px;color:var(--muted);max-width:70ch}
+.tlMove{display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px}
+.tlMove b{font-weight:600}
+.tlBtns{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.tlTo{font:700 14px var(--body);min-width:40px;padding:6px 10px;border-radius:var(--r-sm);border:0;color:#fff;cursor:pointer}
+.tlTo.tS{background:var(--tS)}.tlTo.tA{background:var(--tA)}.tlTo.tB{background:var(--tB)}.tlTo.tC{background:var(--tC)}.tlTo.tN{background:var(--line);color:var(--ink);font-weight:600}
+.tlActs{display:flex;flex-wrap:wrap;gap:6px}
+.tc[draggable="true"]{cursor:grab;background:none;border:1px solid transparent;color:inherit;font:inherit}
+.tc.sel{border-color:var(--glow);background:var(--glow-soft);box-shadow:var(--halo)}
+.tier.over{border-color:var(--glow);box-shadow:var(--halo)}
+.tier.none .tl small{font:700 12px var(--body);text-align:center;line-height:1.1;padding:4px}
+@media (max-width:899px){.tlBar{top:64px}}
