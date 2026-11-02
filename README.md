@@ -26,15 +26,19 @@ src/                  (TypeScript; tipos dos dados e do estado em types.ts)
     index.ts          junta os JSON e monta a lista final de classes
   lib/util.ts         funções pequenas (escape de HTML, busca sem acento, brasão da classe)
   components/shared.ts  pedaços de interface reutilizados
-  views/              uma por aba: home, tiers, classes, comparar, ultras, montador, enhancements, hardfarm, diárias, itens novos (releases.js)
-  features/           novidades, alertas e notificações, avisos na tela, busca global, cor dos olhos (eye.js)
+  views/              uma por aba: home, tiers, classes, comparar, ultras, montador, enhancements, hardfarm, diárias, itens novos (releases.ts)
+  features/           novidades, alertas e notificações, avisos na tela, busca global, cor dos olhos (eye.ts)
   styles/             CSS dividido por área; main.css define a ordem (a ordem importa)
 tools/build.mjs       build com esbuild
 ```
 
+## App instalável e offline
+
+`public/` tem o `manifest.webmanifest` e os ícones; o build copia tudo para `dist/` e gera `dist/sw.js` a partir de `tools/sw.template.js`, com a versão tirada do hash do build. Servido por http(s) (GitHub Pages, `npm run dev`), o navegador oferece "Instalar app" e o portal abre sem internet com a última versão vista. Abrindo `dist/index.html` direto do disco, o service worker não liga (limite do navegador), mas o resto funciona.
+
 ## Navegação e tema
 
-- **5 destinos** (config.js, `SECS`/`SUBS`/`SEC`): Hoje, Classes (tier list, todas, comparar, enhancements), Ultras (agenda e times, montador), Farm (diárias, HardFarm) e Novidades (itens novos, notícias de classes). No computador as abas aparecem embaixo do destino aberto; no celular, numa fileira no topo. Cada destino lembra a última aba usada.
+- **5 destinos** (config.ts, `SECS`/`SUBS`/`SEC`): Hoje, Classes (tier list, todas, comparar, enhancements), Ultras (agenda e times, montador), Farm (diárias, HardFarm) e Novidades (itens novos, notícias de classes). No computador as abas aparecem embaixo do destino aberto; no celular, numa fileira no topo. Cada destino lembra a última aba usada.
 - **Busca única** no topo: acha classes, itens novos, diárias e cards de HardFarm.
 - **Tema Hollowborn** (styles/tokens.css): fundo violeta escuro, texto cor de osso e um brilho que segue a "cor dos olhos" escolhida no botão de olho (Espectral, Vazio, Sangue, Brasa, Osso). Todos os tons que brilham saem de `--eye`.
 

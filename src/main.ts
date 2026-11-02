@@ -36,3 +36,6 @@ window.addEventListener("hashchange",()=>{const v=location.hash.slice(1);if(v&&v
 setTimeout(()=>checkLive(true),600);
 setInterval(()=>{checkLive(false);renderAgenda()},60000);
 document.addEventListener("visibilitychange",()=>{if(!document.hidden){checkLive(false);renderAgenda()}});
+
+/* app instalável: o service worker só funciona em http(s), não abrindo o arquivo direto do disco */
+if("serviceWorker" in navigator&&location.protocol.startsWith("http"))window.addEventListener("load",()=>{navigator.serviceWorker.register("sw.js").catch(()=>{})});
