@@ -8,9 +8,9 @@ import {show} from "./nav.js";
 
 /* Diárias: lista do dia com caixas de marcar. O que está marcado vale só para o "dia do jogo":
    quando a hora de virada passa, as marcações voltam do zero. */
-const GROUPS=["start","mid","end","hf","boss","season","old"];
+const GROUPS=["start","mid","end","hf","boss","rep","season","old"];
 /* grupos que entram na contagem do dia (sazonais e antigas ficam de fora) */
-const counted=x=>x.g!=="old"&&x.g!=="season";
+const counted=x=>x.g!=="old"&&x.g!=="season"&&x.g!=="rep";
 const pad=n=>String(n).padStart(2,"0");
 const isoLocal=d=>`${d.getFullYear()}-${pad(d.getMonth()+1)}-${pad(d.getDate())}`;
 const lg=()=>st.lang==="en"?"en":"pt";
@@ -42,13 +42,13 @@ export function renderDailies(){
       <button class="linkBtn" data-dclear>${L("daily_clear")}</button>
       ${h.size?`<button class="linkBtn" data-dshow>${st.dsh?L("daily_hide_hidden"):L("daily_show_hidden",{n:h.size})}</button>`:""}</div>
     <p class="dHint">${L("daily_hour_tip")}</p>`;
-  const f=st.df,groups=GROUPS.filter(g=>f==="all"?g!=="old"&&g!=="season":f===g);
+  const f=st.df,groups=GROUPS.filter(g=>f==="all"?g!=="old"&&g!=="season"&&g!=="rep":f===g);
   const jn=`<code class="jn" data-j="yulgar" title="${esc(L("farm_copied"))}">/join yulgar</code>`;
-  let html=["boss","old","season","hf"].includes(f)?"":`<p class="dBoard">${L("daily_board")} ${jn}</p>`;
+  let html=["boss","old","season","hf","rep"].includes(f)?"":`<p class="dBoard">${L("daily_board")} ${jn}</p>`;
   for(const g of groups){
     const all=DAILIES.filter(x=>x.g===g),items=all.filter(x=>st.dsh||!h.has(x.id));
     const nDone=all.filter(x=>!h.has(x.id)&&d.done.includes(x.id)).length,nTot=all.filter(x=>!h.has(x.id)).length;
-    html+=`<section class="dGrp"><h3>${L("daily_g_"+g)}<small>${nDone}/${nTot}</small></h3>${["hf","boss","season","old"].includes(g)?`<p class="dNote">${L("daily_"+g+"_note")}</p>`:""}
+    html+=`<section class="dGrp"><h3>${L("daily_g_"+g)}<small>${nDone}/${nTot}</small></h3>${["hf","boss","rep","season","old"].includes(g)?`<p class="dNote">${L("daily_"+g+"_note")}</p>`:""}
       <div class="dGrid">${items.map(x=>item(x,d,h)).join("")||`<p class="dNote">${L("daily_empty")}</p>`}</div></section>`;
   }
   document.getElementById("dList").innerHTML=html;

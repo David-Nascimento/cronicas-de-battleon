@@ -248,12 +248,12 @@
       "en": "Completed \"Drive Back the Invaders\"; level 50; 1 Dark Ice"
     },
     "rw": {
-      "pt": "500 gold, 500 XP e 12 Glacera Ice Token. Legends têm a versão LEGEND, com 18 tokens",
-      "en": "500 gold, 500 XP and 12 Glacera Ice Tokens. Legends get the LEGEND version, with 18 tokens"
+      "pt": "500 gold, 500 XP e Glacera Ice Tokens (12 no quadro). Legends têm a versão LEGEND, com mais tokens; só uma das duas por dia",
+      "en": "500 gold, 500 XP and Glacera Ice Tokens (12 on the board). Legends get the LEGEND version with more tokens; only one of the two per day"
     },
     "for": {
-      "pt": "Classe Cryomancer",
-      "en": "Cryomancer class"
+      "pt": "Classe Cryomancer (Ice Token, segundo o AQWHub)",
+      "en": "Cryomancer class (Ice Token, per AQWHub)"
     },
     "mem": "l",
     "src": "https://aqwwiki.wikidot.com/daily-quest-board-s-quests",
@@ -280,8 +280,8 @@
       "en": "500 gold, 500 XP and 12 Shurpu Blaze Tokens. Members get the MEMBER version, with 600 gold, 600 XP and 18 tokens"
     },
     "for": {
-      "pt": "Classe Pyromancer",
-      "en": "Pyromancer class"
+      "pt": "Classe Pyromancer (Blaze Token, segundo o AQWHub)",
+      "en": "Pyromancer class (Blaze Token, per AQWHub)"
     },
     "mem": "m",
     "src": "https://aqwwiki.wikidot.com/daily-quest-board-s-quests",
@@ -548,57 +548,70 @@
     "g": "hf",
     "n": "ShadowScythe General",
     "req": {
-      "pt": "17 dias com member, 50 dias sem member.",
-      "en": "17 days with membership, 50 days without."
+      "pt": "Nível 50; 1 Broken Blade (Citadel Crusader, Lightguard Caster, Lightguard Paladin ou Sigrid Sunshield). Quest \"ShadowScythe Class Daily\" (2 Shadow Shield) e, para Legends, \"ShadowScythe Quest Legend\" (4 Shadow Shield). Segundo a AQWG, 17 dias com member e 50 sem.",
+      "en": "Level 50; 1 Broken Blade (Citadel Crusader, Lightguard Caster, Lightguard Paladin or Sigrid Sunshield). Quest \"ShadowScythe Class Daily\" (2 Shadow Shield) and, for Legends, \"ShadowScythe Quest Legend\" (4 Shadow Shield). Per AQWG, 17 days with membership and 50 without."
     },
     "rw": {
       "pt": "Classe ShadowScythe General",
       "en": "ShadowScythe General class"
     },
     "hf": "ShadowScythe General",
-    "src": "https://sites.google.com/view/aqwg-net/farming-list",
-    "sn": "AQWG",
+    "src": "https://aqwwiki.wikidot.com/gravelyn-s-quests",
+    "sn": "AQW Wiki: Gravelyn's Quests",
     "j": [
-      "shadowfall"
-    ]
+      "shadowfall",
+      "lightguardwar"
+    ],
+    "who": {
+      "pt": "Gravelyn, em Shadowfall (a luta é em /lightguardwar)",
+      "en": "Gravelyn, in Shadowfall (the fight is in /lightguardwar)"
+    }
   },
   {
     "id": "madweapon",
     "g": "hf",
     "n": "Mad Weaponsmith",
     "req": {
-      "pt": "30 dias com member, 90 sem member. Pede 90 C-Armour Tokens.",
-      "en": "30 days with membership, 90 without. Needs 90 C-Armour Tokens."
+      "pt": "Ter concluído \"The Confrontation\". Quests \"Nightmare Fire\" (1 C-Armor Token) e, para Legends, \"Naturally Unlucky\" (2): Nightmare Fire e Unlucky Horseshoe caem de Lucid Nightmare e Nightmare. São 90 C-Armor Tokens; a AQWG fala em 30 dias com member e 90 sem.",
+      "en": "Completed \"The Confrontation\". Quests \"Nightmare Fire\" (1 C-Armor Token) and, for Legends, \"Naturally Unlucky\" (2): Nightmare Fire and Unlucky Horseshoe drop from Lucid Nightmare and Nightmare. You need 90 C-Armor Tokens; AQWG says 30 days with membership and 90 without."
     },
     "rw": {
       "pt": "Item Mad Weaponsmith",
       "en": "Mad Weaponsmith item"
     },
     "hf": "Mad Weaponsmith e Cysero's SUPER Hammer",
-    "src": "https://sites.google.com/view/aqwg-net/farming-list",
-    "sn": "AQWG",
+    "src": "https://aqwwiki.wikidot.com/cysero-s-quests",
+    "sn": "AQW Wiki: Cysero's Quests",
     "j": [
       "deadmoor"
-    ]
+    ],
+    "who": {
+      "pt": "Cysero, em Deadmoor",
+      "en": "Cysero, in Deadmoor"
+    }
   },
   {
     "id": "hammer",
     "g": "hf",
     "n": "Cysero's SUPER Hammer",
     "req": {
-      "pt": "30 dias com member, 90 sem member. Pede 90 C-Hammer Tokens e exige a Mad Weaponsmith antes.",
-      "en": "30 days with membership, 90 without. Needs 90 C-Hammer Tokens and the Mad Weaponsmith first."
+      "pt": "Ter concluído \"The Confrontation\" e ter a Mad Weaponsmith. Quests \"Links To The Past\" (1 C-Hammer Token) e, para Legends, \"Spooky Lint\" (2): os itens caem de Geist e Hart Geist. São 90 C-Hammer Tokens.",
+      "en": "Completed \"The Confrontation\" and own the Mad Weaponsmith. Quests \"Links To The Past\" (1 C-Hammer Token) and, for Legends, \"Spooky Lint\" (2): the items drop from Geist and Hart Geist. You need 90 C-Hammer Tokens."
     },
     "rw": {
       "pt": "Item Cysero's SUPER Hammer",
       "en": "Cysero's SUPER Hammer item"
     },
     "hf": "Mad Weaponsmith e Cysero's SUPER Hammer",
-    "src": "https://sites.google.com/view/aqwg-net/farming-list",
-    "sn": "AQWG",
+    "src": "https://aqwwiki.wikidot.com/cysero-s-quests",
+    "sn": "AQW Wiki: Cysero's Quests",
     "j": [
       "deadmoor"
-    ]
+    ],
+    "who": {
+      "pt": "Cysero, em Deadmoor",
+      "en": "Cysero, in Deadmoor"
+    }
   },
   {
     "id": "golden",
@@ -643,39 +656,46 @@
     ]
   },
   {
-    "id": "diamonds",
+    "id": "cragbattle",
     "g": "hf",
-    "n": "Daily Diamonds",
+    "n": "Crag & Bamboozle Battle",
     "who": {
-      "pt": "Crag",
-      "en": "Crag"
+      "pt": "Pet Crag & Bamboozle (só para quem tem o pet)",
+      "en": "Crag & Bamboozle pet (owners only)"
     },
-    "req": null,
+    "req": {
+      "pt": "10 Gem of Nulgath e 1 Dark Makai Sigil (Dark Makai)",
+      "en": "10 Gem of Nulgath and 1 Dark Makai Sigil (Dark Makai)"
+    },
     "rw": {
-      "pt": "30 Diamond of Nulgath por dia, com chance de Blood Gem",
-      "en": "30 Diamond of Nulgath a day, with a chance at a Blood Gem"
+      "pt": "50.000 gold, 13.000 XP e o Fighter Crag & Bamboozle",
+      "en": "50,000 gold, 13,000 XP and Fighter Crag & Bamboozle"
     },
-    "hf": "Quests diárias que alimentam outros farms",
-    "src": "https://sites.google.com/view/aqwg-net/farming-list",
-    "sn": "AQWG"
+    "mem": "l",
+    "src": "https://aqwwiki.wikidot.com/crag-s-quests",
+    "sn": "AQW Wiki: Crag's Quests"
   },
   {
     "id": "evil1",
     "g": "hf",
     "n": "Slithering Shadows",
     "who": {
-      "pt": "Em /bludrut4",
-      "en": "In /bludrut4"
+      "pt": "Gravelyn, em Shadowfall; os itens saem do 4º andar de Bludrut Keep",
+      "en": "Gravelyn, in Shadowfall; the items are on Bludrut Keep's 4th floor"
     },
-    "req": null,
+    "req": {
+      "pt": "Ser Evil; 5 Shadow Scales (Shadow Serpent)",
+      "en": "Be Evil; 5 Shadow Scales (Shadow Serpent)"
+    },
     "rw": {
-      "pt": "Reputação Evil",
-      "en": "Evil reputation"
+      "pt": "500 gold, 300 XP e 6.000 de reputação Evil",
+      "en": "500 gold, 300 XP and 6,000 Evil rep"
     },
     "hf": "Reputação Evil",
-    "src": "https://sites.google.com/view/aqwg-net/reputation/evil-rep",
-    "sn": "AQWG: Evil",
+    "src": "https://aqwwiki.wikidot.com/gravelyn-s-quests",
+    "sn": "AQW Wiki: Gravelyn's Quests",
     "j": [
+      "shadowfall",
       "bludrut4"
     ]
   },
@@ -684,21 +704,22 @@
     "g": "hf",
     "n": "Sea No Evil",
     "who": {
-      "pt": "Em /voltaire",
-      "en": "In /voltaire"
+      "pt": "Gravelyn, em Shadowfall",
+      "en": "Gravelyn, in Shadowfall"
     },
     "req": {
-      "pt": "Rank 4 ou mais de Evil",
-      "en": "Evil rank 4 or higher"
+      "pt": "Ser Evil, Rank 4 de Evil; 5 Fish Heads (Fishbones)",
+      "en": "Be Evil, Evil rank 4; 5 Fish Heads (Fishbones)"
     },
     "rw": {
-      "pt": "Reputação Evil",
-      "en": "Evil reputation"
+      "pt": "500 gold, 300 XP e 4.000 de reputação Evil",
+      "en": "500 gold, 300 XP and 4,000 Evil rep"
     },
     "hf": "Reputação Evil",
-    "src": "https://sites.google.com/view/aqwg-net/reputation/evil-rep",
-    "sn": "AQWG: Evil",
+    "src": "https://aqwwiki.wikidot.com/gravelyn-s-quests",
+    "sn": "AQW Wiki: Gravelyn's Quests",
     "j": [
+      "shadowfall",
       "voltaire"
     ]
   },
@@ -707,21 +728,22 @@
     "g": "hf",
     "n": "Inquisitor Inquiry",
     "who": {
-      "pt": "Em /citadel",
-      "en": "In /citadel"
+      "pt": "Gravelyn, em Shadowfall",
+      "en": "Gravelyn, in Shadowfall"
     },
     "req": {
-      "pt": "Só para não-members",
-      "en": "Non-members only"
+      "pt": "Ser Evil; 7 Inquisitor Contract (Inquisitor Captain ou Inquisitor Guard). A AQWG diz que só vale para não-members",
+      "en": "Be Evil; 7 Inquisitor Contract (Inquisitor Captain or Inquisitor Guard). AQWG says it's for non-members only"
     },
     "rw": {
-      "pt": "Reputação Evil",
-      "en": "Evil reputation"
+      "pt": "300 gold, 200 XP, 2.000 de reputação Evil e um item Golden Inquisitor à escolha",
+      "en": "300 gold, 200 XP, 2,000 Evil rep and a Golden Inquisitor item of your choice"
     },
     "hf": "Reputação Evil",
-    "src": "https://sites.google.com/view/aqwg-net/reputation/evil-rep",
-    "sn": "AQWG: Evil",
+    "src": "https://aqwwiki.wikidot.com/gravelyn-s-quests",
+    "sn": "AQW Wiki: Gravelyn's Quests",
     "j": [
+      "shadowfall",
       "citadel"
     ]
   },
@@ -773,17 +795,20 @@
     "g": "hf",
     "n": "Prevent the Return",
     "who": {
-      "pt": "Em /doomwood",
-      "en": "In /doomwood"
+      "pt": "Knave1, em Banished; os itens caem dos Doomwood Soldier e Ectomancer",
+      "en": "Knave1, in Banished; the items drop from Doomwood Soldiers and Ectomancers"
     },
-    "req": null,
+    "req": {
+      "pt": "Ter concluído a quest anterior; 15 Small, 10 Large e 1 Final Strength Drain",
+      "en": "Completed the previous quest; 15 Small, 10 Large and 1 Final Strength Drain"
+    },
     "rw": {
-      "pt": "Reputação Good",
-      "en": "Good reputation"
+      "pt": "2.500 gold, 2.500 XP e 2.500 de reputação Good",
+      "en": "2,500 gold, 2,500 XP and 2,500 Good rep"
     },
     "hf": "Reputação Good",
-    "src": "https://sites.google.com/view/aqwg-net/reputation/good-rep",
-    "sn": "AQWG: Good",
+    "src": "https://aqwwiki.wikidot.com/knave1-s-quests",
+    "sn": "AQW Wiki: Knave1's Quests",
     "j": [
       "doomwood"
     ]
@@ -815,72 +840,101 @@
     "id": "ezrajal",
     "g": "boss",
     "n": "UltraEzrajal",
-    "req": null,
+    "req": {
+      "pt": "Ter concluído \"The Engineer\"; derrotar o Ultra Ezrajal",
+      "en": "Completed \"The Engineer\"; defeat Ultra Ezrajal"
+    },
     "rw": {
-      "pt": "Recompensa diária: Insignia",
-      "en": "Daily reward: Insignia"
+      "pt": "250.000 gold, 500.000 XP e 1 Ezrajal Insignia",
+      "en": "250,000 gold, 500,000 XP and 1 Ezrajal Insignia"
     },
     "for": {
       "pt": "Exalted Apotheosis (uma Insignia por dia)",
       "en": "Exalted Apotheosis (one Insignia a day)"
     },
-    "src": "https://www.aqwhub.com/other-guides/weeklies-and-dailies/",
-    "sn": "AQWHub",
+    "src": "https://aqwwiki.wikidot.com/sir-cole-s-quests",
+    "sn": "AQW Wiki: Sir Cole's Quests",
     "hf": "Exalted Apotheosis",
     "j": [
       "ultraezrajal"
-    ]
+    ],
+    "who": {
+      "pt": "Inn at the Edge of Time",
+      "en": "Inn at the Edge of Time"
+    }
   },
   {
     "id": "warden",
     "g": "boss",
     "n": "UltraWarden",
-    "req": null,
+    "req": {
+      "pt": "Ter concluído a do Ultra Ezrajal; derrotar o Ultra Warden",
+      "en": "Completed the Ultra Ezrajal quest; defeat Ultra Warden"
+    },
     "rw": {
-      "pt": "Recompensa diária: Insignia",
-      "en": "Daily reward: Insignia"
+      "pt": "250.000 gold, 500.000 XP e 1 Warden Insignia",
+      "en": "250,000 gold, 500,000 XP and 1 Warden Insignia"
     },
     "for": {
       "pt": "Exalted Apotheosis (uma Insignia por dia)",
       "en": "Exalted Apotheosis (one Insignia a day)"
     },
-    "src": "https://www.aqwhub.com/other-guides/weeklies-and-dailies/",
-    "sn": "AQWHub",
+    "src": "https://aqwwiki.wikidot.com/sir-cole-s-quests",
+    "sn": "AQW Wiki: Sir Cole's Quests",
     "hf": "Exalted Apotheosis",
     "j": [
       "ultrawarden"
-    ]
+    ],
+    "who": {
+      "pt": "Inn at the Edge of Time",
+      "en": "Inn at the Edge of Time"
+    }
   },
   {
     "id": "engineer",
     "g": "boss",
     "n": "UltraEngineer",
-    "req": null,
-    "rw": {
-      "pt": "Recompensa diária: Insignia",
-      "en": "Daily reward: Insignia"
+    "req": {
+      "pt": "Ter concluído a do Ultra Warden; derrotar o Ultra Engineer",
+      "en": "Completed the Ultra Warden quest; defeat Ultra Engineer"
     },
-    "src": "https://www.aqwhub.com/other-guides/weeklies-and-dailies/",
-    "sn": "AQWHub",
+    "rw": {
+      "pt": "250.000 gold, 500.000 XP e 1 Engineer Insignia",
+      "en": "250,000 gold, 500,000 XP and 1 Engineer Insignia"
+    },
+    "src": "https://aqwwiki.wikidot.com/sir-cole-s-quests",
+    "sn": "AQW Wiki: Sir Cole's Quests",
     "hf": "Exalted Apotheosis",
     "j": [
       "ultraengineer"
-    ]
+    ],
+    "who": {
+      "pt": "Inn at the Edge of Time",
+      "en": "Inn at the Edge of Time"
+    }
   },
   {
     "id": "astral",
     "g": "boss",
-    "n": "AstralShrine",
-    "req": null,
-    "rw": {
-      "pt": "Recompensa diária: Star of the Empyrean",
-      "en": "Daily reward: Star of the Empyrean"
+    "n": "Asterism's Toll (AstralShrine)",
+    "req": {
+      "pt": "Ter concluído \"Hoshiyoru\"; nível 95; 1 Astral's Supernova (Astral Empyrean)",
+      "en": "Completed \"Hoshiyoru\"; level 95; 1 Astral's Supernova (Astral Empyrean)"
     },
-    "src": "https://www.aqwhub.com/other-guides/weeklies-and-dailies/",
-    "sn": "AQWHub",
+    "rw": {
+      "pt": "350.000 gold, 1.000.000 XP e 1 Star of the Empyrean",
+      "en": "350,000 gold, 1,000,000 XP and 1 Star of the Empyrean"
+    },
+    "src": "https://aqwwiki.wikidot.com/empress-ai-no-miko-s-quests",
+    "sn": "AQW Wiki: Empress Ai No Miko's Quests",
     "j": [
       "astralshrine"
-    ]
+    ],
+    "ne": "Asterism's Toll (AstralShrine)",
+    "who": {
+      "pt": "Empress Ai No Miko, em Astral Shrine",
+      "en": "Empress Ai No Miko, in Astral Shrine"
+    }
   },
   {
     "id": "iona",
@@ -916,14 +970,22 @@
   {
     "id": "azalith",
     "g": "boss",
-    "n": "Apex Azalith",
-    "req": null,
-    "rw": {
-      "pt": "Recompensa diária: Divinas Voluntas",
-      "en": "Daily reward: Divinas Voluntas"
+    "n": "Unshackled Azalith (Apex Azalith)",
+    "req": {
+      "pt": "Nível 80; 1 Azalith's Infernal Horn (Azalith, Morningstar)",
+      "en": "Level 80; 1 Azalith's Infernal Horn (Azalith, Morningstar)"
     },
-    "src": "https://www.aqwhub.com/other-guides/weeklies-and-dailies/",
-    "sn": "AQWHub"
+    "rw": {
+      "pt": "25.000 gold, 100.000 XP e 5 Divina Voluntas",
+      "en": "25,000 gold, 100,000 XP and 5 Divina Voluntas"
+    },
+    "src": "https://aqwwiki.wikidot.com/aranx-s-quests",
+    "sn": "AQW Wiki: Aranx's Quests",
+    "ne": "Unshackled Azalith (Apex Azalith)",
+    "who": {
+      "pt": "Aranx, em Apex Azalith",
+      "en": "Aranx, in Apex Azalith"
+    }
   },
   {
     "id": "kolr",
@@ -955,52 +1017,76 @@
   {
     "id": "kasuko",
     "g": "season",
-    "n": "Kasuko",
-    "req": null,
-    "rw": {
-      "pt": "Recompensa diária: Volcanic Essence",
-      "en": "Daily reward: Volcanic Essence"
+    "n": "The Molten Heart (Kasuko)",
+    "req": {
+      "pt": "1 Molten Heart (Kasuko)",
+      "en": "1 Molten Heart (Kasuko)"
     },
-    "src": "https://www.aqwhub.com/other-guides/weeklies-and-dailies/",
-    "sn": "AQWHub",
+    "rw": {
+      "pt": "250.000 gold, 500.000 XP e 1 Volcanic Essence",
+      "en": "250,000 gold, 500,000 XP and 1 Volcanic Essence"
+    },
+    "src": "https://aqwwiki.wikidot.com/anina-s-quests",
+    "sn": "AQW Wiki: Anina's Quests",
     "j": [
       "lavarockshore"
-    ]
+    ],
+    "ne": "The Molten Heart (Kasuko)",
+    "who": {
+      "pt": "Anina, em Lavarock Bay ou Lavarock Shore",
+      "en": "Anina, in Lavarock Bay or Lavarock Shore"
+    }
   },
   {
     "id": "kala",
     "g": "season",
-    "n": "UltraKala",
-    "req": null,
-    "rw": {
-      "pt": "Recompensa diária: Insignia (ultra de agosto)",
-      "en": "Daily reward: Insignia (August ultra)"
+    "n": "Batara Kala (UltraKala)",
+    "req": {
+      "pt": "Ter concluído \"Kala-mity time\"; derrotar a Batara Kala",
+      "en": "Completed \"Kala-mity time\"; defeat Batara Kala"
     },
-    "src": "https://www.aqwhub.com/other-guides/weeklies-and-dailies/",
-    "sn": "AQWHub",
+    "rw": {
+      "pt": "200.000 gold, 400.000 XP e 1 Kala Insignia",
+      "en": "200,000 gold, 400,000 XP and 1 Kala Insignia"
+    },
+    "src": "https://aqwwiki.wikidot.com/ki-sama-s-quests",
+    "sn": "AQW Wiki: Ki Sama's Quests",
     "j": [
       "ultrakala"
-    ]
+    ],
+    "ne": "Batara Kala (UltraKala)",
+    "who": {
+      "pt": "Ki Sama, em Ultra Kala",
+      "en": "Ki Sama, in Ultra Kala"
+    }
   },
   {
     "id": "iara",
     "g": "season",
-    "n": "UltraIara",
-    "req": null,
+    "n": "Ultra Iara",
+    "req": {
+      "pt": "Ter concluído \"Test of Will\"; derrotar a Ultra Iara",
+      "en": "Completed \"Test of Will\"; defeat Ultra Iara"
+    },
     "rw": {
-      "pt": "Recompensa diária: Insignia (ultra de setembro)",
-      "en": "Daily reward: Insignia (September ultra)"
+      "pt": "100.000 gold, 300.000 XP e 1 Iara Insignia",
+      "en": "100,000 gold, 300,000 XP and 1 Iara Insignia"
     },
     "hf": "Armas de merge da Iara",
-    "src": "https://www.aqwhub.com/other-guides/weeklies-and-dailies/",
-    "sn": "AQWHub",
+    "src": "https://aqwwiki.wikidot.com/batista-s-quests",
+    "sn": "AQW Wiki: Batista's Quests",
     "for": {
       "pt": "Armas de merge da Iara (5 Iara Insignias por arma)",
       "en": "Iara merge weapons (5 Iara Insignias per weapon)"
     },
     "j": [
       "ultraiara"
-    ]
+    ],
+    "ne": "Ultra Iara",
+    "who": {
+      "pt": "Batista, em Ultra Iara",
+      "en": "Batista, in Ultra Iara"
+    }
   },
   {
     "id": "hay",
@@ -1133,5 +1219,1114 @@
     "j": [
       "dwarfhold"
     ]
+  },
+  {
+    "id": "schnozz",
+    "g": "start",
+    "n": "Schnozzberry Delight",
+    "who": {
+      "pt": "Cysero, em Battleon",
+      "en": "Cysero, in Battleon"
+    },
+    "req": {
+      "pt": "10 Schnozzberry (Marsh Tree)",
+      "en": "10 Schnozzberry (Marsh Tree)"
+    },
+    "rw": {
+      "pt": "150 gold e 150 XP",
+      "en": "150 gold and 150 XP"
+    },
+    "src": "https://aqwwiki.wikidot.com/cysero-s-quests",
+    "sn": "AQW Wiki: Cysero's Quests",
+    "j": [
+      "battleon"
+    ]
+  },
+  {
+    "id": "yulgarhero",
+    "g": "mid",
+    "n": "Yulgar's Daily Hero Challenge",
+    "who": {
+      "pt": "Yulgar, em Yulgar's Inn",
+      "en": "Yulgar, in Yulgar's Inn"
+    },
+    "req": {
+      "pt": "Nível 50; 10 Boar Meat (Horc Boar Scout), 15 Doomwood Tree sap (Doomwood Treeant), 1 Sandsea Horc blade (Horc Sell-Sword), 3 Treeant board (Treeant) e 1 Gold Hoard (Trigoras)",
+      "en": "Level 50; 10 Boar Meat (Horc Boar Scout), 15 Doomwood Tree sap (Doomwood Treeant), 1 Sandsea Horc blade (Horc Sell-Sword), 3 Treeant board (Treeant) and 1 Gold Hoard (Trigoras)"
+    },
+    "rw": {
+      "pt": "5.000 gold e 5.000 XP",
+      "en": "5,000 gold and 5,000 XP"
+    },
+    "src": "https://aqwwiki.wikidot.com/yulgar-s-quests",
+    "sn": "AQW Wiki: Yulgar's Quests",
+    "j": [
+      "yulgar"
+    ]
+  },
+  {
+    "id": "artifact",
+    "g": "mid",
+    "n": "Artifact Class Daily",
+    "who": {
+      "pt": "Cysero, em Artixpointe",
+      "en": "Cysero, in Artixpointe"
+    },
+    "req": {
+      "pt": "1 Rare Artifact (Rotting Minion, Shadowhound ou Skeletal Minion). Legends têm a \"Artifact Hunter Quest Legend\", que dá 4",
+      "en": "1 Rare Artifact (Rotting Minion, Shadowhound or Skeletal Minion). Legends get \"Artifact Hunter Quest Legend\", which gives 4"
+    },
+    "rw": {
+      "pt": "100 gold, 100 XP e 2 Ancient Artifact",
+      "en": "100 gold, 100 XP and 2 Ancient Artifact"
+    },
+    "src": "https://aqwwiki.wikidot.com/cysero-s-quests",
+    "sn": "AQW Wiki: Cysero's Quests"
+  },
+  {
+    "id": "ichorus",
+    "g": "mid",
+    "n": "Hatch the Ichorus Egg",
+    "who": {
+      "pt": "DragonMaster StoneScythe, em Ecto Cave",
+      "en": "DragonMaster StoneScythe, in Ecto Cave"
+    },
+    "req": {
+      "pt": "50 Uncut Ichor Gem (Ichor Draconian)",
+      "en": "50 Uncut Ichor Gem (Ichor Draconian)"
+    },
+    "rw": {
+      "pt": "1 Pure Ichor Gem (sem gold nem XP)",
+      "en": "1 Pure Ichor Gem (no gold or XP)"
+    },
+    "src": "https://aqwwiki.wikidot.com/dragonmaster-stonescythe-s-quests",
+    "sn": "AQW Wiki: DragonMaster StoneScythe's Quests"
+  },
+  {
+    "id": "razor1",
+    "g": "mid",
+    "n": "Razorclaw Daily Challenge",
+    "who": {
+      "pt": "Galanoth, em Razorclaw",
+      "en": "Galanoth, in Razorclaw"
+    },
+    "req": {
+      "pt": "1 Razorsharp Claw (Razorclaw)",
+      "en": "1 Razorsharp Claw (Razorclaw)"
+    },
+    "rw": {
+      "pt": "5.000 gold, 5.000 XP e chance de 5 Gilded Claw ou 1 Gilded Fang",
+      "en": "5,000 gold, 5,000 XP and a chance at 5 Gilded Claw or 1 Gilded Fang"
+    },
+    "src": "https://aqwwiki.wikidot.com/galanoth-s-quests",
+    "sn": "AQW Wiki: Galanoth's Quests",
+    "j": [
+      "razorclaw"
+    ]
+  },
+  {
+    "id": "razor2",
+    "g": "mid",
+    "n": "Cryptbreaker Daily Challenge",
+    "who": {
+      "pt": "Galanoth, em Razorclaw",
+      "en": "Galanoth, in Razorclaw"
+    },
+    "req": {
+      "pt": "Nível 10; 1 Razorsharp Claw (Cryptbreaker)",
+      "en": "Level 10; 1 Razorsharp Claw (Cryptbreaker)"
+    },
+    "rw": {
+      "pt": "10.000 gold, 1.000 XP e chance de 5 Gilded Claw ou 1 Gilded Fang",
+      "en": "10,000 gold, 1,000 XP and a chance at 5 Gilded Claw or 1 Gilded Fang"
+    },
+    "src": "https://aqwwiki.wikidot.com/galanoth-s-quests",
+    "sn": "AQW Wiki: Galanoth's Quests",
+    "j": [
+      "razorclaw"
+    ]
+  },
+  {
+    "id": "razor3",
+    "g": "mid",
+    "n": "Defeat the Dragon Thief",
+    "who": {
+      "pt": "Galanoth, em Razorclaw",
+      "en": "Galanoth, in Razorclaw"
+    },
+    "req": {
+      "pt": "Nível 20; 1 Poisoned Claw (Razorclaws e Cryptbreaker)",
+      "en": "Level 20; 1 Poisoned Claw (Razorclaws and Cryptbreaker)"
+    },
+    "rw": {
+      "pt": "500 gold, 350 XP, 5 Gilded Claw e chance de Gilded Fang",
+      "en": "500 gold, 350 XP, 5 Gilded Claw and a chance at Gilded Fang"
+    },
+    "src": "https://aqwwiki.wikidot.com/galanoth-s-quests",
+    "sn": "AQW Wiki: Galanoth's Quests",
+    "j": [
+      "razorclaw"
+    ]
+  },
+  {
+    "id": "desolich",
+    "g": "mid",
+    "n": "Slay the Avatar of Desolich",
+    "who": {
+      "pt": "Galanoth, em Dragon Challenge",
+      "en": "Galanoth, in Dragon Challenge"
+    },
+    "req": {
+      "pt": "Ter concluído a quest anterior; derrotar o Avatar of Desolich (nível 60)",
+      "en": "Completed the previous quest; defeat Avatar of Desolich (level 60)"
+    },
+    "rw": {
+      "pt": "1.500 gold, 1.500 XP e 20 DragonSlayer Trophy",
+      "en": "1,500 gold, 1,500 XP and 20 DragonSlayer Trophy"
+    },
+    "src": "https://aqwwiki.wikidot.com/galanoth-s-quests",
+    "sn": "AQW Wiki: Galanoth's Quests"
+  },
+  {
+    "id": "desoloth",
+    "g": "mid",
+    "n": "Slay Desoloth",
+    "who": {
+      "pt": "Galanoth, em Dragon Challenge",
+      "en": "Galanoth, in Dragon Challenge"
+    },
+    "req": {
+      "pt": "Ter concluído a quest anterior; derrotar Desoloth the Final (nível 60)",
+      "en": "Completed the previous quest; defeat Desoloth the Final (level 60)"
+    },
+    "rw": {
+      "pt": "1.500 gold, 1.500 XP e 20 DragonSlayer Trophy",
+      "en": "1,500 gold, 1,500 XP and 20 DragonSlayer Trophy"
+    },
+    "src": "https://aqwwiki.wikidot.com/galanoth-s-quests",
+    "sn": "AQW Wiki: Galanoth's Quests"
+  },
+  {
+    "id": "fiends",
+    "g": "end",
+    "n": "Controlling the Fiends",
+    "who": {
+      "pt": "Memory of Nulgath, em Originul (também no Quadro de Quests Diárias)",
+      "en": "Memory of Nulgath, in Originul (also on the Daily Quest Board)"
+    },
+    "req": {
+      "pt": "Ter concluído \"Break their Muti-kneecaps\"; nível 80; 30 Essence of The Citadel (Bloodfiend e Dreadfiend) e 1 Champion's Essence (Fiend Champion)",
+      "en": "Completed \"Break their Muti-kneecaps\"; level 80; 30 Essence of The Citadel (Bloodfiend and Dreadfiend) and 1 Champion's Essence (Fiend Champion)"
+    },
+    "rw": {
+      "pt": "6.000 gold, 6.000 XP e 1 Fiend Emblem",
+      "en": "6,000 gold, 6,000 XP and 1 Fiend Emblem"
+    },
+    "src": "https://aqwwiki.wikidot.com/memory-of-nulgath-s-quests",
+    "sn": "AQW Wiki: Memory of Nulgath's Quests",
+    "j": [
+      "originul"
+    ]
+  },
+  {
+    "id": "moya",
+    "g": "hf",
+    "n": "Become the Desterrat Moya",
+    "who": {
+      "pt": "Knave1, em Banished",
+      "en": "Knave1, in Banished"
+    },
+    "req": {
+      "pt": "Ter concluído a quest anterior; 10 Moya Ichor (Desterrat Cruor) e 10 Moya Aether (Desterrat Crux)",
+      "en": "Completed the previous quest; 10 Moya Ichor (Desterrat Cruor) and 10 Moya Aether (Desterrat Crux)"
+    },
+    "rw": {
+      "pt": "2.500 gold, 2.500 XP e 2.500 de reputação Evil",
+      "en": "2,500 gold, 2,500 XP and 2,500 Evil rep"
+    },
+    "src": "https://aqwwiki.wikidot.com/knave1-s-quests",
+    "sn": "AQW Wiki: Knave1's Quests",
+    "for": {
+      "pt": "Reputação Evil",
+      "en": "Evil reputation"
+    }
+  },
+  {
+    "id": "tenacity",
+    "g": "hf",
+    "n": "Tenacity Challenge",
+    "who": {
+      "pt": "Pet Nulgath Challenge (só para quem tem o pet); objetivos em Deathpits e Underworld",
+      "en": "Nulgath Challenge pet (owners only); objectives in Deathpits and Underworld"
+    },
+    "req": {
+      "pt": "6 Dark Runes (Ghastly Darkblood) e 7 Blood Runes (Bloodfiend)",
+      "en": "6 Dark Runes (Ghastly Darkblood) and 7 Blood Runes (Bloodfiend)"
+    },
+    "rw": {
+      "pt": "3.000 gold, 3.000 XP e, à escolha, 40 Tainted Gem, 40 Dark Crystal Shard ou 10 Blood Gem of the Archfiend",
+      "en": "3,000 gold, 3,000 XP and your pick of 40 Tainted Gem, 40 Dark Crystal Shard or 10 Blood Gem of the Archfiend"
+    },
+    "src": "https://aqwwiki.wikidot.com/nulgath-challenge-pet-s-quests",
+    "sn": "AQW Wiki: Nulgath Challenge Pet's Quests",
+    "j": [
+      "underworld"
+    ],
+    "for": {
+      "pt": "Recursos de Nulgath",
+      "en": "Nulgath resources"
+    }
+  },
+  {
+    "id": "contender",
+    "g": "hf",
+    "n": "Contender Challenge",
+    "who": {
+      "pt": "Pet Nulgath Challenge (só para quem tem o pet e a Lesser Bloodbeacon Polearm)",
+      "en": "Nulgath Challenge pet (owners with the Lesser Bloodbeacon Polearm)"
+    },
+    "req": {
+      "pt": "1 Blood Titan Head (Blood Titan), 1 Desterrat Moya Tentacle (Desterrat Moya) e 1 Dragon Heart (Baby Trigoras ou Ssikari)",
+      "en": "1 Blood Titan Head (Blood Titan), 1 Desterrat Moya Tentacle (Desterrat Moya) and 1 Dragon Heart (Baby Trigoras or Ssikari)"
+    },
+    "rw": {
+      "pt": "2.500 gold, 2.500 XP e Diamonds of Nulgath, Unidentified 13 ou a Ultra Bloodbeacon Polearm +10",
+      "en": "2,500 gold, 2,500 XP and Diamonds of Nulgath, Unidentified 13 or the Ultra Bloodbeacon Polearm +10"
+    },
+    "src": "https://aqwwiki.wikidot.com/nulgath-challenge-pet-s-quests",
+    "sn": "AQW Wiki: Nulgath Challenge Pet's Quests",
+    "for": {
+      "pt": "Recursos de Nulgath",
+      "en": "Nulgath resources"
+    }
+  },
+  {
+    "id": "anina-blade12",
+    "g": "hf",
+    "n": "Forge the Blaze of Awe",
+    "who": {
+      "pt": "Anina, em Lavarock Bay ou Lavarock Shore",
+      "en": "Anina, in Lavarock Bay or Lavarock Shore"
+    },
+    "req": {
+      "pt": "Ter a Blade of Awe; 99 Scroll of Scorched Steel, 500 Akriloth's Scale e 50 Molten Core (Akriloth em /gravestrike, Molten Core em /battleundere) e 10 Volcanic Essence (Kalayo)",
+      "en": "Own Blade of Awe; 99 Scroll of Scorched Steel, 500 Akriloth's Scale and 50 Molten Core (Akriloth in /gravestrike, Molten Core in /battleundere) and 10 Volcanic Essence (Kalayo)"
+    },
+    "rw": {
+      "pt": "100.000 gold, 100.000 XP e a versão de fogo da Blade of Awe",
+      "en": "100,000 gold, 100,000 XP and the fire version of Blade of Awe"
+    },
+    "src": "https://aqwwiki.wikidot.com/anina-s-quests",
+    "sn": "AQW Wiki: Anina's Quests",
+    "j": [
+      "lavarockshore"
+    ]
+  },
+  {
+    "id": "anina-blinding25",
+    "g": "hf",
+    "n": "Forge the Blazing Light of Destiny",
+    "who": {
+      "pt": "Anina, em Lavarock Bay ou Lavarock Shore",
+      "en": "Anina, in Lavarock Bay or Lavarock Shore"
+    },
+    "req": {
+      "pt": "Ter a Blinding Light of Destiny; 99 Scroll of Scorched Steel, 1.000 Akriloth's Scale e 100 Molten Core (Akriloth em /gravestrike, Molten Core em /battleundere) e 10 Volcanic Essence (Kalayo)",
+      "en": "Own Blinding Light of Destiny; 99 Scroll of Scorched Steel, 1,000 Akriloth's Scale and 100 Molten Core (Akriloth in /gravestrike, Molten Core in /battleundere) and 10 Volcanic Essence (Kalayo)"
+    },
+    "rw": {
+      "pt": "100.000 gold, 100.000 XP e a versão de fogo da Blinding Light of Destiny",
+      "en": "100,000 gold, 100,000 XP and the fire version of Blinding Light of Destiny"
+    },
+    "src": "https://aqwwiki.wikidot.com/anina-s-quests",
+    "sn": "AQW Wiki: Anina's Quests",
+    "j": [
+      "lavarockshore"
+    ]
+  },
+  {
+    "id": "anina-necrotic22",
+    "g": "hf",
+    "n": "Forge the Burning Sword of Doom",
+    "who": {
+      "pt": "Anina, em Lavarock Bay ou Lavarock Shore",
+      "en": "Anina, in Lavarock Bay or Lavarock Shore"
+    },
+    "req": {
+      "pt": "Ter a Necrotic Sword of Doom; 99 Scroll of Scorched Steel, 1.500 Akriloth's Scale, 1 Flame Heart (Smoldur, /ashfallcamp) e 150 Molten Core (Akriloth em /gravestrike, Molten Core em /battleundere) e 10 Volcanic Essence (Kalayo)",
+      "en": "Own Necrotic Sword of Doom; 99 Scroll of Scorched Steel, 1,500 Akriloth's Scale, 1 Flame Heart (Smoldur, /ashfallcamp) and 150 Molten Core (Akriloth in /gravestrike, Molten Core in /battleundere) and 10 Volcanic Essence (Kalayo)"
+    },
+    "rw": {
+      "pt": "100.000 gold, 100.000 XP e a versão de fogo da Necrotic Sword of Doom",
+      "en": "100,000 gold, 100,000 XP and the fire version of Necrotic Sword of Doom"
+    },
+    "src": "https://aqwwiki.wikidot.com/anina-s-quests",
+    "sn": "AQW Wiki: Anina's Quests",
+    "j": [
+      "lavarockshore"
+    ]
+  },
+  {
+    "id": "legionscythe",
+    "g": "hf",
+    "n": "Shadow Legion Vampire Scythe",
+    "who": {
+      "pt": "Dage the Evil (Dage's House, Legion Castle, Underworld...)",
+      "en": "Dage the Evil (Dage's House, Legion Castle, Underworld...)"
+    },
+    "req": {
+      "pt": "Ter a Evolved Legion Vampire; 1 Northlands Ice Heart (Ice Symbiote)",
+      "en": "Own Evolved Legion Vampire; 1 Northlands Ice Heart (Ice Symbiote)"
+    },
+    "rw": {
+      "pt": "1.000 gold, 1.000 XP e 1 Ice Ten Elixir",
+      "en": "1,000 gold, 1,000 XP and 1 Ice Ten Elixir"
+    },
+    "src": "https://aqwwiki.wikidot.com/dage-the-evil-s-quests",
+    "sn": "AQW Wiki: Dage the Evil's Quests",
+    "j": [
+      "underworld"
+    ]
+  },
+  {
+    "id": "legionex1",
+    "g": "boss",
+    "n": "Daily Exercise 1: Ultra Aeacus",
+    "who": {
+      "pt": "Dage the Evil (Legion); luta em /judgement ou /revenant",
+      "en": "Dage the Evil (Legion); fight in /judgement or /revenant"
+    },
+    "req": {
+      "pt": "Ter a Legion Promotion; derrotar o chefe uma vez",
+      "en": "Have the Legion Promotion; defeat the boss once"
+    },
+    "rw": {
+      "pt": "50.000 gold, 50.000 XP e 100 Legion Tokens (chance de Lineage of Devastation)",
+      "en": "50,000 gold, 50,000 XP and 100 Legion Tokens (chance at Lineage of Devastation)"
+    },
+    "src": "https://aqwwiki.wikidot.com/dage-the-evil-s-champion-quests",
+    "sn": "AQW Wiki: Dage the Evil's Champion Quests",
+    "j": [
+      "judgement",
+      "revenant"
+    ],
+    "for": {
+      "pt": "Legion Tokens (Legion Revenant e itens da Legion)",
+      "en": "Legion Tokens (Legion Revenant and Legion items)"
+    }
+  },
+  {
+    "id": "legionex2",
+    "g": "boss",
+    "n": "Daily Exercise 2: Legion Lich Lord",
+    "who": {
+      "pt": "Dage the Evil (Legion); luta em /frozenlair",
+      "en": "Dage the Evil (Legion); fight in /frozenlair"
+    },
+    "req": {
+      "pt": "Ter a Legion Promotion; derrotar o chefe uma vez",
+      "en": "Have the Legion Promotion; defeat the boss once"
+    },
+    "rw": {
+      "pt": "75.000 gold, 75.000 XP e 150 Legion Tokens (chance de Lineage of Devastation)",
+      "en": "75,000 gold, 75,000 XP and 150 Legion Tokens (chance at Lineage of Devastation)"
+    },
+    "src": "https://aqwwiki.wikidot.com/dage-the-evil-s-champion-quests",
+    "sn": "AQW Wiki: Dage the Evil's Champion Quests",
+    "j": [
+      "frozenlair"
+    ],
+    "for": {
+      "pt": "Legion Tokens (Legion Revenant e itens da Legion)",
+      "en": "Legion Tokens (Legion Revenant and Legion items)"
+    }
+  },
+  {
+    "id": "legionex3",
+    "g": "boss",
+    "n": "Daily Exercise 3: The Beast",
+    "who": {
+      "pt": "Dage the Evil (Legion); luta em /sevencircleswar",
+      "en": "Dage the Evil (Legion); fight in /sevencircleswar"
+    },
+    "req": {
+      "pt": "Ter a Legion Promotion; derrotar o chefe uma vez",
+      "en": "Have the Legion Promotion; defeat the boss once"
+    },
+    "rw": {
+      "pt": "75.000 gold, 100.000 XP e 150 Legion Tokens (chance de Lineage of Devastation)",
+      "en": "75,000 gold, 100,000 XP and 150 Legion Tokens (chance at Lineage of Devastation)"
+    },
+    "src": "https://aqwwiki.wikidot.com/dage-the-evil-s-champion-quests",
+    "sn": "AQW Wiki: Dage the Evil's Champion Quests",
+    "j": [
+      "sevencircleswar"
+    ],
+    "for": {
+      "pt": "Legion Tokens (Legion Revenant e itens da Legion)",
+      "en": "Legion Tokens (Legion Revenant and Legion items)"
+    }
+  },
+  {
+    "id": "legionex4",
+    "g": "boss",
+    "n": "Daily Exercise 4: Devastator Deimos",
+    "who": {
+      "pt": "Dage the Evil (Legion); luta em /deimos",
+      "en": "Dage the Evil (Legion); fight in /deimos"
+    },
+    "req": {
+      "pt": "Ter a Legion Promotion; derrotar o chefe uma vez",
+      "en": "Have the Legion Promotion; defeat the boss once"
+    },
+    "rw": {
+      "pt": "100.000 gold, 150.000 XP e 150 Legion Tokens (chance de Lineage of Devastation)",
+      "en": "100,000 gold, 150,000 XP and 150 Legion Tokens (chance at Lineage of Devastation)"
+    },
+    "src": "https://aqwwiki.wikidot.com/dage-the-evil-s-champion-quests",
+    "sn": "AQW Wiki: Dage the Evil's Champion Quests",
+    "j": [
+      "deimos"
+    ],
+    "for": {
+      "pt": "Legion Tokens (Legion Revenant e itens da Legion)",
+      "en": "Legion Tokens (Legion Revenant and Legion items)"
+    }
+  },
+  {
+    "id": "legionex5",
+    "g": "boss",
+    "n": "Daily Exercise 5: God of the Depths",
+    "who": {
+      "pt": "Dage the Evil (Legion)",
+      "en": "Dage the Evil (Legion)"
+    },
+    "req": {
+      "pt": "Ter a Legion Promotion; nível 80; derrotar o chefe uma vez",
+      "en": "Have the Legion Promotion; level 80; defeat the boss once"
+    },
+    "rw": {
+      "pt": "100.000 gold, 200.000 XP, 250 Legion Tokens e 1 Soul Sand (chance de Lineage of Devastation)",
+      "en": "100,000 gold, 200,000 XP, 250 Legion Tokens and 1 Soul Sand (chance at Lineage of Devastation)"
+    },
+    "src": "https://aqwwiki.wikidot.com/dage-the-evil-s-champion-quests",
+    "sn": "AQW Wiki: Dage the Evil's Champion Quests",
+    "for": {
+      "pt": "Legion Tokens (Legion Revenant e itens da Legion)",
+      "en": "Legion Tokens (Legion Revenant and Legion items)"
+    }
+  },
+  {
+    "id": "legionex6",
+    "g": "boss",
+    "n": "Daily Exercise 6: Dage the Dark Lord",
+    "who": {
+      "pt": "Dage the Evil (Legion); luta em /ultradage",
+      "en": "Dage the Evil (Legion); fight in /ultradage"
+    },
+    "req": {
+      "pt": "Ter a Legion Promotion; derrotar o chefe uma vez",
+      "en": "Have the Legion Promotion; defeat the boss once"
+    },
+    "rw": {
+      "pt": "150.000 gold, 200.000 XP, 250 Legion Tokens e 2 Soul Sand (chance de Lineage of Devastation)",
+      "en": "150,000 gold, 200,000 XP, 250 Legion Tokens and 2 Soul Sand (chance at Lineage of Devastation)"
+    },
+    "src": "https://aqwwiki.wikidot.com/dage-the-evil-s-champion-quests",
+    "sn": "AQW Wiki: Dage the Evil's Champion Quests",
+    "j": [
+      "ultradage"
+    ],
+    "for": {
+      "pt": "Legion Tokens (Legion Revenant e itens da Legion)",
+      "en": "Legion Tokens (Legion Revenant and Legion items)"
+    }
+  },
+  {
+    "id": "gauntlet-conquest",
+    "g": "boss",
+    "n": "Humiliation of Conquest Gauntlet",
+    "who": {
+      "pt": "Dage the Evil, em Undervoid",
+      "en": "Dage the Evil, in Undervoid"
+    },
+    "req": {
+      "pt": "Ter concluído \"Conquer Death\"; derrotar Conquest",
+      "en": "Completed \"Conquer Death\"; defeat Conquest"
+    },
+    "rw": {
+      "pt": "800 gold, 800 XP e Conquest's Pride",
+      "en": "800 gold, 800 XP and Conquest's Pride"
+    },
+    "src": "https://aqwwiki.wikidot.com/dage-the-evil-s-quests",
+    "sn": "AQW Wiki: Dage the Evil's Quests",
+    "j": [
+      "undervoid"
+    ]
+  },
+  {
+    "id": "gauntlet-war",
+    "g": "boss",
+    "n": "Slaughter of War Gauntlet",
+    "who": {
+      "pt": "Dage the Evil, em Undervoid",
+      "en": "Dage the Evil, in Undervoid"
+    },
+    "req": {
+      "pt": "Ter concluído \"Conquer Death\"; derrotar War",
+      "en": "Completed \"Conquer Death\"; defeat War"
+    },
+    "rw": {
+      "pt": "800 gold, 800 XP e War's Pride",
+      "en": "800 gold, 800 XP and War's Pride"
+    },
+    "src": "https://aqwwiki.wikidot.com/dage-the-evil-s-quests",
+    "sn": "AQW Wiki: Dage the Evil's Quests",
+    "j": [
+      "undervoid"
+    ]
+  },
+  {
+    "id": "gauntlet-famine",
+    "g": "boss",
+    "n": "Feast of Famine Gauntlet",
+    "who": {
+      "pt": "Dage the Evil, em Undervoid",
+      "en": "Dage the Evil, in Undervoid"
+    },
+    "req": {
+      "pt": "Ter concluído \"Conquer Death\"; derrotar Famine",
+      "en": "Completed \"Conquer Death\"; defeat Famine"
+    },
+    "rw": {
+      "pt": "800 gold, 800 XP e Famine's Pride",
+      "en": "800 gold, 800 XP and Famine's Pride"
+    },
+    "src": "https://aqwwiki.wikidot.com/dage-the-evil-s-quests",
+    "sn": "AQW Wiki: Dage the Evil's Quests",
+    "j": [
+      "undervoid"
+    ]
+  },
+  {
+    "id": "gauntlet-death",
+    "g": "boss",
+    "n": "Mastery of Death Gauntlet",
+    "who": {
+      "pt": "Dage the Evil, em Undervoid",
+      "en": "Dage the Evil, in Undervoid"
+    },
+    "req": {
+      "pt": "Ter concluído \"Conquer Death\"; derrotar Death",
+      "en": "Completed \"Conquer Death\"; defeat Death"
+    },
+    "rw": {
+      "pt": "800 gold, 800 XP e Death's Pride (chance de Enchanted Deathshead)",
+      "en": "800 gold, 800 XP and Death's Pride (chance at Enchanted Deathshead)"
+    },
+    "src": "https://aqwwiki.wikidot.com/dage-the-evil-s-quests",
+    "sn": "AQW Wiki: Dage the Evil's Quests",
+    "j": [
+      "undervoid"
+    ]
+  },
+  {
+    "id": "rep-sandsea1",
+    "g": "rep",
+    "n": "Delectable Desert Desserts",
+    "who": {
+      "pt": "Bastet, em Oasis",
+      "en": "Bastet, in Oasis"
+    },
+    "req": {
+      "pt": "5 Pot of Honey (Stinger), 4 Powdered Snow Sugar (Snow Golem) e 7 Cactus Fig (Cactus Creeper)",
+      "en": "5 Pot of Honey (Stinger), 4 Powdered Snow Sugar (Snow Golem) and 7 Cactus Fig (Cactus Creeper)"
+    },
+    "rw": {
+      "pt": "600 gold, 600 XP e 2.000 de reputação Sandsea",
+      "en": "600 gold, 600 XP and 2,000 Sandsea rep"
+    },
+    "src": "https://aqwwiki.wikidot.com/bastet-s-quests",
+    "sn": "AQW Wiki: Bastet's Quests",
+    "j": [
+      "sandsea"
+    ],
+    "mem": "m"
+  },
+  {
+    "id": "rep-sandsea2",
+    "g": "rep",
+    "n": "Oil Spills",
+    "who": {
+      "pt": "Bastet, em Oasis",
+      "en": "Bastet, in Oasis"
+    },
+    "req": {
+      "pt": "8 Corn Oil (Scarecrow), 5 River Fishman Oil (River Fishman) e 3 Bupers Camel Lard (Bupers Camel)",
+      "en": "8 Corn Oil (Scarecrow), 5 River Fishman Oil (River Fishman) and 3 Bupers Camel Lard (Bupers Camel)"
+    },
+    "rw": {
+      "pt": "500 gold, 700 XP e 2.000 de reputação Sandsea",
+      "en": "500 gold, 700 XP and 2,000 Sandsea rep"
+    },
+    "src": "https://aqwwiki.wikidot.com/bastet-s-quests",
+    "sn": "AQW Wiki: Bastet's Quests",
+    "j": [
+      "sandsea"
+    ],
+    "mem": "m"
+  },
+  {
+    "id": "rep-sandsea3",
+    "g": "rep",
+    "n": "The Scarab Sandwich",
+    "who": {
+      "pt": "Bastet, em Oasis",
+      "en": "Bastet, in Oasis"
+    },
+    "req": {
+      "pt": "10 Dried Scarab (Desert Vase), 8 Pile of Sand (clique nos montes de areia) e 1 Dark Witch's Pointy Hat (Dark Witch)",
+      "en": "10 Dried Scarab (Desert Vase), 8 Pile of Sand (click the sand piles) and 1 Dark Witch's Pointy Hat (Dark Witch)"
+    },
+    "rw": {
+      "pt": "900 gold, 800 XP e 2.000 de reputação Sandsea",
+      "en": "900 gold, 800 XP and 2,000 Sandsea rep"
+    },
+    "src": "https://aqwwiki.wikidot.com/bastet-s-quests",
+    "sn": "AQW Wiki: Bastet's Quests",
+    "j": [
+      "sandsea"
+    ],
+    "mem": "m"
+  },
+  {
+    "id": "rep-sandsea4",
+    "g": "rep",
+    "n": "Lore Style Surf and Turf",
+    "who": {
+      "pt": "Bastet, em Oasis",
+      "en": "Bastet, in Oasis"
+    },
+    "req": {
+      "pt": "1 Nessie Seared Steak (Nessie), 1 Rock Lobster Tail (Rock Lobster), 1 Twisted Tooth Strip Steak (Twistedtooth) e 1 Grizzly Bear Prime Rib (Grizzly Bear)",
+      "en": "1 Nessie Seared Steak (Nessie), 1 Rock Lobster Tail (Rock Lobster), 1 Twisted Tooth Strip Steak (Twistedtooth) and 1 Grizzly Bear Prime Rib (Grizzly Bear)"
+    },
+    "rw": {
+      "pt": "700 gold, 600 XP e 2.000 de reputação Sandsea",
+      "en": "700 gold, 600 XP and 2,000 Sandsea rep"
+    },
+    "src": "https://aqwwiki.wikidot.com/bastet-s-quests",
+    "sn": "AQW Wiki: Bastet's Quests",
+    "j": [
+      "sandsea"
+    ],
+    "mem": "m"
+  },
+  {
+    "id": "rep-vamp1",
+    "g": "rep",
+    "n": "A Wolf's Tail",
+    "who": {
+      "pt": "Brysin, em Safiria's Castle",
+      "en": "Brysin, in Safiria's Castle"
+    },
+    "req": {
+      "pt": "Ter concluído \"Twisted Paw\"; 5 Lycan's Tails (Chaos Lycan)",
+      "en": "Completed \"Twisted Paw\"; 5 Lycan's Tails (Chaos Lycan)"
+    },
+    "rw": {
+      "pt": "250 gold, 175 XP e 400 de reputação Vampire",
+      "en": "250 gold, 175 XP and 400 Vampire rep"
+    },
+    "src": "https://aqwwiki.wikidot.com/brysin-s-quests",
+    "sn": "AQW Wiki: Brysin's Quests",
+    "j": [
+      "safiria"
+    ]
+  },
+  {
+    "id": "rep-vamp2",
+    "g": "rep",
+    "n": "A Twisted Mess",
+    "who": {
+      "pt": "Brysin, em Safiria's Castle",
+      "en": "Brysin, in Safiria's Castle"
+    },
+    "req": {
+      "pt": "Ter concluído \"Twisted Paw\"; 1 Twisted Equipment (Twisted Paw)",
+      "en": "Completed \"Twisted Paw\"; 1 Twisted Equipment (Twisted Paw)"
+    },
+    "rw": {
+      "pt": "300 gold, 200 XP e 1.000 de reputação Vampire",
+      "en": "300 gold, 200 XP and 1,000 Vampire rep"
+    },
+    "src": "https://aqwwiki.wikidot.com/brysin-s-quests",
+    "sn": "AQW Wiki: Brysin's Quests",
+    "j": [
+      "safiria"
+    ]
+  },
+  {
+    "id": "rep-vamp3",
+    "g": "rep",
+    "n": "Dogfight",
+    "who": {
+      "pt": "Brysin, em Safiria's Castle",
+      "en": "Brysin, in Safiria's Castle"
+    },
+    "req": {
+      "pt": "Ter concluído \"Twisted Paw\"; DNA de Twisted Paw, Dire Wolf, Chaos Lycan, Lycan e Lycan Knight",
+      "en": "Completed \"Twisted Paw\"; DNA from Twisted Paw, Dire Wolf, Chaos Lycan, Lycan and Lycan Knight"
+    },
+    "rw": {
+      "pt": "600 gold, 500 XP e 2.500 de reputação Vampire",
+      "en": "600 gold, 500 XP and 2,500 Vampire rep"
+    },
+    "src": "https://aqwwiki.wikidot.com/brysin-s-quests",
+    "sn": "AQW Wiki: Brysin's Quests",
+    "j": [
+      "safiria"
+    ]
+  },
+  {
+    "id": "rep-lycan1",
+    "g": "rep",
+    "n": "Pain in the Neck",
+    "who": {
+      "pt": "Faopaw, em Lycan Ridge",
+      "en": "Faopaw, in Lycan Ridge"
+    },
+    "req": {
+      "pt": "5 Chaorrupted Vampire Fang (Chaos Vampire Knight)",
+      "en": "5 Chaorrupted Vampire Fang (Chaos Vampire Knight)"
+    },
+    "rw": {
+      "pt": "250 gold, 175 XP e 400 de reputação Lycan",
+      "en": "250 gold, 175 XP and 400 Lycan rep"
+    },
+    "src": "https://aqwwiki.wikidot.com/faopaw-s-quests",
+    "sn": "AQW Wiki: Faopaw's Quests",
+    "j": [
+      "lycan"
+    ]
+  },
+  {
+    "id": "rep-lycan2",
+    "g": "rep",
+    "n": "Sanguine's Terrortory",
+    "who": {
+      "pt": "Faopaw, em Lycan Ridge",
+      "en": "Faopaw, in Lycan Ridge"
+    },
+    "req": {
+      "pt": "1 Sanguines Chaoruppted Barb (Sanguine)",
+      "en": "1 Sanguines Chaoruppted Barb (Sanguine)"
+    },
+    "rw": {
+      "pt": "300 gold, 200 XP e 1.000 de reputação Lycan",
+      "en": "300 gold, 200 XP and 1,000 Lycan rep"
+    },
+    "src": "https://aqwwiki.wikidot.com/faopaw-s-quests",
+    "sn": "AQW Wiki: Faopaw's Quests",
+    "j": [
+      "lycan"
+    ]
+  },
+  {
+    "id": "rep-lycan3",
+    "g": "rep",
+    "n": "Bone Roam",
+    "who": {
+      "pt": "Faopaw, em Lycan Ridge",
+      "en": "Faopaw, in Lycan Ridge"
+    },
+    "req": {
+      "pt": "1 osso de cada: Lich of the Stone, Rattlebones, Skeletal Fire Mage e Blightfang",
+      "en": "One bone each from Lich of the Stone, Rattlebones, Skeletal Fire Mage and Blightfang"
+    },
+    "rw": {
+      "pt": "600 gold, 500 XP e 2.500 de reputação Lycan",
+      "en": "600 gold, 500 XP and 2,500 Lycan rep"
+    },
+    "src": "https://aqwwiki.wikidot.com/faopaw-s-quests",
+    "sn": "AQW Wiki: Faopaw's Quests",
+    "j": [
+      "lycan"
+    ]
+  },
+  {
+    "id": "rep-north",
+    "g": "rep",
+    "n": "Feed the Hungry",
+    "who": {
+      "pt": "Cleric Crystal, em Northpointe",
+      "en": "Cleric Crystal, in Northpointe"
+    },
+    "req": {
+      "pt": "4 Roast Stalker Eye (Grim Stalker) e 4 Grilled Chimera Wing (Chimera)",
+      "en": "4 Roast Stalker Eye (Grim Stalker) and 4 Grilled Chimera Wing (Chimera)"
+    },
+    "rw": {
+      "pt": "1.500 gold, 1.500 XP e 1.500 de reputação Northpointe",
+      "en": "1,500 gold, 1,500 XP and 1,500 Northpointe rep"
+    },
+    "src": "https://aqwwiki.wikidot.com/cleric-crystal-s-quests",
+    "sn": "AQW Wiki: Cleric Crystal's Quests",
+    "j": [
+      "northpointe"
+    ]
+  },
+  {
+    "id": "rep-beast",
+    "g": "rep",
+    "n": "BeastMaster Challenge",
+    "who": {
+      "pt": "Faith, em Northpointe",
+      "en": "Faith, in Northpointe"
+    },
+    "req": {
+      "pt": "Nível 5; 10 Purple Slime (Purple Slime)",
+      "en": "Level 5; 10 Purple Slime (Purple Slime)"
+    },
+    "rw": {
+      "pt": "1.000 gold, 1.000 XP e 2.000 de reputação BeastMaster",
+      "en": "1,000 gold, 1,000 XP and 2,000 BeastMaster rep"
+    },
+    "src": "https://aqwwiki.wikidot.com/faith-s-quests",
+    "sn": "AQW Wiki: Faith's Quests",
+    "j": [
+      "northpointe"
+    ]
+  },
+  {
+    "id": "rep-fish",
+    "g": "rep",
+    "n": "Fins up!",
+    "who": {
+      "pt": "Faith, em Greenguard West",
+      "en": "Faith, in Greenguard West"
+    },
+    "req": {
+      "pt": "Rank 6 de Fishing; 10 peixes \"Fin\" (Redfin, Willowfin, Wingfin, Sparklefin, Thurmofin ou Pillfin)",
+      "en": "Fishing rank 6; 10 \"Fin\" fish (Redfin, Willowfin, Wingfin, Sparklefin, Thurmofin or Pillfin)"
+    },
+    "rw": {
+      "pt": "1.650 gold, 1.650 XP e 20 Fishin' Chips",
+      "en": "1,650 gold, 1,650 XP and 20 Fishin' Chips"
+    },
+    "src": "https://aqwwiki.wikidot.com/faith-s-quests",
+    "sn": "AQW Wiki: Faith's Quests",
+    "j": [
+      "greenguardwest"
+    ]
+  },
+  {
+    "id": "rep-brightoak",
+    "g": "rep",
+    "n": "Fungi for a Fun Guy",
+    "who": {
+      "pt": "Aven Greywhorl, em Brightoak Grove",
+      "en": "Aven Greywhorl, in Brightoak Grove"
+    },
+    "req": {
+      "pt": "1 Intact Spores e 1 Colony Spore (Grove Spore)",
+      "en": "1 Intact Spores and 1 Colony Spore (Grove Spore)"
+    },
+    "rw": {
+      "pt": "450 gold, 650 XP e 3.000 de reputação Brightoak",
+      "en": "450 gold, 650 XP and 3,000 Brightoak rep"
+    },
+    "src": "https://aqwwiki.wikidot.com/aven-greywhorl-s-quests",
+    "sn": "AQW Wiki: Aven Greywhorl's Quests"
+  },
+  {
+    "id": "rep-chrono1",
+    "g": "rep",
+    "n": "Who Let The Togs Out?",
+    "who": {
+      "pt": "Cysero's Orb, em The Span",
+      "en": "Cysero's Orb, in The Span"
+    },
+    "req": {
+      "pt": "1 Rubber Ducky (General Porkon), 1 Tog Whistle (Tog) e 2 Uncured Harp Strings (Rhison, Horc Boar Scout ou Jungle Vulture)",
+      "en": "1 Rubber Ducky (General Porkon), 1 Tog Whistle (Tog) and 2 Uncured Harp Strings (Rhison, Horc Boar Scout or Jungle Vulture)"
+    },
+    "rw": {
+      "pt": "1.750 gold, 1.750 XP, 1.750 de reputação ChronoSpan e chance de Golden Tog (member)",
+      "en": "1,750 gold, 1,750 XP, 1,750 ChronoSpan rep and a chance at a Golden Tog (member)"
+    },
+    "src": "https://aqwwiki.wikidot.com/cysero-s-orb-s-quests",
+    "sn": "AQW Wiki: Cysero's Orb's Quests"
+  },
+  {
+    "id": "rep-chrono2",
+    "g": "rep",
+    "n": "You Don't Want To Know...",
+    "who": {
+      "pt": "Cysero's Orb, em The Span",
+      "en": "Cysero's Orb, in The Span"
+    },
+    "req": {
+      "pt": "3 Ghost Dreams (Moglin Ghost), 4 Sneak's Ambition (Sneak), 1 Pilot's Hope (Shadowscythe), 2 Tog Goals (Tog) e 3 Fairy Tears (Dreadspider)",
+      "en": "3 Ghost Dreams (Moglin Ghost), 4 Sneak's Ambition (Sneak), 1 Pilot's Hope (Shadowscythe), 2 Tog Goals (Tog) and 3 Fairy Tears (Dreadspider)"
+    },
+    "rw": {
+      "pt": "350 gold, 350 XP e 1.000 de reputação ChronoSpan",
+      "en": "350 gold, 350 XP and 1,000 ChronoSpan rep"
+    },
+    "src": "https://aqwwiki.wikidot.com/cysero-s-orb-s-quests",
+    "sn": "AQW Wiki: Cysero's Orb's Quests"
+  },
+  {
+    "id": "rep-ether1",
+    "g": "rep",
+    "n": "Elemental Reagent Hunt",
+    "who": {
+      "pt": "Drakor, em Dragonhame",
+      "en": "Drakor, in Dragonhame"
+    },
+    "req": {
+      "pt": "Ter concluído \"Heart-searing Pain\"; 13 Elemental Reagent (Dracolichs de Dragonhame). Legends têm a \"Legendary Elemental Reagant\" (10 reagentes, 2.000 de reputação)",
+      "en": "Completed \"Heart-searing Pain\"; 13 Elemental Reagent (Dragonhame dracoliches). Legends get \"Legendary Elemental Reagant\" (10 reagents, 2,000 rep)"
+    },
+    "rw": {
+      "pt": "200 gold, 200 XP e 1.000 de reputação EtherStorm",
+      "en": "200 gold, 200 XP and 1,000 EtherStorm rep"
+    },
+    "src": "https://aqwwiki.wikidot.com/drakor-s-quests",
+    "sn": "AQW Wiki: Drakor's Quests"
+  },
+  {
+    "id": "rep-brethwren",
+    "g": "rep",
+    "n": "Meme Quest",
+    "who": {
+      "pt": "Duck Norris, em Birds with Harms",
+      "en": "Duck Norris, in Birds with Harms"
+    },
+    "req": {
+      "pt": "Ter concluído \"Without Feather Ado\"; 1 Meme Discovered (Birdbarian, Fencing Finch, Robber Ducky, Swole Swan, Turkonian ou Unsettling Sparrow)",
+      "en": "Completed \"Without Feather Ado\"; 1 Meme Discovered (Birdbarian, Fencing Finch, Robber Ducky, Swole Swan, Turkonian or Unsettling Sparrow)"
+    },
+    "rw": {
+      "pt": "10.000 gold, 20.000 XP, 5.000 de reputação Brethwren e um Duck Norris Meme",
+      "en": "10,000 gold, 20,000 XP, 5,000 Brethwren rep and a Duck Norris Meme"
+    },
+    "src": "https://aqwwiki.wikidot.com/duck-norris-quests",
+    "sn": "AQW Wiki: Duck Norris' Quests"
+  },
+  {
+    "id": "rep-arcangrove",
+    "g": "rep",
+    "n": "Scales and Tails",
+    "who": {
+      "pt": "Ewa, em The Cloister",
+      "en": "Ewa, in The Cloister"
+    },
+    "req": {
+      "pt": "Ter concluído \"Wendigo Whereabouts\"; 10 Frogdrake Tail (Swamp Frogdrake) e 10 Lurker Scale (Swamp Lurker)",
+      "en": "Completed \"Wendigo Whereabouts\"; 10 Frogdrake Tail (Swamp Frogdrake) and 10 Lurker Scale (Swamp Lurker)"
+    },
+    "rw": {
+      "pt": "400 gold, 500 XP e 1.500 de reputação Arcangrove",
+      "en": "400 gold, 500 XP and 1,500 Arcangrove rep"
+    },
+    "src": "https://aqwwiki.wikidot.com/ewa-s-quests",
+    "sn": "AQW Wiki: Ewa's Quests"
+  },
+  {
+    "id": "rep-yew1",
+    "g": "rep",
+    "n": "Thelima Training",
+    "who": {
+      "pt": "Geopetal, em Thelima City",
+      "en": "Geopetal, in Thelima City"
+    },
+    "req": {
+      "pt": "100 Thelima Soldiers Trained (Drow Soldier, Dwarven Aegis e Noelle Knight)",
+      "en": "100 Thelima Soldiers Trained (Drow Soldier, Dwarven Aegis and Noelle Knight)"
+    },
+    "rw": {
+      "pt": "5.000 gold, 10.000 XP e 2.000 de reputação Yew Mountains",
+      "en": "5,000 gold, 10,000 XP and 2,000 Yew Mountains rep"
+    },
+    "src": "https://aqwwiki.wikidot.com/geopetal-s-quests",
+    "sn": "AQW Wiki: Geopetal's Quests"
+  },
+  {
+    "id": "rep-yew2",
+    "g": "rep",
+    "n": "Knights of Noelle",
+    "who": {
+      "pt": "Geopetal, em Thelima City",
+      "en": "Geopetal, in Thelima City"
+    },
+    "req": {
+      "pt": "9 Knight Trained (Noelle Knight)",
+      "en": "9 Knight Trained (Noelle Knight)"
+    },
+    "rw": {
+      "pt": "1.500 gold, 1.500 XP e 75 de reputação Yew Mountains",
+      "en": "1,500 gold, 1,500 XP and 75 Yew Mountains rep"
+    },
+    "src": "https://aqwwiki.wikidot.com/geopetal-s-quests",
+    "sn": "AQW Wiki: Geopetal's Quests"
+  },
+  {
+    "id": "rep-yew3",
+    "g": "rep",
+    "n": "Aureate Aegis",
+    "who": {
+      "pt": "Geopetal, em Thelima City",
+      "en": "Geopetal, in Thelima City"
+    },
+    "req": {
+      "pt": "9 Aegis Approval (Dwarven Aegis)",
+      "en": "9 Aegis Approval (Dwarven Aegis)"
+    },
+    "rw": {
+      "pt": "1.500 gold, 1.500 XP e 75 de reputação Yew Mountains",
+      "en": "1,500 gold, 1,500 XP and 75 Yew Mountains rep"
+    },
+    "src": "https://aqwwiki.wikidot.com/geopetal-s-quests",
+    "sn": "AQW Wiki: Geopetal's Quests"
+  },
+  {
+    "id": "rep-myth1",
+    "g": "rep",
+    "n": "Bad Reputation",
+    "who": {
+      "pt": "Jon Jett, em Mythsong City",
+      "en": "Jon Jett, in Mythsong City"
+    },
+    "req": {
+      "pt": "1 Toaddragon Horn (French Horned Toadragon)",
+      "en": "1 Toaddragon Horn (French Horned Toadragon)"
+    },
+    "rw": {
+      "pt": "200 gold, 200 XP e 1.500 de reputação Mythsong",
+      "en": "200 gold, 200 XP and 1,500 Mythsong rep"
+    },
+    "src": "https://aqwwiki.wikidot.com/jon-jett-s-quests",
+    "sn": "AQW Wiki: Jon Jett's Quests"
+  },
+  {
+    "id": "rep-myth2",
+    "g": "rep",
+    "n": "Victims of Circumstance",
+    "who": {
+      "pt": "Jon Jett, em Mythsong City",
+      "en": "Jon Jett, in Mythsong City"
+    },
+    "req": {
+      "pt": "10 Phony Ticket Stubs (Beatles, Grateful Undead ou Tune-a-Fish)",
+      "en": "10 Phony Ticket Stubs (Beatles, Grateful Undead or Tune-a-Fish)"
+    },
+    "rw": {
+      "pt": "300 gold, 300 XP e 1.500 de reputação Mythsong",
+      "en": "300 gold, 300 XP and 1,500 Mythsong rep"
+    },
+    "src": "https://aqwwiki.wikidot.com/jon-jett-s-quests",
+    "sn": "AQW Wiki: Jon Jett's Quests"
   }
 ]

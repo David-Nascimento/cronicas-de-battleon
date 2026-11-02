@@ -217,7 +217,7 @@
   "daily_src": "Fonte",
   "daily_member": "Variante member",
   "daily_legend": "Variante Legends",
-  "daily_boss_note": "O AQWHub traz só o nome do chefe e a recompensa; os detalhes ficam na wiki.",
+  "daily_boss_note": "Chefes com recompensa diária. Detalhes e requisitos conferidos na AQW Wiki.",
   "daily_old_note": "A wiki ainda lista estas como diárias antigas. Elas não entram na contagem do dia.",
   "daily_hidden_n": "ocultas",
   "daily_empty": "Nada para mostrar aqui.",
@@ -301,7 +301,9 @@
   "tl_copied": "Tier list copiada",
   "tl_reset_done": "Tier list voltou para a do portal",
   "tl_q": "Buscar entre as classes sem tier…",
-  "tl_nohit": "Nenhuma classe sem tier com esse nome."
+  "tl_nohit": "Nenhuma classe sem tier com esse nome.",
+  "daily_g_rep": "Reputação",
+  "daily_rep_note": "Diárias de NPCs que dão reputação de facção (e alguns materiais). Não entram na contagem do dia; marque as que você faz."
  },
  "en": {
   "title": "Chronicles of Battleon",
@@ -521,7 +523,7 @@
   "daily_src": "Source",
   "daily_member": "Member variant",
   "daily_legend": "Legends variant",
-  "daily_boss_note": "AQWHub only gives the boss name and the reward; details are on the wiki.",
+  "daily_boss_note": "Bosses with a daily reward. Details and requirements checked on the AQW Wiki.",
   "daily_old_note": "The wiki still lists these as old dailies. They don't count toward today's total.",
   "daily_hidden_n": "hidden",
   "daily_empty": "Nothing to show here.",
@@ -605,6 +607,8 @@
   "tl_copied": "Tier list copied",
   "tl_reset_done": "Tier list is back to the portal's",
   "tl_q": "Search unranked classes…",
-  "tl_nohit": "No unranked class with that name."
+  "tl_nohit": "No unranked class with that name.",
+  "daily_g_rep": "Reputation",
+  "daily_rep_note": "NPC dailies that give faction reputation (and some materials). They don't count toward today's total; tick the ones you do."
  }
 }

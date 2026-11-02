@@ -34,7 +34,7 @@ export function runSearch(){const q=nrm(gq.value.trim());if(!q){gres.hidden=true
 function pick(b:HTMLElement){gres.hidden=true;gq.value="";gq.blur();
   if(b.dataset.gitem){show("lancamentos");focusItem(b.dataset.gitem,b.dataset.gname);return true}
   if(b.dataset.gdaily){const id=b.dataset.gdaily,x=DAILIES.find(d=>d.id===id);
-    if(x){if(x.g==="old"||x.g==="season")st.df=x.g;else if(st.df!=="all"&&st.df!==x.g)st.df="all";
+    if(x){if(x.g==="old"||x.g==="season"||x.g==="rep")st.df=x.g;else if(st.df!=="all"&&st.df!==x.g)st.df="all";
       if((st.dhide||[]).includes(id))st.dsh=true;save()}
     show("diarias");renderDailies();const t=document.querySelector(`[data-dtoggle="${CSS.escape(id)}"]`);flash(t&&t.closest(".dItem"));return true}
   if(b.dataset.gfarm!=null){const i=+b.dataset.gfarm;st.fk="all";save();show("itens");renderFarms();flash(document.getElementById("farm-"+i));return true}
