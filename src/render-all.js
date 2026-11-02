@@ -17,13 +17,20 @@ import {renderTiers} from "./views/tiers.js";
 import {renderReleases} from "./views/releases.js";
 import {renderEye} from "./features/eye.js";
 
+/* Cada aba só é montada quando aparece. Trocar de idioma marca todas como "sujas" e redesenha só a aberta;
+   as outras são montadas na primeira vez que forem abertas (show → renderView). */
+const VIEWR={inicio:renderModes,tier:renderTiers,todas:renderCards,comparar:renderCompare,enh:renderEnh,
+  ultras:()=>{renderAgenda();renderTeams()},montador:renderBuilder,diarias:renderDailies,itens:renderFarms,lancamentos:renderReleases,novidades:renderFeed};
+const dirty=new Set(Object.keys(VIEWR));
+export function renderView(v,force){if((force||dirty.has(v))&&VIEWR[v]){dirty.delete(v);VIEWR[v]()}}
 export function renderAll(){
-  renderStatic();renderModes();
+  renderStatic();
   seg("segCat",Object.keys(CATS).map(k=>[k,catName(k)]),"cat",renderTiers);
   seg("segMode",[["geral",L("overall")],["farm","Farm"],["solo","Solo"],["ultra","Ultras"]],"mode",renderTiers);
   seg("bCat",[["all",L("all")],...Object.keys(CATS).map(k=>[k,catName(k)])],"bcat",renderBuilder);
   seg("segAll",[["todas",L("all")],...Object.keys(CATS).map(k=>[k,catName(k)])],"all",renderCards);
-  renderTiers();renderAgenda();renderTeams();renderBuilder();renderFarms();renderDailies();renderCards();renderCompare();renderEnh();renderFeed();renderReleases();renderEye();refreshNotif();
+  Object.keys(VIEWR).forEach(k=>dirty.add(k));
+  renderView(ui.curView);renderEye();refreshNotif();
   if(dlg.open&&ui.curClass!=null)openClass(ui.curClass);
   if(dlgE.open&&ui.eIdx!=null)openEnh(ui.eIdx);
 }

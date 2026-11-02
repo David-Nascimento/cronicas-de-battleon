@@ -3,8 +3,8 @@ import {NEWS} from "../data/index.js";
 import {refreshNotif} from "../features/alerts.js";
 import {newsSeen, renderFeed} from "../features/news.js";
 import {L, save, st, ui} from "../state.js";
-import {renderDailies} from "./dailies.js";
-import {markReleaseSeen, navCount, renderReleases} from "./releases.js";
+import {markReleaseSeen, navCount} from "./releases.js";
+import {renderView} from "../render-all.js";
 
 /* Navegação em 5 destinos (Hoje, Classes, Ultras, Farm, Novidades), cada um com suas abas.
    Na lateral do computador as abas aparecem embaixo do destino aberto; no celular, numa fileira no topo. */
@@ -35,8 +35,9 @@ export function show(v){
   renderNav();
   try{history.replaceState(null,"","#"+v)}catch(e){}
   if(changed)window.scrollTo(0,0);
-  if(v==="diarias")renderDailies();
-  if(v==="lancamentos"){renderReleases();if(markReleaseSeen())refreshNotif()}
+  /* diárias, itens novos e notícias são redesenhados a cada visita (virada do dia, marcar como visto) */
+  if(v==="diarias"||v==="lancamentos")renderView(v,true);else if(v!=="novidades")renderView(v);
+  if(v==="lancamentos"&&markReleaseSeen())refreshNotif();
   if(v==="novidades"){ui.feedSeen=newsSeen();renderFeed();st.newsSeen=NEWS.reduce((m,n)=>n.d>m?n.d:m,ui.feedSeen);save();refreshNotif()}}
 export function closePanel(){document.getElementById("notifPanel").hidden=true;document.getElementById("bell").setAttribute("aria-expanded","false");document.body.classList.remove("np-open")}
 document.addEventListener("keydown",e=>{if(e.key==="Escape"&&!document.getElementById("notifPanel").hidden)closePanel()});
