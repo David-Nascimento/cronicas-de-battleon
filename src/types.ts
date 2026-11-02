@@ -38,6 +38,7 @@ export interface State {
   cat: string; mode: string; all: string; lang: Lang; nf: string; bcat: string; eslot: string; fk: string;
   eye: string; subs: Record<string, string>; rt: string;
   sub?: string; rel?: string; relSeen?: string; newsSeen?: string; dis?: string[]; own?: string[]; cmp?: string[];
+  dmine?: string[]; drem?: boolean; fprog?: Record<string, number[]>;
   tsrc?: string; mytier?: Record<string, Record<string, string[]>>;
   dly?: { k: string; done: string[] }; dhide?: string[]; dsh?: boolean; df?: string; dh?: number;
   [k: string]: unknown;

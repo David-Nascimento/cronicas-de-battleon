@@ -5,6 +5,7 @@ import {esc} from "../lib/util.js";
 import {L, save, st} from "../state.js";
 import {renderFarms} from "./farms.js";
 import {renderHome} from "./home.js";
+import {toast} from "../features/toasts.js";
 import {show} from "./nav.js";
 
 /* Diárias: lista do dia com caixas de marcar. O que está marcado vale só para o "dia do jogo":
@@ -23,8 +24,11 @@ export function nextReset(now=new Date()){const r=new Date(now);r.setHours(hour(
 /* garante que as marcações são de hoje; se o dia virou, zera */
 function sync(){const k=dayKey();if(!st.dly||st.dly.k!==k){st.dly={k,done:[]};save()}return st.dly}
 const hidden=()=>new Set(st.dhide||[]);
+/* Minhas diárias: se a pessoa escolheu as suas, só elas contam */
+const mine=()=>new Set(st.dmine||[]);
+const inScope=(x,h,m)=>!h.has(x.id)&&(m.size?m.has(x.id):counted(x));
 export function dailyProgress(){
-  const d=sync(),h=hidden(),scope=DAILIES.filter(x=>counted(x)&&!h.has(x.id));
+  const d=sync(),h=hidden(),m=mine(),scope=DAILIES.filter(x=>inScope(x,h,m));
   return{done:scope.filter(x=>d.done.includes(x.id)).length,total:scope.length};
 }
 function fmtLeft(ms){const m=Math.max(0,Math.ceil(ms/6e4)),h=Math.floor(m/60);return h?`${h}h ${pad(m%60)}min`:`${m}min`}
@@ -32,7 +36,8 @@ function fmtLeft(ms){const m=Math.max(0,Math.ceil(ms/6e4)),h=Math.floor(m/60);re
 export function renderDailies(){
   if(!st.df)st.df="all";
   const d=sync(),h=hidden(),en=lg()==="en";
-  seg("segDaily",[["all",L("daily_g_all")],...GROUPS.map(g=>[g,L("daily_g_"+g)])],"df",renderDailies);
+  const m=mine();if(st.df==="mine"&&!m.size)st.df="all";
+  seg("segDaily",[["all",L("daily_g_all")],...(m.size?[["mine",`★ ${L("daily_g_mine")} <b>${m.size}</b>`]]:[]),...GROUPS.map(g=>[g,L("daily_g_"+g)])],"df",renderDailies);
   const p=dailyProgress(),pct=p.total?Math.round(p.done/p.total*100):0,reset=nextReset();
   const hours=Array.from({length:24},(_,i)=>`<option value="${i}"${i===hour()?" selected":""}>${pad(i)}:00</option>`).join("");
   document.getElementById("dBar").innerHTML=`
@@ -41,11 +46,14 @@ export function renderDailies(){
     <div class="dMeter" role="progressbar" aria-valuemin="0" aria-valuemax="${p.total}" aria-valuenow="${p.done}"><i style="width:${pct}%"></i></div>
     <div class="dTools"><label class="dHour" title="${esc(L("daily_hour_tip"))}">${L("daily_hour")} <select id="dHour" aria-label="${esc(L("daily_hour"))}">${hours}</select></label>
       <button class="linkBtn" data-dclear>${L("daily_clear")}</button>
+      <label class="dHour"><input type="checkbox" id="dRem"${st.drem?" checked":""}> ${L("daily_rem")}</label>
       ${h.size?`<button class="linkBtn" data-dshow>${st.dsh?L("daily_hide_hidden"):L("daily_show_hidden",{n:h.size})}</button>`:""}</div>
-    <p class="dHint">${L("daily_hour_tip")}</p>`;
-  const f=st.df,groups=GROUPS.filter(g=>f==="all"?g!=="old"&&g!=="season"&&g!=="rep":f===g);
+    <p class="dHint">${m.size?L("daily_scope_mine",{n:m.size}):L("daily_scope_all")} ${L("daily_hour_tip")}</p>`;
+  const f=st.df,groups=f==="mine"?[]:GROUPS.filter(g=>f==="all"?g!=="old"&&g!=="season"&&g!=="rep":f===g);
   const jn=`<code class="jn" data-j="yulgar" title="${esc(L("farm_copied"))}">/join yulgar</code>`;
   let html=["boss","old","season","hf","rep"].includes(f)?"":`<p class="dBoard">${L("daily_board")} ${jn}</p>`;
+  if(f==="mine"){const xs=DAILIES.filter(x=>m.has(x.id)&&(st.dsh||!h.has(x.id)));
+    html+=`<section class="dGrp"><h3>★ ${L("daily_g_mine")}<small>${xs.filter(x=>d.done.includes(x.id)).length}/${xs.length}</small></h3><div class="dGrid">${xs.map(x=>item(x,d,h)).join("")}</div></section>`}
   for(const g of groups){
     const all=DAILIES.filter(x=>x.g===g),items=all.filter(x=>st.dsh||!h.has(x.id));
     const nDone=all.filter(x=>!h.has(x.id)&&d.done.includes(x.id)).length,nTot=all.filter(x=>!h.has(x.id)).length;
@@ -77,23 +85,30 @@ function item(x,d,h){
       ${x.for?`<div class="dRow"><span>${L("daily_for")}</span>${esc(x.for[l])}</div>`:""}
       ${x.hf?`<button class="dHf" data-dhf="${esc(x.hf)}">${L("daily_open_hf")}</button>`:""}
       <div class="fsrc">${L("daily_src")}: <a href="${x.src}" target="_blank" rel="noopener">${esc(x.sn)} ↗</a></div></div>
-    <button class="dHide" data-dhide="${x.id}" title="${L(hid?"daily_unhide":"daily_hide")}">${L(hid?"daily_unhide":"daily_hide")}</button></article>`;
+    <span class="dSide"><button class="dStar" data-dstar="${x.id}" aria-pressed="${mine().has(x.id)}" title="${L(mine().has(x.id)?"daily_unstar":"daily_star")}">${mine().has(x.id)?"★":"☆"} <span>${L(mine().has(x.id)?"daily_starred":"daily_star_short")}</span></button>
+    <button class="dHide" data-dhide="${x.id}" title="${L(hid?"daily_unhide":"daily_hide")}">${L(hid?"daily_unhide":"daily_hide")}</button></span></article>`;
 }
 
 /* cliques e troca da hora de virada */
 const root=document.getElementById("v-diarias");
 root.addEventListener("click",e=>{
   const t=(e.target as HTMLElement).closest<HTMLElement>("[data-dtoggle]");
-  if(t){const d=sync(),id=t.dataset.dtoggle;d.done=d.done.includes(id)?d.done.filter(x=>x!==id):[...d.done,id];save();renderDailies();return}
+  if(t){const d=sync(),id=t.dataset.dtoggle;d.done=d.done.includes(id)?d.done.filter(x=>x!==id):[...d.done,id];save();renderDailies();renderHome();return}
   const hd=(e.target as HTMLElement).closest<HTMLElement>("[data-dhide]");
   if(hd){const s=hidden(),id=hd.dataset.dhide;s.has(id)?s.delete(id):s.add(id);st.dhide=[...s];save();renderDailies();return}
   const hf=(e.target as HTMLElement).closest<HTMLElement>("[data-dhf]");
   if(hf){const i=FARMS.findIndex(x=>x.n===hf.dataset.dhf);if(i<0)return;st.fk=FARMS[i].k;save();show("itens");renderFarms();
     const el=document.getElementById("farm-"+i);if(el){el.scrollIntoView({behavior:"smooth",block:"center"});el.classList.add("flash");setTimeout(()=>el.classList.remove("flash"),1600)}return}
+  const sr=(e.target as HTMLElement).closest<HTMLElement>("[data-dstar]");
+  if(sr){const s=mine(),id=sr.dataset.dstar;s.has(id)?s.delete(id):s.add(id);st.dmine=[...s];save();renderDailies();renderHome();schedRem();return}
   if((e.target as HTMLElement).closest<HTMLElement>("[data-dclear]")){sync().done=[];save();renderDailies();return}
   if((e.target as HTMLElement).closest<HTMLElement>("[data-dshow]")){st.dsh=!st.dsh;save();renderDailies();return}
 });
 root.addEventListener("change",e=>{
+  if((e.target as HTMLElement).id==="dRem"){const on=(e.target as HTMLInputElement).checked;
+    if(on&&"Notification" in window&&Notification.permission==="default")Notification.requestPermission().then(()=>{st.drem=Notification.permission==="granted";save();renderDailies();schedRem()});
+    else{st.drem=on&&"Notification" in window&&Notification.permission==="granted";save();renderDailies();schedRem();if(on&&!st.drem)toast("!",L("daily_rem_denied"))}
+    return}
   if((e.target as HTMLElement).id!=="dHour")return;
   const keep=sync().done;st.dh=Number((e.target as HTMLInputElement).value);st.dly={k:dayKey(),done:keep};save();renderDailies();
 });
@@ -105,3 +120,13 @@ function tick(){
 }
 setInterval(tick,30000);
 document.addEventListener("visibilitychange",()=>{if(!document.hidden)tick()});
+
+/* lembrete: 1 hora antes da virada, se ainda faltar diária das que contam. Só funciona com o portal aberto
+   (aba ou app instalado); avisar com o navegador fechado exigiria um servidor de notificações. */
+let remTimer=0;
+export function schedRem(){clearTimeout(remTimer);if(!st.drem||!("Notification" in window)||Notification.permission!=="granted")return;
+  const at=nextReset().getTime()-36e5-Date.now();if(at<0)return;
+  remTimer=window.setTimeout(()=>{const p=dailyProgress();if(p.total>p.done){
+    const n=new Notification(L("title"),{body:L("daily_rem_body",{n:p.total-p.done}),icon:"icons/icon-192.png",tag:"battleon-daily"});
+    n.onclick=()=>{window.focus();show("diarias")}}},at)}
+setTimeout(schedRem,1500);

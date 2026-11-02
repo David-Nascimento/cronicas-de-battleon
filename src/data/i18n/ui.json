@@ -306,7 +306,17 @@
   "daily_rep_note": "Diárias de NPCs que dão reputação de facção (e alguns materiais). Não entram na contagem do dia; marque as que você faz.",
   "daily_event_h": "Evento no ar: {e}",
   "daily_event_x": "As quests do evento não são diárias: segundo a wiki, cada uma só pode ser feita uma vez. Os drops, as lojas e os merges ficam disponíveis até o fim do evento. Estes são os mapas:",
-  "daily_event_items": "Ver os itens do evento"
+  "daily_event_items": "Ver os itens do evento",
+  "daily_g_mine": "Minhas",
+  "daily_star": "Adicionar às minhas diárias",
+  "daily_unstar": "Tirar das minhas diárias",
+  "daily_star_short": "Minhas",
+  "daily_starred": "Nas minhas",
+  "daily_scope_mine": "Contando só as suas {n} diárias (★).",
+  "daily_scope_all": "Contando as diárias principais. Marque ★ nas que você faz e a contagem passa a ser só delas.",
+  "daily_rem": "Lembrar 1 hora antes da virada",
+  "daily_rem_denied": "O navegador não deixou mostrar avisos. Libere as notificações deste site e tente de novo.",
+  "daily_rem_body": "Faltam {n} diárias e o dia vira em 1 hora."
  },
  "en": {
   "title": "Chronicles of Battleon",
@@ -615,6 +625,16 @@
   "daily_rep_note": "NPC dailies that give faction reputation (and some materials). They don't count toward today's total; tick the ones you do.",
   "daily_event_h": "Event live: {e}",
   "daily_event_x": "The event quests aren't dailies: per the wiki, each one can only be done once. Drops, shops and merges stay available until the event ends. These are the maps:",
-  "daily_event_items": "See the event items"
+  "daily_event_items": "See the event items",
+  "daily_g_mine": "Mine",
+  "daily_star": "Add to my dailies",
+  "daily_unstar": "Remove from my dailies",
+  "daily_star_short": "Mine",
+  "daily_starred": "In mine",
+  "daily_scope_mine": "Counting only your {n} dailies (★).",
+  "daily_scope_all": "Counting the main dailies. Star (★) the ones you do and only those will count.",
+  "daily_rem": "Remind me 1 hour before reset",
+  "daily_rem_denied": "The browser blocked notifications. Allow them for this site and try again.",
+  "daily_rem_body": "{n} dailies left and the day resets in 1 hour."
  }
 }
