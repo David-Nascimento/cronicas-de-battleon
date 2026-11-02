@@ -226,7 +226,7 @@
   "daily_g_hf": "HardFarm",
   "daily_g_season": "Sazonais",
   "daily_hf_note": "Quests diárias que fazem parte dos farms da aba HardFarm e que não estão no Quadro de Quests Diárias.",
-  "daily_season_note": "Só valem enquanto a ultra está no ar. Elas não entram na contagem do dia.",
+  "daily_season_note": "Diárias que só valem enquanto a ultra ou o evento está no ar. Elas não entram na contagem do dia.",
   "daily_open_hf": "Ver no HardFarm",
   "sec_farm": "Farm",
   "tab_releases": "Itens novos",
@@ -303,7 +303,10 @@
   "tl_q": "Buscar entre as classes sem tier…",
   "tl_nohit": "Nenhuma classe sem tier com esse nome.",
   "daily_g_rep": "Reputação",
-  "daily_rep_note": "Diárias de NPCs que dão reputação de facção (e alguns materiais). Não entram na contagem do dia; marque as que você faz."
+  "daily_rep_note": "Diárias de NPCs que dão reputação de facção (e alguns materiais). Não entram na contagem do dia; marque as que você faz.",
+  "daily_event_h": "Evento no ar: {e}",
+  "daily_event_x": "As quests do evento não são diárias: segundo a wiki, cada uma só pode ser feita uma vez. Os drops, as lojas e os merges ficam disponíveis até o fim do evento. Estes são os mapas:",
+  "daily_event_items": "Ver os itens do evento"
  },
  "en": {
   "title": "Chronicles of Battleon",
@@ -532,7 +535,7 @@
   "daily_g_hf": "HardFarm",
   "daily_g_season": "Seasonal",
   "daily_hf_note": "Daily quests that are part of the farms in the HardFarm tab and are not on the Daily Quest Board.",
-  "daily_season_note": "They only count while the ultra is on. They don't count toward today's total.",
+  "daily_season_note": "Dailies that only count while the ultra or event is live. They don't count toward today's total.",
   "daily_open_hf": "See in HardFarm",
   "sec_farm": "Farm",
   "tab_releases": "New items",
@@ -609,6 +612,9 @@
   "tl_q": "Search unranked classes…",
   "tl_nohit": "No unranked class with that name.",
   "daily_g_rep": "Reputation",
-  "daily_rep_note": "NPC dailies that give faction reputation (and some materials). They don't count toward today's total; tick the ones you do."
+  "daily_rep_note": "NPC dailies that give faction reputation (and some materials). They don't count toward today's total; tick the ones you do.",
+  "daily_event_h": "Event live: {e}",
+  "daily_event_x": "The event quests aren't dailies: per the wiki, each one can only be done once. Drops, shops and merges stay available until the event ends. These are the maps:",
+  "daily_event_items": "See the event items"
  }
 }

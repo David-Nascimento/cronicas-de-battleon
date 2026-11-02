@@ -34,3 +34,6 @@
 .dHf:hover{background:var(--glow-soft)}
 .fcard.flash{box-shadow:0 0 0 2px var(--glow)}
 .dNoJ{color:var(--muted);font-size:12px}
+.dEvent{padding:16px;margin-bottom:14px;display:flex;flex-direction:column;gap:8px;border-color:var(--glow-dim);background:radial-gradient(500px 200px at 100% 0,var(--glow-soft),transparent 70%),var(--panel)}
+.dEvent .relTop b{font:700 17px var(--deco)}
+.dEvent .linkBtn{align-self:flex-start}

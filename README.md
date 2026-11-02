@@ -40,6 +40,7 @@ tools/build.mjs       build com esbuild
 
 - **5 destinos** (config.ts, `SECS`/`SUBS`/`SEC`): Hoje, Classes (tier list, todas, comparar, enhancements), Ultras (agenda e times, montador), Farm (diárias, HardFarm) e Novidades (itens novos, notícias de classes). No computador as abas aparecem embaixo do destino aberto; no celular, numa fileira no topo. Cada destino lembra a última aba usada.
 - **Minha tier list** (views/tiers.ts): além da do portal, cada pessoa monta a sua com todas as classes (sem separar por loja); os tiers ficam em cima e "Sem tier" embaixo, com uma busca por nome só para ela, arrastando ou tocando na classe e depois no tier. Fica salva no navegador, uma por modo; dá para voltar à do portal, começar do zero ou copiar como texto.
+- **Evento sazonal nas Diárias**: na aba Sazonais aparece o evento no ar (vem das entradas de `releases.json` com `until` no futuro), com os mapas e joins. Some sozinho quando o evento acaba.
 - **Busca única** no topo: acha classes, itens novos, diárias e cards de HardFarm.
 - **Tema Hollowborn** (styles/tokens.css): fundo violeta escuro, texto cor de osso e um brilho que segue a "cor dos olhos" escolhida no botão de olho (Espectral, Vazio, Sangue, Brasa, Osso). Todos os tons que brilham saem de `--eye`.
 

@@ -1,5 +1,6 @@
 import {seg} from "../components/shared.js";
-import {DAILIES, FARMS} from "../data/index.js";
+import {DAILIES, FARMS, REL} from "../data/index.js";
+import {fmtDay, jn as joinCode} from "./releases.js";
 import {esc} from "../lib/util.js";
 import {L, save, st} from "../state.js";
 import {renderFarms} from "./farms.js";
@@ -48,10 +49,20 @@ export function renderDailies(){
   for(const g of groups){
     const all=DAILIES.filter(x=>x.g===g),items=all.filter(x=>st.dsh||!h.has(x.id));
     const nDone=all.filter(x=>!h.has(x.id)&&d.done.includes(x.id)).length,nTot=all.filter(x=>!h.has(x.id)).length;
+    if(g==="season")html+=eventCard();
     html+=`<section class="dGrp"><h3>${L("daily_g_"+g)}<small>${nDone}/${nTot}</small></h3>${["hf","boss","rep","season","old"].includes(g)?`<p class="dNote">${L("daily_"+g+"_note")}</p>`:""}
       <div class="dGrid">${items.map(x=>item(x,d,h)).join("")||`<p class="dNote">${L("daily_empty")}</p>`}</div></section>`;
   }
   document.getElementById("dList").innerHTML=html;
+}
+/* evento sazonal no ar agora (vem de releases.json: entradas com "until" que ainda não passou) */
+function eventCard(){
+  const today=isoLocal(new Date()),evs=REL.filter(r=>r.until&&r.until>=today);if(!evs.length)return "";
+  const until=evs[0].until,maps=[...new Map(evs.flatMap(r=>r.maps).filter(m=>m.j).map(m=>[m.j,m])).values()],l=lg();
+  return `<article class="dEvent frame"><div class="relTop"><b>${L("daily_event_h",{e:esc(evs[0].t[l].split(":")[0])})}</b><span class="pill soon">${L("rel_until",{d:fmtDay(until)})}</span></div>
+    <p class="dNote">${L("daily_event_x")}</p>
+    <ul class="relMaps">${maps.map(m=>`<li>${joinCode(m.j)}<span><b>${esc(m.n)}</b> ${esc(m.w[l])}</span></li>`).join("")}</ul>
+    <button class="linkBtn" data-relt="all">${L("daily_event_items")}</button></article>`;
 }
 function item(x,d,h){
   const on=d.done.includes(x.id),hid=h.has(x.id),l=lg(),name=l==="en"&&x.ne?x.ne:x.n;
