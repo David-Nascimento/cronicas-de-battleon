@@ -54,9 +54,10 @@ export function renderTiers(){
     ${s?`<div class="tlMove"><b>${L("tl_move",{c:esc(s.name)})}</b><span class="tlBtns">${ROWS.map(r=>`<button class="tlTo t${r}" data-tto="${r}">${r==="N"?L("tl_none"):r}</button>`).join("")}<button class="linkBtn open" data-i="${idx(s)}">${L("tl_card")}</button><button class="linkBtn" data-tcancel>${L("tl_cancel")}</button></span></div>`
       :`<p class="tlHint">${L("tl_hint")}${custom?"":` <span class="pill soon">${L("tl_from_portal")}</span>`}</p>`}
     <div class="tlActs"><button class="btnQ" data-treset>${L("tl_reset")}</button><button class="btnQ" data-tzero>${L("tl_zero")}</button><button class="btnQ" data-tcopy>${L("tl_copy")}</button></div></div>`;
-  box.innerHTML=ROWS.map(r=>{const xs=m[r].map(n=>D[byName[n]]).filter(Boolean);
-    const vis=xs.filter(hit);
-    return `<div class="tier${r==="N"?" none":""}" data-trow="${r}"><div class="tl" style="background:${r==="N"?"var(--line)":tColor(r)}">${r==="N"?`<small>${L("tl_none")}</small>`:r}<em class="tlN">${nq?`${vis.length}/`:""}${xs.length}</em></div><div class="tr">${vis.length?vis.map(c=>card(c,true)).join(""):`<span class="empty">${nq&&xs.length?L("tl_nohit"):L(r==="N"?"tl_none_empty":"tl_drop")}</span>`}</div></div>`}).join("");
+  /* "Sem tier" vem primeiro: é de lá que se tiram as classes, e a busca filtra só ela */
+  box.innerHTML=(["N",...TIERS] as Row[]).map(r=>{const xs=m[r].map(n=>D[byName[n]]).filter(Boolean);
+    const vis=r==="N"?xs.filter(hit):xs,f=r==="N"&&nq;
+    return `<div class="tier${r==="N"?" none":""}" data-trow="${r}"><div class="tl" style="background:${r==="N"?"var(--line)":tColor(r)}">${r==="N"?`<small>${L("tl_none")}</small>`:r}<em class="tlN">${f?`${vis.length}/`:""}${xs.length}</em></div><div class="tr">${vis.length?vis.map(c=>card(c,true)).join(""):`<span class="empty">${f&&xs.length?L("tl_nohit"):L(r==="N"?"tl_none_empty":"tl_drop")}</span>`}</div></div>`}).join("");
 }
 
 /* eventos da edição */
