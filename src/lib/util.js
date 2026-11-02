@@ -2,7 +2,10 @@ import {CATS, GLYPH} from "../config.js";
 import {D} from "../data/index.js";
 
 export const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
-export const wiki=n=>"https://aqwwiki.wikidot.com/search:site/q/"+encodeURIComponent(n);
+/* link direto da página no AQW Wiki (a busca do wiki está fora do ar): o Wikidot monta o endereço
+   com o nome em minúsculas, trocando tudo que não é letra ou número por hífen ("Artix's Armor (0 AC)" → artix-s-armor-0-ac) */
+export const wikiSlug=n=>n.normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-+|-+$/g,"");
+export const wiki=n=>"https://aqwwiki.wikidot.com/"+wikiSlug(n);
 export const initials=n=>n.replace(/'s\b/g,"").split(/\s+/).filter(w=>!/^(of|no|the)$/i.test(w)).map(w=>w[0]).join("").slice(0,3).toUpperCase();
 export function sigil(c,sz){
   const col=`var(${CATS[c.cat].c})`,ini=initials(c.name);
