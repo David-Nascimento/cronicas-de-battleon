@@ -316,7 +316,11 @@
   "daily_scope_all": "Contando as diárias principais. Marque ★ nas que você faz e a contagem passa a ser só delas.",
   "daily_rem": "Lembrar 1 hora antes da virada",
   "daily_rem_denied": "O navegador não deixou mostrar avisos. Libere as notificações deste site e tente de novo.",
-  "daily_rem_body": "Faltam {n} diárias e o dia vira em 1 hora."
+  "daily_rem_body": "Faltam {n} diárias e o dia vira em 1 hora.",
+  "farm_prog": "{n} de {t} etapas",
+  "farm_done": "Concluído",
+  "farm_step": "Etapa {n} feita",
+  "farm_started": "Em andamento"
  },
  "en": {
   "title": "Chronicles of Battleon",
@@ -635,6 +639,10 @@
   "daily_scope_all": "Counting the main dailies. Star (★) the ones you do and only those will count.",
   "daily_rem": "Remind me 1 hour before reset",
   "daily_rem_denied": "The browser blocked notifications. Allow them for this site and try again.",
-  "daily_rem_body": "{n} dailies left and the day resets in 1 hour."
+  "daily_rem_body": "{n} dailies left and the day resets in 1 hour.",
+  "farm_prog": "{n} of {t} steps",
+  "farm_done": "Done",
+  "farm_step": "Step {n} done",
+  "farm_started": "In progress"
  }
 }

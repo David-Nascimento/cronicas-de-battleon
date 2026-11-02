@@ -78,3 +78,12 @@ code.jn{font:600 12px ui-monospace,SFMono-Regular,Menlo,monospace;background:var
 .bslot .st.miss{color:var(--muted)}
 .bslot.ok{border-color:var(--tB)}
 .bhint{padding:18px;color:var(--muted)}
+.fprog{display:flex;flex-direction:column;gap:6px;font-size:13px}
+.fprog b{font-weight:600}
+.fsteps{list-style:none;padding-left:0!important}
+.fsteps li{display:grid;grid-template-columns:24px minmax(0,1fr);gap:8px;align-items:start}
+.fsteps li.ok>span{color:var(--muted)}
+.fchk{width:24px;height:24px;border-radius:7px;border:2px solid var(--line);background:var(--bg2);color:transparent;display:flex;align-items:center;justify-content:center;cursor:pointer;padding:0;margin-top:1px}
+.fchk svg{width:15px;height:15px}
+.fchk:hover{border-color:var(--glow)}
+.fchk[aria-checked="true"]{background:var(--tB);border-color:var(--tB);color:#fff}
