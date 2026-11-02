@@ -25,7 +25,7 @@ src/
     index.js          junta os JSON e monta a lista final de classes
   lib/util.js         funções pequenas (escape de HTML, busca sem acento, brasão da classe)
   components/shared.js  pedaços de interface reutilizados
-  views/              uma por aba: home, tiers, classes, comparar, ultras, montador, enhancements, hardfarm
+  views/              uma por aba: home, tiers, classes, comparar, ultras, montador, enhancements, hardfarm, diárias
   features/           novidades, alertas e notificações, avisos na tela, busca global
   styles/             CSS dividido por área; main.css define a ordem (a ordem importa)
 tools/build.mjs       build com esbuild
@@ -34,7 +34,7 @@ tools/build.mjs       build com esbuild
 ## Atualizar conteúdo
 
 Edite os arquivos em `src/data/` e rode `npm run build`. Exemplos:
-`hardfarm.json` (cards de HardFarm), `news.json` (novidades), `classes.json` (tiers), `ultra-schedule.json`.
+`hardfarm.json` (cards de HardFarm), `dailies.json` (aba Diárias), `news.json` (novidades), `classes.json` (tiers), `ultra-schedule.json`.
 
 ## Antes desta versão
 

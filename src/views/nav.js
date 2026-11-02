@@ -3,6 +3,7 @@ import {NEWS} from "../data/index.js";
 import {refreshNotif} from "../features/alerts.js";
 import {newsSeen, renderFeed} from "../features/news.js";
 import {L, save, st, ui} from "../state.js";
+import {renderDailies} from "./dailies.js";
 
 export const VIEWS=Object.values(SEC).flat(),secOf=v=>Object.keys(SEC).find(k=>SEC[k].includes(v));
 export function renderSub(){const list=SUBS[secOf(ui.curView)],sn=document.getElementById("subnav");
@@ -23,6 +24,7 @@ export function show(v){
   renderSub();
   try{history.replaceState(null,"","#"+v)}catch(e){}
   if(changed)window.scrollTo(0,0);
+  if(v==="diarias")renderDailies();
   if(v==="novidades"){ui.feedSeen=newsSeen();renderFeed();st.newsSeen=NEWS.reduce((m,n)=>n.d>m?n.d:m,ui.feedSeen);save();refreshNotif()}}
 export function closePanel(){document.getElementById("notifPanel").hidden=true;document.getElementById("bell").setAttribute("aria-expanded","false");document.body.classList.remove("np-open")}
 document.addEventListener("keydown",e=>{if(e.key==="Escape"&&!document.getElementById("notifPanel").hidden)closePanel()});

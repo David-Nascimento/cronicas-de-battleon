@@ -4,6 +4,7 @@ import "./styles/main.css";
 import "./views/static.js";
 import "./views/nav.js";
 import "./views/farms.js";
+import "./views/dailies.js";
 import "./views/builder.js";
 import "./views/home.js";
 import "./views/tiers.js";

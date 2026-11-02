@@ -1,0 +1,676 @@
+[
+ {
+  "id": "moglin",
+  "g": "start",
+  "n": "Moglin Companions",
+  "who": {
+   "pt": "Aria, em Aria's Pet Shoppe",
+   "en": "Aria, in Aria's Pet Shoppe"
+  },
+  "req": null,
+  "rw": {
+   "pt": "50 gold, 50 XP, 1.500 de reputação Pet Tamer e 1 Moglin MEAL",
+   "en": "50 gold, 50 XP, 1,500 Pet Tamer rep and 1 Moglin MEAL"
+  },
+  "for": {
+   "pt": "Pets Zorbak, Twilly e Twig (pedem 30 Moglin MEALs)",
+   "en": "Zorbak, Twilly and Twig pets (they need 30 Moglin MEALs)"
+  },
+  "src": "https://aqwwiki.wikidot.com/daily-quest-board-s-quests",
+  "sn": "AQW Wiki"
+ },
+ {
+  "id": "elder",
+  "g": "start",
+  "n": "Experiment 107: Elder's Blood Potion",
+  "who": {
+   "pt": "Reens, em Arcangrove",
+   "en": "Reens, in Arcangrove"
+  },
+  "req": null,
+  "rw": {
+   "pt": "600 gold, 600 XP, 800 de reputação Arcangrove e 1 Elders' Blood",
+   "en": "600 gold, 600 XP, 800 Arcangrove rep and 1 Elders' Blood"
+  },
+  "for": {
+   "pt": "Classe Void Highlord",
+   "en": "Void Highlord class"
+  },
+  "src": "https://aqwwiki.wikidot.com/daily-quest-board-s-quests",
+  "sn": "AQW Wiki"
+ },
+ {
+  "id": "sparrow",
+  "g": "start",
+  "n": "Experiment 231: Sparrow Blood Potion",
+  "who": {
+   "pt": "Reens, em Arcangrove",
+   "en": "Reens, in Arcangrove"
+  },
+  "req": null,
+  "rw": {
+   "pt": "800 gold, 800 XP, 600 de reputação Arcangrove e 1 Sparrow's Blood",
+   "en": "800 gold, 800 XP, 600 Arcangrove rep and 1 Sparrow's Blood"
+  },
+  "src": "https://aqwwiki.wikidot.com/daily-quest-board-s-quests",
+  "sn": "AQW Wiki"
+ },
+ {
+  "id": "odds",
+  "g": "start",
+  "n": "Odd's 'n' Ends",
+  "who": {
+   "pt": "Vinara, em Curiosities",
+   "en": "Vinara, in Curiosities"
+  },
+  "req": null,
+  "rw": {
+   "pt": "1 Crypto Token (não dá gold nem XP)",
+   "en": "1 Crypto Token (no gold or XP)"
+  },
+  "for": {
+   "pt": "Classe Frostval Barbarian",
+   "en": "Frostval Barbarian class"
+  },
+  "src": "https://aqwwiki.wikidot.com/daily-quest-board-s-quests",
+  "sn": "AQW Wiki"
+ },
+ {
+  "id": "tokcol",
+  "g": "start",
+  "n": "Tokens of Collection",
+  "who": {
+   "pt": "Drakath (Kid), em Terrarium",
+   "en": "Drakath (Kid), in Terrarium"
+  },
+  "req": null,
+  "rw": {
+   "pt": "150 gold, 150 XP e 1 Token of Collection",
+   "en": "150 gold, 150 XP and 1 Token of Collection"
+  },
+  "for": {
+   "pt": "Classe The Collector (pede 90 Tokens of Collection)",
+   "en": "The Collector class (needs 90 Tokens of Collection)"
+  },
+  "src": "https://aqwwiki.wikidot.com/daily-quest-board-s-quests",
+  "sn": "AQW Wiki"
+ },
+ {
+  "id": "embargo",
+  "g": "start",
+  "n": "Shadow Embargo",
+  "who": {
+   "pt": "Kunoichi, em Akiba",
+   "en": "Kunoichi, in Akiba"
+  },
+  "req": null,
+  "rw": {
+   "pt": "5.000 gold, 5.000 XP, 5.000 de reputação Yokai e 1 Shadow Shroud",
+   "en": "5,000 gold, 5,000 XP, 5,000 Yokai rep and 1 Shadow Shroud"
+  },
+  "src": "https://aqwwiki.wikidot.com/daily-quest-board-s-quests",
+  "sn": "AQW Wiki"
+ },
+ {
+  "id": "bugged",
+  "g": "start",
+  "n": "Bugged by Rares!",
+  "who": {
+   "pt": "Drakath (Kid), em Terrarium",
+   "en": "Drakath (Kid), in Terrarium"
+  },
+  "req": null,
+  "rw": {
+   "pt": "300 gold, 300 XP e 1 Token of Collection; pode vir também 40 Super-Fan Swag Token C ou D",
+   "en": "300 gold, 300 XP and 1 Token of Collection; you may also get 40 Super-Fan Swag Token C or D"
+  },
+  "for": {
+   "pt": "Classe The Collector",
+   "en": "The Collector class"
+  },
+  "src": "https://aqwwiki.wikidot.com/daily-quest-board-s-quests",
+  "sn": "AQW Wiki"
+ },
+ {
+  "id": "rarely",
+  "g": "start",
+  "n": "Rarely Defeated!",
+  "who": {
+   "pt": "Drakath (Kid), em Terrarium",
+   "en": "Drakath (Kid), in Terrarium"
+  },
+  "req": null,
+  "rw": {
+   "pt": "300 gold, 300 XP e 1 Token of Collection; pode vir também 40 Super-Fan Swag Token C ou D",
+   "en": "300 gold, 300 XP and 1 Token of Collection; you may also get 40 Super-Fan Swag Token C or D"
+  },
+  "for": {
+   "pt": "Classe The Collector",
+   "en": "The Collector class"
+  },
+  "src": "https://aqwwiki.wikidot.com/daily-quest-board-s-quests",
+  "sn": "AQW Wiki"
+ },
+ {
+  "id": "mine",
+  "g": "mid",
+  "n": "Mine Crafting",
+  "who": {
+   "pt": "Artix, em Necropolis",
+   "en": "Artix, in Necropolis"
+  },
+  "req": {
+   "pt": "Ter concluído \"A Loyal Follower\"; 30 Raw Ore e a Axe of the Prospector",
+   "en": "Completed \"A Loyal Follower\"; 30 Raw Ore and the Axe of the Prospector"
+  },
+  "rw": {
+   "pt": "5.000 gold, 5.000 XP, 2.000 de reputação DoomWood e 1 metal à escolha: Aluminum, Barium, Gold, Iron, Copper, Silver ou Platinum",
+   "en": "5,000 gold, 5,000 XP, 2,000 DoomWood rep and 1 metal of your choice: Aluminum, Barium, Gold, Iron, Copper, Silver or Platinum"
+  },
+  "for": {
+   "pt": "Metais da BLoD, da Necrotic Sword of Doom e da SDKA",
+   "en": "Metals for BLoD, Necrotic Sword of Doom and SDKA"
+  },
+  "src": "https://aqwwiki.wikidot.com/daily-quest-board-s-quests",
+  "sn": "AQW Wiki"
+ },
+ {
+  "id": "hardcore",
+  "g": "mid",
+  "n": "Hard Core Metals",
+  "who": {
+   "pt": "Vayle, em Necropolis",
+   "en": "Vayle, in Necropolis"
+  },
+  "req": {
+   "pt": "Ter concluído \"Dark Spirit Donation\"; 30 Raw Ore e a Axe of the Prospector",
+   "en": "Completed \"Dark Spirit Donation\"; 30 Raw Ore and the Axe of the Prospector"
+  },
+  "rw": {
+   "pt": "5.000 gold, 5.000 XP, 2.000 de reputação DoomWood e 1 metal à escolha: Arsenic, Beryllium, Chromium, Palladium, Rhodium, Thorium ou Mercury",
+   "en": "5,000 gold, 5,000 XP, 2,000 DoomWood rep and 1 metal of your choice: Arsenic, Beryllium, Chromium, Palladium, Rhodium, Thorium or Mercury"
+  },
+  "for": {
+   "pt": "Metais da BLoD, da Necrotic Sword of Doom e da SDKA",
+   "en": "Metals for BLoD, Necrotic Sword of Doom and SDKA"
+  },
+  "src": "https://aqwwiki.wikidot.com/daily-quest-board-s-quests",
+  "sn": "AQW Wiki"
+ },
+ {
+  "id": "glacera",
+  "g": "mid",
+  "n": "Glacera Ice Token",
+  "who": {
+   "pt": "Syrrus, em Frozen Ruins, Frozen Tower e Northstar",
+   "en": "Syrrus, in Frozen Ruins, Frozen Tower and Northstar"
+  },
+  "req": {
+   "pt": "Ter concluído \"Drive Back the Invaders\"; nível 50; 1 Dark Ice",
+   "en": "Completed \"Drive Back the Invaders\"; level 50; 1 Dark Ice"
+  },
+  "rw": {
+   "pt": "500 gold, 500 XP e 12 Glacera Ice Token. Legends têm a versão LEGEND, com 18 tokens",
+   "en": "500 gold, 500 XP and 12 Glacera Ice Tokens. Legends get the LEGEND version, with 18 tokens"
+  },
+  "for": {
+   "pt": "Classe Cryomancer",
+   "en": "Cryomancer class"
+  },
+  "mem": "l",
+  "src": "https://aqwwiki.wikidot.com/daily-quest-board-s-quests",
+  "sn": "AQW Wiki"
+ },
+ {
+  "id": "shurpu",
+  "g": "mid",
+  "n": "Shurpu Blaze Tokens",
+  "who": {
+   "pt": "Warlic, em Ruins of Shurpu",
+   "en": "Warlic, in Ruins of Shurpu"
+  },
+  "req": {
+   "pt": "Ter concluído \"Face Xan\"; 1 Guardian Shale",
+   "en": "Completed \"Face Xan\"; 1 Guardian Shale"
+  },
+  "rw": {
+   "pt": "500 gold, 500 XP e 12 Shurpu Blaze Token. Members têm a versão MEMBER, com 600 gold, 600 XP e 18 tokens",
+   "en": "500 gold, 500 XP and 12 Shurpu Blaze Tokens. Members get the MEMBER version, with 600 gold, 600 XP and 18 tokens"
+  },
+  "for": {
+   "pt": "Classe Pyromancer",
+   "en": "Pyromancer class"
+  },
+  "mem": "m",
+  "src": "https://aqwwiki.wikidot.com/daily-quest-board-s-quests",
+  "sn": "AQW Wiki"
+ },
+ {
+  "id": "sol",
+  "g": "mid",
+  "n": "Seal of Light",
+  "who": {
+   "pt": "Lady Celestia, em Alteon Battle",
+   "en": "Lady Celestia, in Alteon Battle"
+  },
+  "req": {
+   "pt": "Derrotar o Ultra Alteon (1 Alteon Defeated)",
+   "en": "Defeat Ultra Alteon (1 Alteon Defeated)"
+  },
+  "rw": {
+   "pt": "500 gold, 500 XP e 1 Seal of Light",
+   "en": "500 gold, 500 XP and 1 Seal of Light"
+  },
+  "for": {
+   "pt": "Classe Bright Knight (pede 50 Seals of Light)",
+   "en": "Bright Knight class (needs 50 Seals of Light)"
+  },
+  "src": "https://aqwwiki.wikidot.com/daily-quest-board-s-quests",
+  "sn": "AQW Wiki"
+ },
+ {
+  "id": "sod",
+  "g": "mid",
+  "n": "Seal of Darkness",
+  "who": {
+   "pt": "Lady Celestia, em Sepulchure Battle",
+   "en": "Lady Celestia, in Sepulchure Battle"
+  },
+  "req": {
+   "pt": "Derrotar o Ultra Sepulchure (1 Sepulchure Defeated)",
+   "en": "Defeat Ultra Sepulchure (1 Sepulchure Defeated)"
+  },
+  "rw": {
+   "pt": "500 gold, 500 XP e 1 Seal of Darkness",
+   "en": "500 gold, 500 XP and 1 Seal of Darkness"
+  },
+  "for": {
+   "pt": "Classe Bright Knight (pede 50 Seals of Darkness)",
+   "en": "Bright Knight class (needs 50 Seals of Darkness)"
+  },
+  "src": "https://aqwwiki.wikidot.com/daily-quest-board-s-quests",
+  "sn": "AQW Wiki"
+ },
+ {
+  "id": "chaos",
+  "g": "mid",
+  "n": "Embrace Your Chaos (Daily)",
+  "who": {
+   "pt": "Loremaster Maya, em Mount Doomskull",
+   "en": "Loremaster Maya, in Mount Doomskull"
+  },
+  "req": {
+   "pt": "6 Chaos Power Increased",
+   "en": "6 Chaos Power Increased"
+  },
+  "rw": {
+   "pt": "1.000 gold, 1.000 XP, 5.000 de reputação Chaos e 1 Dage's Scroll Fragment",
+   "en": "1,000 gold, 1,000 XP, 5,000 Chaos rep and 1 Dage's Scroll Fragment"
+  },
+  "src": "https://aqwwiki.wikidot.com/daily-quest-board-s-quests",
+  "sn": "AQW Wiki"
+ },
+ {
+  "id": "shadows",
+  "g": "end",
+  "n": "The Encroaching Shadows (Daily)",
+  "who": {
+   "pt": "Braeus, em Shadowfall",
+   "en": "Braeus, in Shadowfall"
+  },
+  "req": {
+   "pt": "Nível 75; 1 Glacial Pinion, 3 Hydra Eyeball e 1 Flibbitigiblets",
+   "en": "Level 75; 1 Glacial Pinion, 3 Hydra Eyeball and 1 Flibbitigiblets"
+  },
+  "rw": {
+   "pt": "50.000 gold, 100.000 XP e 50 Void Aura; pode vir também 1 (Necro) Scroll of Dark Arts",
+   "en": "50,000 gold, 100,000 XP and 50 Void Aura; you may also get 1 (Necro) Scroll of Dark Arts"
+  },
+  "src": "https://aqwwiki.wikidot.com/daily-quest-board-s-quests",
+  "sn": "AQW Wiki"
+ },
+ {
+  "id": "glimpse",
+  "g": "end",
+  "n": "Glimpse Into The Dark (Daily)",
+  "who": {
+   "pt": "Braeus, em Shadowfall",
+   "en": "Braeus, in Shadowfall"
+  },
+  "req": {
+   "pt": "Nível 75; 13 Kraken Doubloon, 3 Ancient Trigora's Horns e 1 Graveclaw's Broken Axe",
+   "en": "Level 75; 13 Kraken Doubloon, 3 Ancient Trigora's Horns and 1 Graveclaw's Broken Axe"
+  },
+  "rw": {
+   "pt": "100.000 gold, 150.000 XP e 100 Void Aura; pode vir também 1 (Necro) Scroll of Dark Arts",
+   "en": "100,000 gold, 150,000 XP and 100 Void Aura; you may also get 1 (Necro) Scroll of Dark Arts"
+  },
+  "src": "https://aqwwiki.wikidot.com/daily-quest-board-s-quests",
+  "sn": "AQW Wiki"
+ },
+ {
+  "id": "voidbuq",
+  "g": "end",
+  "n": "Wrong Turn at Voidbuquerque",
+  "who": {
+   "pt": "Memory of Nulgath, em Originul",
+   "en": "Memory of Nulgath, in Originul"
+  },
+  "req": {
+   "pt": "Nível 80; ter concluído \"Break their Muti-kneecaps\"; as ??? Essences de Flibbitiestgibbet, Nightbane e Xyfrag",
+   "en": "Level 80; completed \"Break their Muti-kneecaps\"; the ??? Essences of Flibbitiestgibbet, Nightbane and Xyfrag"
+  },
+  "rw": {
+   "pt": "75.000 gold, 150.000 XP, 1 Unidentified 13 e 1 gema à escolha: 60 Tainted Gem, 35 Dark Crystal Shard, 100 Diamond of Nulgath, 35 Gem of Nulgath, 7 Blood Gem of the Archfiend ou 2 Totem of Nulgath",
+   "en": "75,000 gold, 150,000 XP, 1 Unidentified 13 and 1 gem of your choice: 60 Tainted Gem, 35 Dark Crystal Shard, 100 Diamond of Nulgath, 35 Gem of Nulgath, 7 Blood Gem of the Archfiend or 2 Totem of Nulgath"
+  },
+  "src": "https://aqwwiki.wikidot.com/daily-quest-board-s-quests",
+  "sn": "AQW Wiki"
+ },
+ {
+  "id": "beatup",
+  "g": "end",
+  "n": "Beat Up Master For My Enjoyment",
+  "who": {
+   "pt": "Undead Cashfear, em Gaol Cell",
+   "en": "Undead Cashfear, in Gaol Cell"
+  },
+  "req": {
+   "pt": "Ter concluído \"The Gaol of Eternal Torment and Misery\"; 1 Grimskull Beat Up",
+   "en": "Completed \"The Gaol of Eternal Torment and Misery\"; 1 Grimskull Beat Up"
+  },
+  "rw": {
+   "pt": "125.000 gold, 250.000 XP e 2.500 de reputação Grimskull Trolling",
+   "en": "125,000 gold, 250,000 XP and 2,500 Grimskull Trolling rep"
+  },
+  "src": "https://aqwwiki.wikidot.com/daily-quest-board-s-quests",
+  "sn": "AQW Wiki"
+ },
+ {
+  "id": "night",
+  "g": "end",
+  "n": "Night Falls (Daily Bonus)",
+  "who": {
+   "pt": "Ai No Miko, em Eclipse Ascent",
+   "en": "Ai No Miko, in Eclipse Ascent"
+  },
+  "req": {
+   "pt": "Nível 50; 1 Midnight Moondrop (Hollow Midnight)",
+   "en": "Level 50; 1 Midnight Moondrop (Hollow Midnight)"
+  },
+  "rw": {
+   "pt": "100.000 gold, 150.000 XP e 3 Sliver of Moonlight",
+   "en": "100,000 gold, 150,000 XP and 3 Sliver of Moonlight"
+  },
+  "src": "https://aqwwiki.wikidot.com/daily-quest-board-s-quests",
+  "sn": "AQW Wiki"
+ },
+ {
+  "id": "dawn",
+  "g": "end",
+  "n": "Dawn Breaks (Daily Bonus)",
+  "who": {
+   "pt": "Ai No Miko, em Eclipse Ascent",
+   "en": "Ai No Miko, in Eclipse Ascent"
+  },
+  "req": {
+   "pt": "Nível 50; 1 Solstice Sundew (Hollow Solstice)",
+   "en": "Level 50; 1 Solstice Sundew (Hollow Solstice)"
+  },
+  "rw": {
+   "pt": "100.000 gold, 150.000 XP e 3 Sliver of Sunlight",
+   "en": "100,000 gold, 150,000 XP and 3 Sliver of Sunlight"
+  },
+  "src": "https://aqwwiki.wikidot.com/daily-quest-board-s-quests",
+  "sn": "AQW Wiki"
+ },
+ {
+  "id": "frozen",
+  "g": "end",
+  "n": "Frozen Cycle (Daily Bonus)",
+  "who": {
+   "pt": "Ai No Miko, em Eclipse Ascent",
+   "en": "Ai No Miko, in Eclipse Ascent"
+  },
+  "req": {
+   "pt": "Nível 80; 1 Midnight's Shadow e 1 Solstice's Shadow (da dungeon Ascension of the Eclipse)",
+   "en": "Level 80; 1 Midnight's Shadow and 1 Solstice's Shadow (from the Ascension of the Eclipse dungeon)"
+  },
+  "rw": {
+   "pt": "500.000 gold, 750.000 XP e 3 Ecliptic Offering",
+   "en": "500,000 gold, 750,000 XP and 3 Ecliptic Offering"
+  },
+  "src": "https://aqwwiki.wikidot.com/daily-quest-board-s-quests",
+  "sn": "AQW Wiki"
+ },
+ {
+  "id": "ezrajal",
+  "g": "boss",
+  "n": "UltraEzrajal",
+  "req": null,
+  "rw": {
+   "pt": "Recompensa diária: Insignia",
+   "en": "Daily reward: Insignia"
+  },
+  "for": {
+   "pt": "Exalted Apotheosis (uma Insignia por dia)",
+   "en": "Exalted Apotheosis (one Insignia a day)"
+  },
+  "src": "https://www.aqwhub.com/other-guides/weeklies-and-dailies/",
+  "sn": "AQWHub"
+ },
+ {
+  "id": "warden",
+  "g": "boss",
+  "n": "UltraWarden",
+  "req": null,
+  "rw": {
+   "pt": "Recompensa diária: Insignia",
+   "en": "Daily reward: Insignia"
+  },
+  "for": {
+   "pt": "Exalted Apotheosis (uma Insignia por dia)",
+   "en": "Exalted Apotheosis (one Insignia a day)"
+  },
+  "src": "https://www.aqwhub.com/other-guides/weeklies-and-dailies/",
+  "sn": "AQWHub"
+ },
+ {
+  "id": "engineer",
+  "g": "boss",
+  "n": "UltraEngineer",
+  "req": null,
+  "rw": {
+   "pt": "Recompensa diária: Insignia",
+   "en": "Daily reward: Insignia"
+  },
+  "src": "https://www.aqwhub.com/other-guides/weeklies-and-dailies/",
+  "sn": "AQWHub"
+ },
+ {
+  "id": "astral",
+  "g": "boss",
+  "n": "AstralShrine",
+  "req": null,
+  "rw": {
+   "pt": "Recompensa diária: Star of the Empyrean",
+   "en": "Daily reward: Star of the Empyrean"
+  },
+  "src": "https://www.aqwhub.com/other-guides/weeklies-and-dailies/",
+  "sn": "AQWHub"
+ },
+ {
+  "id": "iona",
+  "g": "boss",
+  "n": "Queen Iona",
+  "req": null,
+  "rw": {
+   "pt": "Recompensa diária: Lothian's Lightning",
+   "en": "Daily reward: Lothian's Lightning"
+  },
+  "src": "https://www.aqwhub.com/other-guides/weeklies-and-dailies/",
+  "sn": "AQWHub"
+ },
+ {
+  "id": "tyndarius",
+  "g": "boss",
+  "n": "UltraTyndarius",
+  "req": null,
+  "rw": {
+   "pt": "Recompensa diária: Insignia",
+   "en": "Daily reward: Insignia"
+  },
+  "src": "https://www.aqwhub.com/other-guides/weeklies-and-dailies/",
+  "sn": "AQWHub"
+ },
+ {
+  "id": "azalith",
+  "g": "boss",
+  "n": "Apex Azalith",
+  "req": null,
+  "rw": {
+   "pt": "Recompensa diária: Divinas Voluntas",
+   "en": "Daily reward: Divinas Voluntas"
+  },
+  "src": "https://www.aqwhub.com/other-guides/weeklies-and-dailies/",
+  "sn": "AQWHub"
+ },
+ {
+  "id": "kolr",
+  "g": "boss",
+  "n": "Kolr, Usurper of Flames",
+  "req": null,
+  "rw": {
+   "pt": "Recompensa diária: Cinders and Flames (para a SoF)",
+   "en": "Daily reward: Cinders and Flames (for SoF)"
+  },
+  "src": "https://www.aqwhub.com/other-guides/weeklies-and-dailies/",
+  "sn": "AQWHub"
+ },
+ {
+  "id": "kathool",
+  "g": "boss",
+  "n": "Kathool",
+  "req": null,
+  "rw": {
+   "pt": "Recompensa diária: Soul Sand",
+   "en": "Daily reward: Soul Sand"
+  },
+  "src": "https://www.aqwhub.com/other-guides/weeklies-and-dailies/",
+  "sn": "AQWHub"
+ },
+ {
+  "id": "hay",
+  "g": "old",
+  "n": "Pet Food Delivery",
+  "who": {
+   "pt": "Aria, em Aria's Pet Shoppe",
+   "en": "Aria, in Aria's Pet Shoppe"
+  },
+  "req": {
+   "pt": "5 Bundle of Hay (do Scarecrow)",
+   "en": "5 Bundle of Hay (from the Scarecrow)"
+  },
+  "rw": {
+   "pt": "750 gold e 750 XP",
+   "en": "750 gold and 750 XP"
+  },
+  "src": "https://aqwwiki.wikidot.com/daily-quest-board-s-quests",
+  "sn": "AQW Wiki"
+ },
+ {
+  "id": "firegem",
+  "g": "old",
+  "n": "Fire Gem",
+  "who": {
+   "pt": "Cleric Dawn, em Swordhaven Gates",
+   "en": "Cleric Dawn, in Swordhaven Gates"
+  },
+  "req": {
+   "pt": "1 Fire Gem (do Skeletal Fire Mage)",
+   "en": "1 Fire Gem (from the Skeletal Fire Mage)"
+  },
+  "rw": {
+   "pt": "100 gold, 50 XP e o item Burn it Down",
+   "en": "100 gold, 50 XP and the item Burn it Down"
+  },
+  "src": "https://aqwwiki.wikidot.com/daily-quest-board-s-quests",
+  "sn": "AQW Wiki"
+ },
+ {
+  "id": "llama",
+  "g": "old",
+  "n": "Alarm a Llama!",
+  "who": {
+   "pt": "Donna Charmer, em Llama Farm",
+   "en": "Donna Charmer, in Llama Farm"
+  },
+  "req": {
+   "pt": "5 Alarmed Llamas (Pinewood Forest) e 1 Llama Leash (Pine Troll)",
+   "en": "5 Alarmed Llamas (Pinewood Forest) and 1 Llama Leash (Pine Troll)"
+  },
+  "rw": {
+   "pt": "500 gold, 500 XP e 1.500 de reputação Dwarfhold",
+   "en": "500 gold, 500 XP and 1,500 Dwarfhold rep"
+  },
+  "src": "https://aqwwiki.wikidot.com/daily-quest-board-s-quests",
+  "sn": "AQW Wiki"
+ },
+ {
+  "id": "grizzly",
+  "g": "old",
+  "n": "Grizzly Situation",
+  "who": {
+   "pt": "Donna Charmer, em Llama Farm",
+   "en": "Donna Charmer, in Llama Farm"
+  },
+  "req": {
+   "pt": "6 Bear Claws (do Pine Grizzly)",
+   "en": "6 Bear Claws (from the Pine Grizzly)"
+  },
+  "rw": {
+   "pt": "500 gold, 500 XP e 1.500 de reputação Dwarfhold",
+   "en": "500 gold, 500 XP and 1,500 Dwarfhold rep"
+  },
+  "src": "https://aqwwiki.wikidot.com/daily-quest-board-s-quests",
+  "sn": "AQW Wiki"
+ },
+ {
+  "id": "mine2",
+  "g": "old",
+  "n": "What's Mine is Yours",
+  "who": {
+   "pt": "Lister, em Dwarfhold Keep",
+   "en": "Lister, in Dwarfhold Keep"
+  },
+  "req": {
+   "pt": "Rank 4 em Dwarfhold; 1 Bag of Gems (minigame do Mining Cart) e 1 Chaotic Draconian Scale",
+   "en": "Dwarfhold rank 4; 1 Bag of Gems (Mining Cart mini-game) and 1 Chaotic Draconian Scale"
+  },
+  "rw": {
+   "pt": "20.000 gold, 20.000 XP e 30.000 de reputação Dwarfhold",
+   "en": "20,000 gold, 20,000 XP and 30,000 Dwarfhold rep"
+  },
+  "src": "https://aqwwiki.wikidot.com/daily-quest-board-s-quests",
+  "sn": "AQW Wiki"
+ },
+ {
+  "id": "scales",
+  "g": "old",
+  "n": "Balance the Scales",
+  "who": {
+   "pt": "Ironfist, em Dwarfhold Keep",
+   "en": "Ironfist, in Dwarfhold Keep"
+  },
+  "req": {
+   "pt": "Rank 4 em Dwarfhold; 6 Draconian Scales",
+   "en": "Dwarfhold rank 4; 6 Draconian Scales"
+  },
+  "rw": {
+   "pt": "500 gold, 500 XP e 1.500 de reputação Dwarfhold",
+   "en": "500 gold, 500 XP and 1,500 Dwarfhold rep"
+  },
+  "src": "https://aqwwiki.wikidot.com/daily-quest-board-s-quests",
+  "sn": "AQW Wiki"
+ }
+]

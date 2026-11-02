@@ -7,4 +7,5 @@
   body .toasts{bottom:calc(84px + env(safe-area-inset-bottom,0px))}
 }
 @media (max-width:899px){.topbar .seg button{padding:6px 9px}.topbar{gap:8px}}
-@media (max-width:360px){.bnav .nv{font-size:9px}}
+@media (max-width:480px){.bnav .nv{font-size:9px;padding-left:0;padding-right:0}.bnav .nv span{max-width:100%;overflow:hidden;text-overflow:ellipsis}}
+@media (max-width:360px){.bnav .nv{font-size:8.5px}}

@@ -9,12 +9,13 @@ import ITEMS from "./ultra-items.json";
 import ENH from "./enhancements.json";
 import UI from "./i18n/ui.json";
 import EN from "./i18n/en.json";
+import DAILIES from "./dailies.json";
 import FARMS from "./hardfarm.json";
 import SCHED from "./ultra-schedule.json";
 import NEWS from "./news.json";
 import {HUB} from "../config.js";
 
-export {TYPES, RAW, FAMS, CALYR, OBTAIN, CONS, TEAMS, ITEMS, ENH, UI, EN, FARMS, SCHED, NEWS};
+export {TYPES, RAW, FAMS, CALYR, OBTAIN, CONS, TEAMS, ITEMS, ENH, UI, EN, DAILIES, FARMS, SCHED, NEWS};
 
 export const RAWBY=Object.fromEntries(RAW.map(r=>[r[0],r]));
 export const D=RAW.map(r=>{const t=TYPES[r[5]];let o=r[7]||{};

@@ -11,9 +11,10 @@ export const ICO={inicio:"M12 3 L2.5 11.2 H5 V20 H10.2 V14 H13.8 V20 H19 V11.2 H
   ultras:"M12 2 C12.8 6.2 18.2 8.4 18.2 14.2 A6.2 6.2 0 0 1 5.8 14.2 C5.8 11.4 7.4 10 8 7.6 C9.8 8.6 10.8 9.6 11 11.6 C12.2 8.8 12.4 5.2 12 2 Z",
   enh:"M6.5 3 H17.5 L22 9.2 L12 21.5 L2 9.2 Z",
   itens:"M6 2 H18 V6 C18 9 15.5 10.6 14 12 C15.5 13.4 18 15 18 18 V22 H6 V18 C6 15 8.5 13.4 10 12 C8.5 10.6 6 9 6 6 Z",
+  diarias:"M7 2 H9 V4 H15 V2 H17 V4 H20 V22 H4 V4 H7 Z M6 10 V20 H18 V10 Z M10.6 17.4 L7.8 14.6 L9.2 13.2 L10.6 14.6 L14.8 10.4 L16.2 11.8 Z",
   novidades:"M12 2 L14.6 8.9 L22 9.4 L16.3 14.2 L18.2 21.5 L12 17.5 L5.8 21.5 L7.7 14.2 L2 9.4 L9.4 8.9 Z"};
-export const SECS=[["inicio","sec_inicio"],["classes","sec_classes"],["ultras","sec_ultras"],["enh","sec_enh"],["itens","sec_items"],["novidades","sec_news"]];
+export const SECS=[["inicio","sec_inicio"],["classes","sec_classes"],["ultras","sec_ultras"],["enh","sec_enh"],["itens","sec_items"],["diarias","sec_daily"],["novidades","sec_news"]];
 export const SUBS={classes:[["tier","tab_tier"],["todas","tab_all"],["comparar","tab_cmp"]],ultras:[["ultras","sub_teams"],["montador","tab_builder"]]};
-export const SEC={inicio:["inicio"],classes:["tier","todas","comparar"],ultras:["ultras","montador"],enh:["enh"],itens:["itens"],novidades:["novidades"]};
+export const SEC={inicio:["inicio"],classes:["tier","todas","comparar"],ultras:["ultras","montador"],enh:["enh"],itens:["itens"],diarias:["diarias"],novidades:["novidades"]};
 export const DN="https://www.aq.com/gamedesignnotes/";
 export const TYIC={new:"✦",rework:"⚒",balance:"⚖",skin:"✧",event:"⏳"};
