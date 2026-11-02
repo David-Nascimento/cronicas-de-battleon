@@ -258,7 +258,10 @@
     "mem": "l",
     "src": "https://aqwwiki.wikidot.com/daily-quest-board-s-quests",
     "sn": "AQW Wiki",
-    "hf": "Cryomancer"
+    "hf": "Cryomancer",
+    "j": [
+      "frozenruins"
+    ]
   },
   {
     "id": "shurpu",
@@ -283,7 +286,10 @@
     "mem": "m",
     "src": "https://aqwwiki.wikidot.com/daily-quest-board-s-quests",
     "sn": "AQW Wiki",
-    "hf": "Pyromancer"
+    "hf": "Pyromancer",
+    "j": [
+      "xancave"
+    ]
   },
   {
     "id": "sol",
@@ -570,7 +576,10 @@
     },
     "hf": "Mad Weaponsmith e Cysero's SUPER Hammer",
     "src": "https://sites.google.com/view/aqwg-net/farming-list",
-    "sn": "AQWG"
+    "sn": "AQWG",
+    "j": [
+      "deadmoor"
+    ]
   },
   {
     "id": "hammer",
@@ -586,7 +595,10 @@
     },
     "hf": "Mad Weaponsmith e Cysero's SUPER Hammer",
     "src": "https://sites.google.com/view/aqwg-net/farming-list",
-    "sn": "AQWG"
+    "sn": "AQWG",
+    "j": [
+      "deadmoor"
+    ]
   },
   {
     "id": "golden",
@@ -814,7 +826,10 @@
     },
     "src": "https://www.aqwhub.com/other-guides/weeklies-and-dailies/",
     "sn": "AQWHub",
-    "hf": "Exalted Apotheosis"
+    "hf": "Exalted Apotheosis",
+    "j": [
+      "ultraezrajal"
+    ]
   },
   {
     "id": "warden",
@@ -831,7 +846,10 @@
     },
     "src": "https://www.aqwhub.com/other-guides/weeklies-and-dailies/",
     "sn": "AQWHub",
-    "hf": "Exalted Apotheosis"
+    "hf": "Exalted Apotheosis",
+    "j": [
+      "ultrawarden"
+    ]
   },
   {
     "id": "engineer",
@@ -844,7 +862,10 @@
     },
     "src": "https://www.aqwhub.com/other-guides/weeklies-and-dailies/",
     "sn": "AQWHub",
-    "hf": "Exalted Apotheosis"
+    "hf": "Exalted Apotheosis",
+    "j": [
+      "ultraengineer"
+    ]
   },
   {
     "id": "astral",
@@ -856,7 +877,10 @@
       "en": "Daily reward: Star of the Empyrean"
     },
     "src": "https://www.aqwhub.com/other-guides/weeklies-and-dailies/",
-    "sn": "AQWHub"
+    "sn": "AQWHub",
+    "j": [
+      "astralshrine"
+    ]
   },
   {
     "id": "iona",
@@ -868,7 +892,10 @@
       "en": "Daily reward: Lothian's Lightning"
     },
     "src": "https://www.aqwhub.com/other-guides/weeklies-and-dailies/",
-    "sn": "AQWHub"
+    "sn": "AQWHub",
+    "j": [
+      "queeniona"
+    ]
   },
   {
     "id": "tyndarius",
@@ -881,7 +908,10 @@
     },
     "src": "https://www.aqwhub.com/other-guides/weeklies-and-dailies/",
     "sn": "AQWHub",
-    "hf": "Infernal Flame Pyromancer"
+    "hf": "Infernal Flame Pyromancer",
+    "j": [
+      "ultratyndarius"
+    ]
   },
   {
     "id": "azalith",
@@ -905,7 +935,10 @@
       "en": "Daily reward: Cinders and Flames (for SoF)"
     },
     "src": "https://www.aqwhub.com/other-guides/weeklies-and-dailies/",
-    "sn": "AQWHub"
+    "sn": "AQWHub",
+    "j": [
+      "flameusurper"
+    ]
   },
   {
     "id": "kathool",
@@ -929,7 +962,10 @@
       "en": "Daily reward: Volcanic Essence"
     },
     "src": "https://www.aqwhub.com/other-guides/weeklies-and-dailies/",
-    "sn": "AQWHub"
+    "sn": "AQWHub",
+    "j": [
+      "lavarockshore"
+    ]
   },
   {
     "id": "kala",
@@ -941,7 +977,10 @@
       "en": "Daily reward: Insignia (August ultra)"
     },
     "src": "https://www.aqwhub.com/other-guides/weeklies-and-dailies/",
-    "sn": "AQWHub"
+    "sn": "AQWHub",
+    "j": [
+      "ultrakala"
+    ]
   },
   {
     "id": "iara",
@@ -958,7 +997,10 @@
     "for": {
       "pt": "Armas de merge da Iara (5 Iara Insignias por arma)",
       "en": "Iara merge weapons (5 Iara Insignias per weapon)"
-    }
+    },
+    "j": [
+      "ultraiara"
+    ]
   },
   {
     "id": "hay",
@@ -999,7 +1041,10 @@
       "en": "100 gold, 50 XP and the item Burn it Down"
     },
     "src": "https://aqwwiki.wikidot.com/daily-quest-board-s-quests",
-    "sn": "AQW Wiki"
+    "sn": "AQW Wiki",
+    "j": [
+      "portalundead"
+    ]
   },
   {
     "id": "llama",
@@ -1018,7 +1063,10 @@
       "en": "500 gold, 500 XP and 1,500 Dwarfhold rep"
     },
     "src": "https://aqwwiki.wikidot.com/daily-quest-board-s-quests",
-    "sn": "AQW Wiki"
+    "sn": "AQW Wiki",
+    "j": [
+      "llama"
+    ]
   },
   {
     "id": "grizzly",
@@ -1037,7 +1085,10 @@
       "en": "500 gold, 500 XP and 1,500 Dwarfhold rep"
     },
     "src": "https://aqwwiki.wikidot.com/daily-quest-board-s-quests",
-    "sn": "AQW Wiki"
+    "sn": "AQW Wiki",
+    "j": [
+      "llama"
+    ]
   },
   {
     "id": "mine2",
@@ -1056,7 +1107,10 @@
       "en": "20,000 gold, 20,000 XP and 30,000 Dwarfhold rep"
     },
     "src": "https://aqwwiki.wikidot.com/daily-quest-board-s-quests",
-    "sn": "AQW Wiki"
+    "sn": "AQW Wiki",
+    "j": [
+      "dwarfhold"
+    ]
   },
   {
     "id": "scales",
@@ -1075,6 +1129,9 @@
       "en": "500 gold, 500 XP and 1,500 Dwarfhold rep"
     },
     "src": "https://aqwwiki.wikidot.com/daily-quest-board-s-quests",
-    "sn": "AQW Wiki"
+    "sn": "AQW Wiki",
+    "j": [
+      "dwarfhold"
+    ]
   }
 ]

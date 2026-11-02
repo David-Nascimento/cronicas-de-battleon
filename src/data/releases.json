@@ -55,8 +55,9 @@
           "j": "walpurgisnacht"
         },
         "mg": {
-          "pt": "Merge da Eternal Night",
-          "en": "Eternal Night merge"
+          "pt": "Witch's Charms (merge), em Walpurgisnacht",
+          "en": "Witch's Charms (merge), in Walpurgisnacht",
+          "j": "walpurgisnacht"
         },
         "el": {
           "pt": "Merge em Elodea Temple",
@@ -85,6 +86,14 @@
         {
           "n": "AQW Wiki: Walpurgisnacht",
           "u": "https://aqwwiki.wikidot.com/walpurgisnacht"
+        },
+        {
+          "n": "AQW Wiki: Witch's Charms",
+          "u": "https://aqwwiki.wikidot.com/witch-s-charms"
+        },
+        {
+          "n": "AQW Wiki: Featured Gear Shop (outubro de 2026)",
+          "u": "https://aqwwiki.wikidot.com/featured-gear-shop-october-2026"
         }
       ],
       "items": {
@@ -135,7 +144,7 @@
           ["Crowned MogloBeast Hair","a","fgs"],
           ["Crowned MogloBeast Locks","a","fgs"],
           ["Crowned MogloBeast Morph","a"],
-          ["Empire Dread Devil Cowl","l"],
+          ["Empire Dread Devil Cowl","l","fgs"],
           ["Empire Dread Devil Grin","a","fgs"],
           ["Empire Dread Devil Mask","a","fgs"],
           ["Father Forest Morph","a","wd"],
@@ -244,7 +253,7 @@
           ["Wulpurga Witch o' Lantern","a","wd"]
         ],
         "misc": [
-          ["Gold Voucher 25k",""],
+          ["Gold Voucher 25k","","mg"],
           ["Luna Dial",""]
         ]
       }
