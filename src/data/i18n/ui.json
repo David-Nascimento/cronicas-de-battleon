@@ -341,7 +341,8 @@
   "daily_pick_save": "Salvar ({n})",
   "daily_pick_done": "Pronto: {n} diárias nas suas",
   "daily_pick_cleared": "Suas diárias foram limpas",
-  "q_all_stores": "buscando em todas as lojas"
+  "q_all_stores": "buscando em todas as lojas",
+  "enh_found": "{n} classes encontradas. Toque numa para ver só ela:"
  },
  "en": {
   "title": "Chronicles of Battleon",
@@ -685,6 +686,7 @@
   "daily_pick_save": "Save ({n})",
   "daily_pick_done": "Done: {n} dailies in yours",
   "daily_pick_cleared": "Your dailies were cleared",
-  "q_all_stores": "searching every store"
+  "q_all_stores": "searching every store",
+  "enh_found": "{n} classes found. Tap one to see only it:"
  }
 }

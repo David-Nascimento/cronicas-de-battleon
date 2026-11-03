@@ -1,7 +1,7 @@
 import {catChip, catName, seg} from "../components/shared.js";
 import {CATS, MODES} from "../config.js";
 import {D, ENH} from "../data/index.js";
-import {esc, idx, nrm, sigil, tColor, total, has} from "../lib/util.js";
+import {esc, idx, nrm, sigil, tColor, total, has, skey} from "../lib/util.js";
 import {L, T, st, ui} from "../state.js";
 
 export const SLOTIDX={"Classe":0,"Arma":1,"Capacete":2,"Capa":3};
@@ -15,10 +15,15 @@ export const chipU=u=>`<button class="open" data-i="${idx(u.c)}">${esc(u.c.name)
 export function renderEnh(){
   const SL=["Classe","Arma","Capacete","Capa"];
   seg("segSlot",[["all",L("slot_all")],...SL.map(k=>[k,L("slot_"+k)])],"eslot",renderEnh);
-  const eqv=nrm((document.getElementById("enq") as HTMLInputElement).value.trim()),hits=eqv?D.filter(c=>has(c.name,eqv)).slice(0,3):[],hitK=new Set();
+  const eqv=nrm((document.getElementById("enq") as HTMLInputElement).value.trim()),hitK=new Set();
+  /* todas as classes que batem com a busca; a que começa com o texto vem primeiro.
+     Se o nome bate exato, mostra só ela; senão abre as 3 primeiras e lista as outras para escolher */
+  const kq=skey(eqv),all=eqv?D.filter(c=>has(c.name,eqv)).sort((a,b)=>(skey(a.name).startsWith(kq)?0:1)-(skey(b.name).startsWith(kq)?0:1)||total(b)-total(a)):[];
+  const exact=all.find(c=>skey(c.name)===kq),hits=exact?[exact]:all.slice(0,3);
+  const pick=all.length>1?`<div class="qPick"><span>${L("enh_found",{n:all.length})}</span>${all.map(c=>`<button class="chip${hits.includes(c)?" on":""}" data-enqpick="${esc(c.name)}" aria-pressed="${hits.includes(c)}">${esc(c.name)}</button>`).join("")}</div>`:"";
   hits.forEach(c=>Object.keys(MODES).forEach(m=>c.b[m].split("|").forEach((v,si)=>hitK.add(si+":"+v))));
   const isHit=e=>hitK.has(SLOTIDX[e[1]]+":"+(e[0]==="Forge (base)"?"Forge":e[0]));
-  const qpanel=!eqv?"":hits.length?hits.map(c=>`<div class="qcard frame"><div class="qh">${sigil(c)}<button class="open" data-i="${idx(c)}">${esc(c.name)}</button>${catChip(c)}</div>
+  const qpanel=!eqv?"":hits.length?pick+hits.map(c=>`<div class="qcard frame"><div class="qh">${sigil(c)}<button class="open" data-i="${idx(c)}">${esc(c.name)}</button>${catChip(c)}</div>
     <div class="tbl"><table><thead><tr><th>${L("thMode")}</th><th>${L("thClass")}</th><th>${L("thWeapon")}</th><th>${L("thHelm")}</th><th>${L("thCape")}</th></tr></thead><tbody>${Object.keys(MODES).map(m=>`<tr><td>${MODES[m]} <span class="b" style="background:${tColor(c[m])};margin-left:4px">${c[m]}</span></td>${c.b[m].split("|").map(x=>`<td>${esc(x)}</td>`).join("")}</tr>`).join("")}</tbody></table></div></div>`).join("")+`<p class="sub" style="margin:0">${L("enh_qhint")}</p>`
     :`<p class="npEmpty">${L("gnores")}</p>`;
   document.getElementById("enh").innerHTML=qpanel+SL.filter(k=>st.eslot==="all"||st.eslot===k).map(k=>{const items=ENH.map((e,ei)=>[e,ei]).filter(([e])=>e[1]===k);
@@ -46,3 +51,7 @@ export function updEnh(){const us=usersOf(ENH[ui.eIdx]),q=nrm((document.getEleme
     const xs=us.filter(u=>u.c.cat===k&&has(u.c.name,q));
     return xs.length?`<div class="eGrp"><h4><span class="dot" style="background:var(${CATS[k].c})"></span>${catName(k)} · ${xs.length}</h4><div class="usedList">${xs.map(chipU).join("")}</div></div>`:""}).join("")||`<p class="npEmpty">${L("gnores")}</p>`}
 dlgE.addEventListener("click",e=>{if(e.target===dlgE)dlgE.close()});
+
+/* tocar num nome da lista de resultados abre só aquela classe */
+document.getElementById("enh").addEventListener("click",e=>{const b=(e.target as HTMLElement).closest<HTMLElement>("[data-enqpick]");if(!b)return;
+  const q=document.getElementById("enq") as HTMLInputElement;q.value=b.dataset.enqpick;renderEnh()});

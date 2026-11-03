@@ -67,6 +67,16 @@ try {
     await p.click("#gq"); await p.fill("#gq", "paladin slayer"); await wait(p);
     check((await p.locator("#gres").innerText()).includes("PaladinSlayer"), "busca do topo acha PaladinSlayer");
   }
+  /* enhancements: busca lista todas as classes e deixa escolher uma */
+  {
+    const p = await page();
+    await go(p, "enh");
+    await p.fill("#enq", "palad"); await p.dispatchEvent("#enq", "input"); await wait(p);
+    check(await p.locator('[data-enqpick="PaladinSlayer"]').count() === 1, "enhancements: PaladinSlayer aparece na lista da busca");
+    await p.click('[data-enqpick="PaladinSlayer"]'); await wait(p);
+    const t = await p.locator("#enh .qcard .qh button").allInnerTexts();
+    check(t.length === 1 && t[0] === "PaladinSlayer", "enhancements: tocar no nome mostra só a classe");
+  }
   /* minha tier list: começa pela do portal, move, busca nas sem tier, volta */
   {
     const p = await page();
