@@ -54,10 +54,17 @@ try {
   check(await pg.locator('.item.on input[data-own="ArchPaladin"]').count() === 1, "marcar uma classe à mão");
   await pg.click('[data-tab="ultras"]');
   check((await pg.locator("#view").innerText()).includes("Você monta"), "ultras: time completo com as classes que tem");
-  await pg.click('[data-tab="diarias"]'); await pg.click('[data-dpick="moglin"]'); await pg.click("[data-dsave]"); await pg.click('[data-dday="moglin"]');
+  await pg.click('[data-tab="diarias"]'); await pg.click('[data-dpick="moglin"]');
+  check(await pg.evaluate(() => { const r = document.querySelector(".saveBar").getBoundingClientRect(); return r.bottom <= innerHeight && r.top > 0; }), "diárias: botão Salvar sempre visível na tela");
+  await pg.click("[data-dsave]"); await pg.click('[data-dday="moglin"]');
   check((await pg.locator("#view .sub").innerText()).startsWith("1 de 1"), "diárias: escolher e marcar");
   await pg.click('[data-tab="farm"]'); await pg.click('[data-ff="todos"]');
   check(await pg.locator('.pill.ok:has-text("Você já tem a classe")').count() >= 1, "HardFarm: farm da classe que já tem conta como concluído");
+  await pg.fill("[data-fq]", "chaos"); await pg.click(`[data-ftrack="Reputação Chaos"]`);
+  await pg.click('[data-tab="resumo"]');
+  check(await pg.locator('.trk b:has-text("Reputação Chaos")').count() === 1, "HardFarm: um clique em Acompanhar leva o farm para o Resumo");
+  await pg.click(".trk .nxt input");
+  check((await pg.locator(".trk .pill").first().innerText()).startsWith("1/"), "Resumo: marcar a próxima etapa ali mesmo");
   await pg.click('[data-tab="quests"]'); await pg.fill('[data-qadd] input[name="n"]', "Nulgath Larvae"); await pg.click("[data-qadd] button");
   check(await pg.locator('.item b:has-text("Nulgath Larvae")').count() === 1, "quests: adicionar");
   await pg.reload(); await pg.waitForSelector(".cname");

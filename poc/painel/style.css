@@ -80,3 +80,12 @@ h3{font:700 17px var(--deco);margin:0 0 8px}
 .tx .pill{display:inline-block;margin-top:5px}
 .mem>span{min-width:0}
 .mem small{color:var(--muted);font-size:12px;text-align:right;max-width:52%;flex:none}
+.saveBar{position:fixed;left:50%;transform:translateX(-50%);bottom:max(16px,env(safe-area-inset-bottom));z-index:6;display:flex;align-items:center;justify-content:space-between;gap:14px;width:min(560px,calc(100vw - 32px));padding:10px 12px 10px 16px;border-radius:14px;border:1px solid var(--glow-dim);background:color-mix(in oklab,var(--panel) 94%,transparent);backdrop-filter:blur(10px);box-shadow:0 18px 40px -12px rgba(0,0,0,.6)}
+#view:has(.saveBar){padding-bottom:80px}
+.btn:disabled{opacity:.5;cursor:not-allowed}
+.btn.sm,.btnQ.sm{flex:none;padding:6px 11px;font-size:13px;align-self:center}
+.trk{padding:12px;border-radius:10px;border:1px solid var(--line2);background:var(--bg2)}
+.trk .nxt{margin-top:8px;background:var(--panel)}
+.nxt .lbl{color:var(--glow-hi);font-weight:600}
+.link.mut{color:var(--muted);font-weight:500}
+.grid.wide{grid-template-columns:repeat(auto-fill,minmax(min(100%,330px),1fr))}

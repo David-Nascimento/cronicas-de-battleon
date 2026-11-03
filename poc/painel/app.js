@@ -22,7 +22,11 @@ const toClass = item => { if (ALIAS[item] && byKey[ckey(ALIAS[item])]) return by
   let b = item, p; do { p = b; b = b.replace(/\s*\((class|\d+|0 ac|ac|non-ac|legend|non-legend|rare|special)\)\s*$/i, ""); } while (b !== p);
   return byKey[ckey(b)] || null; };
 
-let store, user = null, D = null, tab = "resumo", cf = "tenho", cq = "", ff = "and", busy = false;
+let store, user = null, D = null, tab = "resumo", cf = "tenho", cq = "", ff = "and", fq = "", busy = false;
+const KIND = {class: "Classe", gear: "Arma ou armadura", mat: "Material", rep: "Reputação", daily: "Diárias", season: "Sazonal"};
+const EFF = ["", "Curto", "Médio", "Longo", "Muito longo", "Extremo"];
+const tracked = () => (D.ftrack || []).map(n => FARMS.find(f => f.n === n)).filter(Boolean);
+const nextStep = f => f.req.findIndex((_, i) => !(D.fprog[f.n] || []).includes(i));
 const save = () => store.save(D);
 
 /* o que vem do personagem (não dá para desmarcar) + o que a pessoa marcou */
@@ -52,7 +56,7 @@ function boot(u, data) {
 const TABS = [["resumo", "Resumo"], ["classes", "Classes"], ["diarias", "Diárias"], ["farm", "HardFarm"], ["ultras", "Ultras"], ["quests", "Quests"]];
 function render() {
   const o = owned();
-  const count = {classes: o.all.size, diarias: D.dMine.length ? `${D.dDone.filter(id => D.dMine.includes(id)).length}/${D.dMine.length}` : "", farm: FARMS.filter(f => (D.fprog[f.n] || []).length && !farmDone(f)).length || "",
+  const count = {classes: o.all.size, diarias: D.dMine.length ? `${D.dDone.filter(id => D.dMine.includes(id)).length}/${D.dMine.length}` : "", farm: tracked().filter(f => !farmDone(f)).length || "",
     quests: D.quests.filter(q => q.st !== "done").length || ""};
   $("#tabs").innerHTML = TABS.map(([k, l]) => `<button data-tab="${k}" aria-pressed="${tab === k}">${l}${count[k] ? `<b>${count[k]}</b>` : ""}</button>`).join("");
   $("#view").innerHTML = ({resumo, classes, diarias, farm, ultras, quests})[tab]();
@@ -76,16 +80,19 @@ const crest = () => `<svg viewBox="0 0 48 54" aria-hidden="true"><path d="M24 2 
 
 function resumo() {
   const o = owned(), mine = D.dMine.length, done = D.dDone.filter(id => D.dMine.includes(id)).length;
-  const prog = FARMS.filter(f => (D.fprog[f.n] || []).length && !farmDone(f)).length;
+  const tr = tracked(), prog = tr.filter(f => !farmDone(f)).length;
   const ready = TEAMS.filter(t => t.team.every(([n]) => o.all.has(n))).length;
   return `<div class="stack">${charCard()}
     <div class="stats">
       <button class="stat" data-tab="classes"><b>${o.all.size}<small style="font-size:14px"> / ${CLASSES.length}</small></b><small>classes que você tem</small></button>
       <button class="stat" data-tab="diarias"><b>${mine ? `${done}/${mine}` : "—"}</b><small>${mine ? "diárias feitas hoje" : "escolha suas diárias"}</small></button>
-      <button class="stat" data-tab="farm"><b>${prog}</b><small>farms em andamento</small></button>
+      <button class="stat" data-tab="farm"><b>${prog}</b><small>farms que você acompanha</small></button>
       <button class="stat" data-tab="ultras"><b>${ready}<small style="font-size:14px"> / ${TEAMS.length}</small></b><small>times de ultra que você monta</small></button>
       <button class="stat" data-tab="quests"><b>${D.quests.filter(q => q.st !== "done").length}</b><small>quests em aberto</small></button>
-    </div></div>`;
+    </div>
+    <section class="card"><div class="row" style="justify-content:space-between"><h3 style="margin:0">Farms que você acompanha</h3><button class="link" data-gofarms>${tr.length ? "Escolher outro farm" : ""}</button></div>
+      ${tr.length ? `<div class="stack" style="margin-top:10px">${tr.map(trackRow).join("")}</div>`
+        : `<p class="sub" style="margin:6px 0 10px">Escolha um farm (uma classe, uma arma, uma reputação) e ele aparece aqui com a próxima etapa.</p><button class="btn" data-gofarms>Escolher um farm</button>`}</section></div>`;
 }
 
 function classes() {
@@ -107,7 +114,7 @@ function diarias() {
     const sel = new Set(D.dPick || D.dMine);
     return `<h2>Escolha as suas diárias</h2><p class="sub">Marque as que você faz. Depois, todo dia, é só ticar as que fez; à meia-noite as marcações voltam do zero.</p>
       ${Object.entries(G).map(([g, l]) => { const xs = DAILIES.filter(d => d.g === g); return xs.length ? `<h3 style="margin-top:14px">${l}</h3><div class="grid">${xs.map(d => `<label class="item"><input type="checkbox" class="chk" data-dpick="${d.id}" ${sel.has(d.id) ? "checked" : ""}><span class="tx"><b>${esc(d.n)}</b><small>${esc(d.who?.pt || "")}</small></span></label>`).join("")}</div>` : ""; }).join("")}
-      <div class="row" style="margin-top:16px;position:sticky;bottom:12px"><button class="btn" data-dsave>Salvar (${sel.size})</button>${D.dMine.length ? `<button class="btnQ" data-dcancel>Cancelar</button>` : ""}</div>`;
+      <div class="saveBar" role="region" aria-label="Salvar diárias"><span><b>${sel.size}</b> ${sel.size === 1 ? "diária escolhida" : "diárias escolhidas"}</span><span class="row">${D.dMine.length ? `<button class="btnQ" data-dcancel>Cancelar</button>` : ""}<button class="btn" data-dsave ${sel.size ? "" : "disabled"}>Salvar</button></span></div>`;
   }
   const xs = DAILIES.filter(d => D.dMine.includes(d.id)), done = xs.filter(d => D.dDone.includes(d.id)).length;
   return `<h2>Diárias de hoje</h2><p class="sub">${done} de ${xs.length} feitas. Voltam do zero à meia-noite. <button class="link" data-dedit>Editar minhas diárias</button></p>
@@ -116,16 +123,33 @@ function diarias() {
       return `<label class="item${on ? " on" : ""}"><input type="checkbox" class="chk" data-dday="${d.id}" ${on ? "checked" : ""}><span class="tx"><b>${esc(d.n)}</b><small>${d.j ? d.j.map(j => "/join " + j).join(", ") : ""}${d.rw ? " · " + esc(d.rw.pt) : ""}</small></span></label>`; }).join("")}</div>`;
 }
 
+/* uma linha de farm acompanhado: progresso e a próxima etapa, que dá para marcar ali mesmo */
+function trackRow(f) {
+  const p = D.fprog[f.n] || [], ok = farmDone(f), byCls = f.cls && owned().all.has(f.cls), nx = nextStep(f);
+  return `<div class="trk"><div class="row" style="justify-content:space-between"><b>${esc(f.n)}</b>${ok ? `<span class="pill ok">${byCls ? "Você já tem a classe" : "Concluído"}</span>` : `<span class="pill">${p.length}/${f.req.length} etapas</span>`}</div>
+    <div class="bar"><i style="width:${ok ? 100 : p.length / f.req.length * 100}%"></i></div>
+    ${!ok && nx >= 0 ? `<label class="item nxt"><input type="checkbox" class="chk" data-fstep="${esc(f.n)}|${nx}"><span class="tx"><small class="lbl">Próxima etapa (${nx + 1} de ${f.req.length})</small><span>${esc(f.req[nx].pt)}</span></span></label>` : ""}
+    <div class="row" style="margin-top:6px"><button class="link" data-fopen="${esc(f.n)}">Ver todas as etapas</button><button class="link mut" data-funtrack="${esc(f.n)}">Parar de acompanhar</button></div></div>`;
+}
+
 function farm() {
-  const o = owned();
-  const xs = FARMS.filter(f => ff === "todos" ? true : ff === "and" ? (D.fprog[f.n] || []).length && !farmDone(f) : farmDone(f));
-  return `<h2>HardFarm</h2><p class="sub">Marque as etapas que já fez. Farm de classe que você já tem conta como concluído sozinho.</p>
-    <span class="seg" style="margin-bottom:12px">${[["and", "Em andamento"], ["ok", "Concluídos"], ["todos", "Todos"]].map(([k, l]) => `<button data-ff="${k}" aria-pressed="${ff === k}">${l}</button>`).join("")}</span>
-    <div class="stack" style="margin-top:12px">${xs.map(f => { const p = D.fprog[f.n] || [], ok = farmDone(f), byCls = f.cls && o.all.has(f.cls);
-      return `<article class="card"><div class="row" style="justify-content:space-between"><h3 style="margin:0">${esc(f.n)}</h3>${ok ? `<span class="pill ok">${byCls ? "Você já tem a classe" : "Concluído"}</span>` : `<span class="pill">${p.length}/${f.req.length} etapas</span>`}</div>
-        <div class="bar"><i style="width:${ok ? 100 : p.length / f.req.length * 100}%"></i></div>
-        <div class="stack" style="gap:6px;margin-top:10px">${f.req.map((r, i) => `<label class="item${p.includes(i) || byCls ? " on" : ""}" style="padding:7px 10px"><input type="checkbox" class="chk" data-fstep="${esc(f.n)}|${i}" ${p.includes(i) || byCls ? "checked" : ""} ${byCls ? "disabled" : ""}><span class="tx"><small style="color:var(--ink);font-size:13.5px">${esc(r.pt)}</small></span></label>`).join("")}</div></article>`; }).join("")
-      || `<p class="empty">${ff === "and" ? "Nenhum farm em andamento. Abra \"Todos\" e marque a primeira etapa de um farm para acompanhar aqui." : "Nada aqui ainda."}</p>`}</div>`;
+  const o = owned(), tr = tracked(), q = ckey(fq);
+  const head = `<h2>HardFarm</h2><p class="sub">Escolha os farms que está fazendo com <b>Acompanhar</b>: eles vão para o Resumo, com a próxima etapa. Farm de classe que você já tem conta como concluído sozinho.</p>
+    <div class="row" style="margin-bottom:12px"><span class="seg">${[["and", `Acompanhando ${tr.length}`], ["todos", "Escolher farms"], ["ok", "Concluídos"]].map(([k, l]) => `<button data-ff="${k}" aria-pressed="${ff === k}">${l}</button>`).join("")}</span>
+      ${ff === "todos" ? `<input type="search" data-fq placeholder="Buscar farm…" value="${esc(fq)}" aria-label="Buscar farm">` : ""}</div>`;
+  if (ff === "todos") {
+    const xs = FARMS.filter(f => !q || ckey(f.n).includes(q));
+    return head + `<div class="grid wide">${xs.map(f => { const on = (D.ftrack || []).includes(f.n), ok = farmDone(f);
+      return `<div class="item${on ? " on" : ""}"><span class="tx"><b>${esc(f.n)}</b><small>${KIND[f.k] || f.k}${f.e ? `, esforço ${EFF[f.e].toLowerCase()}` : ""}, ${f.req.length} ${f.req.length === 1 ? "etapa" : "etapas"}</small>${ok ? `<span class="pill ok">${f.cls && o.all.has(f.cls) ? "Você já tem a classe" : "Concluído"}</span>` : ""}</span>
+        <button class="${on ? "btnQ" : "btn"} sm" data-ftrack="${esc(f.n)}" aria-pressed="${on}">${on ? "✓ Acompanhando" : "Acompanhar"}</button></div>`; }).join("") || `<p class="empty">Nenhum farm com esse nome.</p>`}</div>`;
+  }
+  const xs = ff === "and" ? tr : FARMS.filter(farmDone);
+  return head + `<div class="stack">${xs.map(f => { const p = D.fprog[f.n] || [], ok = farmDone(f), byCls = f.cls && o.all.has(f.cls);
+    return `<article class="card" id="farm-${ckey(f.n)}"><div class="row" style="justify-content:space-between"><h3 style="margin:0">${esc(f.n)}</h3>${ok ? `<span class="pill ok">${byCls ? "Você já tem a classe" : "Concluído"}</span>` : `<span class="pill">${p.length}/${f.req.length} etapas</span>`}</div>
+      <div class="bar"><i style="width:${ok ? 100 : p.length / f.req.length * 100}%"></i></div>
+      <div class="stack" style="gap:6px;margin-top:10px">${f.req.map((r, i) => `<label class="item${p.includes(i) || byCls ? " on" : ""}" style="padding:7px 10px"><input type="checkbox" class="chk" data-fstep="${esc(f.n)}|${i}" ${p.includes(i) || byCls ? "checked" : ""} ${byCls ? "disabled" : ""}><span class="tx"><small style="color:var(--ink);font-size:13.5px">${esc(r.pt)}</small></span></label>`).join("")}</div>
+      ${(D.ftrack || []).includes(f.n) ? `<button class="link mut" data-funtrack="${esc(f.n)}" style="margin-top:8px">Parar de acompanhar</button>` : ""}</article>`; }).join("")
+    || `<div class="card"><p class="sub" style="margin:0 0 10px">${ff === "and" ? "Você ainda não acompanha nenhum farm." : "Nenhum farm concluído ainda."}</p>${ff === "and" ? `<button class="btn" data-ff="todos">Escolher farms</button>` : ""}</div>`}</div>`;
 }
 
 function ultras() {
@@ -168,6 +192,10 @@ document.addEventListener("click", e => {
   if (t.dataset.tab) { tab = t.dataset.tab; return render(); }
   if (t.dataset.cf) { cf = t.dataset.cf; return render(); }
   if (t.dataset.ff) { ff = t.dataset.ff; return render(); }
+  if (t.dataset.gofarms != null) { tab = "farm"; ff = "todos"; return render(); }
+  if (t.dataset.ftrack) { const s = new Set(D.ftrack || []); s.has(t.dataset.ftrack) ? s.delete(t.dataset.ftrack) : s.add(t.dataset.ftrack); D.ftrack = [...s]; save(); return render(); }
+  if (t.dataset.funtrack) { D.ftrack = (D.ftrack || []).filter(n => n !== t.dataset.funtrack); save(); return render(); }
+  if (t.dataset.fopen) { tab = "farm"; ff = "and"; render(); document.getElementById("farm-" + ckey(t.dataset.fopen))?.scrollIntoView({block: "start"}); return; }
   if (t.dataset.sync != null) return link(D.char);
   if (t.dataset.unlink != null) { D.snap = null; save(); return render(); }
   if (t.dataset.dedit != null) { D.dPick = [...D.dMine]; return render(); }
@@ -180,10 +208,12 @@ document.addEventListener("change", e => {
   if (t.dataset.own) { const s = new Set(D.own); t.checked ? s.add(t.dataset.own) : s.delete(t.dataset.own); D.own = [...s]; save(); return render(); }
   if (t.dataset.dpick) { const s = new Set(D.dPick || D.dMine); t.checked ? s.add(t.dataset.dpick) : s.delete(t.dataset.dpick); D.dPick = [...s]; return render(); }
   if (t.dataset.dday) { dayReset(); const s = new Set(D.dDone); t.checked ? s.add(t.dataset.dday) : s.delete(t.dataset.dday); D.dDone = [...s]; save(); return render(); }
-  if (t.dataset.fstep) { const [n, i] = t.dataset.fstep.split("|"), s = new Set(D.fprog[n] || []); t.checked ? s.add(+i) : s.delete(+i); D.fprog = {...D.fprog, [n]: [...s]}; save(); return render(); }
+  if (t.dataset.fstep) { const [n, i] = t.dataset.fstep.split("|"), s = new Set(D.fprog[n] || []); t.checked ? s.add(+i) : s.delete(+i); D.fprog = {...D.fprog, [n]: [...s]};
+    if (t.checked && !(D.ftrack || []).includes(n)) D.ftrack = [...(D.ftrack || []), n]; save(); return render(); }
   if (t.dataset.qdone) { const q = D.quests.find(x => x.id === t.dataset.qdone); if (q) q.st = t.checked ? "done" : "open"; save(); return render(); }
 });
-document.addEventListener("input", e => { if (e.target.dataset.cq != null) { cq = e.target.value; const pos = e.target.selectionStart; render(); const i = $("[data-cq]"); i.focus(); i.setSelectionRange(pos, pos); } });
+document.addEventListener("input", e => { if (e.target.dataset.fq != null) { fq = e.target.value; const pos = e.target.selectionStart; render(); const i = $("[data-fq]"); i.focus(); i.setSelectionRange(pos, pos); return; }
+  if (e.target.dataset.cq != null) { cq = e.target.value; const pos = e.target.selectionStart; render(); const i = $("[data-cq]"); i.focus(); i.setSelectionRange(pos, pos); } });
 document.addEventListener("submit", e => {
   e.preventDefault(); const f = e.target, v = Object.fromEntries(new FormData(f));
   if (f.dataset.link != null) return link(String(v.n).trim());

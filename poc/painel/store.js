@@ -5,7 +5,7 @@ import {firebaseConfig} from "./firebase-config.js";
 
 const SDK = "https://www.gstatic.com/firebasejs/10.12.2/";
 const LOCAL_KEY = "cdbPainelPOC";
-export const EMPTY = () => ({char: "", snap: null, own: [], dMine: [], dDay: "", dDone: [], fprog: {}, quests: []});
+export const EMPTY = () => ({char: "", snap: null, own: [], dMine: [], dDay: "", dDone: [], fprog: {}, ftrack: [], quests: []});
 
 export async function createStore(onUser) {
   if (!firebaseConfig) {
