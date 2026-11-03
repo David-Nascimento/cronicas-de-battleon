@@ -3,6 +3,7 @@
 // Serve os arquivos do projeto (o painel usa os JSON de src/data) e a rota /api/char?name=NOME,
 // que lê a charpage pública do AQW pelo servidor (o navegador não pode ler o site da Artix direto).
 // Cache de 10 minutos por personagem e no máximo 1 consulta nova a cada 5 segundos, para não pesar no site da Artix.
+// Sem cache: o navegador sempre pega a versão mais nova dos arquivos (evita ver uma versão antiga depois de atualizar).
 // Variáveis: PORT (5180), AQW_BASE (para testes com uma charpage falsa), DEBUG=1 (salva o HTML lido em poc/painel/debug/).
 import {createServer} from "node:http";
 import {readFile, mkdir, writeFile} from "node:fs/promises";
@@ -44,6 +45,6 @@ createServer(async (req, res) => {
   const file = normalize(join(root, p));
   /* só serve o painel e os dados do portal */
   if (!file.startsWith(join(root, "poc/painel")) && !file.startsWith(join(root, "src/data")) && !file.startsWith(join(root, "public"))) { res.writeHead(404); return res.end("404"); }
-  try { const b = await readFile(file); res.writeHead(200, {"Content-Type": TYPES[extname(file)] || "application/octet-stream"}); res.end(b); }
+  try { const b = await readFile(file); res.writeHead(200, {"Content-Type": TYPES[extname(file)] || "application/octet-stream", "Cache-Control": "no-store"}); res.end(b); }
   catch { res.writeHead(404); res.end("404"); }
 }).listen(PORT, () => console.log(`Painel (POC): http://localhost:${PORT}/poc/painel/   (charpage: ${BASE})`));
