@@ -22,3 +22,6 @@ export const score=t=>({S:4,A:3,B:2,C:1}[t]||0);
 export const total=c=>score(c.farm)+score(c.solo)+score(c.ultra);
 export const idx=c=>D.indexOf(c);
 export const nrm=x=>x.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"");
+/* busca tolerante: ignora acento, maiúscula, espaço, hífen e apóstrofo ("paladin slayer" acha "PaladinSlayer") */
+export const skey=x=>nrm(x||"").replace(/[^a-z0-9]/g,"");
+export const has=(text,q)=>!q||skey(text).includes(skey(q));

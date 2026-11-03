@@ -1,7 +1,7 @@
 import {catChip, catName, seg} from "../components/shared.js";
 import {CATS, MODES} from "../config.js";
 import {D, ENH} from "../data/index.js";
-import {esc, idx, nrm, sigil, tColor, total} from "../lib/util.js";
+import {esc, idx, nrm, sigil, tColor, total, has} from "../lib/util.js";
 import {L, T, st, ui} from "../state.js";
 
 export const SLOTIDX={"Classe":0,"Arma":1,"Capacete":2,"Capa":3};
@@ -15,7 +15,7 @@ export const chipU=u=>`<button class="open" data-i="${idx(u.c)}">${esc(u.c.name)
 export function renderEnh(){
   const SL=["Classe","Arma","Capacete","Capa"];
   seg("segSlot",[["all",L("slot_all")],...SL.map(k=>[k,L("slot_"+k)])],"eslot",renderEnh);
-  const eqv=nrm((document.getElementById("enq") as HTMLInputElement).value.trim()),hits=eqv?D.filter(c=>nrm(c.name).includes(eqv)).slice(0,3):[],hitK=new Set();
+  const eqv=nrm((document.getElementById("enq") as HTMLInputElement).value.trim()),hits=eqv?D.filter(c=>has(c.name,eqv)).slice(0,3):[],hitK=new Set();
   hits.forEach(c=>Object.keys(MODES).forEach(m=>c.b[m].split("|").forEach((v,si)=>hitK.add(si+":"+v))));
   const isHit=e=>hitK.has(SLOTIDX[e[1]]+":"+(e[0]==="Forge (base)"?"Forge":e[0]));
   const qpanel=!eqv?"":hits.length?hits.map(c=>`<div class="qcard frame"><div class="qh">${sigil(c)}<button class="open" data-i="${idx(c)}">${esc(c.name)}</button>${catChip(c)}</div>
@@ -43,6 +43,6 @@ export function updEnh(){const us=usersOf(ENH[ui.eIdx]),q=nrm((document.getEleme
   sg.innerHTML=[["all",L("all")],...cats.map(k=>[k,catName(k)])].map(([v,l])=>`<button data-v="${v}" aria-pressed="${ui.eCat===v}">${l}</button>`).join("");
   sg.onclick=ev=>{const b=(ev.target as HTMLElement).closest<HTMLElement>("button");if(!b)return;ui.eCat=b.dataset.v;updEnh()};
   document.getElementById("eList").innerHTML=cats.filter(k=>ui.eCat==="all"||k===ui.eCat).map(k=>{
-    const xs=us.filter(u=>u.c.cat===k&&(!q||nrm(u.c.name).includes(q)));
+    const xs=us.filter(u=>u.c.cat===k&&has(u.c.name,q));
     return xs.length?`<div class="eGrp"><h4><span class="dot" style="background:var(${CATS[k].c})"></span>${catName(k)} · ${xs.length}</h4><div class="usedList">${xs.map(chipU).join("")}</div></div>`:""}).join("")||`<p class="npEmpty">${L("gnores")}</p>`}
 dlgE.addEventListener("click",e=>{if(e.target===dlgE)dlgE.close()});

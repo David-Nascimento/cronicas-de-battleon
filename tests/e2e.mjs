@@ -57,6 +57,16 @@ try {
     const href = await p.locator("#relList .ri a").first().getAttribute("href");
     check(/^https:\/\/aqwwiki\.wikidot\.com\/[a-z0-9-]+$/.test(href), "link direto para a página do wiki");
   }
+  /* busca de classe: ignora espaço e o filtro de loja */
+  {
+    const p = await page();
+    await go(p, "todas");
+    await p.click('#segAll button[data-v="free"]'); await wait(p);
+    await p.fill("#q", "paladin slayer"); await p.dispatchEvent("#q", "input"); await wait(p);
+    check((await p.locator("#cards .card h4").allInnerTexts()).some(t => t.startsWith("PaladinSlayer")), "busca acha PaladinSlayer com espaço e outra loja selecionada");
+    await p.click("#gq"); await p.fill("#gq", "paladin slayer"); await wait(p);
+    check((await p.locator("#gres").innerText()).includes("PaladinSlayer"), "busca do topo acha PaladinSlayer");
+  }
   /* minha tier list: começa pela do portal, move, busca nas sem tier, volta */
   {
     const p = await page();

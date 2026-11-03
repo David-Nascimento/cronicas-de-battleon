@@ -1,5 +1,5 @@
 import {D, TEAMS, byName} from "../data/index.js";
-import {esc, idx, nrm, score, sigil} from "../lib/util.js";
+import {esc, idx, nrm, score, sigil, has} from "../lib/util.js";
 import {L, T, st} from "../state.js";
 
 export const ownSet=()=>new Set(st.own||[]);
@@ -9,7 +9,7 @@ export function bestSub(own,role,except){let best=null,bs=-1;
   D.forEach(c=>{if(!own.has(c.name)||c.name===except||!ROLE_T[role].includes(c.type))return;
     const sc=score(c.ultra)*10+score(c.solo)+(c.type==="sup"&&(role==="heal"||role==="sup")?5:0);
     if(sc>bs){bs=sc;best=c}});return best}
-export const bList=f=>[...D].sort((a,b)=>a.name.localeCompare(b.name)).filter(c=>(st.bcat==="all"||c.cat===st.bcat)&&(!f||nrm(c.name).includes(f)));
+export const bList=f=>[...D].sort((a,b)=>a.name.localeCompare(b.name)).filter(c=>(st.bcat==="all"||c.cat===st.bcat)&&has(c.name,f));
 export function renderBuilder(){
   const own=ownSet(),f=nrm((document.getElementById("bq") as HTMLInputElement).value.trim());
   document.getElementById("bCount").textContent=L("bld_n",{n:[...own].filter(n=>n in byName).length});

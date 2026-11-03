@@ -2,7 +2,7 @@ import {seg} from "../components/shared.js";
 import {RICO, RTYPES} from "../config.js";
 import {REL} from "../data/index.js";
 import {unreadNews} from "../features/news.js";
-import {esc, nrm, wiki} from "../lib/util.js";
+import {esc, nrm, wiki, has} from "../lib/util.js";
 import {L, loc, save, st, ui} from "../state.js";
 
 /* Itens novos: o que entrou no jogo em cada atualização (dados em data/releases.json). */
@@ -38,7 +38,7 @@ export function renderRelList(){
   const box=document.getElementById("relList");if(!box||!REL.length)return;
   const r=cur(),q=nrm((ui.relQ||"").trim()),t=st.rt||"all";
   const html=RTYPES.filter(k=>(t==="all"||t===k)&&(r.items[k]||[]).length).map(k=>{
-    const rows=r.items[k].filter(it=>!q||nrm(it[0]).includes(q));
+    const rows=r.items[k].filter(it=>has(it[0],q));
     return rows.length?`<section class="relGrp"><h3>${ricon(k,"rgIc")}${L("rel_t_"+k)} <small>${rows.length}</small></h3><div class="relItems">${rows.map(it=>row(r,k,it)).join("")}</div></section>`:""}).join("");
   box.innerHTML=html||`<p class="relEmpty">${L("rel_empty")}</p>`;
 }

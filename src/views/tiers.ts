@@ -2,7 +2,7 @@ import {catName, seg} from "../components/shared.js";
 import {TIERS} from "../config.js";
 import {D, byName} from "../data/index.js";
 import {toast} from "../features/toasts.js";
-import {esc, idx, nrm, score, sigil, tColor, total} from "../lib/util.js";
+import {esc, idx, nrm, score, sigil, tColor, total, has} from "../lib/util.js";
 import {L, T, save, st} from "../state.js";
 import type {Klass, Tier} from "../types.js";
 
@@ -42,7 +42,7 @@ export function renderTiers(){
   const edit=st.tsrc==="mine",box=document.getElementById("tiers");
   document.getElementById("segCat").hidden=edit;
   const pool=document.getElementById("tierPool"),qi=document.getElementById("tierQ") as HTMLInputElement;pool.hidden=!edit;qi.placeholder=L("tl_q");qi.setAttribute("aria-label",L("tl_q"));
-  const nq=nrm(q.trim()),hit=(c:Klass)=>!nq||nrm(c.name).includes(nq);
+  const nq=nrm(q.trim()),hit=(c:Klass)=>has(c.name,nq);
   const tools=document.getElementById("tierTools");
   if(!edit){sel=null;tools.innerHTML="";document.getElementById("tierPool").hidden=true;
     box.innerHTML=TIERS.map(t=>{const xs=list().filter(c=>tierOf(c)===t);

@@ -340,7 +340,8 @@
   "daily_pick_none": "Desmarcar o grupo",
   "daily_pick_save": "Salvar ({n})",
   "daily_pick_done": "Pronto: {n} diárias nas suas",
-  "daily_pick_cleared": "Suas diárias foram limpas"
+  "daily_pick_cleared": "Suas diárias foram limpas",
+  "q_all_stores": "buscando em todas as lojas"
  },
  "en": {
   "title": "Chronicles of Battleon",
@@ -683,6 +684,7 @@
   "daily_pick_none": "Uncheck the group",
   "daily_pick_save": "Save ({n})",
   "daily_pick_done": "Done: {n} dailies in yours",
-  "daily_pick_cleared": "Your dailies were cleared"
+  "daily_pick_cleared": "Your dailies were cleared",
+  "q_all_stores": "searching every store"
  }
 }
