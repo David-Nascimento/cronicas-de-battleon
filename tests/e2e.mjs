@@ -66,6 +66,11 @@ try {
     check((await p.locator("#cards .card h4").allInnerTexts()).some(t => t.startsWith("PaladinSlayer")), "busca acha PaladinSlayer com espaço e outra loja selecionada");
     await p.click("#gq"); await p.fill("#gq", "paladin slayer"); await wait(p);
     check((await p.locator("#gres").innerText()).includes("PaladinSlayer"), "busca do topo acha PaladinSlayer");
+    await p.fill("#gq", "tier list"); await wait(p);
+    check(await p.locator('#gres [data-gpage="tier"]').count() === 1, "busca do topo oferece ir para a tier list");
+    await p.fill("#gq", "minhas diarias"); await wait(p);
+    await p.click('#gres [data-gpage="mydaily"]'); await wait(p);
+    check((await hash(p)) === "#diarias" && (await p.locator('#segDaily button[data-v="mine"]').getAttribute("aria-pressed")) === "true", "ir para Minhas diárias pela busca");
   }
   /* enhancements: busca lista todas as classes e deixa escolher uma */
   {
@@ -93,6 +98,17 @@ try {
     check(hits.length > 0 && hits.every(n => n.toLowerCase().includes("lord")), "busca filtra só as sem tier");
     await p.click(`#poolList [data-tname="${hits[0]}"]`); await p.click('.tlTo[data-tto="A"]'); await wait(p);
     check((await names("A")).includes(hits[0]), "tocar e escolher o tier move a classe");
+    /* compartilhar: link abre a mesma lista em outra pessoa; imagem baixa um PNG */
+    await p.click("[data-tlink]"); await wait(p, 300);
+    const link = await p.inputValue("#tlLinkIn");
+    check(/[?&]tl=[zj][A-Za-z0-9_-]+#tier$/.test(link), "link da tier list gerado");
+    const [dl] = await Promise.all([p.waitForEvent("download"), p.click("[data-timg]")]);
+    check(/\.png$/.test(dl.suggestedFilename()), "imagem da tier list baixada");
+    const o = await page(); await o.goto(link); await wait(o, 500);
+    check((await o.locator('#segTsrc button[data-v="shared"]').getAttribute("aria-pressed")) === "true", "link abre a tier list compartilhada");
+    check((await o.locator("#tiers .tier:nth-child(2) .tc span").allInnerTexts()).includes(hits[0]), "lista compartilhada tem a classe movida");
+    await o.click("[data-tsave]"); await wait(o);
+    check((await o.locator('#tiers [data-trow="A"] [data-tname]').evaluateAll(e => e.map(x => x.dataset.tname))).includes(hits[0]), "salvar como minha tier list");
     await p.click("[data-treset]"); await wait(p);
     check((await names("N")).length === 0, "voltar para a do portal");
   }

@@ -2,13 +2,15 @@
 
 Guia de AdventureQuest Worlds feito por fãs, em português e inglês: qual classe usar, o que farmar hoje, como montar time de ultra e o que entrou no jogo em cada atualização.
 
-Versão atual: **2.3.0**. Projeto não oficial; AdventureQuest Worlds e as marcas relacionadas pertencem à Artix Entertainment, LLC.
+Versão atual: **2.4.0**. Projeto não oficial; AdventureQuest Worlds e as marcas relacionadas pertencem à Artix Entertainment, LLC.
+
+**Abrir o portal:** https://david-nascimento.github.io/cronicas-de-battleon/ (no celular, dá para instalar como app pelo menu do navegador).
 
 ![Página Hoje](docs/screenshots/hoje.png)
 
 ## O que tem no portal
 
-O portal tem 5 destinos, e cada um guarda suas abas: **Hoje**, **Classes**, **Ultras**, **Farm** e **Novidades**. A busca do topo acha classes, itens novos, diárias e cards de HardFarm de qualquer lugar (atalho: tecla `/`).
+O portal tem 5 destinos, e cada um guarda suas abas: **Hoje**, **Classes**, **Ultras**, **Farm** e **Novidades**. A busca do topo acha classes, itens novos, diárias e cards de HardFarm de qualquer lugar (atalho: tecla `/`). Ela também leva às partes do portal: quem digita "tier list", "diárias", "enh" ou "ultra" vê **Ir para** e cai direto na aba. Ela ignora acento, maiúscula, espaço e hífen ("paladin slayer" acha PaladinSlayer).
 
 ### Hoje
 
@@ -24,11 +26,19 @@ Tudo que entrou no jogo em cada atualização, com filtro por tipo, busca, marca
 
 ### Tier list e Minha tier list
 
-A tier list do portal separa por loja (Free, Member, ACS, HeroMart, Calendário) e por modo (Geral, Farm, Solo, Ultras). Em **Minha tier list**, cada pessoa monta a sua com todas as classes juntas, a partir da do portal: arraste a classe para um tier, ou toque nela e escolha S, A, B, C ou Sem tier. As classes ainda sem tier ficam embaixo, com uma busca só para elas. Fica salva no navegador, uma por modo, e dá para voltar à do portal, começar do zero ou copiar como texto.
+A tier list do portal separa por loja (Free, Member, ACS, HeroMart, Calendário) e por modo (Geral, Farm, Solo, Ultras). Em **Minha tier list**, cada pessoa monta a sua com todas as classes juntas, a partir da do portal: arraste a classe para um tier, ou toque nela e escolha S, A, B, C ou Sem tier. As classes ainda sem tier ficam embaixo, com uma busca só para elas. Fica salva no navegador, uma por modo, e dá para voltar à do portal, começar do zero ou compartilhar:
+
+- **Baixar imagem:** um PNG com os tiers e os nomes, pronto para postar (no celular abre o menu de compartilhar).
+- **Copiar link:** a lista vai dentro do endereço. Quem abre vê a aba **Compartilhada**, pode abrir a ficha de cada classe e tocar em **Salvar como minha tier list** para mexer nela.
+- **Copiar texto:** os tiers em texto simples.
 
 ![Tier list do portal](docs/screenshots/tier-list.png)
 
 ![Minha tier list, com uma classe escolhida para mover](docs/screenshots/minha-tier-list.png)
+
+| Tier list que chegou por link | Imagem gerada |
+|---|---|
+| ![Tier list compartilhada](docs/screenshots/tier-compartilhada.png) | ![Imagem da tier list](docs/screenshots/tier-imagem.png) |
 
 ### Diárias
 
@@ -81,7 +91,7 @@ As capturas foram feitas num ambiente sem acesso ao Google Fonts; no navegador o
   - `npm run dev`: recompila ao salvar e serve em http://localhost:5173
   - `npm run build`: gera `dist/` otimizado
   - `npm run typecheck`: confere os tipos com o TypeScript (`tsc`)
-  - `npm test`: abre o portal num Chromium e confere navegação, itens novos, tier list, diárias, HardFarm, idioma e celular (precisa de `npx playwright install chromium` uma vez). O GitHub roda build, tipos e testes a cada mudança na `main` (`.github/workflows/ci.yml`).
+  - `npm test`: abre o portal num Chromium e confere navegação, itens novos, tier list, diárias, HardFarm, idioma e celular (precisa de `npx playwright install chromium` uma vez). O GitHub roda build, tipos e testes a cada mudança na `main` e, se passar, publica o `dist/` no GitHub Pages (`.github/workflows/ci.yml`). Para isso funcionar, o Pages precisa estar ligado uma vez em Settings > Pages > Source: **GitHub Actions**.
 
 ### App instalável e offline
 

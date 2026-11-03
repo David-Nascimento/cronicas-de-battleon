@@ -27,10 +27,17 @@ import {checkLive} from "./features/toasts.js";
 import {renderAll} from "./render-all.js";
 import {renderAgenda} from "./views/agenda.js";
 import {show} from "./views/nav.js";
-import {ui} from "./state.js";
+import {L, ui} from "./state.js";
+import {decodeTier} from "./features/share-tier.js";
+import {openShared, renderTiers} from "./views/tiers.js";
+import {toast} from "./features/toasts.js";
 
 seg("segLang",[["pt","PT"],["en","EN"]],"lang",renderAll);
 renderAll();
+/* tier list compartilhada por link: ?tl=...#tier */
+const tl=new URLSearchParams(location.search).get("tl");
+if(tl)decodeTier(tl).then(t=>{const u=new URL(location.href);u.search="";history.replaceState(null,"",u.toString());
+  if(t){openShared(t);show("tier");renderTiers()}else toast("!",L("tl_shared_bad"))});
 show(location.hash.slice(1)||"inicio");
 window.addEventListener("hashchange",()=>{const v=location.hash.slice(1);if(v&&v!==ui.curView)show(v)});
 setTimeout(()=>checkLive(true),600);

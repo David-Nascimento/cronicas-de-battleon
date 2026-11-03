@@ -33,3 +33,11 @@
 #tierQ{width:280px}
 .pool .tr{padding:4px 0;min-height:60px}
 @media (max-width:640px){#tierQ{width:100%}}
+.tlShareL{font:600 13px var(--body);color:var(--muted)}
+.tlSep{width:1px;align-self:stretch;background:var(--line2);margin:0 4px}
+.tlActs .btnG{font-size:13px;padding:7px 12px}
+.tlLink{display:flex;flex-direction:column;gap:6px;margin-top:10px}
+.tlLink label{font-size:13px;color:var(--muted)}
+.tlLink input{width:100%;font:500 12.5px var(--body)}
+.tlShared{border-color:var(--glow-dim)}
+@media (max-width:640px){.tlSep{display:none}}

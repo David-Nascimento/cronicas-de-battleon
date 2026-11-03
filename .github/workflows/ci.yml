@@ -1,4 +1,4 @@
-# Confere cada mudança na main e em pull requests: build, tipos e testes no navegador.
+# Confere cada mudança na main e em pull requests (build, tipos e testes no navegador) e publica no GitHub Pages.
 name: CI
 on:
   push:
@@ -19,3 +19,35 @@ jobs:
       - run: npm run build
       - run: npm run typecheck
       - run: npm test
+
+  # Publica o portal no GitHub Pages depois que os testes passam na main.
+  # Na primeira vez, se o Pages ainda não estiver ligado: Settings > Pages > Source: GitHub Actions.
+  deploy:
+    needs: test
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main' || github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    concurrency:
+      group: pages
+      cancel-in-progress: true
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm install --no-audit --no-fund
+      - run: npm run build
+      - uses: actions/configure-pages@v5
+        with:
+          enablement: true
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+      - id: deploy
+        uses: actions/deploy-pages@v4
