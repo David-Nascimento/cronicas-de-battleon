@@ -27,6 +27,16 @@ const KIND = {class: "Classe", gear: "Arma ou armadura", mat: "Material", rep: "
 const EFF = ["", "Curto", "Médio", "Longo", "Muito longo", "Extremo"];
 const tracked = () => (D.ftrack || []).map(n => FARMS.find(f => f.n === n)).filter(Boolean);
 const nextStep = f => f.req.findIndex((_, i) => !(D.fprog[f.n] || []).includes(i));
+/* join clicável: copia "/join mapa" */
+const jn = m => `<button type="button" class="jn" data-j="${esc(m)}" title="Copiar">/join ${esc(m)}</button>`;
+/* texto da etapa com os "/mapa" virando join clicável, mais "Onde conseguir" item por item (r.w) e joins extras (r.j) */
+function stepBody(r) {
+  const txt = esc(r.pt).replace(/(^|[\s(])\/(?!join\b|goto\b)([a-z0-9]{3,})/g, (a, b, m) => b + jn(m));
+  const inTxt = new Set([...r.pt.matchAll(/(?:^|[\s(])\/([a-z0-9]{3,})/g)].map(m => m[1]));
+  const extra = (r.j || []).filter(m => !inTxt.has(m));
+  const where = (r.w || []).map(w => `<li><b>${esc(w.i)}</b>: ${esc(w.o.pt)}${w.j ? " " + jn(w.j) : ""}</li>`).join("");
+  return `<span class="stx">${txt}</span>${extra.length ? `<span class="jrow">Ir para: ${extra.map(jn).join(" ")}</span>` : ""}${where ? `<ul class="where"><li class="wh">Onde conseguir</li>${where}</ul>` : ""}`;
+}
 const save = () => store.save(D);
 
 /* o que vem do personagem (não dá para desmarcar) + o que a pessoa marcou */
@@ -90,9 +100,21 @@ function resumo() {
       <button class="stat" data-tab="ultras"><b>${ready}<small style="font-size:14px"> / ${TEAMS.length}</small></b><small>times de ultra que você monta</small></button>
       <button class="stat" data-tab="quests"><b>${D.quests.filter(q => q.st !== "done").length}</b><small>quests em aberto</small></button>
     </div>
+    ${dailyCard()}
     <section class="card"><div class="row" style="justify-content:space-between"><h3 style="margin:0">Farms que você acompanha</h3><button class="link" data-gofarms>${tr.length ? "Escolher outro farm" : ""}</button></div>
       ${tr.length ? `<div class="stack" style="margin-top:10px">${tr.map(trackRow).join("")}</div>`
         : `<p class="sub" style="margin:6px 0 10px">Escolha um farm (uma classe, uma arma, uma reputação) e ele aparece aqui com a próxima etapa.</p><button class="btn" data-gofarms>Escolher um farm</button>`}</section></div>`;
+}
+
+/* Resumo: as diárias de hoje, para marcar sem trocar de aba */
+function dailyCard() {
+  const xs = DAILIES.filter(d => D.dMine.includes(d.id)), done = xs.filter(d => D.dDone.includes(d.id)).length;
+  if (!xs.length) return `<section class="card"><h3>Diárias de hoje</h3><p class="sub" style="margin:0 0 10px">Escolha as diárias que você faz e acompanhe aqui, todo dia.</p><button class="btn" data-tab="diarias">Escolher minhas diárias</button></section>`;
+  return `<section class="card"><div class="row" style="justify-content:space-between"><h3 style="margin:0">Diárias de hoje</h3><span class="row"><span class="pill ${done === xs.length ? "ok" : ""}">${done === xs.length ? "Todas feitas" : `${done} de ${xs.length} feitas`}</span><button class="link" data-dedit2>Editar</button></span></div>
+    <div class="bar"><i style="width:${done / xs.length * 100}%"></i></div>
+    <div class="grid" style="margin-top:10px">${xs.map(d => { const on = D.dDone.includes(d.id);
+      return `<label class="item${on ? " on" : ""}"><input type="checkbox" class="chk" data-dday="${d.id}" ${on ? "checked" : ""}><span class="tx"><b>${esc(d.n)}</b>${d.j ? `<span class="jrow">${d.j.map(jn).join(" ")}</span>` : ""}</span></label>`; }).join("")}</div>
+    <p class="sub" style="margin:8px 0 0">Voltam do zero à meia-noite.</p></section>`;
 }
 
 function classes() {
@@ -120,7 +142,7 @@ function diarias() {
   return `<h2>Diárias de hoje</h2><p class="sub">${done} de ${xs.length} feitas. Voltam do zero à meia-noite. <button class="link" data-dedit>Editar minhas diárias</button></p>
     <div class="bar"><i style="width:${xs.length ? done / xs.length * 100 : 0}%"></i></div>
     <div class="grid" style="margin-top:12px">${xs.map(d => { const on = D.dDone.includes(d.id);
-      return `<label class="item${on ? " on" : ""}"><input type="checkbox" class="chk" data-dday="${d.id}" ${on ? "checked" : ""}><span class="tx"><b>${esc(d.n)}</b><small>${d.j ? d.j.map(j => "/join " + j).join(", ") : ""}${d.rw ? " · " + esc(d.rw.pt) : ""}</small></span></label>`; }).join("")}</div>`;
+      return `<label class="item${on ? " on" : ""}"><input type="checkbox" class="chk" data-dday="${d.id}" ${on ? "checked" : ""}><span class="tx"><b>${esc(d.n)}</b>${d.j ? `<span class="jrow">${d.j.map(jn).join(" ")}</span>` : ""}<small>${d.rw ? esc(d.rw.pt) : ""}</small></span></label>`; }).join("")}</div>`;
 }
 
 /* uma linha de farm acompanhado: progresso e a próxima etapa, que dá para marcar ali mesmo */
@@ -128,7 +150,7 @@ function trackRow(f) {
   const p = D.fprog[f.n] || [], ok = farmDone(f), byCls = f.cls && owned().all.has(f.cls), nx = nextStep(f);
   return `<div class="trk"><div class="row" style="justify-content:space-between"><b>${esc(f.n)}</b>${ok ? `<span class="pill ok">${byCls ? "Você já tem a classe" : "Concluído"}</span>` : `<span class="pill">${p.length}/${f.req.length} etapas</span>`}</div>
     <div class="bar"><i style="width:${ok ? 100 : p.length / f.req.length * 100}%"></i></div>
-    ${!ok && nx >= 0 ? `<label class="item nxt"><input type="checkbox" class="chk" data-fstep="${esc(f.n)}|${nx}"><span class="tx"><small class="lbl">Próxima etapa (${nx + 1} de ${f.req.length})</small><span>${esc(f.req[nx].pt)}</span></span></label>` : ""}
+    ${!ok && nx >= 0 ? `<label class="item nxt"><input type="checkbox" class="chk" data-fstep="${esc(f.n)}|${nx}"><span class="tx"><small class="lbl">Próxima etapa (${nx + 1} de ${f.req.length})</small>${stepBody(f.req[nx])}</span></label>` : ""}
     <div class="row" style="margin-top:6px"><button class="link" data-fopen="${esc(f.n)}">Ver todas as etapas</button><button class="link mut" data-funtrack="${esc(f.n)}">Parar de acompanhar</button></div></div>`;
 }
 
@@ -147,7 +169,7 @@ function farm() {
   return head + `<div class="stack">${xs.map(f => { const p = D.fprog[f.n] || [], ok = farmDone(f), byCls = f.cls && o.all.has(f.cls);
     return `<article class="card" id="farm-${ckey(f.n)}"><div class="row" style="justify-content:space-between"><h3 style="margin:0">${esc(f.n)}</h3>${ok ? `<span class="pill ok">${byCls ? "Você já tem a classe" : "Concluído"}</span>` : `<span class="pill">${p.length}/${f.req.length} etapas</span>`}</div>
       <div class="bar"><i style="width:${ok ? 100 : p.length / f.req.length * 100}%"></i></div>
-      <div class="stack" style="gap:6px;margin-top:10px">${f.req.map((r, i) => `<label class="item${p.includes(i) || byCls ? " on" : ""}" style="padding:7px 10px"><input type="checkbox" class="chk" data-fstep="${esc(f.n)}|${i}" ${p.includes(i) || byCls ? "checked" : ""} ${byCls ? "disabled" : ""}><span class="tx"><small style="color:var(--ink);font-size:13.5px">${esc(r.pt)}</small></span></label>`).join("")}</div>
+      <div class="stack" style="gap:6px;margin-top:10px">${f.req.map((r, i) => `<label class="item${p.includes(i) || byCls ? " on" : ""}" style="padding:7px 10px"><input type="checkbox" class="chk" data-fstep="${esc(f.n)}|${i}" ${p.includes(i) || byCls ? "checked" : ""} ${byCls ? "disabled" : ""}><span class="tx stepTx">${stepBody(r)}</span></label>`).join("")}</div>
       ${(D.ftrack || []).includes(f.n) ? `<button class="link mut" data-funtrack="${esc(f.n)}" style="margin-top:8px">Parar de acompanhar</button>` : ""}</article>`; }).join("")
     || `<div class="card"><p class="sub" style="margin:0 0 10px">${ff === "and" ? "Você ainda não acompanha nenhum farm." : "Nenhum farm concluído ainda."}</p>${ff === "and" ? `<button class="btn" data-ff="todos">Escolher farms</button>` : ""}</div>`}</div>`;
 }
@@ -169,6 +191,9 @@ function quests() {
     ${done.length ? `<h3 style="margin-top:16px">Concluídas (${done.length})</h3><div class="stack">${done.map(row).join("")}</div>` : ""}`;
 }
 
+function toast(msg) { let el = document.getElementById("toast"); if (!el) { el = document.createElement("div"); el.id = "toast"; el.className = "toast"; el.setAttribute("role", "status"); document.body.appendChild(el); }
+  el.textContent = msg; el.classList.add("on"); clearTimeout(toast.t); toast.t = setTimeout(() => el.classList.remove("on"), 1600); }
+
 /* ---------- personagem ---------- */
 async function link(name) {
   busy = true; render(); $("#msg").hidden = true;
@@ -187,6 +212,8 @@ async function link(name) {
 /* ---------- eventos ---------- */
 document.addEventListener("click", e => {
   const t = e.target.closest("button,[data-tab]"); if (!t) return;
+  if (t.dataset.j) { e.preventDefault(); const txt = "/join " + t.dataset.j; try { navigator.clipboard?.writeText(txt).catch(() => {}); } catch (_) {} toast(`Copiado: ${txt}`); return; }
+  if (t.dataset.dedit2 != null) { tab = "diarias"; D.dPick = [...D.dMine]; return render(); }
   if (t.dataset.signin != null) return store.signIn();
   if (t.dataset.signout != null) return store.signOut();
   if (t.dataset.tab) { tab = t.dataset.tab; return render(); }
