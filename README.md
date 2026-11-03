@@ -56,7 +56,7 @@ Na aba **Sazonais** aparece o evento que está no ar, com a data de fim e os map
 
 ### HardFarm
 
-99 farms longos (classes, armas e armaduras, materiais, reputação, diárias e sazonais), com o esforço estimado, onde começar (`/join`), o que é preciso em cada etapa e a fonte. Em 242 das 288 etapas há **Onde conseguir cada item**: o monstro, a quest ou a loja de cada material, com o `/join` para copiar (fontes: guias do AQWG e AQW Wiki; os dados ficam em `tools/where/` e entram no `hardfarm.json` com `python3 tools/where/apply.py`). Marque as etapas que já concluiu: a barra mostra o progresso, fica salva no navegador e o filtro **Em andamento** junta os farms que você começou.
+99 farms longos (classes, armas e armaduras, materiais, reputação, diárias e sazonais), com o esforço estimado, onde começar (`/join`), o que é preciso em cada etapa e a fonte. Em 81 etapas aparece **Aceite**: a quest que precisa pegar, quem dá e o `/join`. Em 242 das 288 etapas há **Onde conseguir cada item**: o monstro, a quest ou a loja de cada material, com o `/join` para copiar (fontes: guias do AQWG e AQW Wiki; os dados ficam em `tools/where/` e entram no `hardfarm.json` com `python3 tools/where/apply.py`; as quests ficam em `tools/where/quests.py`). Marque as etapas que já concluiu: a barra mostra o progresso, fica salva no navegador e o filtro **Em andamento** junta os farms que você começou.
 
 ![HardFarm](docs/screenshots/hardfarm.png)
 

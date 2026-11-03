@@ -367,7 +367,8 @@
   "m_until": "Até {d}",
   "m_last": "Último dia",
   "m_more": "Ver tudo em Sazonais",
-  "farm_where": "Onde conseguir cada item ({n})"
+  "farm_where": "Onde conseguir cada item ({n})",
+  "farm_accept": "Aceite"
  },
  "en": {
   "title": "Chronicles of Battleon",
@@ -737,6 +738,7 @@
   "m_until": "Until {d}",
   "m_last": "Last day",
   "m_more": "See all in Seasonal",
-  "farm_where": "Where to get each item ({n})"
+  "farm_where": "Where to get each item ({n})",
+  "farm_accept": "Accept"
  }
 }

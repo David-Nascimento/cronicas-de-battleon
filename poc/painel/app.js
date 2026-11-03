@@ -29,12 +29,13 @@ const tracked = () => (D.ftrack || []).map(n => FARMS.find(f => f.n === n)).filt
 const nextStep = f => f.req.findIndex((_, i) => !(D.fprog[f.n] || []).includes(i));
 /* join clicável: copia "/join mapa" */
 const jn = m => `<button type="button" class="jn" data-j="${esc(m)}" title="Copiar">/join ${esc(m)}</button>`;
-/* texto da etapa com os "/mapa" virando join clicável, mais "Onde conseguir" item por item (r.w), cada um com o seu join */
+/* etapa: a quest para aceitar (r.q), o texto com os "/mapa" virando join clicável e "Onde conseguir" item por item (r.w) */
 function stepBody(r, id) {
   const txt = esc(r.pt).replace(/(^|[\s(])\/(?!join\b|goto\b)([a-z0-9]{3,})/g, (a, b, m) => b + jn(m));
   const ws = r.w || [], where = ws.map(w => `<li><b>${esc(w.i)}</b>: ${esc(w.o.pt)}${w.j ? " " + jn(w.j) : ""}</li>`).join("");
   /* listas curtas ficam abertas; as longas (ex.: Lord of Order) começam fechadas */
-  return `<label class="stx" for="${id}">${txt}</label>${where ? `<details class="where"${ws.length <= 8 ? " open" : ""}><summary>Onde conseguir cada item (${ws.length})</summary><ul>${where}</ul></details>` : ""}`;
+  const qs = (r.q || []).map(q => `<span class="quest"><em>Aceite</em> <b>${esc(q.n.pt)}</b>${q.by ? ` · ${esc(q.by)}` : ""} ${jn(q.j)}</span>`).join("");
+  return `${qs}<label class="stx" for="${id}">${txt}</label>${where ? `<details class="where"${ws.length <= 8 ? " open" : ""}><summary>Onde conseguir cada item (${ws.length})</summary><ul>${where}</ul></details>` : ""}`;
 }
 const save = () => store.save(D);
 

@@ -10,6 +10,15 @@
       {
         "pt": "Legion Fealty 1 (exige Rank 10 Evil): 50 Aeacus Empowered (matar o Ultra Aeacus 50 vezes), 300 Tethered Soul, 500 Darkened Essence em /shadowrealmpast e 1.000 Dracolich Contract.",
         "en": "Legion Fealty 1 (needs Rank 10 Evil): 50 Aeacus Empowered (kill Ultra Aeacus 50 times), 300 Tethered Soul, 500 Darkened Essence in /shadowrealmpast and 1,000 Dracolich Contract.",
+        "q": [
+          {
+            "n": {
+              "pt": "Legion Fealty 1",
+              "en": "Legion Fealty 1"
+            },
+            "j": "revenant"
+          }
+        ],
         "w": [
           {
             "i": "Aeacus Empowered",
@@ -53,6 +62,15 @@
       {
         "pt": "Legion Fealty 2 (nível 80): 400 de cada uma de 10 Cohorts Conquered, 4.000 no total.",
         "en": "Legion Fealty 2 (level 80): 400 each of 10 Cohorts Conquered, 4,000 in total.",
+        "q": [
+          {
+            "n": {
+              "pt": "Legion Fealty 2",
+              "en": "Legion Fealty 2"
+            },
+            "j": "revenant"
+          }
+        ],
         "w": [
           {
             "i": "Cohort (Grim)",
@@ -151,6 +169,31 @@
       {
         "pt": "Legion Fealty 3: 4.000 Legion Token, 300 Dage's Favor, 100 Dark Token e 30 Diamond Token of Dage.",
         "en": "Legion Fealty 3: 4,000 Legion Token, 300 Dage's Favor, 100 Dark Token and 30 Diamond Token of Dage.",
+        "q": [
+          {
+            "n": {
+              "pt": "Legion Fealty 3",
+              "en": "Legion Fealty 3"
+            },
+            "j": "revenant"
+          },
+          {
+            "n": {
+              "pt": "Legion Loyalty Rewarded",
+              "en": "Legion Loyalty Rewarded"
+            },
+            "by": "Gresk",
+            "j": "shadowblast"
+          },
+          {
+            "n": {
+              "pt": "Legion Recruits: The Dark Path Waits",
+              "en": "Legion Recruits: The Dark Path Waits"
+            },
+            "by": "Gresk",
+            "j": "shadowblast"
+          }
+        ],
         "w": [
           {
             "i": "Legion Token",
@@ -201,6 +244,15 @@
       {
         "pt": "Legion Fealty 4: 10 Exalted Crown, 20 Revenant's Spellscroll e 6 Conquest Wreath.",
         "en": "Legion Fealty 4: 10 Exalted Crown, 20 Revenant's Spellscroll and 6 Conquest Wreath.",
+        "q": [
+          {
+            "n": {
+              "pt": "Legion Fealty 4",
+              "en": "Legion Fealty 4"
+            },
+            "j": "revenant"
+          }
+        ],
         "w": [
           {
             "i": "Revenant's Spellscroll",
@@ -252,6 +304,16 @@
       {
         "pt": "Corrente de 10 quests do Kro'nar; a classe sai na nona (Hero's Heartbeat), no nível 75.",
         "en": "Chain of 10 Kro'nar quests; the class comes from the ninth (Hero's Heartbeat), at level 75.",
+        "q": [
+          {
+            "n": {
+              "pt": "10 quests do Kro'nar, em ordem",
+              "en": "Kro'nar's 10 quests, in order"
+            },
+            "by": "Kro'nar",
+            "j": "timeinn"
+          }
+        ],
         "w": [
           {
             "i": "Lost Hieroglyphic",
@@ -323,6 +385,16 @@
       {
         "pt": "Burning Fates: 3.000 Fire Essence em /volcano, 100 Akriloth's Flametongue, 50 Immortal Embers e 50 Ashes from the Void Realm. Exige a Blade of Awe no inventário.",
         "en": "Burning Fates: 3,000 Fire Essence in /volcano, 100 Akriloth's Flametongue, 50 Immortal Embers and 50 Ashes from the Void Realm. Needs the Blade of Awe in your inventory.",
+        "q": [
+          {
+            "n": {
+              "pt": "Burning Fates",
+              "en": "Burning Fates"
+            },
+            "by": "Kro'nar",
+            "j": "timeinn"
+          }
+        ],
         "w": [
           {
             "i": "Fire Essence",
@@ -367,6 +439,16 @@
       {
         "pt": "Dragon's Will: 300 Unyielding Slime em /moonlab e 20 de cada material de chefe.",
         "en": "Dragon's Will: 300 Unyielding Slime in /moonlab and 20 of each boss material.",
+        "q": [
+          {
+            "n": {
+              "pt": "Dragon's Will",
+              "en": "Dragon's Will"
+            },
+            "by": "Kro'nar",
+            "j": "timeinn"
+          }
+        ],
         "w": [
           {
             "i": "Unyielding Slime",
@@ -429,6 +511,24 @@
       {
         "pt": "Confluence of Fates: 300 Cross-Dimensional Weapons e 100 Darkon's Receipt. Rend: 125 Epic Hydra Fang em /hydrachallenge.",
         "en": "Confluence of Fates: 300 Cross-Dimensional Weapons and 100 Darkon's Receipt. Rend: 125 Epic Hydra Fang in /hydrachallenge.",
+        "q": [
+          {
+            "n": {
+              "pt": "Confluence of Fates",
+              "en": "Confluence of Fates"
+            },
+            "by": "Kro'nar",
+            "j": "timeinn"
+          },
+          {
+            "n": {
+              "pt": "Rend",
+              "en": "Rend"
+            },
+            "by": "Kro'nar",
+            "j": "timeinn"
+          }
+        ],
         "w": [
           {
             "i": "Cross-Dimensional Weapons",
@@ -517,6 +617,16 @@
       {
         "pt": "Merge da classe: 15 Roentgenium of Nulgath, 1 Void Crystal A e 1 Void Crystal B.",
         "en": "Class merge: 15 Roentgenium of Nulgath, 1 Void Crystal A and 1 Void Crystal B.",
+        "q": [
+          {
+            "n": {
+              "pt": "Void Highlord's Challenge",
+              "en": "Void Highlord's Challenge"
+            },
+            "by": "Void Highlord",
+            "j": "tercessuinotlim"
+          }
+        ],
         "w": [
           {
             "i": "Roentgenium of Nulgath",
@@ -925,11 +1035,31 @@
     "req": [
       {
         "pt": "Corrente de 4 quests do Lae, em /hollowdeep (Eventhub): Draftless, Flow Stress, Heat Treatment e Counterblow.",
-        "en": "Chain of 4 quests from Lae, in /hollowdeep (Eventhub): Draftless, Flow Stress, Heat Treatment and Counterblow."
+        "en": "Chain of 4 quests from Lae, in /hollowdeep (Eventhub): Draftless, Flow Stress, Heat Treatment and Counterblow.",
+        "q": [
+          {
+            "n": {
+              "pt": "Draftless, Flow Stress, Heat Treatment e Counterblow, em ordem",
+              "en": "Draftless, Flow Stress, Heat Treatment and Counterblow, in order"
+            },
+            "by": "Lae",
+            "j": "hollowdeep"
+          }
+        ]
       },
       {
         "pt": "Draftless (nível 85): 100 Legion Tokens, 50 Undead Energy e 25 Hollow Soul. Dá 1 Soul Fragment. Exige Undead Champion (armadura) e o Lae's Hardcore Contract.",
         "en": "Draftless (level 85): 100 Legion Tokens, 50 Undead Energy and 25 Hollow Soul. Gives 1 Soul Fragment. Needs Undead Champion (armor) and Lae's Hardcore Contract.",
+        "q": [
+          {
+            "n": {
+              "pt": "Draftless",
+              "en": "Draftless"
+            },
+            "by": "Lae",
+            "j": "hollowdeep"
+          }
+        ],
         "w": [
           {
             "i": "Undead Energy",
@@ -954,6 +1084,16 @@
       {
         "pt": "Flow Stress (nível 85): 1.000 Legion Tokens, 1 Soul Sand e 6 Soul Fragments. Dá 1 Lich King Fragment.",
         "en": "Flow Stress (level 85): 1,000 Legion Tokens, 1 Soul Sand and 6 Soul Fragments. Gives 1 Lich King Fragment.",
+        "q": [
+          {
+            "n": {
+              "pt": "Flow Stress",
+              "en": "Flow Stress"
+            },
+            "by": "Lae",
+            "j": "hollowdeep"
+          }
+        ],
         "w": [
           {
             "i": "Legion Token",
@@ -967,6 +1107,16 @@
       {
         "pt": "Heat Treatment (nível 85): 10.000 Legion Tokens, 1 Soul Essence, 24 Soul Fragments e 6 Lich King Fragments. Exige Ultimate Lich King (permanente) e o Ultimate Lich King Helm. Recompensa: a Hollowborn Lich King.",
         "en": "Heat Treatment (level 85): 10,000 Legion Tokens, 1 Soul Essence, 24 Soul Fragments and 6 Lich King Fragments. Needs Ultimate Lich King (permanent) and the Ultimate Lich King Helm. Reward: the Hollowborn Lich King.",
+        "q": [
+          {
+            "n": {
+              "pt": "Heat Treatment",
+              "en": "Heat Treatment"
+            },
+            "by": "Lae",
+            "j": "hollowdeep"
+          }
+        ],
         "w": [
           {
             "i": "Legion Token",
@@ -1001,6 +1151,16 @@
       {
         "pt": "Counterblow: 4 Exalted Crown, 4 Revenant's Spellscroll, 4 Conquest Wreath, 3 Soul Essence, 36 Soul Fragments e 12 Lich King Fragments.",
         "en": "Counterblow: 4 Exalted Crown, 4 Revenant's Spellscroll, 4 Conquest Wreath, 3 Soul Essence, 36 Soul Fragments and 12 Lich King Fragments.",
+        "q": [
+          {
+            "n": {
+              "pt": "Counterblow",
+              "en": "Counterblow"
+            },
+            "by": "Lae",
+            "j": "hollowdeep"
+          }
+        ],
         "w": [
           {
             "i": "Exalted Crown",
@@ -1087,11 +1247,29 @@
     "req": [
       {
         "pt": "Nível 80 e a história dos 13 Lords of Chaos completa. A quest da classe começa em /championdrakath.",
-        "en": "Level 80 and the 13 Lords of Chaos story completed. The class quest starts at /championdrakath."
+        "en": "Level 80 and the 13 Lords of Chaos story completed. The class quest starts at /championdrakath.",
+        "q": [
+          {
+            "n": {
+              "pt": "Chaos Avenger Class",
+              "en": "Chaos Avenger Class"
+            },
+            "j": "championdrakath"
+          }
+        ]
       },
       {
         "pt": "Parallel Chaos Amulet: 20 Champion Drakath Insignias. A quest dá 5 insígnias e só pode ser feita 1 vez por semana (reset na sexta), então leva no mínimo um mês.",
         "en": "Parallel Chaos Amulet: 20 Champion Drakath Insignias. The quest gives 5 insignias and can be done once a week (resets Friday), so it takes at least a month.",
+        "q": [
+          {
+            "n": {
+              "pt": "Drakath, Champion of Chaos (semanal)",
+              "en": "Drakath, Champion of Chaos (weekly)"
+            },
+            "j": "championdrakath"
+          }
+        ],
         "w": [
           {
             "i": "Champion Drakath Insignia",
@@ -1109,6 +1287,16 @@
       {
         "pt": "1.300 Fragment of Mount Doomskull em /mountdoomskull, 1 Fragment of the Dragon em /chaoslord e 13 Fragment of the Queen em /transformation.",
         "en": "1,300 Fragment of Mount Doomskull at /mountdoomskull, 1 Fragment of the Dragon at /chaoslord and 13 Fragment of the Queen at /transformation.",
+        "q": [
+          {
+            "n": {
+              "pt": "Embrace Your Chaos (opcional, acelera o Mount Doomskull)",
+              "en": "Embrace Your Chaos (optional, speeds up Mount Doomskull)"
+            },
+            "by": "Loremaster Maya",
+            "j": "mountdoomskull"
+          }
+        ],
         "w": [
           {
             "i": "Fragment of Mount Doomskull",
@@ -1276,11 +1464,53 @@
     "req": [
       {
         "pt": "Rank 10 Yokai e a história de /darkally (inclui \"Defeat the Underfiend\"). A corrente começa na SoulForge do Dage, em /underworld.",
-        "en": "Rank 10 Yokai and the /darkally story (includes \"Defeat the Underfiend\"). The chain starts at Dage's SoulForge, in /underworld."
+        "en": "Rank 10 Yokai and the /darkally story (includes \"Defeat the Underfiend\"). The chain starts at Dage's SoulForge, in /underworld.",
+        "q": [
+          {
+            "n": {
+              "pt": "SoulForge Hammer",
+              "en": "SoulForge Hammer"
+            },
+            "by": "Dage",
+            "j": "underworld"
+          }
+        ]
       },
       {
         "pt": "Passo 1: SoulForge Hammer, Shadow Katana Blade (15 Platinum Paragon Medal a 1m de gold cada, 108 Obsidian Rock, 15 Weapon Imprint, entre outros) e Yokai Sword Scroll (888 Perfect Orochi Scales, 600 Darkened Essence e 1 Oni Skull Charm).",
         "en": "Step 1: SoulForge Hammer, Shadow Katana Blade (15 Platinum Paragon Medal at 1m gold each, 108 Obsidian Rock, 15 Weapon Imprint, among others) and Yokai Sword Scroll (888 Perfect Orochi Scales, 600 Darkened Essence and 1 Oni Skull Charm).",
+        "q": [
+          {
+            "n": {
+              "pt": "Embracing Darkness",
+              "en": "Embracing Darkness"
+            },
+            "by": "Dage",
+            "j": "darkally"
+          },
+          {
+            "n": {
+              "pt": "Forge Your Steel, Steel Your Resolve",
+              "en": "Forge Your Steel, Steel Your Resolve"
+            },
+            "j": "darkally"
+          },
+          {
+            "n": {
+              "pt": "Need Flame",
+              "en": "Need Flame"
+            },
+            "by": "Chanky",
+            "j": "underworld"
+          },
+          {
+            "n": {
+              "pt": "The Edge of an Era",
+              "en": "The Edge of an Era"
+            },
+            "j": "darkally"
+          }
+        ],
         "w": [
           {
             "i": "Zardman's StoneHammer",
@@ -1396,6 +1626,15 @@
       {
         "pt": "Passo 2, opção Legion: 17.500 Legion Tokens, 13 Sapphire Orb, 50 Aeacus Empowered e as classes SwordMaster (2.000 LTs) e Infinite Legion Dark Caster (2.000 LTs).",
         "en": "Step 2, Legion option: 17,500 Legion Tokens, 13 Sapphire Orb, 50 Aeacus Empowered and the SwordMaster (2,000 LTs) and Infinite Legion Dark Caster (2,000 LTs) classes.",
+        "q": [
+          {
+            "n": {
+              "pt": "The Path to Power",
+              "en": "The Path to Power"
+            },
+            "j": "darkally"
+          }
+        ],
         "w": [
           {
             "i": "Sapphire Orb",
@@ -1438,6 +1677,15 @@
       {
         "pt": "Passo 2, opção sem Legion: 1.000 Sword Scroll Fragment, 400 Legion Combat Trophy e 50 Technique Observed no PvP do Dage, mais 250 de cada uma de três reliquias de chefes e 100 Aeacus Empowered.",
         "en": "Step 2, non-Legion option: 1,000 Sword Scroll Fragment, 400 Legion Combat Trophy and 50 Technique Observed in Dage's PvP, plus 250 each of three boss relics and 100 Aeacus Empowered.",
+        "q": [
+          {
+            "n": {
+              "pt": "Legion Sword Training",
+              "en": "Legion Sword Training"
+            },
+            "j": "darkally"
+          }
+        ],
         "w": [
           {
             "i": "Sword Scroll Fragment, Legion Combat Trophy, Technique Observed",
@@ -1517,11 +1765,31 @@
     "req": [
       {
         "pt": "Nível 85 e Rank 7 Fishing. As quests são do Mirror Drakath, em /battleoff, e só dá para fazer 1 por dia.",
-        "en": "Level 85 and Rank 7 Fishing. The quests come from Mirror Drakath, at /battleoff, and you can only do 1 a day."
+        "en": "Level 85 and Rank 7 Fishing. The quests come from Mirror Drakath, at /battleoff, and you can only do 1 a day.",
+        "q": [
+          {
+            "n": {
+              "pt": "Heart of Servitude (1 por dia)",
+              "en": "Heart of Servitude (1 a day)"
+            },
+            "by": "Mirror Drakath",
+            "j": "battleoff"
+          }
+        ]
       },
       {
         "pt": "São 10 quests (Heart of Servitude até The Final Challenge), então o mínimo é 10 dias, cada uma pedindo de 4 a 6 bosses ou drops de mapas diferentes.",
         "en": "There are 10 quests (Heart of Servitude to The Final Challenge), so the minimum is 10 days, each asking for 4 to 6 bosses or drops from different maps.",
+        "q": [
+          {
+            "n": {
+              "pt": "Heart of Servitude, Spirit of Justice, Purification of Chaos, Steadfast Will, Strike of Order, Harmony, Ordinance, Axiom, Blessing of Order",
+              "en": "Heart of Servitude, Spirit of Justice, Purification of Chaos, Steadfast Will, Strike of Order, Harmony, Ordinance, Axiom, Blessing of Order"
+            },
+            "by": "Mirror Drakath",
+            "j": "battleoff"
+          }
+        ],
         "w": [
           {
             "i": "Quest 1: Pristine Blades of Order",
@@ -1800,6 +2068,16 @@
       {
         "pt": "Entre os itens estão 15 Chaoroot, 15 Chaotic War Essence, 45 Purified Raindrop, 50 de cada Suppressed (Drows, Undead, Horcs, Weavers) e 15 Weapon Imprint.",
         "en": "Items include 15 Chaoroot, 15 Chaotic War Essence, 45 Purified Raindrop, 50 each of the Suppressed items (Drows, Undead, Horcs, Weavers) and 15 Weapon Imprint.",
+        "q": [
+          {
+            "n": {
+              "pt": "Purification of Chaos e Ordinance",
+              "en": "Purification of Chaos and Ordinance"
+            },
+            "by": "Mirror Drakath",
+            "j": "battleoff"
+          }
+        ],
         "w": [
           {
             "i": "Chaoroot",
@@ -1907,6 +2185,16 @@
       {
         "pt": "A última quest pede vencer o Champion of Chaos em /ultradrakath.",
         "en": "The last quest asks you to defeat the Champion of Chaos at /ultradrakath.",
+        "q": [
+          {
+            "n": {
+              "pt": "The Final Challenge",
+              "en": "The Final Challenge"
+            },
+            "by": "Mirror Drakath",
+            "j": "battleoff"
+          }
+        ],
         "w": [
           {
             "i": "Champion of Chaos",
@@ -1940,11 +2228,31 @@
     "req": [
       {
         "pt": "Rank 10 Good e Rank 8 SpellCrafting, mais várias histórias (Lord of Chaos 13, Elfhame até Gaiazor, Lost Ruins War, Seraph, Citadel e outras). Quests em /darkthronehub.",
-        "en": "Rank 10 Good and Rank 8 SpellCrafting, plus several storylines (Lord of Chaos 13, Elfhame to Gaiazor, Lost Ruins War, Seraph, Citadel and others). Quests at /darkthronehub."
+        "en": "Rank 10 Good and Rank 8 SpellCrafting, plus several storylines (Lord of Chaos 13, Elfhame to Gaiazor, Lost Ruins War, Seraph, Citadel and others). Quests at /darkthronehub.",
+        "q": [
+          {
+            "n": {
+              "pt": "Legendary Paladin's Vow (ou Silver Paladin's Vow)",
+              "en": "Legendary Paladin's Vow (or Silver Paladin's Vow)"
+            },
+            "by": "Artix",
+            "j": "darkthronehub"
+          }
+        ]
       },
       {
         "pt": "Sem member: 8 quests, cada uma com 3 a 7 itens de bosses de mapas diferentes. Inclui 1.000 Undead Energy, 200 Nightmare Kibble, 20 Feather of Paradise, 77 Shoelace of a Fallen Paladin e 25 de cada flor do passo Eden.",
         "en": "Non-member: 8 quests, each with 3 to 7 items from bosses on different maps. Includes 1,000 Undead Energy, 200 Nightmare Kibble, 20 Feather of Paradise, 77 Shoelace of a Fallen Paladin and 25 of each flower in the Eden step.",
+        "q": [
+          {
+            "n": {
+              "pt": "A Strong Base, Proof of Valor, Mastering the Arcane, For Those Who Have Fallen, Commandment, Hymn of Light, Righteous Seal, Sacred Magic: Eden",
+              "en": "A Strong Base, Proof of Valor, Mastering the Arcane, For Those Who Have Fallen, Commandment, Hymn of Light, Righteous Seal, Sacred Magic: Eden"
+            },
+            "by": "Artix",
+            "j": "darkthronehub"
+          }
+        ],
         "w": [
           {
             "i": "Stone Paladin Armor",
@@ -2101,6 +2409,16 @@
       {
         "pt": "A Pyromancer Artifact tem 3% de drop do Xan, em /xantown.",
         "en": "The Pyromancer Artifact has a 3% drop from Xan, at /xantown.",
+        "q": [
+          {
+            "n": {
+              "pt": "Mastering the Arcane",
+              "en": "Mastering the Arcane"
+            },
+            "by": "Artix",
+            "j": "darkthronehub"
+          }
+        ],
         "w": [
           {
             "i": "Pyromancer Artifact",
@@ -2170,7 +2488,17 @@
     "req": [
       {
         "pt": "Nível 50 e Rank 10 Evil. Sem pagar AC: faça a quest \"Void Promotion\" com o Oblivion, em /tercessuinotlim, e troque o Abyssal Contract na loja ArchFiend Merge.",
-        "en": "Level 50 and Rank 10 Evil. Without paying ACs: do the \"Void Promotion\" quest with Oblivion, at /tercessuinotlim, and trade the Abyssal Contract in the ArchFiend Merge shop."
+        "en": "Level 50 and Rank 10 Evil. Without paying ACs: do the \"Void Promotion\" quest with Oblivion, at /tercessuinotlim, and trade the Abyssal Contract in the ArchFiend Merge shop.",
+        "q": [
+          {
+            "n": {
+              "pt": "Void Promotion",
+              "en": "Void Promotion"
+            },
+            "by": "Oblivion",
+            "j": "tercessuinotlim"
+          }
+        ]
       },
       {
         "pt": "Reagentes: 3 Unidentified 13, Pink Star Diamond of Nulgath, Immortal Joe's Black Star (Mercutio, em /mercutio) e Dirtlicker Demoted (Dirtlicker, em /fiendshard).",
@@ -2384,6 +2712,16 @@
       {
         "pt": "Com a quest \"Chrono Class Quest\" você ganha Saeculum Gems; junte 12 na loja do Kairos, em /tachyon.",
         "en": "The \"Chrono Class Quest\" gives Saeculum Gems; collect 12 at Kairos' shop, at /tachyon.",
+        "q": [
+          {
+            "n": {
+              "pt": "Chrono Class Quest",
+              "en": "Chrono Class Quest"
+            },
+            "by": "Kairos",
+            "j": "tachyon"
+          }
+        ],
         "w": [
           {
             "i": "Saeculum Gem",
@@ -2444,6 +2782,32 @@
       {
         "pt": "10.500 Spirit Orbs, vindos das quests \"Essential Essences\" e \"Bust some Dust\" do Artix (/necropolis), ou da \"Soul Searching\" da Yara. Elas se juntam em 105 Loyal Spirit Orbs e 2 Bright Auras.",
         "en": "10,500 Spirit Orbs, from Artix's \"Essential Essences\" and \"Bust some Dust\" quests (/necropolis), or Yara's \"Soul Searching\". They merge into 105 Loyal Spirit Orbs and 2 Bright Auras.",
+        "q": [
+          {
+            "n": {
+              "pt": "Bust some Dust",
+              "en": "Bust some Dust"
+            },
+            "by": "Artix",
+            "j": "necropolis"
+          },
+          {
+            "n": {
+              "pt": "Essential Essences",
+              "en": "Essential Essences"
+            },
+            "by": "Artix",
+            "j": "necropolis"
+          },
+          {
+            "n": {
+              "pt": "Soul Searching (alternativa)",
+              "en": "Soul Searching (alternative)"
+            },
+            "by": "Yara",
+            "j": "battleunderc"
+          }
+        ],
         "w": [
           {
             "i": "Spirit Orb",
@@ -2470,6 +2834,24 @@
       {
         "pt": "Três metais (Celestial Copper, Blessed Barium e Sanctified Silver) pela quest diária \"Mine Crafting\" e por upgrades. Depois kits de arma: 3 Basic, 3 Advanced e 4 Ultimate, cada um pedindo bosses de dezenas de mapas.",
         "en": "Three metals (Celestial Copper, Blessed Barium and Sanctified Silver) from the daily \"Mine Crafting\" quest and upgrades. Then weapon kits: 3 Basic, 3 Advanced and 4 Ultimate, each asking for bosses on dozens of maps.",
+        "q": [
+          {
+            "n": {
+              "pt": "Mine Crafting (diária)",
+              "en": "Mine Crafting (daily)"
+            },
+            "by": "Artix",
+            "j": "necropolis"
+          },
+          {
+            "n": {
+              "pt": "Basic, Advanced e Ultimate Weapon Kit Construction",
+              "en": "Basic, Advanced and Ultimate Weapon Kit Construction"
+            },
+            "by": "Artix",
+            "j": "necropolis"
+          }
+        ],
         "w": [
           {
             "i": "Copper, Barium e Silver",
@@ -2532,6 +2914,24 @@
       {
         "pt": "Quest final: 250 Loyal Spirit Orb, 500 Spirit Orb, 125 Bright Aura, 75 Brilliant Aura, 1 Blinding Aura e 1 Ultimate Weapon Kit. Você junta os fragmentos com as Blinding Mace, Bow e Blade (10, 25 e 75 quests).",
         "en": "Final quest: 250 Loyal Spirit Orb, 500 Spirit Orb, 125 Bright Aura, 75 Brilliant Aura, 1 Blinding Aura and 1 Ultimate Weapon Kit. You gather the fragments with the Blinding Mace, Bow and Blade (10, 25 and 75 quests).",
+        "q": [
+          {
+            "n": {
+              "pt": "The Blinding Light of Destiny",
+              "en": "The Blinding Light of Destiny"
+            },
+            "by": "Artix",
+            "j": "necropolis"
+          },
+          {
+            "n": {
+              "pt": "Finding Fragments with Blinding Mace, Bow e Blade",
+              "en": "Finding Fragments with Blinding Mace, Bow and Blade"
+            },
+            "by": "Artix",
+            "j": "necropolis"
+          }
+        ],
         "w": [
           {
             "i": "Brilliant, Bright e Blinding Aura",
@@ -2579,6 +2979,32 @@
       {
         "pt": "7.500 Void Aura, 1.600 Cavern Celestite, 5.100 Bone Dust, 10.000 Undead Energy, 4 Barium e 31 Chaorrupted Hourglass.",
         "en": "7,500 Void Aura, 1,600 Cavern Celestite, 5,100 Bone Dust, 10,000 Undead Energy, 4 Barium and 31 Chaorrupted Hourglass.",
+        "q": [
+          {
+            "n": {
+              "pt": "Commanding Shadow Essences",
+              "en": "Commanding Shadow Essences"
+            },
+            "by": "Braeus",
+            "j": "shadowfall"
+          },
+          {
+            "n": {
+              "pt": "Soul Searching",
+              "en": "Soul Searching"
+            },
+            "by": "Yara",
+            "j": "battleunderc"
+          },
+          {
+            "n": {
+              "pt": "Mine Crafting (diária)",
+              "en": "Mine Crafting (daily)"
+            },
+            "by": "Artix",
+            "j": "necropolis"
+          }
+        ],
         "w": [
           {
             "i": "Void Aura",
@@ -2676,6 +3102,16 @@
       {
         "pt": "Chaorrupted Hourglass cai a cerca de 20% do Chaos Lord Iadoa, em /timespace. Também precisa de Necromancer Rank 10 e 2 Primarch's Hilt.",
         "en": "Chaorrupted Hourglass drops at about 20% from Chaos Lord Iadoa, at /timespace. You also need Necromancer Rank 10 and 2 Primarch's Hilt.",
+        "q": [
+          {
+            "n": {
+              "pt": "Find the Doom Blade's Blade, Find the Doom Blade's Hilt e Create the Doom Blade's Aura",
+              "en": "Find the Doom Blade's Blade, Find the Doom Blade's Hilt and Create the Doom Blade's Aura"
+            },
+            "by": "Braeus",
+            "j": "shadowfall"
+          }
+        ],
         "w": [
           {
             "i": "Chaorrupted Hourglass",
@@ -2719,6 +3155,15 @@
       {
         "pt": "Exige member, Rank 5 Evil e a história do Nukemichi (/akiba e /bludrut a /bludrut3). Quests do Vayle, em /necropolis.",
         "en": "Needs membership, Rank 5 Evil and Nukemichi's storyline (/akiba and /bludrut to /bludrut3). Quests from Vayle, at /necropolis.",
+        "q": [
+          {
+            "n": {
+              "pt": "A Penny for your Foughts",
+              "en": "A Penny for your Foughts"
+            },
+            "j": "maul"
+          }
+        ],
         "w": [
           {
             "i": "DoomCoins e Dark Spirit Orbs",
@@ -2781,6 +3226,15 @@
       {
         "pt": "10.500 Dark Spirit Orbs, que se juntam em 105 Corrupt Spirit Orbs e 2 Ominous Auras. Também pede DoomKnight Rank 10, que exige Warrior e Healer no 10.",
         "en": "10,500 Dark Spirit Orbs, which merge into 105 Corrupt Spirit Orbs and 2 Ominous Auras. It also needs DoomKnight Rank 10, which needs Warrior and Healer at 10.",
+        "q": [
+          {
+            "n": {
+              "pt": "A Penny for your Foughts",
+              "en": "A Penny for your Foughts"
+            },
+            "j": "maul"
+          }
+        ],
         "w": [
           {
             "i": "Dark Spirit Orb",
@@ -2798,6 +3252,16 @@
       {
         "pt": "Três metais (Accursed Arsenic, Calamitous Chromium e Reprehensible Rhodium) da quest diária \"Hard Core Metals\", cada um com upgrade de 26 Dark Energy, 5 Dark Spirit Orbs e 16 Deadly Knightshade.",
         "en": "Three metals (Accursed Arsenic, Calamitous Chromium and Reprehensible Rhodium) from the daily \"Hard Core Metals\" quest, each upgraded with 26 Dark Energy, 5 Dark Spirit Orbs and 16 Deadly Knightshade.",
+        "q": [
+          {
+            "n": {
+              "pt": "Hard Core Metals (diária)",
+              "en": "Hard Core Metals (daily)"
+            },
+            "by": "Vayle",
+            "j": "necropolis"
+          }
+        ],
         "w": [
           {
             "i": "Arsenic, Chromium e Rhodium",
@@ -2842,6 +3306,16 @@
       {
         "pt": "Kits de arma: 3 DoomSquire, 3 DoomSoldier e 4 DoomKnight. Quest final: 250 Corrupt Spirit Orb, 500 Dark Spirit Orb, 125 Ominous Aura, 75 Diabolical Aura e 1 Doom Aura.",
         "en": "Weapon kits: 3 DoomSquire, 3 DoomSoldier and 4 DoomKnight. Final quest: 250 Corrupt Spirit Orb, 500 Dark Spirit Orb, 125 Ominous Aura, 75 Diabolical Aura and 1 Doom Aura.",
+        "q": [
+          {
+            "n": {
+              "pt": "Pinpoint the Pieces with Necrotic Bow, Daggers e Broadsword",
+              "en": "Pinpoint the Pieces with Necrotic Bow, Daggers and Broadsword"
+            },
+            "by": "Vayle",
+            "j": "necropolis"
+          }
+        ],
         "w": [
           {
             "i": "DoomSquire Weapon Kit",
@@ -2925,6 +3399,16 @@
       {
         "pt": "\"Willpower Extraction\": repetir até ter 44 Unidentified 34. Pede 5 Necrot, 5 Chaoroot, 5 Doomatter, 10 Essence of Nulgath, 50 ArchFiend's Favour e mais itens avulsos.",
         "en": "\"Willpower Extraction\": repeat until you have 44 Unidentified 34. Asks for 5 Necrot, 5 Chaoroot, 5 Doomatter, 10 Essence of Nulgath, 50 ArchFiend's Favour and other single items.",
+        "q": [
+          {
+            "n": {
+              "pt": "Willpower Extraction",
+              "en": "Willpower Extraction"
+            },
+            "by": "Oblivion",
+            "j": "tercessuinotlim"
+          }
+        ],
         "w": [
           {
             "i": "Unidentified 34",
@@ -2983,6 +3467,16 @@
       {
         "pt": "\"Nulgath Demands Work\", 4 vezes: 10 Unidentified 34, 15 Gem of Nulgath, 30 Dark Crystal Shard, 15 Tainted Gem, 10 Diamond of Nulgath e 2 Blood Gem of the Archfiend por vez. A Unidentified 35 tem 30% de drop.",
         "en": "\"Nulgath Demands Work\", 4 times: 10 Unidentified 34, 15 Gem of Nulgath, 30 Dark Crystal Shard, 15 Tainted Gem, 10 Diamond of Nulgath and 2 Blood Gem of the Archfiend each time. The Unidentified 35 has a 30% drop.",
+        "q": [
+          {
+            "n": {
+              "pt": "Nulgath Demands Work",
+              "en": "Nulgath Demands Work"
+            },
+            "by": "Oblivion",
+            "j": "tercessuinotlim"
+          }
+        ],
         "w": [
           {
             "i": "Diamond of Nulgath",
@@ -3048,6 +3542,16 @@
       {
         "pt": "\"Enough DOOM for an ArchFiend\": 100 Essence of Nulgath, 1.000 Undead Essence, 75 Chaorruption Essence, 5.000 ArchFiend's Favour, 10 Blood Gem of the Archfiend, 100 Living Star Essence e mais.",
         "en": "\"Enough DOOM for an ArchFiend\": 100 Essence of Nulgath, 1,000 Undead Essence, 75 Chaorruption Essence, 5,000 ArchFiend's Favour, 10 Blood Gem of the Archfiend, 100 Living Star Essence and more.",
+        "q": [
+          {
+            "n": {
+              "pt": "Enough DOOM for an ArchFiend",
+              "en": "Enough DOOM for an ArchFiend"
+            },
+            "by": "Oblivion",
+            "j": "tercessuinotlim"
+          }
+        ],
         "w": [
           {
             "i": "Blood Gem of the ArchFiend",
@@ -3113,6 +3617,16 @@
       {
         "pt": "Quests do Lae em /hollowdeep: A Dark Knight (repetir até 125 Dark Fragments), A Dark Knight Rises (15 Doom Fragments), A Dark Knight Falls e A Dark Knight Returns.",
         "en": "Lae's quests in /hollowdeep: A Dark Knight (repeat until 125 Dark Fragments), A Dark Knight Rises (15 Doom Fragments), A Dark Knight Falls and A Dark Knight Returns.",
+        "q": [
+          {
+            "n": {
+              "pt": "A Dark Knight, A Dark Knight Rises",
+              "en": "A Dark Knight, A Dark Knight Rises"
+            },
+            "by": "Lae",
+            "j": "hollowdeep"
+          }
+        ],
         "w": [
           {
             "i": "Empowered Essence",
@@ -3165,6 +3679,16 @@
       {
         "pt": "A última quest pede 10.000 Dark Energy, 3 Scroll of Dark Arts, 12 Weapon Imprint, 3 Desolich's Dark Horn (Desolich tem mais de 8 milhões de HP), 1 Doom Heart (cerca de 0,5%) e as Bones from the Void Realm.",
         "en": "The last quest asks for 10,000 Dark Energy, 3 Scroll of Dark Arts, 12 Weapon Imprint, 3 Desolich's Dark Horn (Desolich has over 8 million HP), 1 Doom Heart (about 0.5%) and the Bones from the Void Realm.",
+        "q": [
+          {
+            "n": {
+              "pt": "A Dark Knight Falls, A Dark Knight Returns",
+              "en": "A Dark Knight Falls, A Dark Knight Returns"
+            },
+            "by": "Lae",
+            "j": "hollowdeep"
+          }
+        ],
         "w": [
           {
             "i": "Dark Energy",
@@ -3260,7 +3784,17 @@
     "req": [
       {
         "pt": "Valencia, no /museum: Artifact Quests, Armour of Awe, e comprar o Armour of Awe Pass (member também compra o Legendary Awe Pass). Os inimigos dão Shards, que viram Fragments e depois um Relic.",
-        "en": "Valencia, in /museum: Artifact Quests, Armour of Awe, and buy the Armour of Awe Pass (members also buy the Legendary Awe Pass). Enemies drop Shards, which become Fragments and then a Relic."
+        "en": "Valencia, in /museum: Artifact Quests, Armour of Awe, and buy the Armour of Awe Pass (members also buy the Legendary Awe Pass). Enemies drop Shards, which become Fragments and then a Relic.",
+        "q": [
+          {
+            "n": {
+              "pt": "Artifact Quests e Armour of Awe",
+              "en": "Artifact Quests and Armour of Awe"
+            },
+            "by": "Valencia",
+            "j": "museum"
+          }
+        ]
       },
       {
         "pt": "Cape of Awe: vencer o Binky em /doomvault 1 vez, melhor em grupo.",
@@ -3335,6 +3869,16 @@
       {
         "pt": "30 dias de quest diária (só member): 30 Shadow Skulls juntados em merge.",
         "en": "30 days of daily quest (members only): 30 Shadow Skulls merged.",
+        "q": [
+          {
+            "n": {
+              "pt": "Slithering Shadows (diária, member)",
+              "en": "Slithering Shadows (daily, member)"
+            },
+            "by": "Gravelyn",
+            "j": "shadowfall"
+          }
+        ],
         "w": [
           {
             "i": "Shadow Skull",
@@ -3369,6 +3913,16 @@
       {
         "pt": "5 dias com member, 7 sem member, nas quests dos Shurpu Blaze Tokens.",
         "en": "5 days with membership, 7 without, from the Shurpu Blaze Tokens quests.",
+        "q": [
+          {
+            "n": {
+              "pt": "Shurpu Blaze Tokens (diária)",
+              "en": "Shurpu Blaze Tokens (daily)"
+            },
+            "by": "Warlic",
+            "j": "xancave"
+          }
+        ],
         "w": [
           {
             "i": "Shurpu Blaze Token",
@@ -3403,6 +3957,16 @@
       {
         "pt": "5 dias com member, 7 sem member, com os Glacera Ice Tokens.",
         "en": "5 days with membership, 7 without, with the Glacera Ice Tokens.",
+        "q": [
+          {
+            "n": {
+              "pt": "Glacera Ice Tokens (diária)",
+              "en": "Glacera Ice Tokens (daily)"
+            },
+            "by": "Syrrus",
+            "j": "frozenruins"
+          }
+        ],
         "w": [
           {
             "i": "Glacera Ice Token",
@@ -3437,6 +4001,16 @@
       {
         "pt": "17 dias com member, 50 dias sem member.",
         "en": "17 days with membership, 50 days without.",
+        "q": [
+          {
+            "n": {
+              "pt": "Diárias ShadowScythe",
+              "en": "ShadowScythe dailies"
+            },
+            "by": "Gravelyn",
+            "j": "shadowfall"
+          }
+        ],
         "w": [
           {
             "i": "Shadow Shield",
@@ -3472,6 +4046,16 @@
       {
         "pt": "30 dias com member, 90 sem member. Pede 90 Tokens of Collection.",
         "en": "30 days with membership, 90 without. Needs 90 Tokens of Collection.",
+        "q": [
+          {
+            "n": {
+              "pt": "Tokens of Collection (diária)",
+              "en": "Tokens of Collection (daily)"
+            },
+            "by": "Drakath (Kid)",
+            "j": "terrarium"
+          }
+        ],
         "w": [
           {
             "i": "Token of Collection",
@@ -3506,6 +4090,16 @@
       {
         "pt": "Mad Weaponsmith: 30 dias com member, 90 sem. Pede 90 C-Armour Tokens.",
         "en": "Mad Weaponsmith: 30 days with membership, 90 without. Needs 90 C-Armour Tokens.",
+        "q": [
+          {
+            "n": {
+              "pt": "Nightmare Fire (member: Naturally Unlucky)",
+              "en": "Nightmare Fire (member: Naturally Unlucky)"
+            },
+            "by": "Cysero",
+            "j": "deadmoor"
+          }
+        ],
         "w": [
           {
             "i": "C-Armour Token",
@@ -3523,6 +4117,16 @@
       {
         "pt": "Cysero's SUPER Hammer: mesma conta, com 90 C-Hammer Tokens, e exige a Mad Weaponsmith antes.",
         "en": "Cysero's SUPER Hammer: same count, with 90 C-Hammer Tokens, and it needs Mad Weaponsmith first.",
+        "q": [
+          {
+            "n": {
+              "pt": "Links To The Past (member: Spooky Lint)",
+              "en": "Links To The Past (member: Spooky Lint)"
+            },
+            "by": "Cysero",
+            "j": "deadmoor"
+          }
+        ],
         "w": [
           {
             "i": "C-Hammer Token",
@@ -3558,6 +4162,16 @@
       {
         "pt": "50 dias, para member e não-member. Pede 50 Seals of Light, 50 Seals of Darkness e 1 milhão de gold.",
         "en": "50 days, for members and non-members. Needs 50 Seals of Light, 50 Seals of Darkness and 1 million gold.",
+        "q": [
+          {
+            "n": {
+              "pt": "Seal of Light e Seal of Darkness (diárias)",
+              "en": "Seal of Light and Seal of Darkness (dailies)"
+            },
+            "by": "Lady Celestia",
+            "j": "alteonbattle"
+          }
+        ],
         "w": [
           {
             "i": "Seal of Light",
@@ -3602,6 +4216,16 @@
       {
         "pt": "Até 12 dias, para member e não-member.",
         "en": "Up to 12 days, for members and non-members.",
+        "q": [
+          {
+            "n": {
+              "pt": "Inquisitor Inquiry (diária)",
+              "en": "Inquisitor Inquiry (daily)"
+            },
+            "by": "Gravelyn",
+            "j": "shadowfall"
+          }
+        ],
         "w": [
           {
             "i": "Inquisitor Inquiry",
@@ -3636,6 +4260,16 @@
       {
         "pt": "30 dias, para member e não-member. Pede 30 Moglin MEALs.",
         "en": "30 days, for members and non-members. Needs 30 Moglin MEALs.",
+        "q": [
+          {
+            "n": {
+              "pt": "Moglin Companions (diária)",
+              "en": "Moglin Companions (daily)"
+            },
+            "by": "Aria",
+            "j": "ariapet"
+          }
+        ],
         "w": [
           {
             "i": "Moglin MEAL",
@@ -3762,6 +4396,16 @@
       {
         "pt": "Março e abril. 5.000 Legion Tokens e 300 Obsidian Rocks em /darkbirthday.",
         "en": "March and April. 5,000 Legion Tokens and 300 Obsidian Rocks at /darkbirthday.",
+        "q": [
+          {
+            "n": {
+              "pt": "Obsidian Mining",
+              "en": "Obsidian Mining"
+            },
+            "by": "Dage",
+            "j": "darkbirthday"
+          }
+        ],
         "w": [
           {
             "i": "Obsidian Rock",
@@ -3867,6 +4511,15 @@
       {
         "pt": "Fevereiro e março. 2.000 ACs, ou farmar por várias quests e 2.000 Golden Tickets.",
         "en": "February and March. 2,000 ACs, or farm it through several quests and 2,000 Golden Tickets.",
+        "q": [
+          {
+            "n": {
+              "pt": "Quests do Mog O'Rahilly e do William Sneevil",
+              "en": "Mog O'Rahilly's and William Sneevil's quests"
+            },
+            "j": "luck"
+          }
+        ],
         "w": [
           {
             "i": "Lucky Clover, Rainbow Shard e Golden Ticket",
@@ -3899,6 +4552,15 @@
       {
         "pt": "Setembro. 5 Iara Insignias por arma, ganhas na quest diária da Ultra Iara.",
         "en": "September. 5 Iara Insignias per weapon, earned from the daily Ultra Iara quest.",
+        "q": [
+          {
+            "n": {
+              "pt": "Ultra Iara (diária)",
+              "en": "Ultra Iara (daily)"
+            },
+            "j": "ultraiara"
+          }
+        ],
         "w": [
           {
             "i": "Iara Insignia",
@@ -4021,6 +4683,16 @@
       {
         "pt": "Fora da Black Friday: quest “The 8 Heads of Orochi”, da Ai no Miko, vencendo a 2ª e a 3ª Head of Orochi.",
         "en": "Outside Black Friday: the “The 8 Heads of Orochi” quest, from Ai no Miko, defeating the 2nd and 3rd Head of Orochi.",
+        "q": [
+          {
+            "n": {
+              "pt": "The 8 Heads of Orochi",
+              "en": "The 8 Heads of Orochi"
+            },
+            "by": "Ai no Miko",
+            "j": "shadowfortress"
+          }
+        ],
         "w": [
           {
             "i": "Dragon Shinobi Token",
@@ -4038,6 +4710,16 @@
       {
         "pt": "Em novembro: quest “Dragon Shinobi Tokens”, da Twilly. Em grupo, BOGOdrone Prime e Executive Assistant Vordred; sozinho, uma sala com Deal Bot 2.0 e Hypnotised Shopper.",
         "en": "In November: the “Dragon Shinobi Tokens” quest, from Twilly. In a group, BOGOdrone Prime and Executive Assistant Vordred; solo, a room with Deal Bot 2.0 and Hypnotised Shopper.",
+        "q": [
+          {
+            "n": {
+              "pt": "Dragon Shinobi Tokens",
+              "en": "Dragon Shinobi Tokens"
+            },
+            "by": "Twilly",
+            "j": "blackfridaywar"
+          }
+        ],
         "w": [
           {
             "i": "Dragon Shinobi Token",
@@ -4120,6 +4802,24 @@
       {
         "pt": "Quests da Aranx: 500 Fallen Knights, 500 Underworld Hounds e 500 Infernal Imps. Depois, Aranx’s Pure Light, com 10% de drop da Aranx em /celestialarena.",
         "en": "Aranx’s quests: 500 Fallen Knights, 500 Underworld Hounds and 500 Infernal Imps. Then Aranx’s Pure Light, with a 10% drop from Aranx at /celestialarena.",
+        "q": [
+          {
+            "n": {
+              "pt": "LightCaster Class",
+              "en": "LightCaster Class"
+            },
+            "by": "Aranx",
+            "j": "celestialrealm"
+          },
+          {
+            "n": {
+              "pt": "Quests das 500 Fallen Knights, Underworld Hounds e Infernal Imps",
+              "en": "Quests for 500 Fallen Knights, Underworld Hounds and Infernal Imps"
+            },
+            "by": "Aranx",
+            "j": "celestialrealm"
+          }
+        ],
         "w": [
           {
             "i": "Aranx's Pure Light",
@@ -4372,6 +5072,16 @@
       {
         "pt": "Quests 1 a 3: caveiras e armas de bosses de ~20 mapas, como Spine Gripper (1%, /battleundera), Escherion’s Robe e Dracolich Destroyer Scythe.",
         "en": "Quests 1 to 3: skulls and weapons from bosses on ~20 maps, such as Spine Gripper (1%, /battleundera), Escherion’s Robe and Dracolich Destroyer Scythe.",
+        "q": [
+          {
+            "n": {
+              "pt": "Quests 1 a 3 do Vordred (Skulls, More Skulls, More Skulls on the Skulls)",
+              "en": "Quests 1 to 3 from Vordred (Skulls, More Skulls, More Skulls on the Skulls)"
+            },
+            "by": "Vordred",
+            "j": "stonewood"
+          }
+        ],
         "w": [
           {
             "i": "Bone Axe",
@@ -4487,6 +5197,16 @@
       {
         "pt": "Quest 4: 5 Desolich’s Skull, 10 Undead Raxgore’s Skull, 15 Legion Lich Lord’s Skull e 20 Reaper’s Skull.",
         "en": "Quest 4: 5 Desolich’s Skull, 10 Undead Raxgore’s Skull, 15 Legion Lich Lord’s Skull and 20 Reaper’s Skull.",
+        "q": [
+          {
+            "n": {
+              "pt": "Quest 4 do Vordred (More Skulls on Those Skulls)",
+              "en": "Quest 4 from Vordred (More Skulls on Those Skulls)"
+            },
+            "by": "Vordred",
+            "j": "stonewood"
+          }
+        ],
         "w": [
           {
             "i": "Desolich's Skull",
@@ -4531,6 +5251,16 @@
       {
         "pt": "Quest 5: Scroll of Dark Arts (cerca de 1%), Noxus Runes, Sally’s Necronomicon (20 milhões de gold) e Ancient Evil of the Necropolis. Quest 6: vencer a Ultra Vordred.",
         "en": "Quest 5: Scroll of Dark Arts (about 1%), Noxus Runes, Sally’s Necronomicon (20 million gold) and Ancient Evil of the Necropolis. Quest 6: defeat Ultra Vordred.",
+        "q": [
+          {
+            "n": {
+              "pt": "Quests 5 e 6 do Vordred (Voiduminance e o Ultra Vordred)",
+              "en": "Quests 5 and 6 from Vordred (Voiduminance and Ultra Vordred)"
+            },
+            "by": "Vordred",
+            "j": "stonewood"
+          }
+        ],
         "w": [
           {
             "i": "Scroll of Dark Arts",
@@ -4900,6 +5630,16 @@
       {
         "pt": "Passo 1 (Lae): 100 Fresh Souls, dos Inquisitor Guards em /citadel.",
         "en": "Step 1 (Lae): 100 Fresh Souls, from the Inquisitor Guards at /citadel.",
+        "q": [
+          {
+            "n": {
+              "pt": "Let's Make a Deal",
+              "en": "Let's Make a Deal"
+            },
+            "by": "Lae",
+            "j": "citadel"
+          }
+        ],
         "w": [
           {
             "i": "Fresh Soul e Unidentified 36",
@@ -4917,6 +5657,16 @@
       {
         "pt": "Passo 2 (“Summoning and Stuff”): 500 Diamond of Nulgath, Unidentified 25, 1.000 ArchFiend’s Favour e 50 Blood Gem of the ArchFiend.",
         "en": "Step 2 (“Summoning and Stuff”): 500 Diamond of Nulgath, Unidentified 25, 1,000 ArchFiend’s Favour and 50 Blood Gem of the ArchFiend.",
+        "q": [
+          {
+            "n": {
+              "pt": "Summoning and Stuff",
+              "en": "Summoning and Stuff"
+            },
+            "by": "Lae",
+            "j": "tercessuinotlim"
+          }
+        ],
         "w": [
           {
             "i": "Unidentified 25",
@@ -4959,6 +5709,16 @@
       {
         "pt": "Passo 3: Diabolical Minion’s Seed (/lostruinswar), 4th Dimension Gem (/blackholesun), Celestial Seal (/goldenarena), Death’s Power (/shadowattack) e 350 Fresh Soul.",
         "en": "Step 3: Diabolical Minion’s Seed (/lostruinswar), 4th Dimension Gem (/blackholesun), Celestial Seal (/goldenarena), Death’s Power (/shadowattack) and 350 Fresh Soul.",
+        "q": [
+          {
+            "n": {
+              "pt": "Let's Make a Deal",
+              "en": "Let's Make a Deal"
+            },
+            "by": "Lae",
+            "j": "citadel"
+          }
+        ],
         "w": [
           {
             "i": "Diabolical Minion's Seed",
@@ -5024,6 +5784,16 @@
       {
         "pt": "20 Avatar Tyndarius Insignias, da quest diária do Galanoth contra a Ultra Avatar Tyndarius. Leva no mínimo 10 dias.",
         "en": "20 Avatar Tyndarius Insignias, from Galanoth’s daily quest against Ultra Avatar Tyndarius. It takes at least 10 days.",
+        "q": [
+          {
+            "n": {
+              "pt": "Diária contra o Ultra Avatar Tyndarius",
+              "en": "Daily against Ultra Avatar Tyndarius"
+            },
+            "by": "Galanoth",
+            "j": "ultratyndarius"
+          }
+        ],
         "w": [
           {
             "i": "Avatar Tyndarius Insignia",
@@ -5040,7 +5810,16 @@
       },
       {
         "pt": "75 Fire Avatar Favour, da quest “Avatar’s Rage”, em /fireavatar (Shadefire Cavalry, Majors, Colonel, Elementals e Living Shadowflame).",
-        "en": "75 Fire Avatar Favour, from the “Avatar’s Rage” quest, at /fireavatar (Shadefire Cavalry, Majors, Colonel, Elementals and Living Shadowflame)."
+        "en": "75 Fire Avatar Favour, from the “Avatar’s Rage” quest, at /fireavatar (Shadefire Cavalry, Majors, Colonel, Elementals and Living Shadowflame).",
+        "q": [
+          {
+            "n": {
+              "pt": "Avatar's Rage",
+              "en": "Avatar's Rage"
+            },
+            "j": "fireavatar"
+          }
+        ]
       }
     ],
     "note": {
@@ -5066,6 +5845,23 @@
       {
         "pt": "14 Avatar Tyndarius Insignias (diária, no mínimo 7 dias) e 40 Fire Avatar Favour.",
         "en": "14 Avatar Tyndarius Insignias (daily, at least 7 days) and 40 Fire Avatar Favour.",
+        "q": [
+          {
+            "n": {
+              "pt": "Diária contra o Ultra Avatar Tyndarius",
+              "en": "Daily against Ultra Avatar Tyndarius"
+            },
+            "by": "Galanoth",
+            "j": "ultratyndarius"
+          },
+          {
+            "n": {
+              "pt": "Avatar's Rage",
+              "en": "Avatar's Rage"
+            },
+            "j": "fireavatar"
+          }
+        ],
         "w": [
           {
             "i": "Avatar Tyndarius Insignia",
@@ -5113,6 +5909,16 @@
       {
         "pt": "90 Warfury Emblem (30 agora e 60 depois), da quest “Warfury Training”. A Vagra dá de 1 a 20 em grupo.",
         "en": "90 Warfury Emblem (30 now and 60 later), from the “Warfury Training” quest. Vagra drops 1 to 20 in a group.",
+        "q": [
+          {
+            "n": {
+              "pt": "Warfury Training",
+              "en": "Warfury Training"
+            },
+            "by": "Vagra",
+            "j": "wartraining"
+          }
+        ],
         "w": [
           {
             "i": "Warfury Emblem",
@@ -5130,6 +5936,16 @@
       {
         "pt": "155 Enchanted Scale (30 agora e 125 depois), da quest do Galanoth em /dragontown. 30 Dragon Scale em /lair.",
         "en": "155 Enchanted Scale (30 now and 125 later), from Galanoth’s quest at /dragontown. 30 Dragon Scale at /lair.",
+        "q": [
+          {
+            "n": {
+              "pt": "DragonSlayer General Class",
+              "en": "DragonSlayer General Class"
+            },
+            "by": "Galanoth",
+            "j": "dragontown"
+          }
+        ],
         "w": [
           {
             "i": "Enchanted Scale",
@@ -5156,6 +5972,16 @@
       {
         "pt": "10 Flame-Forged Metal (Chanky, /underworld), 13 Void Scale (ArchFiend Dragonlord, /underlair, muito difícil) e 50 Gold Voucher 500k, 25 milhões de gold no total.",
         "en": "10 Flame-Forged Metal (Chanky, /underworld), 13 Void Scale (ArchFiend Dragonlord, /underlair, very hard) and 50 Gold Voucher 500k, 25 million gold in total.",
+        "q": [
+          {
+            "n": {
+              "pt": "Need Flame",
+              "en": "Need Flame"
+            },
+            "by": "Chanky",
+            "j": "underworld"
+          }
+        ],
         "w": [
           {
             "i": "Flame-Forged Metal",
@@ -7062,6 +7888,16 @@
       {
         "pt": "Shogun Paragon (rápido): o pet custa 2.000 LTs em /futurewardage durante o Dage’s Birthday (março e abril). Quest “Time for Some Spring Cleaning”, em /fotia, com drops até 50.",
         "en": "Shogun Paragon (fast): the pet costs 2,000 LTs at /futurewardage during Dage’s Birthday (March and April). The “Time for Some Spring Cleaning” quest, at /fotia, with drops up to 50.",
+        "q": [
+          {
+            "n": {
+              "pt": "Time for Some Spring Cleaning",
+              "en": "Time for Some Spring Cleaning"
+            },
+            "by": "Shogun Paragon (pet)",
+            "j": "fotia"
+          }
+        ],
         "w": [
           {
             "i": "Legion Token",
@@ -7079,6 +7915,15 @@
       {
         "pt": "Dreadrock (lento): compre a Undead Champion armour na loja do Dage, em /underworld, e aceite “Undead Champion Recruitment” na 2ª tela de /dreadrock.",
         "en": "Dreadrock (slow): buy the Undead Champion armour at Dage’s shop, in /underworld, and accept “Undead Champion Recruitment” on the 2nd screen of /dreadrock.",
+        "q": [
+          {
+            "n": {
+              "pt": "Undead Champion Recruitment",
+              "en": "Undead Champion Recruitment"
+            },
+            "j": "dreadrock"
+          }
+        ],
         "w": [
           {
             "i": "Legion Token",
@@ -7096,6 +7941,16 @@
       {
         "pt": "Legion Arena (o mais lento, mas sem pet): \"First Class Entertainment\", do Axeros, em /legionarena. Exige ter concluído \"Fail to The King\" e pede 1 Axeros' Brooch, que cai do Legion Fiend Rider (nível 90) com 4% de chance. Dá 120 Legion Tokens (ou 1 Underworld Dragon Guard, à escolha). Não é diária: dá para repetir. Em grupo com classes Chrono e suporte, rende mais que Dreadrock.",
         "en": "Legion Arena (the slowest, but no pet needed): Axeros' \"First Class Entertainment\" in /legionarena. Requires \"Fail to The King\" and 1 Axeros' Brooch, a 4% drop from the Legion Fiend Rider (level 90). Gives 120 Legion Tokens (or 1 Underworld Dragon Guard, your pick). It's not a daily: you can repeat it. In a group with Chrono classes and support it beats Dreadrock.",
+        "q": [
+          {
+            "n": {
+              "pt": "Fail to The King e First Class Entertainment",
+              "en": "Fail to The King and First Class Entertainment"
+            },
+            "by": "Axeros",
+            "j": "legionarena"
+          }
+        ],
         "w": [
           {
             "i": "Axeros' Brooch",
@@ -7119,7 +7974,17 @@
       },
       {
         "pt": "Diárias (com a Legion Promotion): os 6 Daily Exercises do Dage the Evil dão 100, 150, 150, 150, 250 e 250 tokens por dia, contra Ultra Aeacus (/judgement), Legion Lich Lord (/frozenlair), The Beast (/sevencircleswar), Devastator Deimos (/deimos), God of the Depths e Dage the Dark Lord (/ultradage). Estão na aba Diárias, em Chefes.",
-        "en": "Dailies (with the Legion Promotion): Dage the Evil's 6 Daily Exercises give 100, 150, 150, 150, 250 and 250 tokens a day, against Ultra Aeacus (/judgement), Legion Lich Lord (/frozenlair), The Beast (/sevencircleswar), Devastator Deimos (/deimos), God of the Depths and Dage the Dark Lord (/ultradage). They're in the Dailies tab, under Bosses."
+        "en": "Dailies (with the Legion Promotion): Dage the Evil's 6 Daily Exercises give 100, 150, 150, 150, 250 and 250 tokens a day, against Ultra Aeacus (/judgement), Legion Lich Lord (/frozenlair), The Beast (/sevencircleswar), Devastator Deimos (/deimos), God of the Depths and Dage the Dark Lord (/ultradage). They're in the Dailies tab, under Bosses.",
+        "q": [
+          {
+            "n": {
+              "pt": "Daily Exercises 1 a 6 (precisa da Legion Promotion)",
+              "en": "Daily Exercises 1 to 6 (needs the Legion Promotion)"
+            },
+            "by": "Dage the Evil",
+            "j": "underworld"
+          }
+        ]
       }
     ],
     "note": {
@@ -7211,7 +8076,17 @@
     "req": [
       {
         "pt": "Quest “Embrace Your Chaos”, da Loremaster Maya, em /mountdoomskull, matando inimigos no mesmo mapa. Também existe a versão diária.",
-        "en": "“Embrace Your Chaos” quest, from Loremaster Maya, at /mountdoomskull, defeating enemies on the same map. There is also a daily version."
+        "en": "“Embrace Your Chaos” quest, from Loremaster Maya, at /mountdoomskull, defeating enemies on the same map. There is also a daily version.",
+        "q": [
+          {
+            "n": {
+              "pt": "Embrace Your Chaos",
+              "en": "Embrace Your Chaos"
+            },
+            "by": "Loremaster Maya",
+            "j": "mountdoomskull"
+          }
+        ]
       },
       {
         "pt": "A sala mais eficiente tem 2 Chaorrupted Rogues e 2 Chaos Drows.",
@@ -7307,7 +8182,17 @@
     "req": [
       {
         "pt": "Quests “Flex it!” e “Get the Seeds”, da Kasebel, em /shadowrealm (direita, cima, cima).",
-        "en": "“Flex it!” and “Get the Seeds” quests, from Kasebel, at /shadowrealm (right, up, up)."
+        "en": "“Flex it!” and “Get the Seeds” quests, from Kasebel, at /shadowrealm (right, up, up).",
+        "q": [
+          {
+            "n": {
+              "pt": "Flex it! e Get the Seeds",
+              "en": "Flex it! and Get the Seeds"
+            },
+            "by": "Kasebel",
+            "j": "shadowrealm"
+          }
+        ]
       },
       {
         "pt": "Volte ao início do mapa e vá para o canto superior esquerdo para farmar o Gargrowl e o Shadow Guardian.",
@@ -7438,6 +8323,15 @@
       {
         "pt": "66 Cyber Ring Crystal, da quest “Too Dangerous to be Left Alive!” (Tempest Soldiers).",
         "en": "66 Cyber Ring Crystal, from the “Too Dangerous to be Left Alive!” quest (Tempest Soldiers).",
+        "q": [
+          {
+            "n": {
+              "pt": "Too Dangerous to be Left Alive!",
+              "en": "Too Dangerous to be Left Alive!"
+            },
+            "j": "murdermoon"
+          }
+        ],
         "w": [
           {
             "i": "Cyber Ring Crystal",
@@ -7501,7 +8395,17 @@
     "req": [
       {
         "pt": "Só em setembro. Nível 80. Quest “Sailor of the Celestial Skies”, do Barnaby, em /pirates.",
-        "en": "September only. Level 80. “Sailor of the Celestial Skies” quest, from Barnaby, at /pirates."
+        "en": "September only. Level 80. “Sailor of the Celestial Skies” quest, from Barnaby, at /pirates.",
+        "q": [
+          {
+            "n": {
+              "pt": "Sailor of the Celestial Skies",
+              "en": "Sailor of the Celestial Skies"
+            },
+            "by": "Barnaby",
+            "j": "pirates"
+          }
+        ]
       },
       {
         "pt": "5 Sapphire Orb (Legion Lich Lord, /frozenlair) e 5 Rumours of the Celestial Commander (Diabolical Warlord, /lostruinswar).",

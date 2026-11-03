@@ -66,6 +66,7 @@ try {
   await pg.click('[data-tab="farm"]'); await pg.click('[data-ff="todos"]'); await pg.fill("[data-fq]", "dragon of time"); await pg.click(`[data-ftrack="Dragon of Time"]`); await pg.click('[data-tab="resumo"]');
   const lr = pg.locator('.trk:has(b:text-is("Dragon of Time"))');
   check((await lr.locator(".where").innerText()).includes("Lost Hieroglyphic") && await lr.locator(`.jn[data-j="mummies"]`).count() > 0, "HardFarm: etapa mostra onde conseguir cada item, com join");
+  check((await lr.locator(".quest").innerText()).includes("Kro'nar") && await lr.locator('.quest .jn[data-j="timeinn"]').count() === 1, "HardFarm: etapa diz qual quest aceitar, de quem e onde");
   await lr.locator('.jn[data-j="timelibrary"]').first().click();
   check(await pg.locator("#toast.on").count() === 1 && !(await lr.locator(".nxt input").isChecked()), "clicar no join copia sem marcar a etapa");
   await pg.click('.trk:has(b:text-is("Reputação Chaos")) .nxt input');

@@ -67,3 +67,6 @@
 .fwhere ul{list-style:none;margin:6px 0 0;padding:0;display:flex;flex-direction:column;gap:5px}
 .fwhere b{font-weight:600}
 .fwhere li{display:block}
+.fquest{display:flex;flex-wrap:wrap;align-items:center;gap:4px 6px;margin:0 0 5px;padding:5px 9px;border-radius:8px;border:1px solid var(--glow-dim);background:var(--glow-soft);font-size:13px}
+.fquest em{font-style:normal;font-weight:700;color:var(--glow-hi)}
+.fquest b{font-weight:600}

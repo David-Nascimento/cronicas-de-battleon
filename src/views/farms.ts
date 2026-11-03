@@ -8,6 +8,8 @@ import {L, save, st} from "../state.js";
 const prog=(n:string)=>new Set((st.fprog||{})[n]||[]);
 
 document.addEventListener("click",e=>{const c=(e.target as HTMLElement).closest&&(e.target as HTMLElement).closest<HTMLElement>("code.jn");if(!c)return;const t="/join "+c.dataset.j;try{const w=navigator.clipboard&&navigator.clipboard.writeText(t);if(w&&w.catch)w.catch(()=>{})}catch(_){}toast("✓",t,L("farm_copied"))});
+/* "Aceite": a quest (ou quests) que precisa pegar nesta etapa, com quem dá e o join (r.q, de tools/where/quests.py) */
+const quests=(r,lg)=>(r.q||[]).map(q=>`<span class="fquest"><em>${L("farm_accept")}</em> <b>${esc(q.n[lg])}</b>${q.by?` · ${esc(q.by)}`:""} <code class="jn" data-j="${esc(q.j)}" title="${L("farm_copied")}">/join ${esc(q.j)}</code></span>`).join("");
 /* "Onde conseguir": a fonte de cada item da etapa, com o join (r.w, de tools/where) */
 const where=(r,lg)=>{const ws=r.w||[];if(!ws.length)return "";
   return `<details class="fwhere"${ws.length<=6?" open":""}><summary>${L("farm_where",{n:ws.length})}</summary><ul>${ws.map(w=>`<li><b>${esc(w.i)}</b>: ${esc(w.o[lg])}${w.j?` <code class="jn" data-j="${esc(w.j)}" title="${L("farm_copied")}">/join ${esc(w.j)}</code>`:""}</li>`).join("")}</ul></details>`};
@@ -21,7 +23,7 @@ export function renderFarms(){
     ${x.j&&x.j.length?`<div class="fjoin">${L("farm_join")}: ${x.j.map(m=>`<code class="jn" data-j="${m}" title="${L("farm_copied")}">/join ${m}</code>`).join(" ")}</div>`:""}
     ${(()=>{const pg=prog(x.n),n=x.req.length,dn=x.req.filter((_,i)=>pg.has(i)).length,pct=Math.round(dn/n*100);
       return `<div class="fprog"><span><b>${L("farm_prog",{n:dn,t:n})}</b>${dn===n?` <span class="pill on">${L("farm_done")}</span>`:""}</span><div class="dMeter"><i style="width:${pct}%"></i></div></div>
-    <h4>${L("farm_need")}</h4><ul class="fsteps">${x.req.map((r,i)=>`<li class="${pg.has(i)?"ok":""}"><button class="fchk" role="checkbox" aria-checked="${pg.has(i)}" data-fstep="${esc(x.n)}|${i}" aria-label="${esc(L("farm_step",{n:i+1}))}"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5 L10 17.5 L19 7" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></button><span>${jn(r[lg])}${where(r,lg)}</span></li>`).join("")}</ul>`})()}
+    <h4>${L("farm_need")}</h4><ul class="fsteps">${x.req.map((r,i)=>`<li class="${pg.has(i)?"ok":""}"><button class="fchk" role="checkbox" aria-checked="${pg.has(i)}" data-fstep="${esc(x.n)}|${i}" aria-label="${esc(L("farm_step",{n:i+1}))}"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5 L10 17.5 L19 7" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></button><span>${quests(r,lg)}${jn(r[lg])}${where(r,lg)}</span></li>`).join("")}</ul>`})()}
     <div class="fnote">${jn(x.note[lg])}</div>
     ${c?`<button class="fbtn open" data-i="${idx(c)}">${L("farm_open")}</button>`:""}
     <div class="fsrc">${L("farm_src")}: <a href="${x.src}" target="_blank" rel="noopener">${esc(x.sn)} ↗</a></div></article>`}).join("");

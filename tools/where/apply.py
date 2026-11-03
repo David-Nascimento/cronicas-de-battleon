@@ -4,6 +4,14 @@ import json, re, sys, os
 sys.path.insert(0, os.path.dirname(__file__))
 from batch1 import W
 from common import C
+from quests import Q
+EN = [("Quests do Mog O'Rahilly e do William Sneevil", "Mog O'Rahilly's and William Sneevil's quests"), (" (diária, member)", " (daily, member)"), (" (diária)", " (daily)"), (" (diárias)", " (dailies)"), (" (semanal)", " (weekly)"), ("Diárias ShadowScythe", "ShadowScythe dailies"), ("e o Ultra Vordred", "and Ultra Vordred"), ("Diária contra o ", "Daily against "),
+  ("(opcional, acelera o Mount Doomskull)", "(optional, speeds up Mount Doomskull)"), ("(alternativa)", "(alternative)"), ("10 quests do Kro'nar, em ordem", "Kro'nar's 10 quests, in order"),
+  (", em ordem", ", in order"), ("Quests do ", ""), ("Quests das ", "Quests for "), ("Quests ", "Quests "), ("Quest ", "Quest "), (" do Vordred", " from Vordred"), (" do Mog O'Rahilly e do William Sneevil", "Mog O'Rahilly's and William Sneevil's quests"),
+  ("(precisa da Legion Promotion)", "(needs the Legion Promotion)"), ("(1 por dia)", "(1 a day)"), ("(nome no guia)", ""), (" e ", " and "), ("(member: ", "(member: "), ("(ou ", "(or ")]
+def to_en(t):
+    for a, b in EN: t = t.replace(a, b)
+    return re.sub(r"(\d) a (\d)", r"\1 to \2", t)
 P = "src/data/hardfarm.json"
 F = json.load(open(P))
 EXCL = {"Spirit Orb": r"(Dark|Loyal|Corrupt)\s+", "Barium": r"(Blessed)\s+", "Diamond of Nulgath": r"(Star)\s+", "Undead Energy": r"x"}
@@ -17,7 +25,9 @@ def mentions(text, item):
 n_steps = n_w = 0
 for fi, f in enumerate(F):
     for si, r in enumerate(f["req"]):
-        r.pop("w", None); r.pop("j", None)
+        r.pop("w", None); r.pop("j", None); r.pop("q", None)
+        qs = Q.get(fi, {}).get(si, [])
+        if qs: r["q"] = [{"n": {"pt": n, "en": to_en(n)}, **({"by": by} if by else {}), "j": j} for (n, by, j) in qs]
         w = [{"i": i, "o": {"pt": pt, "en": en}, **({"j": j} if j else {})} for (i, pt, en, j) in W.get(fi, {}).get(si, [])]
         have = " | ".join(x["i"] for x in w).lower()
         text = (r["en"] + " " + r["pt"]).replace("\u2019", "'")

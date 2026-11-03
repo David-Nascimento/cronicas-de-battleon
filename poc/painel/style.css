@@ -100,3 +100,6 @@ h3{font:700 17px var(--deco);margin:0 0 8px}
 .where b{font-weight:600}
 .toast{position:fixed;left:50%;bottom:90px;transform:translate(-50%,20px);opacity:0;pointer-events:none;padding:8px 14px;border-radius:10px;background:var(--panel2);border:1px solid var(--glow-dim);font-size:14px;transition:.2s;z-index:9}
 .toast.on{opacity:1;transform:translate(-50%,0)}
+.quest{display:flex;flex-wrap:wrap;align-items:center;gap:4px 6px;margin:2px 0 6px;padding:5px 9px;border-radius:8px;border:1px solid var(--glow-dim);background:var(--glow-soft);font-size:13px}
+.quest em{font-style:normal;font-weight:700;color:var(--glow-hi)}
+.quest b{font-weight:600}
