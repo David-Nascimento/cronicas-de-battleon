@@ -6,6 +6,7 @@
 @media (prefers-color-scheme:light){:root{--bg:#F3F0F6;--bg2:#EAE5F0;--panel:#fff;--panel2:#F7F4FA;--ink:#1B1524;--muted:#5E5570;--line:#D6CEE1;--line2:#E5DFEC;
   --glow:color-mix(in oklab,var(--eye) 45%,#1B1524);--glow-hi:color-mix(in oklab,var(--eye) 38%,#1B1524);--glow-dim:color-mix(in oklab,var(--eye) 52%,#fff);--on-glow:#fff;--ok:#2A7F47;color-scheme:light}}
 *{box-sizing:border-box}
+[hidden]{display:none!important}
 body{margin:0;background:var(--bg);color:var(--ink);font:400 15px/1.5 var(--body)}
 a{color:var(--glow-hi)}
 button{font:inherit;color:inherit}
@@ -110,3 +111,45 @@ h3{font:700 17px var(--deco);margin:0 0 8px}
 .where dt{font-weight:600}
 .where dd{margin:0;color:var(--muted)}
 @media (max-width:520px){.where dl>div{grid-template-columns:1fr;gap:0}}
+/* ---------- tela de login ---------- */
+.auth{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(320px,420px);gap:48px;align-items:center;min-height:calc(100vh - 170px);padding:24px 0}
+.authHero{max-width:520px}
+.authCrest{width:64px;height:72px;color:var(--glow);filter:drop-shadow(0 0 14px var(--glow-dim));margin-bottom:14px}
+.auth h1{font:700 clamp(30px,4vw,44px)/1.08 var(--deco);margin:0 0 12px;text-wrap:balance}
+.authLead{font-size:17px;color:var(--muted);margin:0 0 22px;max-width:44ch}
+.authList{list-style:none;margin:0 0 22px;padding:0;display:flex;flex-direction:column;gap:12px}
+.authList li{display:flex;flex-direction:column;padding-left:16px;border-left:2px solid var(--glow-dim)}
+.authList b{font-weight:600}
+.authList span{color:var(--muted);font-size:14px}
+.authSafe{font-size:13.5px;color:var(--muted);margin:0}
+.authCard{background:var(--panel);border:1px solid var(--line2);border-radius:16px;padding:24px;display:flex;flex-direction:column;gap:14px;box-shadow:0 30px 60px -30px rgba(0,0,0,.7)}
+.authCard h2{margin:0}
+.authCard .sub{margin:0}
+.aTabs{display:grid;grid-template-columns:1fr 1fr;padding:4px;border-radius:12px;background:var(--bg2);border:1px solid var(--line2)}
+.aTabs button{border:0;background:none;padding:9px;border-radius:9px;font:600 14px var(--body);color:var(--muted);cursor:pointer}
+.aTabs button[aria-selected=true]{background:var(--panel2);color:var(--ink);box-shadow:inset 0 0 0 1px var(--line)}
+.gBtn{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;padding:11px 14px;border-radius:10px;border:1px solid var(--line);background:#fff;color:#1f1f1f;font:600 15px var(--body);cursor:pointer}
+.gBtn svg{width:20px;height:20px}
+.gBtn:hover{box-shadow:0 0 0 3px var(--glow-soft)}
+.gBtn:disabled{opacity:.6;cursor:wait}
+.aOr{display:flex;align-items:center;gap:10px;margin:0;color:var(--muted);font-size:12.5px}
+.aOr::before,.aOr::after{content:"";flex:1;height:1px;background:var(--line2)}
+.aForm{display:flex;flex-direction:column;gap:12px}
+.aForm label{display:flex;flex-direction:column;gap:5px;font:600 13px var(--body)}
+.aForm label small{font-weight:400;color:var(--muted)}
+.aForm input{width:100%;padding:10px 12px}
+.pw{position:relative;display:block}
+.pw input{padding-right:76px}
+.pw .link{position:absolute;right:10px;top:50%;transform:translateY(-50%);font-size:12.5px}
+.btn.wide,.btnQ.wide{width:100%;padding:11px}
+.aMsg{margin:0;padding:9px 12px;border-radius:10px;font-size:13.5px}
+.aMsg.err{background:color-mix(in oklab,var(--tS) 16%,var(--panel));border:1px solid color-mix(in oklab,var(--tS) 60%,transparent)}
+.aMsg.ok{background:color-mix(in oklab,var(--ok) 16%,var(--panel));border:1px solid color-mix(in oklab,var(--ok) 60%,transparent)}
+.authCard>.link{align-self:flex-start;font-size:13.5px}
+.aGuest{display:flex;flex-direction:column;gap:6px;padding-top:12px;border-top:1px solid var(--line2)}
+.aGuest small{color:var(--muted);font-size:12.5px;text-align:center}
+.ava{width:30px;height:30px;border-radius:50%;display:grid;place-items:center;background:var(--glow-soft);border:1px solid var(--glow-dim);font-weight:700;color:var(--glow-hi)}
+.whoTx{display:flex;flex-direction:column;line-height:1.2}
+.whoTx small{color:var(--muted);font-size:11.5px}
+@media (max-width:860px){.auth{grid-template-columns:1fr;gap:24px;min-height:0}.authHero{max-width:none}.authList{display:none}.auth h1{font-size:30px}}
+@media (max-width:520px){.whoTx small{display:none}.authCard{padding:18px}}

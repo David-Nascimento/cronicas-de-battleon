@@ -1,0 +1,8 @@
+# Cloudflare Worker da leitura da charpage (gratuito). Publicar: npx wrangler login && npx wrangler deploy
+name = "cdb-charpage"
+main = "worker.mjs"
+compatibility_date = "2026-10-01"
+
+[vars]
+# sites que podem usar a leitura, separados por vírgula (troque pelo endereço do seu site quando publicar)
+ALLOWED_ORIGINS = "https://david-nascimento.github.io,http://localhost:5180"

@@ -1,6 +1,7 @@
 // Painel do usuário (POC): o personagem vinculado pela charpage pública + o que a pessoa acompanha
 // (classes, diárias, HardFarm, ultras e quests). Usa os mesmos dados do portal (src/data).
-import {createStore} from "./store.js";
+import {createStore, errText} from "./store.js";
+import {API_BASE} from "./app-config.js";
 
 const $ = s => document.querySelector(s);
 const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;"}[c]));
@@ -51,14 +52,49 @@ const farmDone = f => (f.cls && owned().all.has(f.cls)) || (D.fprog[f.n] || []).
 
 /* ---------- topo e login ---------- */
 function renderWho() {
-  $("#who").innerHTML = !user ? "" : `${user.photo ? `<img src="${esc(user.photo)}" alt="">` : ""}<span>${esc(user.name)}</span>${store.mode === "firebase" ? `<button class="btnQ" data-signout>Sair</button>` : ""}`;
+  if (!user) { $("#who").innerHTML = ""; return; }
+  const sub = user.method === "guest" ? "Sem conta: salvo só neste aparelho" : user.method === "google" ? "Conta Google" : user.email || "Conta com e-mail";
+  $("#who").innerHTML = `${user.photo ? `<img src="${esc(user.photo)}" alt="">` : `<span class="ava" aria-hidden="true">${esc((user.name || "?")[0].toUpperCase())}</span>`}
+    <span class="whoTx"><b>${esc(user.name)}</b><small>${esc(sub)}</small></span>
+    ${user.method === "guest" ? `<button class="btn sm" data-auth="up">Criar conta</button>` : ""}<button class="btnQ sm" data-signout>Sair</button>`;
+}
+
+/* ---------- tela de login ---------- */
+let amode = "in", abusy = false, amsg = null, aval = {};  /* aval: o que a pessoa digitou, para não sumir quando a tela redesenha */
+const av = k => esc(aval[k] || "");
+const G = `<svg viewBox="0 0 48 48" aria-hidden="true"><path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3C33.7 32.7 29.2 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20 20-8.9 20-20c0-1.3-.1-2.4-.4-3.5z"/><path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.7 15.1 19 12 24 12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2C29.2 35.1 26.7 36 24 36c-5.2 0-9.6-3.3-11.3-7.9l-6.5 5C9.5 39.6 16.2 44 24 44z"/><path fill="#1976D2" d="M43.6 20.5H42V20H24v8h11.3c-.8 2.2-2.2 4.1-4.1 5.6l6.2 5.2C37 39.2 44 34 44 24c0-1.3-.1-2.4-.4-3.5z"/></svg>`;
+function renderAuth() {
+  const up = amode === "up", reset = amode === "reset";
+  const msg = amsg ? `<p class="aMsg ${amsg.ok ? "ok" : "err"}" role="${amsg.ok ? "status" : "alert"}">${esc(amsg.t)}</p>` : "";
+  $("#authCard").innerHTML = reset ? `
+    <h2>Recuperar a senha</h2><p class="sub">Digite o e-mail da conta. Enviamos um link para criar uma senha nova.</p>${msg}
+    <form class="aForm" data-aform="reset" novalidate><label>E-mail<input name="email" type="email" autocomplete="email" required value="${av("email")}"></label>
+      <button class="btn wide" ${abusy ? "disabled" : ""}>${abusy ? "Enviando…" : "Enviar link"}</button></form>
+    <button class="link" data-auth="in">Voltar para entrar</button>` : `
+    <div class="aTabs" role="tablist"><button role="tab" data-auth="in" aria-selected="${!up}">Entrar</button><button role="tab" data-auth="up" aria-selected="${up}">Criar conta</button></div>${msg}
+    <button class="gBtn" data-agoogle ${abusy ? "disabled" : ""}>${G}<span>${up ? "Criar conta com Google" : "Entrar com Google"}</span></button>
+    <p class="aOr"><span>ou com e-mail</span></p>
+    <form class="aForm" data-aform="${amode}" novalidate>
+      ${up ? `<label>Como quer ser chamado<input name="name" autocomplete="nickname" maxlength="40" placeholder="Ex.: BGP" value="${av("name")}"></label>` : ""}
+      <label>E-mail<input name="email" type="email" autocomplete="email" required value="${av("email")}"></label>
+      <label>Senha<span class="pw"><input name="pass" type="password" autocomplete="${up ? "new-password" : "current-password"}" required minlength="6" value="${av("pass")}"><button type="button" class="link" data-pw>Mostrar</button></span>${up ? `<small>Pelo menos 6 caracteres.</small>` : ""}</label>
+      <button class="btn wide" ${abusy ? "disabled" : ""}>${abusy ? (up ? "Criando…" : "Entrando…") : (up ? "Criar conta" : "Entrar")}</button>
+    </form>
+    ${up ? "" : `<button class="link" data-auth="reset">Esqueci minha senha</button>`}
+    <div class="aGuest"><button class="btnQ wide" data-aguest>Continuar sem conta</button><small>Fica salvo só neste aparelho. Dá para criar a conta depois sem perder nada.</small></div>`;
+}
+async function authRun(fn) {
+  abusy = true; amsg = null; renderAuth();
+  try { await fn(); } catch (e) { amsg = {t: errText(e)}; }
+  abusy = false; if (!user) renderAuth();
 }
 function boot(u, data) {
   user = u; D = data;
-  $("#demo").hidden = store.mode !== "local";
+  $("#demo").hidden = store.mode !== "demo";
   $("#gate").hidden = !!u; $("#panel").hidden = !u;
   renderWho();
-  if (u) { dayReset(); render(); }
+  if (!u) { amsg = null; renderAuth(); }
+  if (u) { aval = {}; dayReset(); render(); }
 }
 
 /* ---------- abas ---------- */
@@ -197,7 +233,7 @@ function toast(msg) { let el = document.getElementById("toast"); if (!el) { el =
 async function link(name) {
   busy = true; render(); $("#msg").hidden = true;
   try {
-    const r = await fetch("/api/char?name=" + encodeURIComponent(name)).then(r => r.json());
+    const r = await fetch(API_BASE + "/api/char?name=" + encodeURIComponent(name)).then(r => r.json());
     if (!r.ok) throw new Error(r.error || "Não deu para ler o personagem.");
     /* guarda só o necessário: o inventário inteiro pode ter centenas de itens */
     D.char = r.name;
@@ -213,8 +249,11 @@ document.addEventListener("click", e => {
   const t = e.target.closest("button,[data-tab]"); if (!t) return;
   if (t.dataset.j) { e.preventDefault(); const txt = "/join " + t.dataset.j; try { navigator.clipboard?.writeText(txt).catch(() => {}); } catch (_) {} toast(`Copiado: ${txt}`); return; }
   if (t.dataset.dedit2 != null) { tab = "diarias"; D.dPick = [...D.dMine]; return render(); }
-  if (t.dataset.signin != null) return store.signIn();
-  if (t.dataset.signout != null) return store.signOut();
+  if (t.dataset.auth) { amode = t.dataset.auth; amsg = null; if (user && user.method === "guest") { user = null; $("#gate").hidden = false; $("#panel").hidden = true; renderWho(); } return renderAuth(); }
+  if (t.dataset.agoogle != null) return authRun(() => store.google());
+  if (t.dataset.aguest != null) return authRun(() => store.guest());
+  if (t.dataset.pw != null) { const i = t.previousElementSibling; i.type = i.type === "password" ? "text" : "password"; t.textContent = i.type === "password" ? "Mostrar" : "Ocultar"; return; }
+  if (t.dataset.signout != null) { amode = "in"; return store.signOut(); }
   if (t.dataset.tab) { tab = t.dataset.tab; return render(); }
   if (t.dataset.cf) { cf = t.dataset.cf; return render(); }
   if (t.dataset.ff) { ff = t.dataset.ff; return render(); }
@@ -238,11 +277,17 @@ document.addEventListener("change", e => {
     if (t.checked && !(D.ftrack || []).includes(n)) D.ftrack = [...(D.ftrack || []), n]; save(); return render(); }
   if (t.dataset.qdone) { const q = D.quests.find(x => x.id === t.dataset.qdone); if (q) q.st = t.checked ? "done" : "open"; save(); return render(); }
 });
-document.addEventListener("input", e => { if (e.target.dataset.fq != null) { fq = e.target.value; const pos = e.target.selectionStart; render(); const i = $("[data-fq]"); i.focus(); i.setSelectionRange(pos, pos); return; }
+document.addEventListener("input", e => { if (e.target.closest("[data-aform]")) { aval[e.target.name] = e.target.value; return; } if (e.target.dataset.fq != null) { fq = e.target.value; const pos = e.target.selectionStart; render(); const i = $("[data-fq]"); i.focus(); i.setSelectionRange(pos, pos); return; }
   if (e.target.dataset.cq != null) { cq = e.target.value; const pos = e.target.selectionStart; render(); const i = $("[data-cq]"); i.focus(); i.setSelectionRange(pos, pos); } });
 document.addEventListener("submit", e => {
   e.preventDefault(); const f = e.target, v = Object.fromEntries(new FormData(f));
   if (f.dataset.link != null) return link(String(v.n).trim());
+  if (f.dataset.aform) {
+    const email = String(v.email || "").trim(), pass = String(v.pass || "");
+    if (f.dataset.aform === "reset") return authRun(async () => { await store.reset(email); amsg = {ok: true, t: "Se esse e-mail tiver conta, o link chega em alguns minutos. Confira também o spam."}; amode = "in"; });
+    if (f.dataset.aform === "up") return authRun(() => store.signUp(String(v.name || "").trim(), email, pass));
+    return authRun(() => store.signIn(email, pass));
+  }
   if (f.dataset.qadd != null) { D.quests = [{id: Date.now().toString(36), n: String(v.n).trim(), j: String(v.j || "").trim().replace(/^\/?join\s+/i, ""), note: String(v.note || "").trim(), st: "open"}, ...D.quests]; save(); render(); }
 });
 

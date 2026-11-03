@@ -28,6 +28,22 @@ check(p.equip.weapon === "Vordred's Sword" && p.equip.pet === "Chaotic Flying Ey
 check(p.ccid === "98765432", "acha o ccid");
 check(normalizeInventory(INV).filter(i => i.type === "Class").length === 6, "normaliza o inventário");
 
+/* 1b) Worker do Cloudflare, com fetch e cache simulados */
+{
+  const realFetch = globalThis.fetch, store = new Map();
+  globalThis.caches = {default: {match: async k => store.get(k.url), put: async (k, r) => { store.set(k.url, r); }}};
+  globalThis.fetch = async (u) => String(u).includes("/CharPage/Inventory") ? new Response(JSON.stringify(INV)) : new Response(HTML);
+  const W = (await import("./worker.mjs")).default, ctx = {waitUntil: p => p};
+  const env = {ALLOWED_ORIGINS: "https://site.exemplo,http://localhost:5180"};
+  const r1 = await W.fetch(new Request("https://w.dev/api/char?name=BGP", {headers: {Origin: "https://site.exemplo"}}), env, ctx);
+  const j1 = await r1.json();
+  check(r1.status === 200 && j1.level === 100 && j1.inventory.length === INV.length, "Worker: lê a charpage e o inventário");
+  check(r1.headers.get("Access-Control-Allow-Origin") === "https://site.exemplo", "Worker: libera só o site permitido (CORS)");
+  await new Promise(r => setTimeout(r, 10));
+  const r2 = await W.fetch(new Request("https://w.dev/api/char?name=bgp", {headers: {Origin: "https://site.exemplo"}}), env, ctx);
+  check(r2.headers.get("X-Cache") === "HIT", "Worker: guarda em cache por 10 minutos");
+  globalThis.fetch = realFetch; delete globalThis.caches;
+}
 /* 2) painel inteiro com charpage falsa */
 const up = createServer((req, res) => {
   if (req.url.startsWith("/CharPage?id=BGP")) { res.writeHead(200, {"Content-Type": "text/html"}); return res.end(HTML); }
@@ -41,8 +57,25 @@ const browser = await chromium.launch(); const errors = [];
 try {
   const pg = await (await browser.newContext({viewport: {width: 1200, height: 900}})).newPage();
   pg.on("pageerror", e => errors.push(e.message));
-  await pg.goto("http://localhost:5181/poc/painel/"); await pg.waitForSelector("[data-link]");
-  check(await pg.locator("#demo").isVisible(), "sem Firebase, avisa o modo demonstração");
+  await pg.goto("http://localhost:5181/poc/painel/"); await pg.waitForSelector("#gate:not([hidden]) .gBtn");
+  check(await pg.locator("#demo").isVisible(), "sem Firebase, avisa que o login é demonstração");
+  check(await pg.locator("#panel").isHidden(), "sem entrar, mostra a tela de login e não o painel");
+  await pg.fill('[data-aform="in"] input[name="email"]', "bgp@"); await pg.fill('[data-aform="in"] input[name="pass"]', "123456"); await pg.click('[data-aform="in"] button.btn');
+  check((await pg.locator(".aMsg.err").innerText()).includes("e-mail"), "login: e-mail inválido mostra o motivo");
+  await pg.click('[data-auth="up"]');
+  check(await pg.locator('[data-aform="up"] input[name="name"]').count() === 1, "aba Criar conta pede o nome");
+  await pg.fill('[data-aform="up"] input[name="pass"]', "123"); await pg.click('[data-pw]');
+  check((await pg.locator('[data-aform="up"] input[name="pass"]').getAttribute("type")) === "text", "mostrar a senha");
+  await pg.fill('[data-aform="up"] input[name="name"]', "BGP"); await pg.fill('[data-aform="up"] input[name="email"]', "bgp@exemplo.com"); await pg.click('[data-aform="up"] button.btn');
+  check((await pg.locator(".aMsg.err").innerText()).includes("6 caracteres"), "criar conta: senha curta mostra o motivo");
+  await pg.fill('[data-aform="up"] input[name="pass"]', "segredo1"); await pg.click('[data-aform="up"] button.btn');
+  await pg.waitForSelector("[data-link]");
+  check((await pg.locator("#who").innerText()).includes("BGP"), "criar conta: entra no painel com o nome");
+  await pg.click("[data-signout]"); await pg.waitForSelector("#gate:not([hidden])");
+  await pg.click('[data-auth="reset"]'); await pg.fill('[data-aform="reset"] input', "bgp@exemplo.com"); await pg.click('[data-aform="reset"] button');
+  check((await pg.locator(".aMsg.ok").innerText()).includes("link"), "esqueci a senha: confirma o envio");
+  await pg.click(".gBtn"); await pg.waitForSelector("[data-link]");
+  check((await pg.locator("#who").innerText()).includes("Conta Google"), "entrar com Google (simulado) abre o painel");
   await pg.fill("[data-link] input", "BGP"); await pg.click("[data-link] button"); await pg.waitForSelector(".cname");
   check((await pg.locator(".cname").innerText()) === "BGP" && (await pg.locator(".cmeta").innerText()).includes("Nível 100"), "vincula o personagem");
   await pg.click('[data-tab="classes"]');
@@ -79,7 +112,10 @@ try {
   const r = await pg.evaluate(() => fetch("/api/char?name=NaoExiste").then(r => r.json()));
   check(!r.ok, "personagem inexistente (ou consulta rápida demais) devolve erro claro");
   const m = await (await browser.newContext({viewport: {width: 390, height: 844}})).newPage();
-  await m.goto("http://localhost:5181/poc/painel/"); await m.waitForSelector("#panel:not([hidden])");
+  await m.goto("http://localhost:5181/poc/painel/"); await m.waitForSelector("#gate:not([hidden]) .gBtn");
+  check(await m.evaluate(() => document.documentElement.scrollWidth <= 390), "celular: tela de login sem rolagem lateral");
+  await m.click("[data-aguest]"); await m.waitForSelector("#panel:not([hidden])");
+  check((await m.locator("#who").innerText()).includes("Sem conta") || await m.locator('#who [data-auth="up"]').count() === 1, "continuar sem conta abre o painel e oferece criar conta");
   check(await m.evaluate(() => document.documentElement.scrollWidth <= 390), "celular sem rolagem lateral");
 } finally { await browser.close(); srv.kill(); up.close(); }
 for (const [ok, msg] of results) console.log(`${ok ? "ok  " : "FALHOU"} ${msg}`);
