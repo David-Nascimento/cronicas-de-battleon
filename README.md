@@ -92,11 +92,21 @@ As capturas foram feitas num ambiente sem acesso ao Google Fonts; no navegador o
 
 - **Só abrir:** `dist/index.html` já está compilado. Dois cliques e funciona, sem servidor.
 - **Mexer no código:** instale uma vez com `npm install`, depois:
-  - `npm run dev`: recompila ao salvar e serve em http://localhost:5173
+  - `npm run dev`: recompila ao salvar e serve em http://localhost:5173 (grava em `.dev/`, não mexe no `dist/`)
   - `npm run build`: gera `dist/` otimizado
   - `npm run typecheck`: confere os tipos com o TypeScript (`tsc`)
   - `npm test`: abre o portal num Chromium e confere navegação, itens novos, tier list, diárias, HardFarm, idioma e celular (precisa de `npx playwright install chromium` uma vez). O GitHub roda build, tipos e testes a cada mudança na `main` e, se passar, publica o `dist/` no GitHub Pages (`.github/workflows/ci.yml`, com Settings > Pages > Source: **GitHub Actions**).
   - `bash tools/publish-pages.sh`: publica o `dist/` no branch `gh-pages`, para o Pages em Settings > Pages > **Deploy from a branch**, `gh-pages`, `/ (root)`. A tarefa agendada também faz isso a cada atualização de dados.
+
+### Manter a pasta do computador atualizada
+
+A tarefa agendada atualiza o GitHub; a sua pasta só recebe com `git pull`. O `atualizar.bat` faz isso: dois cliques, ou deixe o Windows rodar sozinho sábado e segunda às 9h30 (meia hora depois da tarefa), colando uma vez no terminal:
+
+```
+schtasks /Create /TN "Cronicas de Battleon - atualizar" /TR "E:\Projetos\cronicas-de-battleon\atualizar.bat" /SC WEEKLY /D SAT,MON /ST 09:30
+```
+
+O resultado de cada vez fica em `atualizar.log`. O `npm run dev` grava em `.dev/` (fora do git), então ele pode ficar rodando sem travar o pull; o `dist/` é só a versão oficial, gerada por `npm run build`.
 
 ### App instalável e offline
 
