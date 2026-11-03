@@ -153,8 +153,8 @@ try {
     await p.click("#farm-0 [data-fstep]");
     await p.reload(); await wait(p, 400);
     check((await p.locator("#farm-0 .fchk[aria-checked=true]").count()) === 1, "progresso do HardFarm fica salvo");
-    check((await p.locator("#farm-0 .fquest").first().innerText()).includes("Legion Fealty 1"), "HardFarm: etapa mostra a quest para aceitar");
-    check((await p.locator("#farm-0 .fwhere").first().innerText()).includes("Aeacus Empowered"), "HardFarm: etapa mostra onde conseguir cada item");
+    check((await p.locator("#farm-0 .fq").first().innerText()).includes("Legion Fealty 1"), "HardFarm: etapa mostra a quest para aceitar");
+    check((await p.locator("#farm-0 .fwhere").first().textContent()).includes("Aeacus Empowered"), "HardFarm: etapa mostra onde conseguir cada item");
   }
   /* idioma, cor dos olhos, celular sem rolagem lateral */
   {

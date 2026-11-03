@@ -9,15 +9,18 @@ const prog=(n:string)=>new Set((st.fprog||{})[n]||[]);
 
 document.addEventListener("click",e=>{const c=(e.target as HTMLElement).closest&&(e.target as HTMLElement).closest<HTMLElement>("code.jn");if(!c)return;const t="/join "+c.dataset.j;try{const w=navigator.clipboard&&navigator.clipboard.writeText(t);if(w&&w.catch)w.catch(()=>{})}catch(_){}toast("✓",t,L("farm_copied"))});
 /* "Aceite": a quest (ou quests) que precisa pegar nesta etapa, com quem dá e o join (r.q, de tools/where/quests.py) */
-const quests=(r,lg)=>(r.q||[]).map(q=>`<span class="fquest"><em>${L("farm_accept")}</em> <b>${esc(q.n[lg])}</b>${q.by?` · ${esc(q.by)}`:""} <code class="jn" data-j="${esc(q.j)}" title="${L("farm_copied")}">/join ${esc(q.j)}</code></span>`).join("");
+const quests=(r,lg)=>{const qs=r.q||[];if(!qs.length)return "";
+  return qs.map(q=>`<span class="fq"><em>${L("farm_quest")}</em> <b>${esc(q.n[lg])}</b>${q.by?` <i>${esc(q.by)}</i>`:""} ${mj(q.j)}</span>`).join("")};
+/* join curto e discreto: mostra "/mapa", copia "/join mapa" */
+const mj=m=>`<code class="jn s" data-j="${esc(m)}" title="${esc(L("farm_copy_j",{m}))}">/${esc(m)}</code>`;
 /* "Onde conseguir": a fonte de cada item da etapa, com o join (r.w, de tools/where) */
 const where=(r,lg)=>{const ws=r.w||[];if(!ws.length)return "";
-  return `<details class="fwhere"${ws.length<=6?" open":""}><summary>${L("farm_where",{n:ws.length})}</summary><ul>${ws.map(w=>`<li><b>${esc(w.i)}</b>: ${esc(w.o[lg])}${w.j?` <code class="jn" data-j="${esc(w.j)}" title="${L("farm_copied")}">/join ${esc(w.j)}</code>`:""}</li>`).join("")}</ul></details>`};
+  return `<details class="fwhere"><summary>${L("farm_where",{n:ws.length})}</summary><dl>${ws.map(w=>`<div><dt>${esc(w.i)}</dt><dd>${esc(w.o[lg])}${w.j?" "+mj(w.j):""}</dd></div>`).join("")}</dl></details>`};
 export function renderFarms(){
   const started=FARMS.filter(x=>prog(x.n).size).length;if(st.fk==="prog"&&!started)st.fk="all";
   seg("segFarm",[["all",L("farm_all")],...(started?[["prog",`${L("farm_started")} <b>${started}</b>`]]:[]),["class",L("farm_class")],["gear",L("farm_gear")],["mat",L("farm_mat")],["rep",L("farm_rep")],["daily",L("farm_daily")],["season",L("farm_season")]],"fk",renderFarms);
   const f=st.fk||"all",lg=st.lang==="en"?"en":"pt";
-  const jn=t=>esc(t).replace(/(^|[\s(])\/(?!goto\b|join\b)([a-z0-9]{3,})/g,(a,b,c)=>`${b}<code class="jn" data-j="${c}" title="${L("farm_copied")}">/join ${c}</code>`);
+  const jn=t=>esc(t).replace(/(^|[\s(])\/(?!goto\b|join\b)([a-z0-9]{3,})/g,(a,b,c)=>`${b}${mj(c)}`);
   document.getElementById("farms").innerHTML=FARMS.filter(x=>f==="all"||(f==="prog"?prog(x.n).size>0:x.k===f)).map(x=>{const c=x.cls&&x.cls in byName?D[byName[x.cls]]:null;
     return `<article class="fcard frame" id="farm-${FARMS.indexOf(x)}"><div class="fh">${c?sigil(c):""}<div><h3>${esc(lg==="en"&&x.ne?x.ne:x.n)}</h3>${x.e?`<span class="eff e${x.e}" title="${L("farm_eff")}"><i aria-hidden="true">${[1,2,3,4,5].map(i=>`<b class="${i<=x.e?"on":""}"></b>`).join("")}</i><em>${L("eff"+x.e)}</em></span>`:""}</div></div>
     ${x.j&&x.j.length?`<div class="fjoin">${L("farm_join")}: ${x.j.map(m=>`<code class="jn" data-j="${m}" title="${L("farm_copied")}">/join ${m}</code>`).join(" ")}</div>`:""}
