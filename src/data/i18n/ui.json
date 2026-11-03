@@ -357,7 +357,11 @@
   "tl_link_done": "Link copiado",
   "tl_img_done": "Imagem baixada",
   "g_goto": "Ir para",
-  "g_page": "Página inicial"
+  "g_page": "Página inicial",
+  "tl_new_x": "Classes novas que o portal ainda não analisou. Entram num tier assim que tiverem guia.",
+  "rel_card": "Ver ficha",
+  "cd_fresh_h": "Ainda sem guia no portal",
+  "cd_fresh_x": "Esta classe saiu agora e entrou aqui sozinha, pelos Itens novos. Tier, enhancements e sequência de skills chegam quando ela for analisada. Até lá, veja as skills e onde conseguir na AQW Wiki."
  },
  "en": {
   "title": "Chronicles of Battleon",
@@ -717,6 +721,10 @@
   "tl_link_done": "Link copied",
   "tl_img_done": "Image downloaded",
   "g_goto": "Go to",
-  "g_page": "Home page"
+  "g_page": "Home page",
+  "tl_new_x": "New classes the portal hasn't reviewed yet. They get a tier once there's a guide.",
+  "rel_card": "Open card",
+  "cd_fresh_h": "No guide in the portal yet",
+  "cd_fresh_x": "This class just came out and was added automatically from New items. Tier, enhancements and skill sequence come once it's reviewed. Until then, check its skills and where to get it on the AQW Wiki."
  }
 }

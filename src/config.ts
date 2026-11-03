@@ -1,10 +1,10 @@
 /* configurações fixas: categorias, modos, rotas e ícones */
-export const CATS={free:{n:"Free",c:"--free"},member:{n:"Member",c:"--member"},acs:{n:"ACS",c:"--acs"},hero:{n:"HeroMart",c:"--hero"},cal:{n:"Calendário",c:"--cal"}};
+export const CATS={free:{n:"Free",c:"--free"},member:{n:"Member",c:"--member"},acs:{n:"ACS",c:"--acs"},hero:{n:"HeroMart",c:"--hero"},cal:{n:"Calendário",c:"--cal"},nova:{n:"Novas",c:"--glow"}};
 export const STORE={hero:"código do calendário, HeroMart ou HeroPoints",acs:"versão por AC"};
 export const MODES={farm:"Farm",solo:"Solo",ultra:"Ultras"};
 export const TIERS=["S","A","B","C"];
 export const HUB="https://www.aqwhub.com/class-usage-guides/";
-export const GLYPH={phys:"M24 9 L27 26 L24 30 L21 26 Z",mag:"M24 9 L27 19 L37 19 L29 25 L32 35 L24 29 L16 35 L19 25 L11 19 L21 19 Z",mana:"M24 9 C30 17 33 22 33 27 A9 9 0 0 1 15 27 C15 22 18 17 24 9 Z",
+export const GLYPH={new:"M24 10 L26.5 21.5 L38 24 L26.5 26.5 L24 38 L21.5 26.5 L10 24 L21.5 21.5 Z",phys:"M24 9 L27 26 L24 30 L21 26 Z",mag:"M24 9 L27 19 L37 19 L29 25 L32 35 L24 29 L16 35 L19 25 L11 19 L21 19 Z",mana:"M24 9 C30 17 33 22 33 27 A9 9 0 0 1 15 27 C15 22 18 17 24 9 Z",
   sup:"M21 11 H27 V20 H36 V26 H27 V35 H21 V26 H12 V20 H21 Z",dodge:"M12 30 C18 14 30 14 36 20 C28 18 22 22 18 32 Z",chrono:"M16 11 H32 L25 23 L32 35 H16 L23 23 Z"};
 export const ICO={inicio:"M12 3 L2.5 11.2 H5 V20 H10.2 V14 H13.8 V20 H19 V11.2 H21.5 Z",
   classes:"M12 2.5 L20 5.6 V12 C20 16.6 16.6 20 12 21.5 C7.4 20 4 16.6 4 12 V5.6 Z",

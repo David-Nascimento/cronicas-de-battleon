@@ -48,3 +48,5 @@
 .tg.lg{color:var(--member);border-color:color-mix(in oklab,var(--member) 45%,transparent)}
 .relEmpty{color:var(--muted);font-size:14px;padding:12px 2px;margin:0}
 .relBar .seg button{padding:6px 10px}
+.riCard{flex:none;font:600 12px var(--body);padding:4px 9px;border-radius:999px;border:1px solid var(--glow-dim);background:var(--glow-soft);color:var(--glow-hi);cursor:pointer}
+.riCard:hover{border-color:var(--glow)}

@@ -14,6 +14,7 @@ import FARMS_ from "./hardfarm.json";
 import SCHED_ from "./ultra-schedule.json";
 import NEWS_ from "./news.json";
 import RELDATA_ from "./releases.json";
+import ALIAS_ from "./class-aliases.json";
 import {HUB} from "../config.js";
 import type {ClassExtra, ClassType, Daily, Farm, Klass, News, RawClass, Release, Team, UiStrings} from "../types.js";
 const TYPES = TYPES_ as unknown as Record<string, ClassType>;
@@ -49,4 +50,21 @@ export const D:Klass[]=RAW.map(r=>{const t=TYPES[r[5]];let o:ClassExtra=r[7]||{}
   inherited:o.like&&o.rot?o.like:null,
   ob:OBTAIN[r[0]]||null,cons:CONS[r[0]]||null,
   cal:isCal,yr:CALYR[r[0]]||null,fam}});
+/* classes que saíram nos Itens novos: liga o item à classe do portal (pelo nome, ou por class-aliases.json para cópias
+   como "PaladinSlayer (2)"). A que não existe no portal entra sozinha como "Nova, ainda sem tier", até alguém analisar. */
+const ALIAS=ALIAS_ as unknown as Record<string,string>;
+const ckey=(n:string)=>n.normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase().replace(/[^a-z0-9]/g,"");
+const baseName=(n:string)=>{let b=n,p;do{p=b;b=b.replace(/\s*\((class|\d+|0 ac|ac|non-ac|legend|non-legend|rare|special)\)\s*$/i,"")}while(b!==p);return b.trim()};
+const byKey:Record<string,string>=Object.fromEntries(RAW.map(r=>[ckey(r[0]),r[0]]));
+export function relClass(item:string):string|null{
+  if(ALIAS[item]&&byKey[ckey(ALIAS[item])])return byKey[ckey(ALIAS[item])];
+  return byKey[ckey(baseName(item))]||null}
+const fresh=new Map<string,string>();
+const freshWk=new Map<string,string>();
+[...REL].reverse().forEach(r=>(r.items.class||[]).forEach(it=>{if(!relClass(it[0])){const n=baseName(it[0]);if(!fresh.has(n)){fresh.set(n,r.from);freshWk.set(n,it[0])}}}));
+fresh.forEach((from,n)=>{const t=TYPES.new;D.push({name:n,cat:"nova",store:"nova",farm:"N" as any,solo:"N" as any,ultra:"N" as any,type:"new",
+  note:"Classe nova, ainda sem tier. Saiu na atualização de {d}.".replace("{d}",from.split("-").reverse().slice(0,2).join("/")),nw:true,
+  b:{farm:t.farm,solo:t.solo,ultra:t.ultra},awe:t.awe,rot:t.rot,generic:true,skills:null,src:null,inherited:null,ob:null,cons:null,cal:false,yr:null,fam:[],fresh:from,wk:freshWk.get(n)} as Klass)});
 export const byName:Record<string,number>=Object.fromEntries(D.map((c,i)=>[c.name,i]));
+/* volta a ligar os itens às classes já com as novas incluídas */
+export const relClassAny=(item:string)=>relClass(item)||(byName[baseName(item)]!=null?baseName(item):null);

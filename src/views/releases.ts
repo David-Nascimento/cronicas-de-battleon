@@ -1,6 +1,6 @@
 import {seg} from "../components/shared.js";
 import {RICO, RTYPES} from "../config.js";
-import {REL} from "../data/index.js";
+import {REL, byName, relClassAny} from "../data/index.js";
 import {unreadNews} from "../features/news.js";
 import {esc, nrm, wiki, has} from "../lib/util.js";
 import {L, loc, save, st, ui} from "../state.js";
@@ -32,7 +32,10 @@ function tags(n,f){let h="";
   return h?`<span class="riTags">${h}</span>`:""}
 function row(r,t,it){const [n,f="",s="",sub=""]=it,src=s&&r.srcs[s],l=st.lang;
   const meta=[t==="weapon"&&sub?L("w_"+sub):"",src?src[l]:""].filter(Boolean);
-  return `<div class="ri" data-ri="${esc(n)}">${ricon(t)}<div class="riTx"><a href="${wiki(n)}" target="_blank" rel="noopener">${esc(n)}</a>${meta.length?`<span class="riMeta">${meta.map((m,i)=>`<span${src&&i===meta.length-1?` class="from"`:""}>${esc(m)}</span>`).join("")}</span>`:""}</div>${tags(n,f||"")}</div>`}
+  return `<div class="ri" data-ri="${esc(n)}">${ricon(t)}<div class="riTx"><a href="${wiki(n)}" target="_blank" rel="noopener">${esc(n)}</a>${meta.length?`<span class="riMeta">${meta.map((m,i)=>`<span${src&&i===meta.length-1?` class="from"`:""}>${esc(m)}</span>`).join("")}</span>`:""}</div>${tags(n,f||"")}${cardBtn(t,n)}</div>`}
+/* item de classe: botão para a ficha da classe no portal (PaladinSlayer (2) abre a ficha do PaladinSlayer) */
+function cardBtn(t,n){if(t!=="class")return "";const c=relClassAny(n);if(c==null||byName[c]==null)return "";
+  return `<button class="open riCard" data-i="${byName[c]}" title="${esc(c)}">${L("rel_card")}</button>`}
 
 export function renderRelList(){
   const box=document.getElementById("relList");if(!box||!REL.length)return;

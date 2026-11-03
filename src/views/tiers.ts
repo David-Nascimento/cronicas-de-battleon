@@ -18,7 +18,7 @@ const modeName=(m:string)=>m==="geral"?L("overall"):MODES[m]||m;
 /* abre uma tier list que chegou por link (só leitura, até a pessoa salvar como dela) */
 export function openShared(t:Shared){shared=t;if(["geral","farm","solo","ultra"].includes(t.m))st.mode=t.m;st.tsrc="shared";save()}
 
-export const overall=(c:Klass)=>{const s=Math.max(score(c.farm),score(c.solo),score(c.ultra)),sum=total(c);
+export const overall=(c:Klass)=>{if(c.farm==="N"as any&&c.solo==="N"as any&&c.ultra==="N"as any)return "N";const s=Math.max(score(c.farm),score(c.solo),score(c.ultra)),sum=total(c);
   if(s===4&&sum>=10)return"S";if(s===4||sum>=9)return"A";if(sum>=6)return"B";return"C"};
 /* a do portal mostra uma loja por vez; a sua junta todas as classes (quem monta tier list compara tudo) */
 const list=()=>(st.tsrc==="mine"?[...D]:D.filter(c=>c.cat===st.cat)).sort((a,b)=>total(b)-total(a));
@@ -56,8 +56,10 @@ export function renderTiers(){
   const nq=nrm(q.trim()),hit=(c:Klass)=>has(c.name,nq);
   const tools=document.getElementById("tierTools");
   if(!edit){sel=null;tools.innerHTML="";document.getElementById("tierPool").hidden=true;
-    box.innerHTML=TIERS.map(t=>{const xs=list().filter(c=>tierOf(c)===t);
-      return `<div class="tier"><div class="tl" style="background:${tColor(t)}">${t}</div><div class="tr">${xs.length?xs.map(c=>card(c,false)).join(""):`<span class="empty">${L("empty",{c:catName(st.cat)})}</span>`}</div></div>`}).join("");
+    const unr=list().filter(c=>tierOf(c)==="N");
+    box.innerHTML=(st.cat==="nova"?"":TIERS.map(t=>{const xs=list().filter(c=>tierOf(c)===t);
+      return `<div class="tier"><div class="tl" style="background:${tColor(t)}">${t}</div><div class="tr">${xs.length?xs.map(c=>card(c,false)).join(""):`<span class="empty">${L("empty",{c:catName(st.cat)})}</span>`}</div></div>`}).join(""))
+      +(unr.length?`<div class="tier tierNew"><div class="tl" style="background:var(--tN)">?</div><div class="tr"><p class="tlNewX">${L("tl_new_x")}</p>${unr.map(c=>card(c,false)).join("")}</div></div>`:"");
     return}
   const m=mine(),custom=!!store()[key()];
   const s=sel?D[byName[sel]]:null;

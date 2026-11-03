@@ -45,7 +45,7 @@ export function runSearch(){const q=nrm(gq.value.trim());if(!q){gres.hidden=true
   const fm=FARMS.filter(x=>has(x.n,q)||(x.ne&&has(x.ne,q))).slice(0,3);
   const pg=pages(q);
   let h=pg.length?`<div class="gsec">${L("g_goto")}</div>`+pg.map(p=>`<button class="gr" data-gpage="${p[0]}">${ico(p[3])}<span><b>${L(p[1])}</b><small>${p[2]?L(p[2]):L("g_page")}</small></span></button>`).join(""):"";
-  if(cls.length)h+=`<div class="gsec">${L("g_classes")}</div>`+cls.map(c=>`<button class="open gr" data-i="${idx(c)}">${sigil(c)}<span><b>${esc(c.name)}</b><small>${catName(c.cat)}, Farm ${c.farm}, Solo ${c.solo}, Ultra ${c.ultra}</small></span></button>`).join("");
+  if(cls.length)h+=`<div class="gsec">${L("g_classes")}</div>`+cls.map(c=>`<button class="open gr" data-i="${idx(c)}">${sigil(c)}<span><b>${esc(c.name)}</b><small>${catName(c.cat)}, ${c.fresh?L("nw"):`Farm ${c.farm}, Solo ${c.solo}, Ultra ${c.ultra}`}</small></span></button>`).join("");
   if(its.length)h+=`<div class="gsec">${L("g_items",{n:its.length})}</div>`+its.slice(0,5).map(x=>`<button class="gr" data-gitem="${esc(x.r.id)}" data-gname="${esc(x.n)}">${ricon(x.t,"sigI")}<span><b>${esc(x.n)}</b><small>${L("rel_t_"+x.t)}, ${fmtRange(x.r)}</small></span></button>`).join("");
   if(dl.length)h+=`<div class="gsec">${L("sec_daily")}</div>`+dl.map(x=>`<button class="gr" data-gdaily="${esc(x.id)}">${ico("diarias")}<span><b>${esc(dn(x))}</b><small>${esc(x.who?x.who[l]:L("daily_g_"+x.g))}</small></span></button>`).join("");
   if(fm.length)h+=`<div class="gsec">HardFarm</div>`+fm.map(x=>`<button class="gr" data-gfarm="${FARMS.indexOf(x)}">${ico("farm")}<span><b>${esc(dn(x))}</b><small>${L("farm_"+x.k)}</small></span></button>`).join("");

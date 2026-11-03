@@ -41,3 +41,5 @@
 .tlLink input{width:100%;font:500 12.5px var(--body)}
 .tlShared{border-color:var(--glow-dim)}
 @media (max-width:640px){.tlSep{display:none}}
+.tierNew .tr{align-content:flex-start}
+.tlNewX{flex-basis:100%;margin:0 0 4px;font-size:13px;color:var(--muted)}

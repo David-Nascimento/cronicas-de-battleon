@@ -54,6 +54,15 @@ try {
     const name = REL[0].items[Object.keys(REL[0].items)[0]][0][0];
     await p.click("#gq"); await p.fill("#gq", name.slice(0, 8)); await wait(p);
     check((await p.locator("#gres [data-gitem]").count()) > 0, "busca global acha item novo");
+    await p.fill("#gq", ""); await p.keyboard.press("Escape"); await wait(p);
+    await p.click(`#segRel button[data-v="${REL[0].id}"]`); await wait(p);
+    await p.click('#segRelT button[data-v="class"]'); await wait(p);
+    const ps = p.locator('#relList .ri[data-ri="PaladinSlayer (2)"] .riCard');
+    check(await ps.count() === 1, "item PaladinSlayer (2) tem botão Ver ficha");
+    if (await ps.count()) { await ps.click(); await wait(p);
+      check((await p.locator("#dName").innerText()).startsWith("PaladinSlayer"), "item de classe abre a ficha da classe (cópia ligada pelo nome)");
+      await p.keyboard.press("Escape"); }
+    await p.click('#segRelT button[data-v="all"]'); await wait(p);
     const href = await p.locator("#relList .ri a").first().getAttribute("href");
     check(/^https:\/\/aqwwiki\.wikidot\.com\/[a-z0-9-]+$/.test(href), "link direto para a página do wiki");
   }

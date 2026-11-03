@@ -1,8 +1,9 @@
 import {catName, seg} from "./components/shared.js";
 import {CATS} from "./config.js";
+import {D} from "./data/index.js";
 import {refreshNotif} from "./features/alerts.js";
 import {renderFeed} from "./features/news.js";
-import {L, ui} from "./state.js";
+import {L, st, ui} from "./state.js";
 import {renderAgenda} from "./views/agenda.js";
 import {renderBuilder} from "./views/builder.js";
 import {renderCards} from "./views/cards.js";
@@ -25,10 +26,13 @@ const dirty=new Set(Object.keys(VIEWR));
 export function renderView(v:string,force?:boolean){if((force||dirty.has(v))&&VIEWR[v]){dirty.delete(v);VIEWR[v]()}}
 export function renderAll(){
   renderStatic();
-  seg("segCat",Object.keys(CATS).map(k=>[k,catName(k)]),"cat",renderTiers);
+  /* "Novas" só aparece enquanto houver classe nova sem análise */
+  const cats=Object.keys(CATS).filter(k=>k!=="nova"||D.some(c=>c.cat==="nova"));
+  if(!cats.includes(st.cat))st.cat="free";if(st.all!=="todas"&&!cats.includes(st.all))st.all="todas";if(st.bcat!=="all"&&!cats.includes(st.bcat))st.bcat="all";
+  seg("segCat",cats.map(k=>[k,k==="nova"?`${catName(k)} <b>${D.filter(c=>c.cat==="nova").length}</b>`:catName(k)]),"cat",renderTiers);
   seg("segMode",[["geral",L("overall")],["farm","Farm"],["solo","Solo"],["ultra","Ultras"]],"mode",renderTiers);
-  seg("bCat",[["all",L("all")],...Object.keys(CATS).map(k=>[k,catName(k)])],"bcat",renderBuilder);
-  seg("segAll",[["todas",L("all")],...Object.keys(CATS).map(k=>[k,catName(k)])],"all",renderCards);
+  seg("bCat",[["all",L("all")],...cats.map(k=>[k,catName(k)])],"bcat",renderBuilder);
+  seg("segAll",[["todas",L("all")],...cats.map(k=>[k,catName(k)])],"all",renderCards);
   Object.keys(VIEWR).forEach(k=>dirty.add(k));
   renderView(ui.curView);renderEye();refreshNotif();
   if(dlg.open&&ui.curClass!=null)openClass(ui.curClass);

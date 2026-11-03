@@ -18,6 +18,8 @@ export function sigil(c,sz?:string){
   <text x="24" y="28.6" text-anchor="middle" font-family="Barlow,system-ui,sans-serif" font-weight="700" font-size="${ini.length>2?11:14}" fill="var(--ink)">${ini}</text></svg>`;
 }
 export const tColor=t=>`var(--t${t})`;
+/* "N" = classe nova, ainda sem tier */
+export const tierTxt=t=>t==="N"?"?":t;
 export const score=t=>({S:4,A:3,B:2,C:1}[t]||0);
 export const total=c=>score(c.farm)+score(c.solo)+score(c.ultra);
 export const idx=c=>D.indexOf(c);

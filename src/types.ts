@@ -15,6 +15,7 @@ export interface Klass {
   name: string; cat: string; store: string; farm: Tier; solo: Tier; ultra: Tier; type: string; note: string; nw: boolean;
   b: Record<Mode, string>; awe: string; rot: string[][]; generic: boolean; skills: string[] | null; src: string | null;
   inherited: string | null; ob: string[] | null; cons: string | null; cal: boolean; yr: number | null; fam: string[];
+  fresh?: string; wk?: string; /* nome da página no wiki, quando difere */ /* classe nova vinda dos Itens novos, ainda sem análise: data da atualização */
 }
 export interface Daily {
   id: string; g: string; n: string; ne?: string; who?: Txt; req: Txt | null; rw: Txt; for?: Txt;

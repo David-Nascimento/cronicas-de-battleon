@@ -1,7 +1,7 @@
 import {catChip} from "../components/shared.js";
 import {MODES} from "../config.js";
 import {D, TYPES, byName} from "../data/index.js";
-import {esc, idx, score, sigil, tColor} from "../lib/util.js";
+import {esc, idx, score, sigil, tColor, tierTxt} from "../lib/util.js";
 import {L, T, save, st} from "../state.js";
 import {keys} from "./class-dialog.js";
 
@@ -20,7 +20,7 @@ export function renderCompare(){
   const row=(h,f)=>`<tr><th scope="row">${h}</th>${cs.map(c=>`<td>${f(c)}</td>`).join("")}</tr>`;
   const bl=s=>`<div class="bl">${s.split("|").map(x=>`<span>${esc(x)}</span>`).join("")}</div>`;
   out.innerHTML=`<div class="cmpWrap"><table class="cmpT"><thead><tr><th scope="row"></th>${cs.map(c=>`<td><button class="open cmpHead" data-i="${idx(c)}">${sigil(c)}<span><b>${esc(c.name)}</b>${catChip(c)}</span></button></td>`).join("")}</tr></thead><tbody>
-    ${Object.keys(MODES).map(m=>row(MODES[m],c=>`<span class="b ${score(c[m])===best(m)&&cs.length>1?"best":""}" style="background:${tColor(c[m])}">${c[m]}</span>`)).join("")}
+    ${Object.keys(MODES).map(m=>row(MODES[m],c=>`<span class="b ${score(c[m])===best(m)&&cs.length>1?"best":""}" style="background:${tColor(c[m])}">${tierTxt(c[m])}</span>`)).join("")}
     ${row(L("row_type"),c=>esc(T(TYPES[c.type].n)))}
     ${row(L("row_note"),c=>esc(T(c.note)))}
     ${Object.keys(MODES).map(m=>row(L("row_build",{m:MODES[m]}),c=>bl(c.b[m]))).join("")}

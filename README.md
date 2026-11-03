@@ -2,7 +2,7 @@
 
 Guia de AdventureQuest Worlds feito por fãs, em português e inglês: qual classe usar, o que farmar hoje, como montar time de ultra e o que entrou no jogo em cada atualização.
 
-Versão atual: **2.4.0**. Projeto não oficial; AdventureQuest Worlds e as marcas relacionadas pertencem à Artix Entertainment, LLC.
+Versão atual: **2.5.0**. Projeto não oficial; AdventureQuest Worlds e as marcas relacionadas pertencem à Artix Entertainment, LLC.
 
 **Abrir o portal:** https://david-nascimento.github.io/cronicas-de-battleon/ (no celular, dá para instalar como app pelo menu do navegador).
 
@@ -60,6 +60,10 @@ Na aba **Sazonais** aparece o evento que está no ar, com a data de fim e os map
 
 ![HardFarm](docs/screenshots/hardfarm.png)
 
+### Classes novas
+
+Quando uma atualização traz uma classe que o portal ainda não analisou, ela entra sozinha, a partir dos Itens novos: aparece na loja **Novas** da tier list (numa faixa "?", sem tier), na Minha tier list (em Sem tier), em Todas as classes e na busca, com a marca de nova e um aviso na ficha. Itens que são cópia de uma classe que já existe (como "PaladinSlayer (2)") ficam ligados a ela em `class-aliases.json`. Nos Itens novos, cada classe tem o botão **Ver ficha**. Quando a classe ganha tier e guia em `classes.json`, ela sai de "Novas" sozinha.
+
 ### Ficha de classe
 
 Cada classe abre uma ficha com como obter, consumíveis, as melhores combinações de enhancement, sequências de skills e, na seção **No portal**, o farm dela no HardFarm, as diárias que ajudam, as notícias e a atualização em que saiu.
@@ -91,7 +95,8 @@ As capturas foram feitas num ambiente sem acesso ao Google Fonts; no navegador o
   - `npm run dev`: recompila ao salvar e serve em http://localhost:5173
   - `npm run build`: gera `dist/` otimizado
   - `npm run typecheck`: confere os tipos com o TypeScript (`tsc`)
-  - `npm test`: abre o portal num Chromium e confere navegação, itens novos, tier list, diárias, HardFarm, idioma e celular (precisa de `npx playwright install chromium` uma vez). O GitHub roda build, tipos e testes a cada mudança na `main` e, se passar, publica o `dist/` no GitHub Pages (`.github/workflows/ci.yml`). Para isso funcionar, o Pages precisa estar ligado uma vez em Settings > Pages > Source: **GitHub Actions**.
+  - `npm test`: abre o portal num Chromium e confere navegação, itens novos, tier list, diárias, HardFarm, idioma e celular (precisa de `npx playwright install chromium` uma vez). O GitHub roda build, tipos e testes a cada mudança na `main` e, se passar, publica o `dist/` no GitHub Pages (`.github/workflows/ci.yml`, com Settings > Pages > Source: **GitHub Actions**).
+  - `bash tools/publish-pages.sh`: publica o `dist/` no branch `gh-pages`, para o Pages em Settings > Pages > **Deploy from a branch**, `gh-pages`, `/ (root)`. A tarefa agendada também faz isso a cada atualização de dados.
 
 ### App instalável e offline
 
@@ -133,12 +138,13 @@ Edite os arquivos em `src/data/` e rode `npm run build`:
 | `hardfarm.json` | HardFarm |
 | `news.json` | Notícias de classes e o sino |
 | `classes.json`, `class-types.json`, `obtain.json` | Tier list, fichas das classes |
+| `class-aliases.json` | Itens de classe que são cópia de uma classe existente (nome do item → classe) |
 | `ultra-teams.json`, `ultra-schedule.json`, `ultra-items.json` | Ultras |
 | `enhancements.json` | Enhancements |
 
 ### Atualização automática
 
-Uma tarefa agendada roda todo **sábado e segunda às 8h53** (horário de Fortaleza) na branch `main`. Ela confere o AQW Wiki e as Design Notes, completa `releases.json`, `news.json` e `dailies.json`, gera o build, testa o site num navegador e só faz commit se algo mudou.
+Uma tarefa agendada roda todo **sábado e segunda às 8h53** (horário de Fortaleza) na branch `main`. Ela confere o AQW Wiki e as Design Notes, completa `releases.json`, `news.json` e `dailies.json`, liga as classes novas (`classes.json` quando há informação para o guia, `class-aliases.json` para cópias), gera o build, testa o site num navegador, só faz commit se algo mudou e atualiza o site no branch `gh-pages`.
 
 ### Formato de `releases.json`
 
