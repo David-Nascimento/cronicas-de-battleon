@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Meu painel · Crônicas de Battleon (POC)</title>
+<link rel="icon" href="/public/icons/icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Texturina:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <div class="brand"><svg viewBox="0 0 48 54" aria-hidden="true"><path d="M24 2 L44 10 V28 C44 40 35 48 24 52 C13 48 4 40 4 28 V10 Z" fill="#2a2236" stroke="currentColor" stroke-width="2"/><circle cx="18" cy="26" r="2.6" fill="currentColor"/><circle cx="30" cy="26" r="2.6" fill="currentColor"/></svg>
+    <div><b>Meu painel</b><small>Crônicas de Battleon · POC</small></div></div>
+  <div class="who" id="who"></div>
+</header>
+<p class="msg" id="msg" hidden></p>
+<p class="demo" id="demo" hidden>Modo demonstração: os dados ficam só neste navegador. Para o login com Google, configure o Firebase (veja <code>poc/painel/LEIAME.md</code>).</p>
+
+<main id="app">
+  <section class="gate" id="gate" hidden>
+    <h1>Acompanhe o seu personagem</h1>
+    <p>Entre para guardar suas classes, diárias, farms, ultras e quests num lugar só, em qualquer aparelho.</p>
+    <button class="btn" data-signin>Entrar com Google</button>
+  </section>
+
+  <div id="panel" hidden>
+    <nav class="tabs" id="tabs" aria-label="Seções do painel"></nav>
+    <section id="view"></section>
+  </div>
+</main>
+<script type="module" src="app.js"></script>
+</body>
+</html>
