@@ -31,6 +31,8 @@ import {L, ui} from "./state.js";
 import {decodeTier} from "./features/share-tier.js";
 import {openShared, renderTiers} from "./views/tiers.js";
 import {toast} from "./features/toasts.js";
+import {initAccount, onAccount} from "./features/account.js";
+import {renderAcct} from "./views/painel.js";
 
 seg("segLang",[["pt","PT"],["en","EN"]],"lang",renderAll);
 renderAll();
@@ -39,6 +41,8 @@ const tl=new URLSearchParams(location.search).get("tl");
 if(tl)decodeTier(tl).then(t=>{const u=new URL(location.href);u.search="";history.replaceState(null,"",u.toString());
   if(t){openShared(t);show("tier");renderTiers()}else toast("!",L("tl_shared_bad"))});
 show(location.hash.slice(1)||"inicio");
+/* conta: ao entrar, os dados da conta substituem os do navegador e o portal redesenha */
+initAccount(()=>{renderAll();show(ui.curView)});onAccount(renderAcct);renderAcct();
 window.addEventListener("hashchange",()=>{const v=location.hash.slice(1);if(v&&v!==ui.curView)show(v)});
 setTimeout(()=>checkLive(true),600);
 setInterval(()=>{checkLive(false);renderAgenda()},60000);

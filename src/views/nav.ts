@@ -20,7 +20,8 @@ export function renderNav(){
   const btn=(k,l)=>`<button class="nv" data-sec="${k}" aria-current="${cur===k?"page":"false"}">${svg(k)}<span>${L(l)}</span>${k==="novidades"?`<span class="navBdg"${n?"":" hidden"}>${n}</span>`:""}</button>`;
   const side=SECS.map(([k,l])=>btn(k,l)+(cur===k&&SUBS[k]?`<div class="nvSubs">${SUBS[k].map(([s,sl])=>`<button class="nvs" data-sub="${s}" aria-current="${ui.curView===s?"page":"false"}">${L(sl)}</button>`).join("")}</div>`:"")).join("");
   const sn=document.getElementById("sideNav"),bn=document.getElementById("bNav");
-  sn.innerHTML=side;bn.innerHTML=SECS.map(([k,l])=>btn(k,l)).join("");
+  /* "Meu painel" fica separado dos 5 destinos: no fim da lateral e, no celular, no botão de conta do topo */
+  sn.innerHTML=side+`<div class="nvSep"></div>`+btn("conta","pn_title");bn.innerHTML=SECS.map(([k,l])=>btn(k,l)).join("");
   [sn,bn].forEach(el=>el.setAttribute("aria-label",L("nav_main")));
   renderSub();
 }
@@ -36,7 +37,8 @@ export function show(v){
   try{history.replaceState(null,"","#"+v)}catch(e){}
   if(changed)window.scrollTo(0,0);
   /* diárias, itens novos e notícias são redesenhados a cada visita (virada do dia, marcar como visto) */
-  if(v==="diarias"||v==="lancamentos")renderView(v,true);else if(v!=="novidades")renderView(v);
+  /* abas que mudam com o que se marca em outras (diárias, farms, painel) são redesenhadas a cada visita */
+  if(["diarias","lancamentos","itens","painel","inicio"].includes(v))renderView(v,true);else if(v!=="novidades")renderView(v);
   if(v==="lancamentos"&&markReleaseSeen())refreshNotif();
   if(v==="novidades"){ui.feedSeen=newsSeen();renderFeed();st.newsSeen=NEWS.reduce((m,n)=>n.d>m?n.d:m,ui.feedSeen);save();refreshNotif()}}
 export function closePanel(){document.getElementById("notifPanel").hidden=true;document.getElementById("bell").setAttribute("aria-expanded","false");document.body.classList.remove("np-open")}

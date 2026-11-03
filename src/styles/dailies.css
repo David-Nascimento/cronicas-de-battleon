@@ -80,3 +80,7 @@ code.jn.s:hover{border-bottom-color:var(--glow);color:var(--glow)}
 .fwhere dt{font-weight:600;color:var(--ink)}
 .fwhere dd{margin:0;color:var(--muted)}
 @media (max-width:520px){.fwhere dl>div{grid-template-columns:1fr;gap:0}}
+.fh{align-items:flex-start}
+.fhT{flex:1;min-width:0}
+.ftrack{flex:none;font:600 12.5px var(--body);padding:5px 11px;border-radius:999px;border:1px solid var(--glow-dim);background:var(--glow);color:var(--on-glow);cursor:pointer}
+.ftrack.on{background:var(--glow-soft);color:var(--glow-hi)}

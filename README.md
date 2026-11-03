@@ -2,7 +2,7 @@
 
 Guia de AdventureQuest Worlds feito por fãs, em português e inglês: qual classe usar, o que farmar hoje, como montar time de ultra e o que entrou no jogo em cada atualização.
 
-Versão atual: **2.7.0**. Projeto não oficial; AdventureQuest Worlds e as marcas relacionadas pertencem à Artix Entertainment, LLC.
+Versão atual: **3.0.0**. Projeto não oficial; AdventureQuest Worlds e as marcas relacionadas pertencem à Artix Entertainment, LLC.
 
 **Abrir o portal:** https://david-nascimento.github.io/cronicas-de-battleon/ (no celular, dá para instalar como app pelo menu do navegador).
 
@@ -10,7 +10,22 @@ Versão atual: **2.7.0**. Projeto não oficial; AdventureQuest Worlds e as marca
 
 ## O que tem no portal
 
-O portal tem 5 destinos, e cada um guarda suas abas: **Hoje**, **Classes**, **Ultras**, **Farm** e **Novidades**. A busca do topo acha classes, itens novos, diárias e cards de HardFarm de qualquer lugar (atalho: tecla `/`). Ela também leva às partes do portal: quem digita "tier list", "diárias", "enh" ou "ultra" vê **Ir para** e cai direto na aba. Ela ignora acento, maiúscula, espaço e hífen ("paladin slayer" acha PaladinSlayer).
+O portal tem 5 destinos, e cada um guarda suas abas: **Hoje**, **Classes**, **Ultras**, **Farm** e **Novidades**, mais o **Meu painel** (botão de conta no topo e fim da lateral). A busca do topo acha classes, itens novos, diárias e cards de HardFarm de qualquer lugar (atalho: tecla `/`). Ela também leva às partes do portal: quem digita "tier list", "diárias", "enh" ou "ultra" vê **Ir para** e cai direto na aba. Ela ignora acento, maiúscula, espaço e hífen ("paladin slayer" acha PaladinSlayer).
+
+### Meu painel (login e tela do usuário)
+
+Quem não entrou vê o login: **Entrar com Google**, **e-mail e senha** (Criar conta e Esqueci minha senha) ou **Continuar sem conta**, que guarda tudo só naquele aparelho. Dentro, a pessoa vincula o personagem pelo nome (o portal lê a página pública dele em account.aq.com; nunca pedimos a senha do AQW) e vê:
+
+- **Resumo:** personagem (nível, classe, facção e equipamento), números do que acompanha, **Diárias de hoje** para marcar ali mesmo e **Farms que acompanha** com a próxima etapa (a quest, o texto e onde conseguir cada item).
+- **Classes:** as do inventário entram sozinhas; as outras a pessoa marca (vale também para o Montador de time).
+- **Ultras:** os times do portal com o que ela já tem.
+- **Quests:** anotações do que está fazendo.
+
+É o mesmo estado do portal: a diária marcada no painel aparece marcada na aba Diárias, e o **Acompanhar** de cada card do HardFarm manda o farm para o painel. Com o login de verdade ligado, tudo isso fica salvo na conta (Firestore) e abre igual em qualquer aparelho; quem começa sem conta leva o que já tinha ao criar a conta. Sem o Firebase configurado, o login funciona em demonstração.
+
+| Login | Painel com o personagem vinculado |
+|---|---|
+| ![Login do Meu painel](docs/screenshots/painel-login.png) | ![Meu painel](docs/screenshots/painel.png) |
 
 ### Hoje
 
@@ -92,7 +107,7 @@ As capturas foram feitas num ambiente sem acesso ao Google Fonts; no navegador o
 
 - **Só abrir:** `dist/index.html` já está compilado. Dois cliques e funciona, sem servidor.
 - **Mexer no código:** instale uma vez com `npm install`, depois:
-  - `npm run dev`: recompila ao salvar e serve em http://localhost:5173 (grava em `.dev/`, não mexe no `dist/`)
+  - `npm run dev`: recompila ao salvar e serve em http://localhost:5173, já com a leitura da charpage do Meu painel (grava em `.dev/`, não mexe no `dist/`)
   - `npm run build`: gera `dist/` otimizado
   - `npm run typecheck`: confere os tipos com o TypeScript (`tsc`)
   - `npm test`: abre o portal num Chromium e confere navegação, itens novos, tier list, diárias, HardFarm, idioma e celular (precisa de `npx playwright install chromium` uma vez). O GitHub roda build, tipos e testes a cada mudança na `main` e, se passar, publica o `dist/` no GitHub Pages (`.github/workflows/ci.yml`, com Settings > Pages > Source: **GitHub Actions**).
@@ -107,6 +122,31 @@ schtasks /Create /TN "Cronicas de Battleon - atualizar" /TR "E:\Projetos\cronica
 ```
 
 O resultado de cada vez fica em `atualizar.log`. O `npm run dev` grava em `.dev/` (fora do git), então ele pode ficar rodando sem travar o pull; o `dist/` é só a versão oficial, gerada por `npm run build`.
+
+### Tudo gratuito, até a hospedagem
+
+| Parte | Serviço | Custo |
+|---|---|---|
+| Site | GitHub Pages (ramo `gh-pages`), ou Cloudflare Pages | Grátis |
+| Login (Google e e-mail) | Firebase Authentication, plano Spark | Grátis |
+| Dados de cada pessoa | Cloud Firestore, plano Spark: 50 mil leituras e 20 mil gravações por dia | Grátis |
+| Leitura da charpage | Cloudflare Workers, plano Free: 100 mil acessos por dia | Grátis |
+
+O plano Spark do Firebase não pede cartão. Se aparecer o pedido de "conta de faturamento" ou de mudar para o Blaze, não aceite: é aí que passa a poder cobrar. Por isso a leitura da charpage fica no Cloudflare, e não nas Cloud Functions do Firebase, que exigem o Blaze.
+
+**Login e dados (Firebase, uns 10 minutos)**
+1. Em https://console.firebase.google.com, crie um projeto (pode desligar o Analytics).
+2. **Authentication** > Começar > ative **Google** e **E-mail/senha**.
+3. **Firestore Database** > Criar banco de dados > modo de produção. Em **Regras**, cole o `firestore.rules` e publique (cada pessoa só lê e grava o próprio documento).
+4. **Configurações do projeto** > Seus apps > `</>` (Web) > copie o `firebaseConfig` e cole em `src/firebase-config.ts`, no lugar de `null`.
+5. **Authentication** > Configurações > **Domínios autorizados**: adicione o domínio do site (ex.: `david-nascimento.github.io`).
+
+**Leitura da charpage no ar (Cloudflare, uns 5 minutos)**
+1. Crie uma conta gratuita em https://dash.cloudflare.com.
+2. Na pasta `server`: `npx wrangler login` e `npx wrangler deploy`.
+3. Cole o endereço que aparece (ex.: `https://cdb-charpage.SEU-USUARIO.workers.dev`) em `src/firebase-config.ts`, em `API_BASE`, e o endereço do site em `server/wrangler.toml`, `ALLOWED_ORIGINS`.
+
+Depois, `npm run build` e `bash tools/publish-pages.sh`.
 
 ### App instalável e offline
 
@@ -128,11 +168,14 @@ src/                  TypeScript; tipos dos dados e do estado em types.ts
   lib/util.ts         funções pequenas (escape de HTML, busca sem acento, brasão da classe, link do wiki)
   components/         pedaços de interface reutilizados
   views/              uma por aba: home, tiers (e Minha tier list), cards, compare, agenda, teams, builder,
-                      enhancements, farms (HardFarm), dailies, releases (itens novos), nav
-  features/           notícias, alertas e notificações, avisos na tela, busca global, cor dos olhos
+                      enhancements, farms (HardFarm), dailies, releases (itens novos), painel (Meu painel), nav
+  features/           notícias, alertas e notificações, avisos na tela, busca global, cor dos olhos, conta (account.ts)
+  firebase-config.ts  configuração do Firebase e endereço da leitura da charpage
   styles/             CSS por área; tokens.css tem as cores e main.css define a ordem (a ordem importa)
 public/               manifest e ícones do app instalável
-tools/                build com esbuild e o modelo do service worker
+server/               leitura da charpage: charpage.mjs (lê a página), api.mjs (rota do npm run dev), worker.mjs e wrangler.toml (Cloudflare)
+firestore.rules       regras do banco: cada pessoa só lê e grava o próprio documento
+tools/                build com esbuild (e o servidor do npm run dev), modelo do service worker, publish-pages.sh, where/ (onde conseguir e quests do HardFarm)
 docs/screenshots/     as capturas deste README
 legacy/               a versão anterior (index.html + css + js), para comparar
 ```

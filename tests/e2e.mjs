@@ -1,6 +1,7 @@
 // Testes de ponta a ponta do portal: abre dist/index.html num Chromium e confere as funções principais.
 // Uso: npm run build && npm test   (precisa do Playwright: npx playwright install chromium)
 import { chromium } from "playwright";
+import { startTestServer } from "./fixtures/serve.mjs";
 import { readFileSync } from "node:fs";
 import { fileURLToPath, pathToFileURL } from "node:url";
 
@@ -27,6 +28,24 @@ async function page(opts = {}) {
 const hash = p => p.evaluate(() => location.hash);
 const go = async (p, h) => { await p.evaluate(h => { location.hash = h; }, h); await wait(p); };
 
+/* leitura da charpage: o HTML e o Worker do Cloudflare (com fetch e cache simulados) */
+{
+  const { parseCharHtml } = await import("../server/charpage.mjs");
+  const { HTML, INV } = await import("./fixtures/charpage.mjs");
+  const c = parseCharHtml(HTML);
+  check(c.level === 100 && c.cls === "PaladinSlayer" && c.equip.weapon === "Vordred's Sword" && c.ccid === "98765432", "charpage: lê nível, classe, equipamento e ccid");
+  const realFetch = globalThis.fetch, mem = new Map();
+  globalThis.caches = { default: { match: async k => mem.get(k.url), put: async (k, r) => { mem.set(k.url, r); } } };
+  globalThis.fetch = async u => String(u).includes("/CharPage/Inventory") ? new Response(JSON.stringify(INV)) : new Response(HTML);
+  const W = (await import("../server/worker.mjs")).default, env = { ALLOWED_ORIGINS: "https://site.exemplo" };
+  const r1 = await W.fetch(new Request("https://w.dev/api/char?name=BGP", { headers: { Origin: "https://site.exemplo" } }), env, { waitUntil: p => p });
+  const j1 = await r1.json();
+  check(r1.status === 200 && j1.inventory.length === INV.length && r1.headers.get("Access-Control-Allow-Origin") === "https://site.exemplo", "Worker: lê a charpage e libera só o site permitido");
+  await new Promise(r => setTimeout(r, 10));
+  const r2 = await W.fetch(new Request("https://w.dev/api/char?name=bgp"), env, { waitUntil: p => p });
+  check(r2.headers.get("X-Cache") === "HIT", "Worker: guarda em cache por 10 minutos");
+  globalThis.fetch = realFetch; delete globalThis.caches;
+}
 try {
   /* navegação: cada aba monta conteúdo quando aparece */
   {
@@ -168,6 +187,49 @@ try {
       await go(m, v);
       check((await m.evaluate(() => document.documentElement.scrollWidth)) <= 390, `celular sem rolagem lateral em ${v}`);
     }
+  }
+  /* Meu painel: login (demonstração), vínculo do personagem pela charpage falsa e o que se acompanha */
+  {
+    const srv = await startTestServer(root + "dist/");
+    try {
+      const ctx = await browser.newContext({ viewport: { width: 1280, height: 900 }, colorScheme: "dark" });
+      const p = await ctx.newPage(); p.on("pageerror", e => errors.push(e.message));
+      await p.goto(srv.url + "#painel"); await wait(p, 500);
+      check(await p.locator("#pnl .gBtn").isVisible() && await p.locator("#pnl .pnDemo").isVisible(), "painel: sem entrar, mostra o login (demonstração)");
+      await p.fill('[data-aform="in"] input[name="email"]', "bgp@"); await p.fill('[data-aform="in"] input[name="pass"]', "123456"); await p.click('[data-aform="in"] button.btnG');
+      check((await p.locator(".aMsg.err").innerText()).includes("e-mail"), "login: e-mail inválido mostra o motivo");
+      await p.click('[data-auth="up"]'); await p.fill('[data-aform="up"] input[name="name"]', "BGP");
+      await p.fill('[data-aform="up"] input[name="email"]', "bgp@exemplo.com"); await p.fill('[data-aform="up"] input[name="pass"]', "123");
+      await p.click('[data-aform="up"] button.btnG');
+      check((await p.locator(".aMsg.err").innerText()).includes("6"), "criar conta: senha curta mostra o motivo e mantém o que foi digitado");
+      await p.fill('[data-aform="up"] input[name="pass"]', "segredo1"); await p.click('[data-aform="up"] button.btnG'); await wait(p, 300);
+      check((await p.locator(".pnTitle").innerText()).includes("BGP") && (await p.locator("#acctBtn").innerText()).includes("BGP"), "criar conta: entra no painel e o topo mostra o nome");
+      await p.fill("[data-link] input", "BGP"); await p.click("[data-link] button"); await p.waitForSelector(".pnName");
+      check((await p.locator(".pnMeta").innerText()).includes("100"), "painel: vincula o personagem pela charpage");
+      await p.click('[data-pt="classes"]'); await wait(p);
+      const mine = await p.$$eval(".pnCl.on .pnClN", e => e.map(x => x.textContent));
+      check(["PaladinSlayer", "Legion Revenant", "Void Highlord"].every(n => mine.includes(n)), "painel: classes do inventário entram sozinhas (inclusive a cópia PaladinSlayer (2))");
+      await p.click('[data-pt="ultras"]'); await wait(p);
+      check((await p.locator(".pnTeams").innerText()).includes("Você monta"), "painel: ultras mostram o time que dá para montar");
+      await go(p, "itens"); await p.click('#farms [data-ftrack="Dragon of Time"]'); await wait(p);
+      await go(p, "diarias"); await p.evaluate(() => { const s = JSON.parse(localStorage.getItem("aqwTier")); s.dmine = ["moglin"]; localStorage.setItem("aqwTier", JSON.stringify(s)); });
+      await p.reload(); await wait(p, 400); await go(p, "painel"); await wait(p, 300);
+      const farm = p.locator('.pnFarm:has(b:text-is("Dragon of Time"))');
+      check(await farm.count() === 1 && (await farm.locator(".fq").innerText()).includes("Kro'nar"), "painel: farm acompanhado aparece com a quest da próxima etapa");
+      await p.click('[data-pday="moglin"]'); await wait(p);
+      check((await p.locator(".pnCard .pill").first().innerText()).includes("Todas"), "painel: marcar a diária no Resumo");
+      await go(p, "diarias");
+      check((await p.locator('[data-dtoggle="moglin"]').getAttribute("aria-checked")) === "true", "a diária marcada no painel aparece marcada na aba Diárias");
+      await go(p, "painel"); await p.click('[data-pt="quests"]'); await p.fill('[data-qadd] input[name="n"]', "Nulgath Larvae"); await p.click("[data-qadd] button"); await wait(p);
+      check(await p.locator('.pnQ b:text-is("Nulgath Larvae")').count() === 1, "painel: anotar uma quest");
+      await p.click("[data-signout]"); await wait(p);
+      check(await p.locator("#pnl .gBtn").isVisible(), "sair volta para o login");
+      await p.click("[data-aguest]"); await wait(p);
+      check((await p.locator(".pnTop").innerText()).includes("Criar conta"), "continuar sem conta abre o painel e oferece criar conta");
+      const m = await (await browser.newContext({ viewport: { width: 390, height: 844 } })).newPage();
+      await m.goto(srv.url + "#painel"); await wait(m, 400);
+      check(await m.evaluate(() => document.documentElement.scrollWidth) <= 390, "celular: login sem rolagem lateral");
+    } finally { srv.close(); }
   }
 } finally {
   await browser.close();

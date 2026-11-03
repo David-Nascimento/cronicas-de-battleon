@@ -24,6 +24,9 @@ export function nextReset(now=new Date()){const r=new Date(now);r.setHours(hour(
 
 /* garante que as marcações são de hoje; se o dia virou, zera */
 function sync(){const k=dayKey();if(!st.dly||st.dly.k!==k){st.dly={k,done:[]};save()}return st.dly}
+/* usados pelo Meu painel: as marcações de hoje e marcar/desmarcar uma diária */
+export const doneToday=()=>sync().done;
+export function toggleDaily(id:string){const d=sync();d.done=d.done.includes(id)?d.done.filter(x=>x!==id):[...d.done,id];save()}
 const hidden=()=>new Set(st.dhide||[]);
 /* Minhas diárias: se a pessoa escolheu as suas, só elas contam */
 const mine=()=>new Set(st.dmine||[]);

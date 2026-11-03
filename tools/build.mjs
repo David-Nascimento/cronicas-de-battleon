@@ -34,8 +34,22 @@ function writeSW() {
 if (dev) {
   const ctx = await esbuild.context({ ...options, plugins: [{ name: "sw", setup(b) { b.onEnd(writeSW); } }] });
   await ctx.watch();
-  const { port } = await ctx.serve({ servedir: out, port: 5173 });
-  console.log(`http://localhost:${port}  (edite src/ e recarregue; index.html é copiado só ao iniciar)`);
+  /* servidor do dev: o portal (pasta .dev) e a leitura da charpage em /api/char, para o "Meu painel" funcionar */
+  const { createServer } = await import("node:http");
+  const { extname, join, normalize } = await import("node:path");
+  const { createApi } = await import("../server/api.mjs");
+  const api = createApi({ base: process.env.AQW_BASE });
+  const TYPES = { ".html": "text/html; charset=utf-8", ".js": "text/javascript; charset=utf-8", ".css": "text/css; charset=utf-8", ".json": "application/json", ".png": "image/png", ".svg": "image/svg+xml", ".webmanifest": "application/manifest+json", ".map": "application/json" };
+  const root = normalize(join(process.cwd(), out));
+  const port = Number(process.env.PORT || 5173);
+  createServer(async (req, res) => {
+    if (await api(req, res)) return;
+    let p = decodeURIComponent(new URL(req.url, "http://x").pathname); if (p.endsWith("/")) p += "index.html";
+    const file = normalize(join(root, p));
+    if (!file.startsWith(root)) { res.writeHead(404); return res.end(); }
+    try { const b = readFileSync(file); res.writeHead(200, { "Content-Type": TYPES[extname(file)] || "application/octet-stream", "Cache-Control": "no-store" }); res.end(b); }
+    catch { res.writeHead(404); res.end("404"); }
+  }).listen(port, () => console.log(`http://localhost:${port}  (edite src/ e recarregue; index.html é copiado só ao iniciar)`));
 } else {
   await esbuild.build(options);
   writeSW();

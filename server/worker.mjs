@@ -1,5 +1,5 @@
 // Leitura da charpage como Cloudflare Worker (plano gratuito: 100 mil acessos por dia).
-// Publica com: npx wrangler deploy  (na pasta poc/painel; veja LEIAME.md, "Tudo gratuito").
+// Publica com: npx wrangler deploy  (na pasta server; veja o README, "Tudo gratuito").
 // Rota: GET /api/char?name=NOME  →  o mesmo JSON do server.mjs local.
 import {fetchChar} from "./charpage.mjs";
 
