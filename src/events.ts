@@ -9,6 +9,7 @@ import {openEnh} from "./views/enhancements.js";
 import {closePanel, secHome, show} from "./views/nav.js";
 import {REL} from "./data/index.js";
 import {goTeam} from "./views/teams.js";
+import {renderDailies} from "./views/dailies.js";
 
 document.addEventListener("click",e=>{
   const tb=(e.target as HTMLElement).closest<HTMLElement>("[data-team]");
@@ -25,6 +26,7 @@ document.addEventListener("click",e=>{
   const gd=(e.target as HTMLElement).closest<HTMLElement>("[data-godaily]");if(gd){dlg.close();st.df="all";save();show("diarias");const t=document.querySelector(`[data-dtoggle="${CSS.escape(gd.dataset.godaily)}"]`);const el=t&&t.closest(".dItem");if(el){el.scrollIntoView({behavior:"smooth",block:"center"});el.classList.add("flash");setTimeout(()=>el.classList.remove("flash"),1800)}return}
   const rt=(e.target as HTMLElement).closest<HTMLElement>("[data-relt]");if(rt&&REL.length){if(dlg.open)dlg.close();st.rt=rt.dataset.relt;st.rel=REL[0].id;ui.relQ="";save();show("lancamentos");return}
   const sb=(e.target as HTMLElement).closest<HTMLElement>("[data-sub]");if(sb){show(sb.dataset.sub);return}
+  if((e.target as HTMLElement).closest("[data-gohub]")){st.df="season";save();show("diarias");renderDailies();return}
   const gv=(e.target as HTMLElement).closest<HTMLElement>("[data-goview]");if(gv){closePanel();show(gv.dataset.goview);return}
   const gm=(e.target as HTMLElement).closest<HTMLElement>("[data-gomode]");if(gm){st.mode=gm.dataset.gomode;save();renderAll();show("tier");return}
   const panel=document.getElementById("notifPanel"),bell=document.getElementById("bell");

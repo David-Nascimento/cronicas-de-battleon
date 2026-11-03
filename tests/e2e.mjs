@@ -137,6 +137,15 @@ try {
     await go(p, "inicio");
     check((await p.locator('.intent[data-goview="diarias"] small').innerText()).startsWith("1 de 3"), "página Hoje mostra o progresso");
   }
+  /* neste mês: Event Hub na página Hoje e na aba Sazonais */
+  {
+    const p = await page();
+    check((await p.locator('#homeWeek .mHub code.jn[data-j="eventhub"]').count()) === 1, "página Hoje mostra o Event Hub");
+    await p.click("#homeWeek [data-gohub]"); await wait(p);
+    check((await hash(p)) === "#diarias" && (await p.locator("#dList .mCard .mHub").count()) === 1, "Ver tudo em Sazonais abre o Event Hub");
+    await p.click("#gq"); await p.fill("#gq", "event hub"); await wait(p);
+    check(await p.locator('#gres [data-gpage="hub"]').count() === 1, "busca 'event hub' leva aos Sazonais");
+  }
   /* hardfarm: progresso por etapa sobrevive ao recarregar */
   {
     const p = await page();

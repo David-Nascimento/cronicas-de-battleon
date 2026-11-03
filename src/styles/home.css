@@ -87,3 +87,17 @@ code.jn{font:600 12px ui-monospace,SFMono-Regular,Menlo,monospace;background:var
 .fchk svg{width:15px;height:15px}
 .fchk:hover{border-color:var(--glow)}
 .fchk[aria-checked="true"]{background:var(--tB);border-color:var(--tB);color:#fff}
+.mHomeH{margin-top:18px}
+.mBox{display:flex;flex-direction:column;gap:10px}
+.mHub{display:flex;flex-direction:column;gap:4px;padding:10px 12px;border-radius:var(--r-md);border:1px solid var(--glow-dim);background:var(--glow-soft)}
+.mHubTop{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px}
+.mHubTop b{font:700 15px var(--display)}
+.mHub p{margin:0;font-size:13px;color:var(--muted)}
+.mH{margin:2px 0 0;font:600 13px var(--body);color:var(--muted)}
+.mList{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:6px}
+.mRow{display:flex;justify-content:space-between;align-items:flex-start;gap:10px}
+.mTx{display:flex;flex-direction:column;align-items:flex-start;gap:3px;min-width:0}
+.mTx b{font-weight:600;font-size:14px}
+.mTx small{font-size:12.5px;color:var(--muted)}
+.mRow .pill{flex:none}
+.mCard{margin-top:12px}

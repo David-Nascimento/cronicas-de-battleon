@@ -2,7 +2,7 @@
 
 Guia de AdventureQuest Worlds feito por fãs, em português e inglês: qual classe usar, o que farmar hoje, como montar time de ultra e o que entrou no jogo em cada atualização.
 
-Versão atual: **2.5.0**. Projeto não oficial; AdventureQuest Worlds e as marcas relacionadas pertencem à Artix Entertainment, LLC.
+Versão atual: **2.6.0**. Projeto não oficial; AdventureQuest Worlds e as marcas relacionadas pertencem à Artix Entertainment, LLC.
 
 **Abrir o portal:** https://david-nascimento.github.io/cronicas-de-battleon/ (no celular, dá para instalar como app pelo menu do navegador).
 
@@ -50,7 +50,7 @@ A tier list do portal separa por loja (Free, Member, ACS, HeroMart, Calendário)
 
 ![Diárias](docs/screenshots/diarias.png)
 
-Na aba **Sazonais** aparece o evento que está no ar, com a data de fim e os mapas. O card some sozinho quando o evento acaba.
+Na aba **Sazonais** aparece o evento que está no ar, com a data de fim e os mapas, e o card **Neste mês: Event Hub**: o `/join eventhub` (o mapa que reúne os eventos do mês) e o que está no ar com data para acabar (recompensas de evento, coleções, o set sazonal do mês), com as fontes. A página Hoje mostra o mesmo em versão curta, e a busca acha com "event hub". Cada item some sozinho depois da data de fim.
 
 ![Evento sazonal no ar](docs/screenshots/evento-sazonal.png)
 
@@ -144,6 +144,7 @@ Edite os arquivos em `src/data/` e rode `npm run build`:
 | Arquivo | Onde aparece |
 |---|---|
 | `releases.json` | Itens novos, card da última atualização e evento sazonal nas Diárias |
+| `month.json` | Neste mês: Event Hub e o que está no ar com data de fim (`list`: `t`, `x`, `j`, `from`, `until`, `src`) |
 | `dailies.json` | Diárias |
 | `hardfarm.json` | HardFarm |
 | `news.json` | Notícias de classes e o sino |
@@ -154,7 +155,7 @@ Edite os arquivos em `src/data/` e rode `npm run build`:
 
 ### Atualização automática
 
-Uma tarefa agendada roda todo **sábado e segunda às 8h53** (horário de Fortaleza) na branch `main`. Ela confere o AQW Wiki e as Design Notes, completa `releases.json`, `news.json` e `dailies.json`, liga as classes novas (`classes.json` quando há informação para o guia, `class-aliases.json` para cópias), gera o build, testa o site num navegador, só faz commit se algo mudou e atualiza o site no branch `gh-pages`.
+Uma tarefa agendada roda todo **sábado e segunda às 8h53** (horário de Fortaleza) na branch `main`. Ela confere o AQW Wiki e as Design Notes, completa `releases.json`, `news.json`, `dailies.json` e `month.json`, liga as classes novas (`classes.json` quando há informação para o guia, `class-aliases.json` para cópias), gera o build, testa o site num navegador, só faz commit se algo mudou e atualiza o site no branch `gh-pages`.
 
 ### Formato de `releases.json`
 

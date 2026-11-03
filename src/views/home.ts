@@ -5,6 +5,7 @@ import {newsSeen} from "../features/news.js";
 import {esc} from "../lib/util.js";
 import {L, T, loc} from "../state.js";
 import {dailyProgress} from "./dailies.js";
+import {monthHtml} from "../features/month.js";
 import {fmtRange, relCounts, relSummary} from "./releases.js";
 
 const ico=k=>`<svg viewBox="0 0 24 24" aria-hidden="true"><path d="${ICO[k]}" fill="currentColor"/></svg>`;
@@ -25,6 +26,8 @@ export function renderHome(){
   TEAMS.forEach((t,ti)=>{const sc=SCHED[t.n];if(typeof sc==="number"){const mn=new Date(2026,sc-1,1).toLocaleDateString(loc(),{month:"long"});
     w+=`<button class="hrow" data-goteam="${ti}"><span class="hic">${ico("ultras")}</span><span class="htx"><b>${esc(T(t.n))}</b></span>${sc===month?`<span class="pill on">${L("ag_now")}</span>`:`<span class="pill">${L("ag_back",{m:mn})}</span>`}</button>`}});
   w+=`<button class="linkBtn" data-goview="ultras">${L("home_agenda")}</button>`;
+  /* neste mês: Event Hub e o que acaba em breve */
+  w+=`<h3 class="mHomeH">${L("m_h")}</h3>${monthHtml(false)}<button class="linkBtn" data-gohub>${L("m_more")}</button>`;
   document.getElementById("homeWeek").innerHTML=w;
   document.getElementById("homeNews").innerHTML=`<h3>${L("home_news")}</h3>`+NEWS.slice(0,3).map(n=>nItem(n,n.d>newsSeen())).join("")+`<button class="linkBtn" data-goview="novidades">${L("home_seeall")}</button>`;
 }

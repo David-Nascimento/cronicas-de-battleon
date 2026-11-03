@@ -1,0 +1,34 @@
+{
+ "updated": "2026-11-02",
+ "hub": {
+  "j": "eventhub",
+  "x": {
+   "pt": "O mapa que reúne os eventos do mês: os mapas de feriado e de evento ficam lá. Também dá para chegar pelo botão Game Menu.",
+   "en": "The map that gathers the month's events: holiday and event maps are there. You can also get there from the Game Menu button."
+  },
+  "src": [
+   {"n": "AQW Wiki: Event Hub", "u": "https://aqwwiki.wikidot.com/event-hub"},
+   {"n": "Design Notes: Happy 18th Birthday, Hero!", "u": "https://www.aq.com/gamedesignnotes/aqw-18thbirthdayparty-2oct26-10483"}
+  ]
+ },
+ "list": [
+  {
+   "t": {"pt": "Recompensas do Mogloween (Eternal Night Trilogy)", "en": "Mogloween rewards (Eternal Night Trilogy)"},
+   "x": {"pt": "As três partes do evento e as recompensas, pelos mapas do evento.", "en": "All three parts of the event and their rewards, through the event maps."},
+   "j": "eventhub", "from": "2026-10-16", "until": "2026-11-13",
+   "src": "https://www.aq.com/gamedesignnotes/aqw-16oct26-mogloween26pt1-10495"
+  },
+  {
+   "t": {"pt": "18th Birthday Collection", "en": "18th Birthday Collection"},
+   "x": {"pt": "Coleção de aniversário de 18 anos do jogo.", "en": "The game's 18th birthday collection."},
+   "from": "2026-10-16", "until": "2026-11-13",
+   "src": "https://www.aq.com/gamedesignnotes/aqw-16oct26-18thbirthdaycollection-10494"
+  },
+  {
+   "t": {"pt": "Set sazonal Harvest Hunters", "en": "Harvest Hunters seasonal set"},
+   "x": {"pt": "Hero Hunter e Lycan Stalker, com elmos, capas e armas: com o Garek, em Battleon (AC), ou no pacote do site.", "en": "Hero Hunter and Lycan Stalker, with helms, capes and weapons: from Garek in Battleon (AC), or the website pack."},
+   "j": "battleon", "from": "2026-11-01", "until": "2026-11-30",
+   "src": "https://www.aq.com/gamedesignnotes/aqw-seasonalset-november-9037"
+  }
+ ]
+}

@@ -7,6 +7,7 @@ import {renderFarms} from "./farms.js";
 import {renderHome} from "./home.js";
 import {toast} from "../features/toasts.js";
 import {show} from "./nav.js";
+import {monthHtml} from "../features/month.js";
 
 /* Diárias: lista do dia com caixas de marcar. O que está marcado vale só para o "dia do jogo":
    quando a hora de virada passa, as marcações voltam do zero. */
@@ -64,7 +65,7 @@ export function renderDailies(){
   for(const g of groups){
     const all=DAILIES.filter(x=>x.g===g),items=all.filter(x=>st.dsh||!h.has(x.id));
     const nDone=all.filter(x=>!h.has(x.id)&&d.done.includes(x.id)).length,nTot=all.filter(x=>!h.has(x.id)).length;
-    if(g==="season")html+=eventCard();
+    if(g==="season")html+=eventCard()+`<article class="dEvent frame mCard"><div class="relTop"><b>${L("m_h")}</b></div>${monthHtml(true)}</article>`;
     html+=`<section class="dGrp"><h3>${L("daily_g_"+g)}<small>${nDone}/${nTot}</small></h3>${["hf","boss","rep","season","old"].includes(g)?`<p class="dNote">${L("daily_"+g+"_note")}</p>`:""}
       <div class="dGrid">${items.map(x=>item(x,d,h)).join("")||`<p class="dNote">${L("daily_empty")}</p>`}</div></section>`;
   }

@@ -361,7 +361,12 @@
   "tl_new_x": "Classes novas que o portal ainda não analisou. Entram num tier assim que tiverem guia.",
   "rel_card": "Ver ficha",
   "cd_fresh_h": "Ainda sem guia no portal",
-  "cd_fresh_x": "Esta classe saiu agora e entrou aqui sozinha, pelos Itens novos. Tier, enhancements e sequência de skills chegam quando ela for analisada. Até lá, veja as skills e onde conseguir na AQW Wiki."
+  "cd_fresh_x": "Esta classe saiu agora e entrou aqui sozinha, pelos Itens novos. Tier, enhancements e sequência de skills chegam quando ela for analisada. Até lá, veja as skills e onde conseguir na AQW Wiki.",
+  "m_h": "Neste mês: Event Hub",
+  "m_now": "No ar, com data para acabar",
+  "m_until": "Até {d}",
+  "m_last": "Último dia",
+  "m_more": "Ver tudo em Sazonais"
  },
  "en": {
   "title": "Chronicles of Battleon",
@@ -725,6 +730,11 @@
   "tl_new_x": "New classes the portal hasn't reviewed yet. They get a tier once there's a guide.",
   "rel_card": "Open card",
   "cd_fresh_h": "No guide in the portal yet",
-  "cd_fresh_x": "This class just came out and was added automatically from New items. Tier, enhancements and skill sequence come once it's reviewed. Until then, check its skills and where to get it on the AQW Wiki."
+  "cd_fresh_x": "This class just came out and was added automatically from New items. Tier, enhancements and skill sequence come once it's reviewed. Until then, check its skills and where to get it on the AQW Wiki.",
+  "m_h": "This month: Event Hub",
+  "m_now": "Live, with an end date",
+  "m_until": "Until {d}",
+  "m_last": "Last day",
+  "m_more": "See all in Seasonal"
  }
 }
