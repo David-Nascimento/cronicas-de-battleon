@@ -2,7 +2,7 @@
 
 Guia de AdventureQuest Worlds feito por fãs, em português e inglês: qual classe usar, o que farmar hoje, como montar time de ultra e o que entrou no jogo em cada atualização.
 
-Versão atual: **2.6.0**. Projeto não oficial; AdventureQuest Worlds e as marcas relacionadas pertencem à Artix Entertainment, LLC.
+Versão atual: **2.7.0**. Projeto não oficial; AdventureQuest Worlds e as marcas relacionadas pertencem à Artix Entertainment, LLC.
 
 **Abrir o portal:** https://david-nascimento.github.io/cronicas-de-battleon/ (no celular, dá para instalar como app pelo menu do navegador).
 
@@ -56,7 +56,7 @@ Na aba **Sazonais** aparece o evento que está no ar, com a data de fim e os map
 
 ### HardFarm
 
-99 farms longos (classes, armas e armaduras, materiais, reputação, diárias e sazonais), com o esforço estimado, onde começar (`/join`), o que é preciso em cada etapa e a fonte. Marque as etapas que já concluiu: a barra mostra o progresso, fica salva no navegador e o filtro **Em andamento** junta os farms que você começou.
+99 farms longos (classes, armas e armaduras, materiais, reputação, diárias e sazonais), com o esforço estimado, onde começar (`/join`), o que é preciso em cada etapa e a fonte. Em 242 das 288 etapas há **Onde conseguir cada item**: o monstro, a quest ou a loja de cada material, com o `/join` para copiar (fontes: guias do AQWG e AQW Wiki; os dados ficam em `tools/where/` e entram no `hardfarm.json` com `python3 tools/where/apply.py`). Marque as etapas que já concluiu: a barra mostra o progresso, fica salva no navegador e o filtro **Em andamento** junta os farms que você começou.
 
 ![HardFarm](docs/screenshots/hardfarm.png)
 

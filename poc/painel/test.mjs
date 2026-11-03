@@ -63,8 +63,13 @@ try {
   await pg.fill("[data-fq]", "chaos"); await pg.click(`[data-ftrack="Reputação Chaos"]`);
   await pg.click('[data-tab="resumo"]');
   check(await pg.locator('.trk b:has-text("Reputação Chaos")').count() === 1, "HardFarm: um clique em Acompanhar leva o farm para o Resumo");
-  await pg.click(".trk .nxt input");
-  check((await pg.locator(".trk .pill").first().innerText()).startsWith("1/"), "Resumo: marcar a próxima etapa ali mesmo");
+  await pg.click('[data-tab="farm"]'); await pg.click('[data-ff="todos"]'); await pg.fill("[data-fq]", "dragon of time"); await pg.click(`[data-ftrack="Dragon of Time"]`); await pg.click('[data-tab="resumo"]');
+  const lr = pg.locator('.trk:has(b:text-is("Dragon of Time"))');
+  check((await lr.locator(".where").innerText()).includes("Lost Hieroglyphic") && await lr.locator(`.jn[data-j="mummies"]`).count() > 0, "HardFarm: etapa mostra onde conseguir cada item, com join");
+  await lr.locator('.jn[data-j="timelibrary"]').first().click();
+  check(await pg.locator("#toast.on").count() === 1 && !(await lr.locator(".nxt input").isChecked()), "clicar no join copia sem marcar a etapa");
+  await pg.click('.trk:has(b:text-is("Reputação Chaos")) .nxt input');
+  check((await pg.locator('.trk:has(b:text-is("Reputação Chaos")) .pill').first().innerText()).startsWith("1/"), "Resumo: marcar a próxima etapa ali mesmo");
   await pg.click('[data-tab="quests"]'); await pg.fill('[data-qadd] input[name="n"]', "Nulgath Larvae"); await pg.click("[data-qadd] button");
   check(await pg.locator('.item b:has-text("Nulgath Larvae")').count() === 1, "quests: adicionar");
   await pg.reload(); await pg.waitForSelector(".cname");

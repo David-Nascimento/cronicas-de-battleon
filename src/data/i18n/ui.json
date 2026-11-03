@@ -366,7 +366,8 @@
   "m_now": "No ar, com data para acabar",
   "m_until": "Até {d}",
   "m_last": "Último dia",
-  "m_more": "Ver tudo em Sazonais"
+  "m_more": "Ver tudo em Sazonais",
+  "farm_where": "Onde conseguir cada item ({n})"
  },
  "en": {
   "title": "Chronicles of Battleon",
@@ -735,6 +736,7 @@
   "m_now": "Live, with an end date",
   "m_until": "Until {d}",
   "m_last": "Last day",
-  "m_more": "See all in Seasonal"
+  "m_more": "See all in Seasonal",
+  "farm_where": "Where to get each item ({n})"
  }
 }

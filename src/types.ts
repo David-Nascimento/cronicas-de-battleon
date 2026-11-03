@@ -21,7 +21,9 @@ export interface Daily {
   id: string; g: string; n: string; ne?: string; who?: Txt; req: Txt | null; rw: Txt; for?: Txt;
   mem?: "m" | "l"; hf?: string; src: string; sn: string; j?: string[];
 }
-export interface Farm { n: string; ne?: string; k: string; cls?: string; e?: number; src: string; sn: string; req: Txt[]; note: Txt; j?: string[] }
+export type Where = { i: string; o: Txt; j?: string };
+export interface FarmStep extends Txt { w?: Where[]; j?: string[] }
+export interface Farm { n: string; ne?: string; k: string; cls?: string; e?: number; src: string; sn: string; req: FarmStep[]; note: Txt; j?: string[] }
 export interface News { d: string; approx?: number; ty: string; cls: string[]; src: string; pt: { t: string; x: string }; en: { t: string; x: string } }
 export interface Team { n: string; map: string; tag: string; team: [string, string][]; tips: string[]; alt: string }
 /* releases.json: item = [nome, marcas ("a" AC, "l" Legend), fonte (chave de srcs), subtipo de arma] */

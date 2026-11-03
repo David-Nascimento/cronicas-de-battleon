@@ -29,13 +29,12 @@ const tracked = () => (D.ftrack || []).map(n => FARMS.find(f => f.n === n)).filt
 const nextStep = f => f.req.findIndex((_, i) => !(D.fprog[f.n] || []).includes(i));
 /* join clicável: copia "/join mapa" */
 const jn = m => `<button type="button" class="jn" data-j="${esc(m)}" title="Copiar">/join ${esc(m)}</button>`;
-/* texto da etapa com os "/mapa" virando join clicável, mais "Onde conseguir" item por item (r.w) e joins extras (r.j) */
-function stepBody(r) {
+/* texto da etapa com os "/mapa" virando join clicável, mais "Onde conseguir" item por item (r.w), cada um com o seu join */
+function stepBody(r, id) {
   const txt = esc(r.pt).replace(/(^|[\s(])\/(?!join\b|goto\b)([a-z0-9]{3,})/g, (a, b, m) => b + jn(m));
-  const inTxt = new Set([...r.pt.matchAll(/(?:^|[\s(])\/([a-z0-9]{3,})/g)].map(m => m[1]));
-  const extra = (r.j || []).filter(m => !inTxt.has(m));
-  const where = (r.w || []).map(w => `<li><b>${esc(w.i)}</b>: ${esc(w.o.pt)}${w.j ? " " + jn(w.j) : ""}</li>`).join("");
-  return `<span class="stx">${txt}</span>${extra.length ? `<span class="jrow">Ir para: ${extra.map(jn).join(" ")}</span>` : ""}${where ? `<ul class="where"><li class="wh">Onde conseguir</li>${where}</ul>` : ""}`;
+  const ws = r.w || [], where = ws.map(w => `<li><b>${esc(w.i)}</b>: ${esc(w.o.pt)}${w.j ? " " + jn(w.j) : ""}</li>`).join("");
+  /* listas curtas ficam abertas; as longas (ex.: Lord of Order) começam fechadas */
+  return `<label class="stx" for="${id}">${txt}</label>${where ? `<details class="where"${ws.length <= 8 ? " open" : ""}><summary>Onde conseguir cada item (${ws.length})</summary><ul>${where}</ul></details>` : ""}`;
 }
 const save = () => store.save(D);
 
@@ -150,7 +149,7 @@ function trackRow(f) {
   const p = D.fprog[f.n] || [], ok = farmDone(f), byCls = f.cls && owned().all.has(f.cls), nx = nextStep(f);
   return `<div class="trk"><div class="row" style="justify-content:space-between"><b>${esc(f.n)}</b>${ok ? `<span class="pill ok">${byCls ? "Você já tem a classe" : "Concluído"}</span>` : `<span class="pill">${p.length}/${f.req.length} etapas</span>`}</div>
     <div class="bar"><i style="width:${ok ? 100 : p.length / f.req.length * 100}%"></i></div>
-    ${!ok && nx >= 0 ? `<label class="item nxt"><input type="checkbox" class="chk" data-fstep="${esc(f.n)}|${nx}"><span class="tx"><small class="lbl">Próxima etapa (${nx + 1} de ${f.req.length})</small>${stepBody(f.req[nx])}</span></label>` : ""}
+    ${!ok && nx >= 0 ? `<div class="item nxt"><input type="checkbox" class="chk" id="nx-${ckey(f.n)}" data-fstep="${esc(f.n)}|${nx}"><div class="tx"><small class="lbl">Próxima etapa (${nx + 1} de ${f.req.length})</small>${stepBody(f.req[nx], "nx-" + ckey(f.n))}</div></div>` : ""}
     <div class="row" style="margin-top:6px"><button class="link" data-fopen="${esc(f.n)}">Ver todas as etapas</button><button class="link mut" data-funtrack="${esc(f.n)}">Parar de acompanhar</button></div></div>`;
 }
 
@@ -169,7 +168,7 @@ function farm() {
   return head + `<div class="stack">${xs.map(f => { const p = D.fprog[f.n] || [], ok = farmDone(f), byCls = f.cls && o.all.has(f.cls);
     return `<article class="card" id="farm-${ckey(f.n)}"><div class="row" style="justify-content:space-between"><h3 style="margin:0">${esc(f.n)}</h3>${ok ? `<span class="pill ok">${byCls ? "Você já tem a classe" : "Concluído"}</span>` : `<span class="pill">${p.length}/${f.req.length} etapas</span>`}</div>
       <div class="bar"><i style="width:${ok ? 100 : p.length / f.req.length * 100}%"></i></div>
-      <div class="stack" style="gap:6px;margin-top:10px">${f.req.map((r, i) => `<label class="item${p.includes(i) || byCls ? " on" : ""}" style="padding:7px 10px"><input type="checkbox" class="chk" data-fstep="${esc(f.n)}|${i}" ${p.includes(i) || byCls ? "checked" : ""} ${byCls ? "disabled" : ""}><span class="tx stepTx">${stepBody(r)}</span></label>`).join("")}</div>
+      <div class="stack" style="gap:6px;margin-top:10px">${f.req.map((r, i) => { const id = `fs-${ckey(f.n)}-${i}`; return `<div class="item${p.includes(i) || byCls ? " on" : ""}" style="padding:7px 10px"><input type="checkbox" class="chk" id="${id}" data-fstep="${esc(f.n)}|${i}" ${p.includes(i) || byCls ? "checked" : ""} ${byCls ? "disabled" : ""}><div class="tx stepTx">${stepBody(r, id)}</div></div>`; }).join("")}</div>
       ${(D.ftrack || []).includes(f.n) ? `<button class="link mut" data-funtrack="${esc(f.n)}" style="margin-top:8px">Parar de acompanhar</button>` : ""}</article>`; }).join("")
     || `<div class="card"><p class="sub" style="margin:0 0 10px">${ff === "and" ? "Você ainda não acompanha nenhum farm." : "Nenhum farm concluído ainda."}</p>${ff === "and" ? `<button class="btn" data-ff="todos">Escolher farms</button>` : ""}</div>`}</div>`;
 }

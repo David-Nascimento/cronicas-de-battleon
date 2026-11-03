@@ -62,3 +62,8 @@
 .pkRow small{display:block;color:var(--muted);font-size:12px}
 .pkFoot{display:flex;justify-content:flex-end;gap:8px;padding:12px 20px 18px;border-top:1px solid var(--line2)}
 .pkFoot .btnG{font-size:14px;padding:9px 16px}
+.fwhere{margin:6px 0 2px;padding:7px 10px;border-radius:8px;background:var(--bg2);border:1px solid var(--line2);font-size:13px}
+.fwhere summary{cursor:pointer;font:600 12.5px var(--body);color:var(--glow-hi)}
+.fwhere ul{list-style:none;margin:6px 0 0;padding:0;display:flex;flex-direction:column;gap:5px}
+.fwhere b{font-weight:600}
+.fwhere li{display:block}
