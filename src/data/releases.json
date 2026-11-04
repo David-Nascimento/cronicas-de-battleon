@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-02",
+  "updated": "2026-11-04",
   "list": [
     {
       "id": "2026-10-30",
@@ -10,8 +10,8 @@
         "en": "Mogloween: the Eternal Night finale in Walpurgisnacht and the event rares"
       },
       "x": {
-        "pt": "Parte 3 da Eternal Night Trilogy, com o chefe Father Forest. Os drops saem dos monstros de Walpurgisnacht, os raros de Mogloween estão na Featured Gear Shop e chegaram a PaladinSlayer (2) e a linha CardChaser e CardClasher Ace. As três partes do evento e as recompensas ficam até sexta, 13 de novembro.",
-        "en": "Part 3 of the Eternal Night Trilogy, with the boss Father Forest. Drops come from the monsters in Walpurgisnacht, the Mogloween rares are in the Featured Gear Shop, and PaladinSlayer (2) plus the CardChaser and CardClasher Ace line arrived. All three parts of the event and their rewards stay until Friday, November 13."
+        "pt": "Parte 3 da Eternal Night Trilogy, com o chefe Father Forest. Os drops saem dos monstros de Walpurgisnacht, os raros de Mogloween estão na Featured Gear Shop e chegaram a PaladinSlayer (2) e a linha CardChaser e CardClasher Ace. As três partes do evento e as recompensas ficam até sexta, 13 de novembro. Na segunda, 2/11, chegaram mais itens: drops do Frankenwerepire em Franken e do Undead Raxgore (Level 75), a Mog-GLOW-ween Merge ampliada com o set Dread Devil e itens de Mogloween Candy Corn na Myx's Candycorn Shop.",
+        "en": "Part 3 of the Eternal Night Trilogy, with the boss Father Forest. Drops come from the monsters in Walpurgisnacht, the Mogloween rares are in the Featured Gear Shop, and PaladinSlayer (2) plus the CardChaser and CardClasher Ace line arrived. All three parts of the event and their rewards stay until Friday, November 13. On Monday, Nov 2, more items arrived: drops from Frankenwerepire in Franken and from Undead Raxgore (Level 75), an expanded Mog-GLOW-ween Merge with the Dread Devil set, and Mogloween Candy Corn items in Myx's Candycorn Shop."
       },
       "until": "2026-11-13",
       "maps": [
@@ -41,9 +41,18 @@
             "en": "Festival of Witches and Lady Laidronette Cavendish's quests"
           },
           "v": "dn"
+        },
+        {
+          "j": "franken",
+          "n": "Franken",
+          "w": {
+            "pt": "Drops do Frankenwerepire e a Mog-GLOW-ween Merge (Voltabolt)",
+            "en": "Frankenwerepire drops and the Mog-GLOW-ween Merge (Voltabolt)"
+          },
+          "v": "wiki"
         }
       ],
-      "shops": ["Featured Gear Shop","Gourd Ol' Gear","Witch's Charms","Mog-GLOW-ween Merge","PaladinSlayer Gear","PaladinSlayer Combo","CardClasher Shop","HeroPoints Merge","Feast of the Depths","Anything Goes Battle Cards Bundle","Anything Goes Battle Deck","Anything Goes Chaos Battle Pack","Anything Goes Doomwood Battle Pack","Anything Goes Doomwood Battle Merge Shop","Anything Goes Series Battle Combo"],
+      "shops": ["Featured Gear Shop","Gourd Ol' Gear","Witch's Charms","Mog-GLOW-ween Merge","PaladinSlayer Gear","PaladinSlayer Combo","CardClasher Shop","HeroPoints Merge","Feast of the Depths","Anything Goes Battle Cards Bundle","Anything Goes Battle Deck","Anything Goes Chaos Battle Pack","Anything Goes Doomwood Battle Pack","Anything Goes Doomwood Battle Merge Shop","Anything Goes Series Battle Combo","Myx's Candycorn Shop"],
       "srcs": {
         "fgs": {
           "pt": "Featured Gear Shop (raro do evento)",
@@ -68,6 +77,28 @@
           "pt": "Gourd Ol' Gear, em Walpurgisnacht",
           "en": "Gourd Ol' Gear, in Walpurgisnacht",
           "j": "walpurgisnacht"
+        },
+        "fr": {
+          "pt": "Drop do Frankenwerepire, em Franken",
+          "en": "Drop from Frankenwerepire, in Franken",
+          "j": "franken"
+        },
+        "gw": {
+          "pt": "Mog-GLOW-ween Merge (Voltabolt), em Franken",
+          "en": "Mog-GLOW-ween Merge (Voltabolt), in Franken",
+          "j": "franken"
+        },
+        "rx": {
+          "pt": "Drop do Undead Raxgore (Level 75), no Coliseum",
+          "en": "Drop from Undead Raxgore (Level 75), in the Coliseum"
+        },
+        "cc": {
+          "pt": "Myx's Candycorn Shop (merge de Mogloween Candy Corn), em Mystcroft",
+          "en": "Myx's Candycorn Shop (Mogloween Candy Corn merge), in Mystcroft"
+        },
+        "dk": {
+          "pt": "Drop do Darktrix, em Mystcroft",
+          "en": "Drop from Darktrix, in Mystcroft"
         }
       },
       "src": [
@@ -94,6 +125,30 @@
         {
           "n": "AQW Wiki: Featured Gear Shop (outubro de 2026)",
           "u": "https://aqwwiki.wikidot.com/featured-gear-shop-october-2026"
+        },
+        {
+          "n": "AQW Wiki: Franken",
+          "u": "https://aqwwiki.wikidot.com/franken"
+        },
+        {
+          "n": "AQW Wiki: Frankenwerepire",
+          "u": "https://aqwwiki.wikidot.com/frankenwerepire"
+        },
+        {
+          "n": "AQW Wiki: Mog-GLOW-ween Merge",
+          "u": "https://aqwwiki.wikidot.com/mog-glow-ween-merge"
+        },
+        {
+          "n": "AQW Wiki: Blinding Blood of Destiny",
+          "u": "https://aqwwiki.wikidot.com/blinding-blood-of-destiny"
+        },
+        {
+          "n": "AQW Wiki: Pumpkin Hunter",
+          "u": "https://aqwwiki.wikidot.com/pumpkin-hunter"
+        },
+        {
+          "n": "AQW Wiki: Corpse Paladin Helm",
+          "u": "https://aqwwiki.wikidot.com/corpse-paladin-helm"
         }
       ],
       "items": {
@@ -103,7 +158,7 @@
         ],
         "armor": [
           ["Undead Blood Paladin","a"],
-          ["Dread Devil","a"],
+          ["Dread Devil","a","gw"],
           ["Blood Lineage Hunter","a","mg"],
           ["CardChaser","a"],
           ["CardClasher Ace (Armor)","a"],
@@ -119,15 +174,18 @@
           ["Rotting Pumpkin Lord",""],
           ["ShadowSlayer Z (Armor)","a","mg"],
           ["Witch Queen Cavendish","a","fgs"],
-          ["Witch Queen Talia (Armor)","a","mg"]
+          ["Witch Queen Talia (Armor)","a","mg"],
+          ["Pumpkin Hunter","","cc"],
+          ["Spooky Skeleton Costume","","cc"],
+          ["Toxic Skeleton Costume",""]
         ],
         "helm": [
           ["Undead Blood Paladin Helm","a"],
-          ["Dread Devil Cowl","a"],
-          ["Dread Devil Grin","a"],
-          ["Dread Devil Mask","a"],
-          ["Dread Devil Morph","a"],
-          ["Dread Devil Visage","a"],
+          ["Dread Devil Cowl","a","gw"],
+          ["Dread Devil Grin","a","gw"],
+          ["Dread Devil Mask","a","gw"],
+          ["Dread Devil Morph","a","gw"],
+          ["Dread Devil Visage","a","gw"],
           ["Ace Tarpaulin Hat","a"],
           ["Blood Lineage Hat","a","mg"],
           ["Blood Lineage Locks","a","mg"],
@@ -168,7 +226,21 @@
           ["ShadowSlayer Z Morph","a","mg"],
           ["ShadowSlayer Z Visage","a","mg"],
           ["Witch Queen Talia Hat","a","mg"],
-          ["Witch Queen Talia Locks","a","mg"]
+          ["Witch Queen Talia Locks","a","mg"],
+          ["Corpse Paladin Helm","","dk"],
+          ["Haunted Wizard Boo-berry Hat (1)",""],
+          ["Haunted Wizard Boo-berry Hat (2)",""],
+          ["Haunted Wizard Pumpkin Hat (1)","","cc"],
+          ["Haunted Wizard Pumpkin Hat (2)",""],
+          ["Haunted Wizard Red Licorish Hat (1)",""],
+          ["Haunted Wizard Red Licorish Hat (2)",""],
+          ["Haunted Wizard Sour Hat (1)",""],
+          ["Haunted Wizard Sour Hat (2)",""],
+          ["Pumpkin Hunter Hat",""],
+          ["Pumpkin Hunter Masked Hat",""],
+          ["Pumpkin Hunter Skull",""],
+          ["Sneevil Shrade's Helm with Ears",""],
+          ["Sneevil Shrade's Mask",""]
         ],
         "cape": [
           ["CardChaser Winglets","a"],
@@ -184,13 +256,19 @@
           ["MogloFiend Cape","a","fgs"],
           ["Mogloween Witch's Pouch","a","fgs"],
           ["Ornate Gold Coffin","a","fgs"],
-          ["Sunchild's Cloak","a","wd"]
+          ["Sunchild's Cloak","a","wd"],
+          ["Reserve Blinding Blood of Destiny","a"],
+          ["Corpse Paladin Cloak",""],
+          ["Dread Devil Sonar","a","gw"],
+          ["Pumpkin Hunter Cape",""]
         ],
         "weapon": [
-          ["Dual Devilish Nunchucks","a","","dagger"],
-          ["Mogloween Prop Sai","a","","dagger"],
-          ["Mogloween Safety Batons","a","","dagger"],
-          ["Mogloween Safety Sticks","a","","dagger"],
+          ["Blinding Blood of Destiny","a","rx","axe"],
+          ["Desolate Darkness of Agony","a","","axe"],
+          ["Dual Devilish Nunchucks","a","fr","dagger"],
+          ["Mogloween Prop Sai","a","gw","dagger"],
+          ["Mogloween Safety Batons","a","fr","dagger"],
+          ["Mogloween Safety Sticks","a","gw","dagger"],
           ["Ace of Blades","a","","dagger"],
           ["Dual Cardsharp Fan Cards","a","","dagger"],
           ["Dual Darkovia Dolore","a","mg","dagger"],
@@ -207,22 +285,39 @@
           ["Sauin's Geist Sickles","l","fgs","dagger"],
           ["Sventura's Hunting Gear","a","mg","dagger"],
           ["Vordred's Sword + ShadowReaper","a","","dagger"],
-          ["Mogloween Boxing Gloves","a","","gauntlet"],
+          ["Dual Blinding Blood of Destiny","a","","dagger"],
+          ["Devilish Toy Nunchucks","a","fr","dagger"],
+          ["Dual Sneevil Shrade Chainsaws","","","dagger"],
+          ["Giant Boo-berry Giant Lollipops","","","dagger"],
+          ["Giant Bubblegum Lollipops","","","dagger"],
+          ["Giant Grape Bubblegum Lollipops","","","dagger"],
+          ["Giant Sour Lollipops","","","dagger"],
+          ["Realistic Dual Toy Sai","a","fr","dagger"],
+          ["Mogloween Boxing Gloves","a","fr","gauntlet"],
           ["Enchanted Toy Boxing Glove","a","fgs","gauntlet"],
-          ["Devilish Nunchucks","a","","mace"],
-          ["Mogloween Safety Baton","a","","mace"],
-          ["Mogloween Safety Stick","a","","mace"],
+          ["Devilish Nunchucks","a","fr","mace"],
+          ["Mogloween Safety Baton","a","fr","mace"],
+          ["Mogloween Safety Stick","a","gw","mace"],
           ["CardChaser Deck","a","","mace"],
           ["Cardsharp Fan Cards","a","","mace"],
           ["Enchanted Devilish Nunchucks","a","fgs","mace"],
           ["Enchanted Safety Baton","a","fgs","mace"],
           ["Enchanted Safety Stick","a","fgs","mace"],
           ["SkullCrusher Bouquet","a","","mace"],
+          ["Giant Boo-berry Giant Lollipop","","","mace"],
+          ["Giant Bubblegum Lollipop","","","mace"],
+          ["Giant Grape Bubblegum Lollipop","","","mace"],
+          ["Giant Sour Lollipop","","","mace"],
+          ["Sneevil Shrade's Chainsaw","","","mace"],
           ["CardChaser Scythe","a","","polearm"],
           ["Sauin's Geist Scythe","a","fgs","polearm"],
           ["Sauin's Geist Sickle","a","fgs","polearm"],
           ["Spirit of Fear Scythe","a","fgs","polearm"],
           ["Sventura","a","wd","polearm"],
+          ["Red Flame Scythe","","","polearm"],
+          ["Souless Flame Scythe","","","polearm"],
+          ["Spectral Hallows Eve Flame Scythe (1)","","","polearm"],
+          ["Spectral Hallows Eve Flame Scythe (2)","","","polearm"],
           ["Darkovia Dolore","a","mg","rifle"],
           ["Cardseeker Staff","a","","staff"],
           ["Great Pumpkin Staff","","","staff"],
@@ -234,18 +329,26 @@
           ["Rotting Great Pumpkin Sword","","","sword"],
           ["Sauin's Geist Blade","a","fgs","sword"],
           ["Silverblood Blade","a","wd","sword"],
-          ["Silversun Blade","a","mg","sword"]
+          ["Silversun Blade","a","mg","sword"],
+          ["Realistic Toy Sai","a","fr","sword"]
         ],
         "pet": [
           ["Beastly Omen of Wrath","a","fgs"],
           ["CardClasher Box Set","a"],
-          ["PaladinSlayer Skull","a"]
+          ["PaladinSlayer Skull","a"],
+          ["Deviled Twilly","a"],
+          ["Lil Enraged Gourdthulu","a"],
+          ["Lil Gourdthulu","a","cc"],
+          ["Lil Toxy Gourdthulu","a"],
+          ["Spooky Toxic Skull","a"]
         ],
         "ground": [
           ["CardChaser Invocation","a"],
           ["Vampire Blood Oath","a"],
-          ["Witch's Catastrophe","a"],
-          ["Witch's Mayhem","a"]
+          ["Witch's Catastrophe (1)","a"],
+          ["Witch's Mayhem (1)","a"],
+          ["Witch's Catastrophe (2)","a"],
+          ["Witch's Mayhem (2)","a"]
         ],
         "house": [
           ["Father Forest's Entrance","a"],
