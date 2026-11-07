@@ -39,7 +39,7 @@
 .evMoreD{margin-top:6px}.evMoreD summary{cursor:pointer;color:var(--ink);font-size:13.5px}.evMoreD .evMaps{margin-top:6px}
 .evMaps{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:4px}
 .evMaps b{font-weight:600}
-.evRare{color:var(--rare)}
+.evRare{color:var(--rareTx)}
 .evFoot{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;padding-top:12px;border-top:1px solid var(--line2);font-size:13px;margin-top:auto}
 .evSrc{color:var(--muted)}
 .evSrc a{color:var(--glow-hi);text-decoration:none}.evSrc a:hover{text-decoration:underline}

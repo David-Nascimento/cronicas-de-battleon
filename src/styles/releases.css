@@ -39,13 +39,13 @@
 .riTx{flex:1;min-width:0;display:flex;flex-direction:column;gap:1px}
 .riTx a{font-weight:600;font-size:14px;color:var(--ink);text-decoration:none;line-height:1.3;overflow-wrap:anywhere}
 .riTx a:hover{color:var(--glow-hi);text-decoration:underline;text-underline-offset:2px}
-.riTx .rare{display:inline-block;width:8px;height:8px;margin:0 7px 1px 0;border-radius:50%;vertical-align:middle;background:var(--rare);box-shadow:0 0 0 2px color-mix(in oklab,var(--rare) 22%,transparent),0 0 8px color-mix(in oklab,var(--rare) 70%,transparent)}
 .riMeta{display:flex;flex-wrap:wrap;gap:2px 10px;font-size:12px;color:var(--muted)}
 .riMeta .from{color:var(--glow-hi)}
-.riTags{display:flex;gap:4px;flex:none}
+.riTags{display:flex;gap:4px;flex:none;align-items:center}
 .tg{font:700 10.5px var(--body);font-style:normal;padding:1px 6px;border-radius:5px;border:1px solid var(--line);color:var(--muted);white-space:nowrap}
 .tg.ac{color:var(--acs);border-color:color-mix(in oklab,var(--acs) 45%,transparent)}
 .tg.z{color:var(--free);border-color:color-mix(in oklab,var(--free) 45%,transparent)}
+.tg.rare{color:var(--rareTx);border-color:color-mix(in oklab,var(--rare) 55%,transparent)}
 .tg.lg{color:var(--member);border-color:color-mix(in oklab,var(--member) 45%,transparent)}
 .relEmpty{color:var(--muted);font-size:14px;padding:12px 2px;margin:0}
 .relBar .seg button{padding:6px 10px}

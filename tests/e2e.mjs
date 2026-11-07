@@ -86,7 +86,7 @@ try {
     await p.click('#segRelT button[data-v="all"]'); await wait(p);
     const rares = Object.values(REL[0].items).flat().filter(i => (i[1] || "").includes("r")).length;
     await p.click(`#segRel button[data-v="${REL[0].id}"]`); await wait(p);
-    check((await p.locator("#relList .ri .rare").count()) === rares, `ponto dourado nos itens Rare = ${rares}`);
+    check((await p.locator("#relList .ri .tg.rare").count()) === rares, `tag Rare nos itens Rare = ${rares}`);
     await p.click('#segRelG button[data-v="type"]'); await wait(p);
     check((await p.locator("#relList .relGrp").count()) === Object.values(REL[0].items).filter(v => v.length).length, "agrupar por tipo");
     await p.click('#segRelG button[data-v="src"]'); await wait(p);
