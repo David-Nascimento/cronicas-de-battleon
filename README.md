@@ -202,7 +202,7 @@ Uma tarefa agendada roda todo **sábado e segunda às 8h53** (horário de Fortal
 
 ### Formato de `releases.json`
 
-Uma entrada por atualização, a mais recente primeiro (`list[0]`). Campos: `id` e `from`/`to` (datas AAAA-MM-DD), `t` e `x` (título e resumo em pt/en; o que vem antes de ":" no título vira o nome do evento), `until` (fim do evento, opcional), `maps` (`j` = join conferido, `n` = nome, `w` = o que tem lá), `shops`, `srcs` (de onde saem os itens: chave → texto pt/en e `j` opcional), `src` (links das fontes) e `items` por tipo (`class`, `armor`, `helm`, `cape`, `weapon`, `pet`, `ground`, `house`, `misc`). Cada item é `[nome, marcas, fonte?, subtipo?]`: marcas `a` (tag de AC) e/ou `l` (Legend); fonte é uma chave de `srcs`; subtipo só para armas (`dagger`, `sword`, `polearm`...). Guarde as 4 atualizações mais recentes.
+Uma entrada por atualização, a mais recente primeiro (`list[0]`). Campos: `id` e `from`/`to` (datas AAAA-MM-DD), `t` e `x` (título e resumo em pt/en; o que vem antes de ":" no título vira o nome do evento), `until` (fim do evento, opcional), `maps` (`j` = join conferido, `n` = nome, `w` = o que tem lá), `shops`, `srcs` (de onde saem os itens: chave → texto pt/en e `j` opcional), `src` (links das fontes) e `items` por tipo (`class`, `armor`, `helm`, `cape`, `weapon`, `pet`, `ground`, `house`, `misc`). Cada item é `[nome, marcas, fonte?, subtipo?]`: marcas `a` (tag de AC), `l` (Legend) e/ou `r` (raridade Rare no AQW Wiki; aparece como um ponto dourado antes do nome); fonte é uma chave de `srcs`; subtipo só para armas (`dagger`, `sword`, `polearm`...). Guarde as 4 atualizações mais recentes.
 
 ### Formato de `dailies.json`
 

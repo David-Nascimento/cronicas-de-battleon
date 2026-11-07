@@ -32,7 +32,8 @@ function tags(n,f){let h="";
   return h?`<span class="riTags">${h}</span>`:""}
 function row(r,t,it){const [n,f="",s="",sub=""]=it,src=s&&r.srcs[s],l=st.lang;
   const meta=[t==="weapon"&&sub?L("w_"+sub):"",src?src[l]:""].filter(Boolean);
-  return `<div class="ri" data-ri="${esc(n)}">${ricon(t)}<div class="riTx"><a href="${wiki(n)}" target="_blank" rel="noopener">${esc(n)}</a>${meta.length?`<span class="riMeta">${meta.map((m,i)=>`<span${src&&i===meta.length-1?` class="from"`:""}>${esc(m)}</span>`).join("")}</span>`:""}</div>${tags(n,f||"")}${cardBtn(t,n)}</div>`}
+  const rare=(f||"").includes("r")?`<i class="rare" role="img" aria-label="${esc(L("rel_rare"))}" title="${esc(L("rel_rare"))}"></i>`:"";
+  return `<div class="ri${rare?" isRare":""}" data-ri="${esc(n)}">${ricon(t)}<div class="riTx"><a href="${wiki(n)}" target="_blank" rel="noopener">${rare}${esc(n)}</a>${meta.length?`<span class="riMeta">${meta.map((m,i)=>`<span${src&&i===meta.length-1?` class="from"`:""}>${esc(m)}</span>`).join("")}</span>`:""}</div>${tags(n,f||"")}${cardBtn(t,n)}</div>`}
 /* item de classe: botão para a ficha da classe no portal (PaladinSlayer (2) abre a ficha do PaladinSlayer) */
 function cardBtn(t,n){if(t!=="class")return "";const c=relClassAny(n);if(c==null||byName[c]==null)return "";
   return `<button class="open riCard" data-i="${byName[c]}" title="${esc(c)}">${L("rel_card")}</button>`}
@@ -48,7 +49,8 @@ export function renderRelList(){
 export function renderReleases(){
   const box=document.getElementById("relBody");if(!box)return;
   if(!REL.length){box.innerHTML=`<p class="relEmpty">${L("rel_none")}</p>`;return}
-  if(!REL.some(x=>x.id===st.rel))st.rel=REL[0].id;
+  /* atualização nova: a aba abre nela, mesmo que a pessoa tenha deixado uma semana antiga escolhida */
+  if(!REL.some(x=>x.id===st.rel)||st.relTop!==REL[0].id){st.rel=REL[0].id;st.rt="all";st.relTop=REL[0].id;save()}
   seg("segRel",REL.map(x=>[x.id,fmtRange(x)]),"rel",()=>{st.rt="all";save();renderReleases()});
   const r=cur(),l=st.lang,c=relCounts(r);
   if(st.rt!=="all"&&!c[st.rt])st.rt="all";
@@ -76,7 +78,7 @@ export function relSummary(){const r=REL[0];if(!r)return `<h3>${L("home_rel")}</
     ${r.maps.some(m=>m.j)?`<div class="hrJoins">${r.maps.filter(m=>m.j).map(m=>jn(m.j)).join("")}</div>`:""}
     <div class="hrFoot">${r.until?`<span class="pill soon">${L("rel_until",{d:fmtDay(r.until)})}</span>`:"<span></span>"}<button class="btnG" data-relt="all">${L("rel_open",{n:c.total})}</button></div>`}
 /* leva até um item (vindo da busca global) */
-export function focusItem(rid,name){st.rel=rid;st.rt="all";ui.relQ="";save();renderReleases();
+export function focusItem(rid,name){st.rel=rid;st.relTop=REL[0]&&REL[0].id;st.rt="all";ui.relQ="";save();renderReleases();
   const el=[...document.querySelectorAll<HTMLElement>("#relList .ri")].find(x=>x.dataset.ri===name);
   if(el){el.classList.add("hit");el.scrollIntoView({behavior:"smooth",block:"center"});setTimeout(()=>el.classList.remove("hit"),2400)}}
 

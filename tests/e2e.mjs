@@ -84,8 +84,19 @@ try {
       check((await p.locator("#dName").innerText()).startsWith("PaladinSlayer"), "item de classe abre a ficha da classe (cópia ligada pelo nome)");
       await p.keyboard.press("Escape"); }
     await p.click('#segRelT button[data-v="all"]'); await wait(p);
+    const rares = Object.values(REL[0].items).flat().filter(i => (i[1] || "").includes("r")).length;
+    await p.click(`#segRel button[data-v="${REL[0].id}"]`); await wait(p);
+    check((await p.locator("#relList .ri .rare").count()) === rares, `ponto dourado nos itens Rare = ${rares}`);
     const href = await p.locator("#relList .ri a").first().getAttribute("href");
     check(/^https:\/\/aqwwiki\.wikidot\.com\/[a-z0-9-]+$/.test(href), "link direto para a página do wiki");
+  }
+  /* atualização nova: a aba abre na mais recente, mesmo com uma semana antiga guardada */
+  if (REL[1]) {
+    const p = await page();
+    await p.evaluate(([old, top]) => { localStorage.setItem("aqwTier", JSON.stringify({ ...JSON.parse(localStorage.getItem("aqwTier") || "{}"), rel: old, relTop: top })); }, [REL[1].id, REL[1].id]);
+    await p.reload(); await wait(p, 400);
+    await go(p, "lancamentos");
+    check(await p.locator(`#segRel button[data-v="${REL[0].id}"][aria-pressed="true"]`).count() === 1, "atualização nova abre na semana mais recente");
   }
   /* busca de classe: ignora espaço e o filtro de loja */
   {
