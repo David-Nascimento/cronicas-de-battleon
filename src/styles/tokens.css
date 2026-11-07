@@ -12,7 +12,7 @@
   --glow:var(--eye); --glow-hi:color-mix(in oklab,var(--eye) 62%,#fff); --glow-dim:color-mix(in oklab,var(--eye) 40%,#110D18);
   --glow-soft:color-mix(in oklab,var(--eye) 12%,transparent); --on-glow:#0B0812; --scrim:rgba(7,4,12,.78);
   --blood:#FF5C72;
-  --free:#62D88E; --member:#F2BE4B; --rare:#FFD34D; --acs:#B392FF; --hero:#F47AB0; --cal:#69B7F7;
+  --free:#62D88E; --member:#F2BE4B; --rare:#FFD34D; --warn:#E8B96A; --acs:#B392FF; --hero:#F47AB0; --cal:#69B7F7;
   --tS:#E5533D; --tA:#D69222; --tB:#3FA56C; --tC:#5F86B0; --tN:#7C7290;
   --deco:"Texturina",Georgia,serif; --display:"Barlow",system-ui,-apple-system,"Segoe UI",sans-serif; --body:"Barlow",system-ui,-apple-system,"Segoe UI",sans-serif;
   --lift:inset 0 1px 0 rgba(255,255,255,.04); --halo:0 0 0 1px var(--glow-dim),0 8px 28px -14px var(--glow);
@@ -25,12 +25,12 @@
   --glow:color-mix(in oklab,var(--eye) 45%,#1B1524); --glow-hi:color-mix(in oklab,var(--eye) 38%,#1B1524); --glow-dim:color-mix(in oklab,var(--eye) 52%,#fff);
   --glow-soft:color-mix(in oklab,var(--eye) 14%,transparent); --on-glow:#FFFFFF; --scrim:rgba(27,21,36,.48);
   --blood:#C2283F;
-  --free:#16804A; --member:#8A5E07; --rare:#B88400; --acs:#6136C0; --hero:#B82F60; --cal:#15618F;
+  --free:#16804A; --member:#8A5E07; --rare:#B88400; --warn:#8A5E07; --acs:#6136C0; --hero:#B82F60; --cal:#15618F;
   --tS:#C23A22; --tA:#A9700C; --tB:#2A7F47; --tC:#476A8E; --tN:#8A8198; --lift:none; --halo:0 0 0 1px var(--glow-dim),0 8px 24px -16px var(--glow); --crest-hood:#2A2236; color-scheme:light}}
 :root[data-theme="light"]{
   --bg:#F3F0F6; --bg2:#EAE5F0; --panel:#FFFFFF; --panel2:#F7F4FA; --ink:#1B1524; --muted:#5E5570; --line:#D6CEE1; --line2:#E5DFEC;
   --glow:color-mix(in oklab,var(--eye) 45%,#1B1524); --glow-hi:color-mix(in oklab,var(--eye) 38%,#1B1524); --glow-dim:color-mix(in oklab,var(--eye) 52%,#fff);
   --glow-soft:color-mix(in oklab,var(--eye) 14%,transparent); --on-glow:#FFFFFF; --scrim:rgba(27,21,36,.48);
   --blood:#C2283F;
-  --free:#16804A; --member:#8A5E07; --rare:#B88400; --acs:#6136C0; --hero:#B82F60; --cal:#15618F;
+  --free:#16804A; --member:#8A5E07; --rare:#B88400; --warn:#8A5E07; --acs:#6136C0; --hero:#B82F60; --cal:#15618F;
   --tS:#C23A22; --tA:#A9700C; --tB:#2A7F47; --tC:#476A8E; --tN:#8A8198; --lift:none; --halo:0 0 0 1px var(--glow-dim),0 8px 24px -16px var(--glow); --crest-hood:#2A2236; color-scheme:light}

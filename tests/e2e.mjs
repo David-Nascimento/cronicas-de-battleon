@@ -53,7 +53,7 @@ try {
     await p.click('#sideNav [data-sec="classes"]'); await wait(p);
     check((await hash(p)) === "#tier", "destino Classes abre a tier list");
     const sel = { inicio: "#modes .rank", tier: "#tiers .tc", todas: "#cards .card", comparar: "#cmpPick input", enh: "#enh .ec", ultras: "#teams .team",
-      montador: "#pkGrid .pk", diarias: "#dList .dItem, #dList .dIntro", itens: "#farms .fcard", lancamentos: "#relList .ri", novidades: "#feed .post" };
+      montador: "#pkGrid .pk", diarias: "#dList .dItem, #dList .dIntro", itens: "#farms .fcard", lancamentos: "#relList .ri", novidades: "#feed .post", eventos: "#evBody .evSum" };
     for (const [v, s] of Object.entries(sel)) { await go(p, v); check((await p.locator(s).count()) > 0, `aba ${v} monta conteúdo`); }
     await p.click('#sideNav [data-sec="classes"]'); await wait(p);
     await p.click('#sideNav [data-sub="enh"]'); await wait(p);
@@ -87,6 +87,13 @@ try {
     const rares = Object.values(REL[0].items).flat().filter(i => (i[1] || "").includes("r")).length;
     await p.click(`#segRel button[data-v="${REL[0].id}"]`); await wait(p);
     check((await p.locator("#relList .ri .rare").count()) === rares, `ponto dourado nos itens Rare = ${rares}`);
+    await p.click('#segRelG button[data-v="type"]'); await wait(p);
+    check((await p.locator("#relList .relGrp").count()) === Object.values(REL[0].items).filter(v => v.length).length, "agrupar por tipo");
+    await p.click('#segRelG button[data-v="src"]'); await wait(p);
+    check((await p.locator("#relList .ri").count()) === count(REL[0]), "agrupar por origem mostra todos os itens");
+    await p.click('[data-relf="rfr"]'); await wait(p);
+    check((await p.locator("#relList .ri").count()) === rares, "filtro Só Rare");
+    await p.click('[data-relf="rfr"]'); await wait(p);
     const href = await p.locator("#relList .ri a").first().getAttribute("href");
     check(/^https:\/\/aqwwiki\.wikidot\.com\/[a-z0-9-]+$/.test(href), "link direto para a página do wiki");
   }
@@ -167,16 +174,22 @@ try {
     await p.click(`[data-dtoggle="${ids[0]}"]`); await wait(p);
     check((await p.locator("#dBar .dProg b").innerText()).startsWith("1 de 3"), "minhas diárias: só as escolhidas contam");
     await go(p, "inicio");
-    check((await p.locator('.intent[data-goview="diarias"] small').innerText()).startsWith("1 de 3"), "página Hoje mostra o progresso");
+    check((await p.locator('.intent[data-goview="diarias"] b').innerText()).startsWith("1 de 3"), "página Hoje mostra o progresso");
   }
-  /* neste mês: Event Hub na página Hoje e na aba Sazonais */
+  /* eventos: lista no Hoje, aba Eventos com o Event Hub, busca e o link das Sazonais */
   {
     const p = await page();
-    check((await p.locator('#homeWeek .mHub code.jn[data-j="eventhub"]').count()) === 1, "página Hoje mostra o Event Hub");
-    await p.click("#homeWeek [data-gohub]"); await wait(p);
-    check((await hash(p)) === "#diarias" && (await p.locator("#dList .mCard .mHub").count()) === 1, "Ver tudo em Sazonais abre o Event Hub");
+    check((await p.locator("#homeWeek .hLive li").count()) > 0, "página Hoje lista o que está no ar");
+    await p.click('#homeWeek [data-goview="eventos"]'); await wait(p);
+    check((await hash(p)) === "#eventos" && (await p.locator('#evBody code.jn[data-j="eventhub"]').count()) >= 1, "Abrir Eventos mostra o Event Hub");
+    check((await p.locator("#evBody .evBar").count()) > 0, "Eventos: linha do tempo do mês");
+    const soon = await p.locator("#evBody .evCard").count(), bd = p.locator('#sideNav [data-sec="eventos"] .navBdg');
+    check(soon === 0 ? (await bd.count()) === 0 : (await bd.innerText()) === String(soon), "aviso no menu = eventos que acabam em até 7 dias");
+    await go(p, "diarias"); await p.click('#segDaily button[data-v="season"]'); await wait(p);
+    await p.click("#dList [data-gohub]"); await wait(p);
+    check((await hash(p)) === "#eventos", "Sazonais leva para Eventos");
     await p.click("#gq"); await p.fill("#gq", "event hub"); await wait(p);
-    check(await p.locator('#gres [data-gpage="hub"]').count() === 1, "busca 'event hub' leva aos Sazonais");
+    check(await p.locator('#gres [data-gpage="hub"]').count() === 1, "busca 'event hub' leva aos Eventos");
   }
   /* hardfarm: progresso por etapa sobrevive ao recarregar */
   {
@@ -196,7 +209,7 @@ try {
     await p.click("#eyeBtn"); await p.click('#eyePanel [data-eye="sangue"]');
     check((await p.evaluate(() => document.documentElement.dataset.eye)) === "sangue", "cor dos olhos muda o tema");
     const m = await page({ viewport: { width: 390, height: 844 } });
-    for (const v of ["inicio", "lancamentos", "tier", "diarias"]) {
+    for (const v of ["inicio", "eventos", "lancamentos", "tier", "diarias"]) {
       await go(m, v);
       check((await m.evaluate(() => document.documentElement.scrollWidth)) <= 390, `celular sem rolagem lateral em ${v}`);
     }

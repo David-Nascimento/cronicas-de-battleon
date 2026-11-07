@@ -30,19 +30,29 @@ function tags(n,f){let h="";
   if(f.includes("a"))h+=/\(0 AC\)/.test(n)?`<i class="tg z">0 AC</i>`:`<i class="tg ac">AC</i>`;
   if(f.includes("l"))h+=`<i class="tg lg">Legend</i>`;
   return h?`<span class="riTags">${h}</span>`:""}
-function row(r,t,it){const [n,f="",s="",sub=""]=it,src=s&&r.srcs[s],l=st.lang;
-  const meta=[t==="weapon"&&sub?L("w_"+sub):"",src?src[l]:""].filter(Boolean);
+function row(r,t,it,bySrc?:boolean){const [n,f="",s="",sub=""]=it,src=!bySrc&&s&&r.srcs[s],l=st.lang;
+  const meta=[bySrc?L("rel_t1_"+t):"",t==="weapon"&&sub?L("w_"+sub):"",src?src[l]:""].filter(Boolean);
   const rare=(f||"").includes("r")?`<i class="rare" role="img" aria-label="${esc(L("rel_rare"))}" title="${esc(L("rel_rare"))}"></i>`:"";
   return `<div class="ri${rare?" isRare":""}" data-ri="${esc(n)}">${ricon(t)}<div class="riTx"><a href="${wiki(n)}" target="_blank" rel="noopener">${rare}${esc(n)}</a>${meta.length?`<span class="riMeta">${meta.map((m,i)=>`<span${src&&i===meta.length-1?` class="from"`:""}>${esc(m)}</span>`).join("")}</span>`:""}</div>${tags(n,f||"")}${cardBtn(t,n)}</div>`}
 /* item de classe: botão para a ficha da classe no portal (PaladinSlayer (2) abre a ficha do PaladinSlayer) */
 function cardBtn(t,n){if(t!=="class")return "";const c=relClassAny(n);if(c==null||byName[c]==null)return "";
   return `<button class="open riCard" data-i="${byName[c]}" title="${esc(c)}">${L("rel_card")}</button>`}
 
+/* filtros: tipo, busca, só Rare e sem tag de AC */
+const keep=(it,q)=>has(it[0],q)&&(!st.rfr||(it[1]||"").includes("r"))&&(!st.rfa||!(it[1]||"").includes("a"));
 export function renderRelList(){
   const box=document.getElementById("relList");if(!box||!REL.length)return;
-  const r=cur(),q=nrm((ui.relQ||"").trim()),t=st.rt||"all";
-  const html=RTYPES.filter(k=>(t==="all"||t===k)&&(r.items[k]||[]).length).map(k=>{
-    const rows=r.items[k].filter(it=>has(it[0],q));
+  const r=cur(),q=nrm((ui.relQ||"").trim()),t=st.rt||"all",l=st.lang;
+  const types=RTYPES.filter(k=>(t==="all"||t===k)&&(r.items[k]||[]).length);
+  let html="";
+  if((st.rg||"src")==="src"){
+    /* agrupado pela origem: a fonte (loja, drop, merge) aparece uma vez, no topo do grupo */
+    const keys=[...Object.keys(r.srcs||{}),""],by=new Map(keys.map(k=>[k,[]]));
+    types.forEach(k=>r.items[k].filter(it=>keep(it,q)).forEach(it=>{const s=it[2]&&r.srcs[it[2]]?it[2]:"";by.get(s).push([k,it])}));
+    html=keys.filter(k=>by.get(k).length).map(k=>{const s=k&&r.srcs[k],rows=by.get(k);
+      return `<section class="relGrp bySrc"><h3><span>${esc(s?s[l]:L("rel_g_other"))}</span> <small>${rows.length}</small>${s&&s.j?jn(s.j):""}</h3><div class="relItems">${rows.map(([t2,it])=>row(r,t2,it,true)).join("")}</div></section>`}).join("");
+  }else html=types.map(k=>{
+    const rows=r.items[k].filter(it=>keep(it,q));
     return rows.length?`<section class="relGrp"><h3>${ricon(k,"rgIc")}${L("rel_t_"+k)} <small>${rows.length}</small></h3><div class="relItems">${rows.map(it=>row(r,k,it)).join("")}</div></section>`:""}).join("");
   box.innerHTML=html||`<p class="relEmpty">${L("rel_empty")}</p>`;
 }
@@ -52,21 +62,24 @@ export function renderReleases(){
   /* atualização nova: a aba abre nela, mesmo que a pessoa tenha deixado uma semana antiga escolhida */
   if(!REL.some(x=>x.id===st.rel)||st.relTop!==REL[0].id){st.rel=REL[0].id;st.rt="all";st.relTop=REL[0].id;save()}
   seg("segRel",REL.map(x=>[x.id,fmtRange(x)]),"rel",()=>{st.rt="all";save();renderReleases()});
-  const r=cur(),l=st.lang,c=relCounts(r);
+  const r=cur(),l=st.lang,c=relCounts(r),all=Object.values(r.items).flat() as string[][];
+  const rares=all.filter(i=>(i[1]||"").includes("r")).length,acs=all.filter(i=>(i[1]||"").includes("a")).length;
   if(st.rt!=="all"&&!c[st.rt])st.rt="all";
   box.innerHTML=`<article class="relHead frame">
     <div class="relTop"><span class="relWhen">${fmtRange(r)}</span>${r.until?`<span class="pill soon">${L("rel_until",{d:fmtDay(r.until)})}</span>`:""}</div>
     <h3>${esc(r.t[l])}</h3><p class="relX">${esc(r.x[l])}</p>
-    <div class="relCols">
-      <div><h4>${L("rel_where")}</h4><ul class="relMaps">${r.maps.map(m=>`<li>${m.j?jn(m.j):""}<span><b>${esc(m.n)}</b> ${esc(m.w[l])}</span></li>`).join("")}</ul></div>
-      <div><h4>${L("rel_shops")}</h4><div class="relShops">${r.shops.slice(0,6).map(s=>`<span>${esc(s)}</span>`).join("")}</div>${r.shops.length>6?`<details class="relMore"><summary>${L("rel_more_shops",{n:r.shops.length-6})}</summary><div class="relShops">${r.shops.slice(6).map(s=>`<span>${esc(s)}</span>`).join("")}</div></details>`:""}</div>
-    </div>
-    <p class="relSrc">${L("rel_src")}: ${r.src.map(s=>`<a href="${s.u}" target="_blank" rel="noopener">${esc(s.n)} ↗</a>`).join("")}</p>
+    <p class="relNums">${L("rel_nums",{n:c.total})}${rares?` · <span class="evRare">${L("ev_rares",{n:rares})}</span>`:""}${acs?` · ${L("rel_nums_ac",{n:acs})}`:""}</p>
+    <ul class="relMaps">${r.maps.map(m=>`<li>${m.j?jn(m.j):""}<span><b>${esc(m.n)}</b> ${esc(m.w[l])}</span></li>`).join("")}</ul>
+    <details class="relMore relSrcD"><summary>${L("rel_src_n",{n:r.src.length})}</summary><p class="relSrc">${r.src.map(s=>`<a href="${s.u}" target="_blank" rel="noopener">${esc(s.n)} ↗</a>`).join("")}</p></details>
   </article>
   <div class="relBar"><div class="seg" id="segRelT"></div><input type="search" id="relQ" autocomplete="off" spellcheck="false" placeholder="${esc(L("rel_q"))}" aria-label="${esc(L("rel_q"))}" value="${esc(ui.relQ||"")}"></div>
+  <div class="relBar2"><span class="relLbl">${L("rel_group")}</span><div class="seg" id="segRelG"></div>
+    <button class="relTg" data-relf="rfr" aria-pressed="${!!st.rfr}">${L("rel_only_rare")}</button><button class="relTg" data-relf="rfa" aria-pressed="${!!st.rfa}">${L("rel_no_ac")}</button></div>
   <p class="relLegend">${L("rel_legend")}</p>
   <div class="relList" id="relList"></div>`;
   seg("segRelT",[["all",`${L("rel_all")} <b>${c.total}</b>`],...RTYPES.filter(k=>c[k]).map(k=>[k,`${L("rel_t_"+k)} <b>${c[k]}</b>`])],"rt",renderRelList);
+  if(!st.rg)st.rg="src";
+  seg("segRelG",[["src",L("rel_g_src")],["type",L("rel_g_type")]],"rg",renderRelList);
   renderRelList();
 }
 /* resumo para a página Hoje */
@@ -82,4 +95,6 @@ export function focusItem(rid,name){st.rel=rid;st.relTop=REL[0]&&REL[0].id;st.rt
   const el=[...document.querySelectorAll<HTMLElement>("#relList .ri")].find(x=>x.dataset.ri===name);
   if(el){el.classList.add("hit");el.scrollIntoView({behavior:"smooth",block:"center"});setTimeout(()=>el.classList.remove("hit"),2400)}}
 
+document.addEventListener("click",e=>{const b=(e.target as HTMLElement).closest<HTMLElement>("[data-relf]");if(!b)return;
+  const k=b.dataset.relf;st[k]=!st[k];save();b.setAttribute("aria-pressed",String(!!st[k]));renderRelList()});
 document.addEventListener("input",e=>{if((e.target as HTMLElement).id==="relQ"){ui.relQ=(e.target as HTMLInputElement).value;renderRelList()}});

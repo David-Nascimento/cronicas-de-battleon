@@ -1,0 +1,21 @@
+/* Visual suave: o brilho fica só no que está ativo; o resto é neutro. Vem por último na cascata. */
+body{background-image:none}
+.hello h1{text-shadow:none}
+.intent svg,.relGrp .rgIc,.orn svg,.eyeBtn svg,.pnCrest svg,.nv[aria-current="page"] svg{filter:none}
+.seg button[aria-pressed="true"]{background:color-mix(in oklab,var(--ink) 13%,var(--panel));color:var(--ink);font-weight:600;box-shadow:inset 0 0 0 1px var(--line)}
+code.jn{background:var(--bg2);color:var(--ink);border-color:var(--line);font-weight:500}
+code.jn:hover{color:var(--glow-hi);border-color:var(--glow-dim)}
+.pill.soon{color:var(--warn);border-color:color-mix(in oklab,var(--warn) 40%,transparent)}
+.relCard,.relHead,.dEvent,.dIntro,.pnChar{background:var(--panel)!important;border-color:var(--line2)!important}
+.mHub{background:var(--bg2);border-color:var(--line2)}
+.hrow .hic,.nItem .ic{background:var(--panel2);color:var(--muted)}
+.riCard{background:transparent;border-color:var(--line);color:var(--ink)}
+.riCard:hover{border-color:var(--glow-dim);color:var(--glow-hi)}
+.relGrp .rgIc{color:var(--muted)}
+.banner{background:var(--panel)}
+/* nota de fontes: recolhida no rodapé, em vez de uma caixa em cada aba */
+.fnote{margin:8px 0 0}
+.fnote summary{cursor:pointer;color:var(--ink);font-weight:600;font-size:13px}
+.fnote p{margin:8px 0 0;max-width:84ch}
+.hello h1{font-size:34px;line-height:1.15}
+.subnav button[aria-current="page"]{color:var(--ink);background:color-mix(in oklab,var(--ink) 13%,var(--panel));border-color:var(--muted);font-weight:600}

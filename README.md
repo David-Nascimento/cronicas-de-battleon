@@ -186,8 +186,8 @@ Edite os arquivos em `src/data/` e rode `npm run build`:
 
 | Arquivo | Onde aparece |
 |---|---|
-| `releases.json` | Itens novos, card da última atualização e evento sazonal nas Diárias |
-| `month.json` | Neste mês: Event Hub e o que está no ar com data de fim (`list`: `t`, `x`, `j`, `from`, `until`, `src`) |
+| `releases.json` | Itens novos (agrupados por origem ou tipo), card da última atualização e eventos com `until` na aba Eventos |
+| `month.json` | Aba Eventos e lista "No ar" do Hoje: Event Hub e o que está no ar com data de fim (`list`: `t`, `x`, `j`, `from`, `until`, `src`) |
 | `dailies.json` | Diárias |
 | `hardfarm.json` | HardFarm |
 | `news.json` | Notícias de classes e o sino |

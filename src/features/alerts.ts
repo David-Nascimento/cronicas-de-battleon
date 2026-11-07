@@ -41,7 +41,7 @@ export function refreshNotif(){
   const la=liveAlerts(),un=unreadNews(),count=la.length+un.length;
   const bdg=document.getElementById("bellBadge");bdg.hidden=!count;bdg.textContent=count>9?"9+":String(count);
   document.getElementById("bellLabel").textContent=L("bell",{n:count});
-  const nb=navCount();document.querySelectorAll<HTMLElement>(".navBdg").forEach(tb=>{tb.hidden=!nb;tb.textContent=String(nb)});
+  const nb=navCount();document.querySelectorAll<HTMLElement>(".navBdg:not(.warn)").forEach(tb=>{tb.hidden=!nb;tb.textContent=String(nb)});
   document.title=(count?`(${count}) `:"")+L("title");
   /* painel */
   const p=document.getElementById("notifPanel");
@@ -51,7 +51,7 @@ export function refreshNotif(){
     ${NEWS.slice(0,5).map(n=>nItem(n,n.d>newsSeen())).join("")||`<div class="npEmpty">${L("n_empty")}</div>`}
     <button class="linkBtn" data-seeall="1">${L("n_seeall")}</button>`;
   /* banner */
-  const top=la.find(a=>a.lvl==="now")||la[0];
+  const bl=la.filter(a=>!a.id.startsWith("rel-")),top=bl.find(a=>a.lvl==="now")||bl[0];
   document.getElementById("banner").innerHTML=top?`<div class="banner"><span class="ic" aria-hidden="true">${top.ic}</span><span class="tx"><b>${esc(top.t)}</b><span>${esc(top.x)}</span></span>
     <span class="acts"><button class="btnG" data-alert="${esc(top.id)}">${L("view")}</button><button class="btnQ" data-dismiss="${esc(top.id)}">${L("dismiss")}</button></span></div>`:"";
   /* alertas na aba */

@@ -55,7 +55,7 @@
 .subnav button{flex:none;font:600 13px var(--body);padding:8px 14px;border-radius:999px;border:1px solid var(--line);background:var(--panel);color:var(--muted);cursor:pointer;white-space:nowrap}
 .subnav button:hover{color:var(--ink)}
 .subnav button[aria-current="page"]{color:var(--on-glow);border-color:var(--glow);background:var(--glow);font-weight:700}
-.bnav{display:none;position:fixed;left:0;right:0;bottom:0;z-index:30;grid-template-columns:repeat(5,1fr);gap:2px;background:color-mix(in oklab,var(--panel) 94%,transparent);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-top:1px solid var(--line);padding:6px max(6px,env(safe-area-inset-right,0px)) calc(6px + env(safe-area-inset-bottom,0px)) max(6px,env(safe-area-inset-left,0px))}
+.bnav{display:none;position:fixed;left:0;right:0;bottom:0;z-index:30;grid-template-columns:repeat(6,1fr);gap:2px;background:color-mix(in oklab,var(--panel) 94%,transparent);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-top:1px solid var(--line);padding:6px max(6px,env(safe-area-inset-right,0px)) calc(6px + env(safe-area-inset-bottom,0px)) max(6px,env(safe-area-inset-left,0px))}
 .bnav .nv{flex-direction:column;justify-content:center;gap:3px;padding:7px 2px 6px;font:600 11px var(--body);letter-spacing:0;text-align:center;border:0;box-shadow:none;border-radius:var(--r-md)}
 .bnav .nv svg{width:22px;height:22px}
 .bnav .nv[aria-current="page"]{background:var(--glow-soft);box-shadow:none;border:0}

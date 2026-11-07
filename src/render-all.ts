@@ -16,13 +16,14 @@ import {renderModes, renderStatic} from "./views/static.js";
 import {renderTeams} from "./views/teams.js";
 import {renderTiers} from "./views/tiers.js";
 import {renderReleases} from "./views/releases.js";
+import {renderEvents} from "./views/events.js";
 import {renderEye} from "./features/eye.js";
 import {renderAcct as renderAcctOnly, renderPainel} from "./views/painel.js";
 
 /* Cada aba só é montada quando aparece. Trocar de idioma marca todas como "sujas" e redesenha só a aberta;
    as outras são montadas na primeira vez que forem abertas (show → renderView). */
 const VIEWR={painel:renderPainel,inicio:renderModes,tier:renderTiers,todas:renderCards,comparar:renderCompare,enh:renderEnh,
-  ultras:()=>{renderAgenda();renderTeams()},montador:renderBuilder,diarias:renderDailies,itens:renderFarms,lancamentos:renderReleases,novidades:renderFeed};
+  ultras:()=>{renderAgenda();renderTeams()},montador:renderBuilder,diarias:renderDailies,itens:renderFarms,lancamentos:renderReleases,eventos:renderEvents,novidades:renderFeed};
 const dirty=new Set(Object.keys(VIEWR));
 export function renderView(v:string,force?:boolean){if((force||dirty.has(v))&&VIEWR[v]){dirty.delete(v);VIEWR[v]()}}
 export function renderAll(){

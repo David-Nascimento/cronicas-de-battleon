@@ -69,18 +69,23 @@
   <section id="v-inicio">
     <div id="banner"></div>
     <header class="hello">
-      <h1 data-i18n="title">Crônicas de Battleon</h1>
-      <p data-i18n="intro"></p>
+      <h1 data-i18n="home_h">Hoje</h1>
+      <p id="homeDate"></p>
     </header>
     <nav class="intents" id="intents"></nav>
     <div class="pulse">
       <section class="frame relCard" id="homeRel"></section>
       <section class="frame" id="homeWeek"></section>
-      <section class="frame" id="homeNews"></section>
     </div>
     <div class="secH"><h2 data-i18n="home_top"></h2><p class="sub" data-i18n="home_top_sub"></p></div>
     <div class="modes" id="modes"></div>
+    <section class="homeNews" id="homeNews"></section>
     <p class="stats" id="stats"></p>
+  </section>
+
+  <section id="v-eventos" hidden>
+    <div class="head"><div><h2 data-i18n="ev_h"></h2><p class="sub" data-i18n="ev_sub"></p></div></div>
+    <div id="evBody"></div>
   </section>
 
   <section id="v-lancamentos" hidden>
@@ -169,13 +174,13 @@
     <div class="enhWrap" id="enh"></div>
   </section>
 
-  <p class="note" data-i18n-html="note"></p>
   <footer class="foot">
     <svg class="fmark" aria-hidden="true"><use href="#crest"/></svg>
     <div>
       <p class="fline" data-i18n="foot_1"></p>
       <p data-i18n="foot_2"></p>
       <p data-i18n="foot_3"></p>
+      <details class="fnote"><summary data-i18n="note_h"></summary><p data-i18n-html="note"></p></details>
     </div>
   </footer>
   </div>

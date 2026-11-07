@@ -31,7 +31,7 @@ const PAGES:[string,string,string,string,string][]=[
   ["diarias","sec_daily","sec_farm","diarias","diarias|diárias|diaria|daily|dailies|quests diarias|reset"],
   ["mydaily","daily_g_mine","sec_farm","diarias","minhas diarias|minhas diárias|my dailies|escolher diarias|lembrete"],
   ["itens","sec_items","sec_farm","farm","hardfarm|hard farm|farm|farmar|grind|reputação|reputacao|rep"],
-  ["hub","m_h","sec_farm","diarias","event hub|eventhub|evento do mes|evento do mês|eventos|sazonal|sazonais|seasonal|neste mes|this month"],
+  ["hub","sec_events","sec_inicio","eventos","event hub|eventhub|evento do mes|evento do mês|eventos|sazonal|sazonais|seasonal|neste mes|this month"],
   ["lancamentos","tab_releases","sec_news","novidades","itens novos|new items|lançamentos|lancamentos|atualização|atualizacao|update|evento|event|release"],
   ["novidades","tab_news","sec_news","novidades","notícias|noticias|news|design notes|rework|novidades"]];
 function pages(q:string){const k=skey(q);if(k.length<2)return [];
@@ -56,7 +56,7 @@ function pick(b:HTMLElement){gres.hidden=true;gq.value="";gq.blur();
   if(b.dataset.gpage){const v=b.dataset.gpage;
     if(v==="mytier"){st.tsrc="mine";save();show("tier");renderTiers();return true}
     if(v==="mydaily"){st.df="mine";save();show("diarias");renderDailies();return true}
-    if(v==="hub"){st.df="season";save();show("diarias");renderDailies();return true}
+    if(v==="hub"){show("eventos");return true}
     if(v==="tier"&&st.tsrc==="shared"){st.tsrc="portal";save()}
     show(v);return true}
   if(b.dataset.gitem){show("lancamentos");focusItem(b.dataset.gitem,b.dataset.gname);return true}
