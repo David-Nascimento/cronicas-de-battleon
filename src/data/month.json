@@ -1,14 +1,14 @@
 {
- "updated": "2026-11-02",
+ "updated": "2026-11-07",
  "hub": {
   "j": "eventhub",
   "x": {
-   "pt": "O mapa que reúne os eventos do mês: os mapas de feriado e de evento ficam lá. Também dá para chegar pelo botão Game Menu.",
-   "en": "The map that gathers the month's events: holiday and event maps are there. You can also get there from the Game Menu button."
+   "pt": "Em novembro, o Event Hub reúne os eventos do mês: o Harvest Fest (fale com a Oishii the Lunch Lady) e o EbilCorp: Hostile Takeover (fale com Yes, Ma'am). Também dá para chegar pelo botão Game Menu.",
+   "en": "In November, the Event Hub gathers the month's events: Harvest Fest (talk to Oishii the Lunch Lady) and EbilCorp: Hostile Takeover (talk to Yes, Ma'am). You can also get there from the Game Menu button."
   },
   "src": [
    {"n": "AQW Wiki: Event Hub", "u": "https://aqwwiki.wikidot.com/event-hub"},
-   {"n": "Design Notes: Happy 18th Birthday, Hero!", "u": "https://www.aq.com/gamedesignnotes/aqw-18thbirthdayparty-2oct26-10483"}
+   {"n": "Design Notes: This Weekend: All-Natural Apocalypse", "u": "https://www.aq.com/gamedesignnotes/aqw-apocalypticcolossus-6nov26-10512"}
   ]
  },
  "list": [
