@@ -1,6 +1,166 @@
 {
-  "updated": "2026-11-04",
+  "updated": "2026-11-07",
   "list": [
+    {
+      "id": "2026-11-06",
+      "from": "2026-11-06",
+      "to": "2026-11-06",
+      "t": {
+        "pt": "Apocalyptic Colossus: o golem do druida Stillin em Kiyamet Grove e o set Aeterna Fatum",
+        "en": "Apocalyptic Colossus: the druid Stillin's golem in Kiyamet Grove and the Aeterna Fatum set"
+      },
+      "x": {
+        "pt": "Evento de fim de semana num bosque secreto de Gilead: fale com o Stillin em Kiyamet Grove e derrote os golems (Apocalyptic Colossus, Level 60, e Overcharged Colossus, Level 70) pelo set Apocalyptic Student. Os recursos viram mais itens na Stillin's Shop, liberada depois da quest A Colossal Task. O set Aeterna Fatum, do casamento do príncipe Sidon, está na Featured Gear Shop, e o pacote Apocalyptic Druid (30 itens) é o bônus de upgrade para compras de 10 dólares ou mais. O Harvest Fest e o EbilCorp: Hostile Takeover continuam no Event Hub.",
+        "en": "Weekend event in a secret grove in Gilead: talk to Stillin in Kiyamet Grove and defeat the golems (Apocalyptic Colossus, Level 60, and Overcharged Colossus, Level 70) for the Apocalyptic Student set. The resources become more items in Stillin's Shop, unlocked after the A Colossal Task quest. Prince Sidon's wedding set, Aeterna Fatum, is in the Featured Gear Shop, and the Apocalyptic Druid pack (30 items) is the upgrade bonus for purchases of $10 or more. Harvest Fest and EbilCorp: Hostile Takeover continue in the Event Hub."
+      },
+      "maps": [
+        {
+          "j": "kiyametgrove",
+          "n": "Kiyamet Grove",
+          "w": {
+            "pt": "Quests do Stillin, drops dos golems e a Stillin's Shop (merge)",
+            "en": "Stillin's quests, golem drops and Stillin's Shop (merge)"
+          },
+          "v": "wiki"
+        }
+      ],
+      "shops": ["Stillin's Shop","Featured Gear Shop","Apocalyptic Druid (Book of Lore)"],
+      "srcs": {
+        "kd": {
+          "pt": "Drop dos golems em Kiyamet Grove",
+          "en": "Golem drop in Kiyamet Grove",
+          "j": "kiyametgrove"
+        },
+        "st": {
+          "pt": "Stillin's Shop (merge), em Kiyamet Grove",
+          "en": "Stillin's Shop (merge), in Kiyamet Grove",
+          "j": "kiyametgrove"
+        },
+        "fgs": {
+          "pt": "Featured Gear Shop (novembro de 2026)",
+          "en": "Featured Gear Shop (November 2026)"
+        },
+        "ub": {
+          "pt": "Bônus de upgrade Apocalyptic Druid (compra de 10 dólares ou mais; loja no Book of Lore)",
+          "en": "Apocalyptic Druid upgrade bonus ($10+ purchase; shop in the Book of Lore)"
+        },
+        "ubd": {
+          "pt": "Bônus de upgrade Apocalyptic Druid; também cai do Overcharged Colossus em Kiyamet Grove",
+          "en": "Apocalyptic Druid upgrade bonus; also drops from the Overcharged Colossus in Kiyamet Grove",
+          "j": "kiyametgrove"
+        }
+      },
+      "src": [
+        {
+          "n": "Design Notes: This Weekend: All-Natural Apocalypse",
+          "u": "https://www.aq.com/gamedesignnotes/aqw-apocalypticcolossus-6nov26-10512"
+        },
+        {
+          "n": "Design Notes: Unlock the Apocalyptic Druid",
+          "u": "https://www.aq.com/gamedesignnotes/aqw-upgradebonus-6nov26-10223"
+        },
+        {
+          "n": "AQW Wiki: Kiyamet Grove",
+          "u": "https://aqwwiki.wikidot.com/kiyamet-grove"
+        },
+        {
+          "n": "AQW Wiki: Stillin's Shop",
+          "u": "https://aqwwiki.wikidot.com/stillin-s-shop"
+        },
+        {
+          "n": "AQW Wiki: Stillin's Quests",
+          "u": "https://aqwwiki.wikidot.com/stillin-s-quests"
+        },
+        {
+          "n": "AQW Wiki: Apocalyptic Colossus",
+          "u": "https://aqwwiki.wikidot.com/apocalyptic-colossus"
+        },
+        {
+          "n": "AQW Wiki: Overcharged Colossus",
+          "u": "https://aqwwiki.wikidot.com/overcharged-colossus"
+        },
+        {
+          "n": "AQW Wiki: Aeterna Fatum",
+          "u": "https://aqwwiki.wikidot.com/aeterna-fatum"
+        }
+      ],
+      "items": {
+        "armor": [
+          ["Aeterna Fatum","a","fgs"],
+          ["Apocalyptic Student's Mistake","","kd"],
+          ["Apocalyptic Student's Tattoos","a","st"],
+          ["Apocalyptic Druid's Robes","a","ub"],
+          ["Apocalyptic Druid's Long Robes","a","ub"],
+          ["Elder Apocalyptic Druid","a","ub"]
+        ],
+        "helm": [
+          ["Aeterna Fatum Visage","a","fgs"],
+          ["Aeterna Fatum Morph","a","fgs"],
+          ["Aeterna Fatum Veil","a","fgs"],
+          ["Aeterna Fatum Circlet","a","fgs"],
+          ["Aeterna Fatum Circlet Morph","a","fgs"],
+          ["Aeterna Fatum Hair","","fgs"],
+          ["Aeterna Fatum Bun","","fgs"],
+          ["Apocalyptic Student's Hair","","kd"],
+          ["Apocalyptic Student's Locks","","kd"],
+          ["Apocalyptic Student's Blind Hair","a","st"],
+          ["Apocalyptic Student's Blind Locks","a","st"],
+          ["Apocalyptic Druid's Visage","a","ubd"],
+          ["Apocalyptic Druid's Mask","a","ub"],
+          ["Apocalyptic Druid's Runed Mask","a","ub"],
+          ["Apocalyptic Druid's Hood","a","ub"],
+          ["Apocalyptic Druid's Runed Visage","a","ub"],
+          ["Apocalyptic Druid's Bone Mask","a","ub"],
+          ["Apocalyptic Druid's Bone Visage","a","ub"],
+          ["Apocalyptic Druid's Beast Visage","a","ub"],
+          ["Apocalyptic Druid's Beast Mask","a","ub"]
+        ],
+        "cape": [
+          ["Apocalyptic Colossus Guard","","kd"],
+          ["Overcharged Colossus Guard","a","st"],
+          ["Apocalyptic Pillar Backblade","a","st"],
+          ["Apocalyptic Student's Wraps","a","st"],
+          ["Apocalyptic Student's Accoutrements","a","st"],
+          ["Apocalyptic Druid's Fossil","a","ubd"],
+          ["Apocalyptic Druid's Skull","a","ubd"],
+          ["Apocalyptic Druid's Portal","a","ub"],
+          ["Apocalyptic Druid's Runes","a","ub"],
+          ["Apocalyptic Druid's Sigils","a","ub"],
+          ["Apocalyptic Druid's Conjuring","a","ub"],
+          ["Apocalyptic Druid's Horns","a","ub"],
+          ["Apocalyptic Druid's Summoning","a","ub"]
+        ],
+        "weapon": [
+          ["Perpetual Silence","a","fgs","mace"],
+          ["Aeterna Fatum Rose (Mace)","","fgs","mace"],
+          ["Golem Hand Gauntlets","","kd","gauntlet"],
+          ["Overcharged Golem Gauntlets","a","st","gauntlet"],
+          ["Back Arm Sword Gauntlet","a","st","gauntlet"],
+          ["Apocalyptic Student's Pillar","a","st","sword"],
+          ["Apocalyptic Student's Pillars","a","st","dagger"],
+          ["Apocalyptic Druid's Bough","a","ubd"],
+          ["Apocalyptic Druid's Cultivator","a","ub"],
+          ["Apocalyptic Druid's Branch","a","ub"],
+          ["Apocalyptic Druid's Harvester","a","ub"],
+          ["Apocalyptic Druid's Familiar","a","ub"],
+          ["Apocalyptic Druid's Corvus","a","ub"],
+          ["Apocalyptic Druid's Claw","a","ub"],
+          ["Apocalyptic Druid's Claws","a","ub"]
+        ],
+        "ground": [
+          ["Apocalyptic Druid's Residue","a","ub"],
+          ["Apocalyptic Druid's Roots","a","ub"]
+        ],
+        "house": [
+          ["Apocalyptic House Colossus","","kd"],
+          ["Overcharged House Colossus","","kd"],
+          ["Apocalyptic Pillar","","kd"]
+        ],
+        "misc": [
+          ["Gold Voucher 100k","","st"]
+        ]
+      }
+    },
     {
       "id": "2026-10-30",
       "from": "2026-10-30",

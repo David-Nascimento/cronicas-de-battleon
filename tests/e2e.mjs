@@ -74,7 +74,9 @@ try {
     await p.click("#gq"); await p.fill("#gq", name.slice(0, 8)); await wait(p);
     check((await p.locator("#gres [data-gitem]").count()) > 0, "busca global acha item novo");
     await p.fill("#gq", ""); await p.keyboard.press("Escape"); await wait(p);
-    await p.click(`#segRel button[data-v="${REL[0].id}"]`); await wait(p);
+    /* a semana com PaladinSlayer (2), que nem sempre é a mais recente */
+    const RPS = REL.find(r => (r.items.class || []).some(i => i[0] === "PaladinSlayer (2)")) || REL[0];
+    await p.click(`#segRel button[data-v="${RPS.id}"]`); await wait(p);
     await p.click('#segRelT button[data-v="class"]'); await wait(p);
     const ps = p.locator('#relList .ri[data-ri="PaladinSlayer (2)"] .riCard');
     check(await ps.count() === 1, "item PaladinSlayer (2) tem botão Ver ficha");
