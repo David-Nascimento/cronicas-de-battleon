@@ -1,0 +1,88 @@
+/* Estilo Fluent: claro por padrão, menu lateral em painel, títulos grandes em Inter,
+   cartões brancos com cantos de 16px e sombra leve. Vem por último na cascata. */
+body{font-family:var(--body);letter-spacing:-.003em}
+h2{font:800 30px/1.15 var(--display);letter-spacing:-.025em}
+.head h2{font-size:clamp(30px,3.4vw,40px)}
+.sub{font-size:14.5px}
+code.jn{font-family:var(--mono);font-weight:500;border-radius:6px;padding:2px 7px}
+.frame{border-radius:var(--r-lg);border-color:var(--line2);box-shadow:var(--shadow)}
+
+/* menu lateral: painel do topo ao fim da tela, itens com seta, o aberto com contorno de destaque */
+.side{gap:18px;padding:20px 16px 20px 0}
+.side::before{content:"";position:absolute;z-index:-1;top:0;bottom:0;right:0;left:-100vmax;background:var(--panel);border-right:1px solid var(--line2)}
+.brand b{font:700 16px/1.2 var(--display);letter-spacing:-.01em}
+.brand svg{width:30px;height:34px}
+.side .brand{padding:2px 4px 16px;border-bottom:1px solid var(--line2)}
+.sideNav{gap:0}
+.sideNav>.nv{border-radius:var(--r-md);padding:11px 12px;font:500 14.5px var(--body);color:var(--ink);border:1px solid transparent;border-top-color:var(--line2);border-radius:0}
+.sideNav>.nv:first-child{border-top-color:transparent}
+.sideNav>.nv svg:not(.chev){width:18px;height:18px;color:var(--muted)}
+.nv .chev{width:14px;height:14px;flex:none;color:var(--muted);order:9}
+.nv .navBdg{margin-left:auto}
+.nv .navBdg+.chev{margin-left:8px}
+.nv:not(:has(.navBdg:not([hidden]))) .chev{margin-left:auto}
+.sideNav>.nv:hover{background:var(--panel2)}
+.sideNav>.nv[aria-current="page"]{background:none;border:1px solid color-mix(in oklab,var(--glow) 45%,transparent);border-radius:10px;color:var(--glow-hi);font-weight:600;margin:3px 0}
+.sideNav>.nv[aria-current="page"] svg{color:var(--glow-hi);filter:none}
+.sideNav>.nv[aria-current="page"]+.nv,.sideNav>.nvSubs+.nv{border-top-color:transparent}
+.nvSubs{margin:2px 0 8px 18px;padding-left:12px;border-left:1px solid var(--line2)}
+.nvs{font:500 13.5px var(--body);color:var(--muted)}
+.nvs[aria-current="page"]{color:var(--ink);font-weight:600}
+.nvs[aria-current="page"]::before{background:var(--glow);box-shadow:none}
+.nvSep{height:1px;background:var(--line2);margin:8px 0}
+.bnav .chev{display:none}
+.bnav .nv[aria-current="page"]{background:color-mix(in oklab,var(--glow) 12%,transparent);color:var(--glow-hi)}
+
+/* topo */
+.topbar::before{background:color-mix(in oklab,var(--bg) 92%,transparent)}
+.gsearch input[type=search]{background:var(--panel);border-color:var(--line2)}
+.themeBtn,.bell,.acctBtn{border-radius:10px}
+.themeBtn{width:42px;height:42px;flex:none;display:flex;align-items:center;justify-content:center;border:1px solid var(--line2);background:var(--panel);color:var(--ink);cursor:pointer}
+.themeBtn svg{width:19px;height:19px}
+.themeBtn:hover{border-color:var(--line)}
+@media (max-width:420px){.themeBtn{width:38px;height:38px}}
+
+/* Hoje: abertura grande, com a arte de vidros na cor Brasa */
+.hero{position:relative;overflow:hidden;padding:56px 48px 48px;border-radius:20px;border:1px solid var(--line2);
+  background:radial-gradient(640px 340px at 88% 18%,color-mix(in oklab,var(--eye) 24%,transparent),transparent 70%),radial-gradient(480px 280px at 62% 115%,rgba(170,140,255,.16),transparent 70%),var(--panel2)}
+.hero .eyebrow{margin:0;font:700 12.5px var(--body);letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+.hero .eyebrow::first-letter{text-transform:uppercase}
+.hello.hero h1{margin:6px 0 0;font:800 clamp(56px,8vw,104px)/1 var(--display);letter-spacing:-.04em;text-shadow:none}
+.hero .heroTag{margin:18px 0 0;font:600 clamp(22px,2.6vw,34px)/1.2 var(--display);letter-spacing:-.02em;color:var(--ink);max-width:none}
+.hero .brace{font-family:var(--mono);font-weight:500;color:var(--glow-hi)}
+.heroCta{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
+.pillBtn{font:600 14.5px var(--body);padding:11px 20px;border-radius:999px;border:1px solid var(--pill);background:var(--pill);color:var(--pillTx);cursor:pointer}
+.pillBtn.ghost{background:transparent;color:var(--ink);border-color:var(--line)}
+.pillBtn:hover{filter:brightness(1.08)}.pillBtn.ghost:hover{border-color:var(--muted)}
+.glass{position:absolute;right:6%;top:50%;width:280px;height:280px;transform:translateY(-52%);pointer-events:none}
+.glass i{position:absolute;display:block;border-radius:16px;border:1px solid rgba(255,255,255,.65);transform:rotate(45deg) skew(-8deg,-8deg)}
+.glass i:nth-child(1){left:70px;top:0;width:140px;height:140px;background:linear-gradient(135deg,rgba(255,180,90,.88),rgba(255,120,150,.55));box-shadow:0 20px 50px -20px rgba(255,140,80,.6)}
+.glass i:nth-child(2){left:10px;top:105px;width:122px;height:122px;background:linear-gradient(135deg,rgba(170,140,255,.75),rgba(255,180,90,.45))}
+.glass i:nth-child(3){left:145px;top:115px;width:112px;height:112px;background:linear-gradient(135deg,rgba(255,214,120,.82),rgba(120,210,200,.45))}
+@media (max-width:900px){.glass{opacity:.35;right:-60px}}
+@media (max-width:560px){.hero{padding:36px 22px 30px}.glass{display:none}}
+
+/* cartões de resumo com quadrado de ícone */
+.intents{gap:14px;border:0;border-radius:0;background:none;overflow:visible;grid-template-columns:repeat(4,minmax(0,1fr))}
+.intent.stat{flex-direction:row;align-items:center;gap:14px;padding:18px;border:1px solid var(--line2);border-radius:var(--r-lg);background:var(--panel);box-shadow:var(--shadow)}
+.intent.stat:hover{background:var(--panel);border-color:var(--line);box-shadow:var(--shadow)}
+.intent.stat .tile{flex:none;width:52px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center}
+.intent.stat .tile svg{width:24px;height:24px;filter:none;color:inherit}
+.intent.stat .stx{display:flex;flex-direction:column;min-width:0}
+.intent.stat b{font:700 21px var(--display);letter-spacing:-.01em}
+.t-diarias .tile{background:color-mix(in oklab,#E08A1E 16%,var(--panel));color:#C77414}
+.t-eventos .tile{background:color-mix(in oklab,#E0563D 16%,var(--panel));color:#D04A32}
+.t-ultras .tile{background:color-mix(in oklab,#7A5BE0 16%,var(--panel));color:#7458D6}
+.t-lancamentos .tile{background:color-mix(in oklab,#1F9E86 16%,var(--panel));color:#1A8F79}
+@media (max-width:1100px){.intents{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:980px){.intent.stat{border-top:1px solid var(--line2)!important;border-left:1px solid var(--line2)!important}}
+@media (max-width:460px){.intents{grid-template-columns:minmax(0,1fr)}}
+
+/* cartão da atualização + no ar */
+.homeNow{border-radius:var(--r-lg)}
+.homeNow>div{padding:22px 24px}
+.hnTop h3{font:700 12px var(--body);letter-spacing:.14em;text-transform:uppercase}
+.hnTitle{font:700 22px/1.25 var(--display);letter-spacing:-.02em}
+#v-inicio .secH h2{font-size:30px}
+.mode{border-radius:var(--r-lg)}
+.homeNews h3{font:800 24px var(--display);letter-spacing:-.02em}

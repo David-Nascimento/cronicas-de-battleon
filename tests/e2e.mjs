@@ -206,6 +206,10 @@ try {
     const p = await page();
     await p.click('#segLang button[data-v="en"]'); await wait(p, 250);
     check((await p.locator("#sideNav").innerText()).includes("What's new"), "troca para inglês");
+    check((await p.evaluate(() => document.documentElement.dataset.theme)) === "light", "tema claro é o padrão");
+    await p.click("#themeBtn"); await p.reload(); await wait(p, 400);
+    check((await p.evaluate(() => document.documentElement.dataset.theme)) === "dark", "tema escuro fica salvo depois de recarregar");
+    await p.click("#themeBtn"); await wait(p);
     check((await p.locator("#eyeBtn").count()) === 0 && (await p.evaluate(() => getComputedStyle(document.documentElement).getPropertyValue("--eye").trim().toUpperCase())) === "#FFB45A", "cor fixa Brasa, sem botão de cor dos olhos");
     const m = await page({ viewport: { width: 390, height: 844 } });
     for (const v of ["inicio", "eventos", "lancamentos", "tier", "diarias"]) {

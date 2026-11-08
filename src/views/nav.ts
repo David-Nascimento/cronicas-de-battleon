@@ -18,7 +18,7 @@ export function renderSub(){const list=SUBS[secOf(ui.curView)],sn=document.getEl
   sn.innerHTML=list?list.map(([k,l])=>`<button data-sub="${k}" aria-current="${ui.curView===k?"page":"false"}">${L(l)}</button>`).join(""):""}
 export function renderNav(){
   const cur=secOf(ui.curView),n=navCount(),es=endingSoon().length;
-  const btn=(k,l)=>`<button class="nv" data-sec="${k}" aria-current="${cur===k?"page":"false"}">${svg(k)}<span>${L(l)}</span>${k==="novidades"?`<span class="navBdg"${n?"":" hidden"}>${n}</span>`:k==="eventos"&&es?`<span class="navBdg warn" title="${L("ev_badge",{n:es})}">${es}</span>`:""}</button>`;
+  const btn=(k,l)=>`<button class="nv" data-sec="${k}" aria-current="${cur===k?"page":"false"}">${svg(k)}<span>${L(l)}</span>${k==="novidades"?`<span class="navBdg"${n?"":" hidden"}>${n}</span>`:k==="eventos"&&es?`<span class="navBdg warn" title="${L("ev_badge",{n:es})}">${es}</span>`:""}<svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="${cur===k&&SUBS[k]?"m6 9 6 6 6-6":"m9 6 6 6-6 6"}" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>`;
   const side=SECS.map(([k,l])=>btn(k,l)+(cur===k&&SUBS[k]?`<div class="nvSubs">${SUBS[k].map(([s,sl])=>`<button class="nvs" data-sub="${s}" aria-current="${ui.curView===s?"page":"false"}">${L(sl)}</button>`).join("")}</div>`:"")).join("");
   const sn=document.getElementById("sideNav"),bn=document.getElementById("bNav");
   /* "Meu painel" fica separado dos 5 destinos: no fim da lateral e, no celular, no botão de conta do topo */

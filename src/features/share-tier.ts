@@ -40,7 +40,7 @@ export async function tierImage(t: Shared, title: string, sub: string, foot: str
   const cs = getComputedStyle(document.documentElement), v = (k: string, d: string) => cs.getPropertyValue(k).trim() || d;
   const bg = v("--bg", "#151020"), panel = v("--panel", "#201a2c"), ink = v("--ink", "#ece4d4"), muted = v("--muted", "#a99fb6"), glow = v("--glow", "#FFB45A"), line = v("--line2", "#352c44");
   try { await (document as any).fonts?.ready; } catch (_) {}
-  const W = 1200, P = 40, LW = 96, GAP = 8, CH = 36, font = "600 17px Barlow, 'Segoe UI', system-ui, sans-serif";
+  const W = 1200, P = 40, LW = 96, GAP = 8, CH = 36, font = "600 17px Inter, 'Segoe UI', system-ui, sans-serif";
   const cv = document.createElement("canvas"), x = cv.getContext("2d");
   x.font = font;
   /* calcula as quebras de linha de cada tier antes de saber a altura */
@@ -59,20 +59,20 @@ export async function tierImage(t: Shared, title: string, sub: string, foot: str
   const tc: Record<string, string> = {}; TIERS.forEach(k => tc[k] = col(tColor(k)));
   const halo = col(`color-mix(in srgb, ${glow} 22%, transparent)`), clear = col(`color-mix(in srgb, ${glow} 0%, transparent)`); probe.remove();
   const g = x.createRadialGradient(W, 0, 0, W, 0, 600); g.addColorStop(0, halo); g.addColorStop(1, clear); x.fillStyle = g; x.fillRect(0, 0, W, H);
-  x.fillStyle = ink; x.font = "700 34px Texturina, Georgia, serif"; x.textBaseline = "alphabetic"; x.fillText(title, P, P + 34);
-  x.fillStyle = muted; x.font = "500 18px Barlow, 'Segoe UI', system-ui, sans-serif"; x.fillText(sub, P, P + 62);
+  x.fillStyle = ink; x.font = "800 34px Inter, 'Segoe UI', system-ui, sans-serif"; x.textBaseline = "alphabetic"; x.fillText(title, P, P + 34);
+  x.fillStyle = muted; x.font = "500 18px Inter, 'Segoe UI', system-ui, sans-serif"; x.fillText(sub, P, P + 62);
   let y = P + 86;
   const rr = (X: number, Y: number, w: number, h: number, r: number) => { x.beginPath(); (x as any).roundRect ? (x as any).roundRect(X, Y, w, h, r) : x.rect(X, Y, w, h); };
   rows.forEach(r => {
     x.fillStyle = panel; rr(P, y, W - P * 2, r.h, 14); x.fill(); x.strokeStyle = line; x.lineWidth = 1; x.stroke();
     x.fillStyle = tc[r.k]; rr(P, y, LW, r.h, 14); x.fill();
-    x.fillStyle = "#14101c"; x.font = "800 40px Barlow, 'Segoe UI', system-ui, sans-serif"; x.textAlign = "center"; x.textBaseline = "middle"; x.fillText(r.k, P + LW / 2, y + r.h / 2 + 1);
+    x.fillStyle = "#14101c"; x.font = "800 40px Inter, 'Segoe UI', system-ui, sans-serif"; x.textAlign = "center"; x.textBaseline = "middle"; x.fillText(r.k, P + LW / 2, y + r.h / 2 + 1);
     x.textAlign = "left"; x.font = font;
     if (!r.lines[0].length) { x.fillStyle = muted; x.fillText("—", P + LW + 20, y + 8 + CH / 2); }
     r.lines.forEach((ln, i) => { let cx = P + LW + 16; const cy = y + 8 + i * (CH + GAP);
       ln.forEach(n => { const w = x.measureText(n).width + 28; x.fillStyle = bg; rr(cx, cy, w, CH, 9); x.fill(); x.strokeStyle = line; x.stroke(); x.fillStyle = ink; x.fillText(n, cx + 14, cy + CH / 2 + 1); cx += w + GAP; }); });
     y += r.h + 10;
   });
-  x.fillStyle = muted; x.font = "500 15px Barlow, 'Segoe UI', system-ui, sans-serif"; x.textBaseline = "alphabetic"; x.fillText(foot, P, H - P + 6);
+  x.fillStyle = muted; x.font = "500 15px Inter, 'Segoe UI', system-ui, sans-serif"; x.textBaseline = "alphabetic"; x.fillText(foot, P, H - P + 6);
   return await new Promise<Blob>(res => cv.toBlob(b => res(b), "image/png"));
 }

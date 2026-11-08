@@ -16,6 +16,7 @@ import {renderModes, renderStatic} from "./views/static.js";
 import {renderTeams} from "./views/teams.js";
 import {renderTiers} from "./views/tiers.js";
 import {renderReleases} from "./views/releases.js";
+import {renderTheme} from "./features/theme.js";
 import {renderEvents} from "./views/events.js";
 import {renderAcct as renderAcctOnly, renderPainel} from "./views/painel.js";
 
@@ -35,7 +36,7 @@ export function renderAll(){
   seg("bCat",[["all",L("all")],...cats.map(k=>[k,catName(k)])],"bcat",renderBuilder);
   seg("segAll",[["todas",L("all")],...cats.map(k=>[k,catName(k)])],"all",renderCards);
   Object.keys(VIEWR).forEach(k=>dirty.add(k));
-  renderView(ui.curView);refreshNotif();renderAcctOnly();
+  renderView(ui.curView);renderTheme();refreshNotif();renderAcctOnly();
   if(dlg.open&&ui.curClass!=null)openClass(ui.curClass);
   if(dlgE.open&&ui.eIdx!=null)openEnh(ui.eIdx);
 }

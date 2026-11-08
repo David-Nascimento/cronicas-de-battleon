@@ -40,7 +40,7 @@ export type UiStrings = Record<Lang, Record<string, string>>;
 /* estado salvo no navegador (localStorage "aqwTier") */
 export interface State {
   cat: string; mode: string; all: string; lang: Lang; nf: string; bcat: string; eslot: string; fk: string;
-  subs: Record<string, string>; rt: string;
+  theme?: string; subs: Record<string, string>; rt: string;
   sub?: string; rel?: string; relTop?: string; rg?: string; rfr?: boolean; rfa?: boolean; relSeen?: string; newsSeen?: string; dis?: string[]; own?: string[]; cmp?: string[];
   dmine?: string[]; drem?: boolean; fprog?: Record<string, number[]>;
   tsrc?: string; mytier?: Record<string, Record<string, string[]>>;

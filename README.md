@@ -91,7 +91,7 @@ Agenda de ultras (semanais, sazonais e outras), times de 4 classes com a funçã
 
 ### Visual Hollowborn, tema claro e celular
 
-O visual segue o tema Hollowborn do AQW: fundo violeta escuro, texto cor de osso e um brilho na cor **Brasa** (âmbar), usada só no que está ativo e nos links. O tema claro acompanha o sistema, e no celular o menu vai para baixo.
+O visual segue a linguagem do Fluent 2: tema **claro** por padrão, menu lateral em painel com setas, títulos grandes em Inter, cartões brancos com cantos de 16px e a cor **Brasa** (âmbar) só no que está ativo e nos links. O botão de lua no topo troca para o tema **escuro** (Hollowborn), e a escolha fica salva. No celular o menu vai para baixo.
 
 | Tema claro |
 |---|

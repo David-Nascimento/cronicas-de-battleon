@@ -15,7 +15,7 @@ export function sigil(c,sz?:string){
   <path d="${GLYPH[c.type]}" fill="${col}" opacity=".22"/>
   <path d="M24 2 L44 13 L44 35 L24 46 L4 35 L4 13 Z" fill="none" stroke="${col}" stroke-width="2"/>
   <path d="M24 7 L39.5 15.8 L39.5 32.2 L24 41 L8.5 32.2 L8.5 15.8 Z" fill="none" stroke="${col}" stroke-width=".8" opacity=".55"/>
-  <text x="24" y="28.6" text-anchor="middle" font-family="Barlow,system-ui,sans-serif" font-weight="700" font-size="${ini.length>2?11:14}" fill="var(--ink)">${ini}</text></svg>`;
+  <text x="24" y="28.6" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-weight="700" font-size="${ini.length>2?11:14}" fill="var(--ink)">${ini}</text></svg>`;
 }
 export const tColor=t=>`var(--t${t})`;
 /* "N" = classe nova, ainda sem tier */

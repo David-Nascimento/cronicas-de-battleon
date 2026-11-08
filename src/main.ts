@@ -1,4 +1,5 @@
 import "./styles/main.css";
+import "./features/theme.js";
 
 /* ordem original de carregamento (registro dos eventos) */
 import "./views/static.js";
