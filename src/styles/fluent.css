@@ -9,7 +9,8 @@ code.jn{font-family:var(--mono);font-weight:500;border-radius:6px;padding:2px 7p
 
 /* menu lateral: painel do topo ao fim da tela, itens com seta, o aberto com contorno de destaque */
 .side{gap:18px;padding:20px 16px 20px 0}
-.side::before{content:"";position:absolute;z-index:-1;top:0;bottom:0;right:0;left:-100vmax;background:var(--panel);border-right:1px solid var(--line2)}
+/* o painel do menu vai até a borda esquerda da tela (sombra sem desfoque, que o overflow da lateral não corta) */
+.side{background:var(--panel);border-right:1px solid var(--line2);box-shadow:-100vmax 0 0 100vmax var(--panel);clip-path:inset(0 0 0 -100vmax)}
 .brand b{font:700 16px/1.2 var(--display);letter-spacing:-.01em}
 .brand svg{width:30px;height:34px}
 .side .brand{padding:2px 4px 16px;border-bottom:1px solid var(--line2)}
@@ -86,3 +87,8 @@ code.jn{font-family:var(--mono);font-weight:500;border-radius:6px;padding:2px 7p
 #v-inicio .secH h2{font-size:30px}
 .mode{border-radius:var(--r-lg)}
 .homeNews h3{font:800 24px var(--display);letter-spacing:-.02em}
+/* respiro entre o menu e o conteúdo */
+@media (min-width:981px){
+  .shell{grid-template-columns:248px minmax(0,1fr);column-gap:clamp(40px,4.5vw,64px)}
+  .side{padding-right:20px}
+}
