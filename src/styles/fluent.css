@@ -9,8 +9,7 @@ code.jn{font-family:var(--mono);font-weight:500;border-radius:6px;padding:2px 7p
 
 /* menu lateral: painel do topo ao fim da tela, itens com seta, o aberto com contorno de destaque */
 .side{gap:18px;padding:20px 16px 20px 0}
-/* o painel do menu vai até a borda esquerda da tela (sombra sem desfoque, que o overflow da lateral não corta) */
-.side{background:var(--panel);border-right:1px solid var(--line2);box-shadow:-100vmax 0 0 100vmax var(--panel);clip-path:inset(0 0 0 -100vmax)}
+.side{background:var(--panel);border-right:1px solid var(--line2)}
 .brand b{font:700 16px/1.2 var(--display);letter-spacing:-.01em}
 .brand svg{width:30px;height:34px}
 .side .brand{padding:2px 4px 16px;border-bottom:1px solid var(--line2)}
@@ -60,7 +59,8 @@ code.jn{font-family:var(--mono);font-weight:500;border-radius:6px;padding:2px 7p
 .glass i:nth-child(1){left:70px;top:0;width:140px;height:140px;background:linear-gradient(135deg,rgba(255,180,90,.88),rgba(255,120,150,.55));box-shadow:0 20px 50px -20px rgba(255,140,80,.6)}
 .glass i:nth-child(2){left:10px;top:105px;width:122px;height:122px;background:linear-gradient(135deg,rgba(170,140,255,.75),rgba(255,180,90,.45))}
 .glass i:nth-child(3){left:145px;top:115px;width:112px;height:112px;background:linear-gradient(135deg,rgba(255,214,120,.82),rgba(120,210,200,.45))}
-@media (max-width:900px){.glass{opacity:.35;right:-60px}}
+@media (max-width:1240px){.glass{transform:translateY(-52%) scale(.72);transform-origin:right center;right:3%;opacity:.6}}
+@media (max-width:900px){.glass{opacity:.3;right:-40px}}
 @media (max-width:560px){.hero{padding:36px 22px 30px}.glass{display:none}}
 
 /* cartões de resumo com quadrado de ícone */
@@ -87,8 +87,10 @@ code.jn{font-family:var(--mono);font-weight:500;border-radius:6px;padding:2px 7p
 #v-inicio .secH h2{font-size:30px}
 .mode{border-radius:var(--r-lg)}
 .homeNews h3{font:800 24px var(--display);letter-spacing:-.02em}
-/* respiro entre o menu e o conteúdo */
+/* computador: o menu fica preso na borda esquerda da tela (como no Fluent) e o conteúdo
+   se centraliza no espaço que sobra, com largura máxima para não esticar em telas grandes */
 @media (min-width:981px){
-  .shell{grid-template-columns:248px minmax(0,1fr);column-gap:clamp(40px,4.5vw,64px)}
-  .side{padding-right:20px}
+  .shell{max-width:none;padding-left:0;padding-right:0;grid-template-columns:272px minmax(0,1fr);column-gap:0}
+  .side{padding:20px 20px 24px max(20px,env(safe-area-inset-left,0px))}
+  .main{width:100%;max-width:1280px;margin:0 auto;padding-left:clamp(32px,4vw,64px);padding-right:clamp(32px,4vw,64px)}
 }
