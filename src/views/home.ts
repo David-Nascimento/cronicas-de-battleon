@@ -6,7 +6,6 @@ import {L, loc, st} from "../state.js";
 import {dailyProgress} from "./dailies.js";
 import {endingSoon, liveEvents} from "./events.js";
 import {fmtDay, jn, relCounts} from "./releases.js";
-import {RTYPES} from "../config.js";
 
 /* Hoje: uma faixa com o que importa agora (diárias, eventos, reset, itens novos), depois a atualização
    uma vez só, o que está no ar por ordem de fim, os melhores e as notícias. Cada informação aparece num lugar. */
@@ -23,17 +22,15 @@ export function renderHome(){
     ["lancamentos",L("tab_releases"),r?String(relCounts(r).total):"0",r?L("hs_rel_x",{d:fmtDay(r.from)}):"",""]];
   const it=document.getElementById("intents");it.setAttribute("aria-label",L("intents"));
   it.innerHTML=tiles.map(([v,h,b,x,c])=>`<button class="intent stat" data-goview="${v}"><small>${esc(h)}</small><b class="${c}">${esc(b)}</b><span>${esc(x)}</span></button>`).join("");
-  /* a atualização, uma vez só */
-  if(r){const c=relCounts(r),all=Object.values(r.items).flat() as string[][],rares=all.filter(i=>(i[1]||"").includes("r")).length;
-    const parts=RTYPES.filter(k=>c[k]).map(k=>`${c[k]} ${L("rel_t_"+k).toLowerCase()}`);
-    document.getElementById("homeRel").innerHTML=`<div class="hrH"><h3>${L("home_rel")}</h3><span class="relWhen">${fmtDay(r.from)}</span></div>
-      <b class="hrT">${esc(r.t[l])}</b>
-      <p class="hrC">${esc(parts.join(" · "))}${rares?` · <span class="evRare">${L("ev_rares",{n:rares})}</span>`:""}</p>
-      <div class="hrFoot"><span class="hrJoins">${r.maps.filter(m=>m.j).map(m=>jn(m.j)).join("")}</span><button class="linkBtn" data-relt="all">${L("rel_open",{n:c.total})}</button></div>`;}
-  else document.getElementById("homeRel").innerHTML=`<h3>${L("home_rel")}</h3><p class="relEmpty">${L("rel_none")}</p>`;
-  /* no ar, por ordem de fim */
-  document.getElementById("homeWeek").innerHTML=`<h3>${L("home_live")}</h3><ul class="hLive">${evs.slice(0,5).map(e=>`<li><span>${esc(e.name)}</span><span class="${e.until&&soon.includes(e)?"warn":"mut"}">${e.until?fmtDay(e.until):L("ev_nodate")}</span></li>`).join("")}</ul>
-    ${evs.length>5?`<p class="hMore">${L("home_live_more",{n:evs.length-5})}</p>`:""}<button class="linkBtn" data-goview="eventos">${L("home_ev_open")}</button>`;
+  /* um cartão só: a última atualização numa linha e os eventos que acabam primeiro */
+  let h="";
+  if(r){const c=relCounts(r),all=Object.values(r.items).flat() as string[][],rares=all.filter(i=>(i[1]||"").includes("r")).length,j=r.maps.find(m=>m.j);
+    h+=`<div class="hnRel"><div class="hnTop"><h3>${L("home_rel")}</h3><span class="relWhen">${fmtDay(r.from)}</span></div>
+      <b class="hnT">${esc(r.t[l])}</b>
+      <p class="hnMeta"><span>${L("rel_nums",{n:c.total})}${rares?` · <span class="evRare">${L("ev_rares",{n:rares})}</span>`:""}</span>${j?jn(j.j):""}<button class="linkBtn" data-relt="all">${L("rel_open",{n:c.total})}</button></p></div>`;}
+  h+=`<div class="hnEv"><div class="hnTop"><h3>${L("home_live")}</h3></div><ul class="hLive">${evs.slice(0,3).map(e=>`<li><span>${esc(e.name)}</span><span class="${e.until&&soon.includes(e)?"warn":"mut"}">${e.until?fmtDay(e.until):L("ev_nodate")}</span></li>`).join("")}</ul>
+    <button class="linkBtn" data-goview="eventos">${evs.length>3?L("home_ev_all",{n:evs.length}):L("home_ev_open")}</button></div>`;
+  document.getElementById("homeNow").innerHTML=h;
   /* notícias em linhas */
   const seen=newsSeen();
   document.getElementById("homeNews").innerHTML=`<h3>${L("home_news")}</h3><ul class="hNews">${NEWS.slice(0,3).map(n=>{const t=NL(n).t;

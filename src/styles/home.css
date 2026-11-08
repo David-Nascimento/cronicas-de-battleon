@@ -130,3 +130,15 @@ code.jn{font:600 12px ui-monospace,SFMono-Regular,Menlo,monospace;background:var
 .hnT{flex:1;min-width:0}.hnT b{font-weight:600}.hnT span{color:var(--muted)}
 .hnU{width:8px;height:8px;border-radius:50%;background:var(--glow);flex:none}
 .homeNews .linkBtn{align-self:flex-start}
+/* Hoje: atualização e o que está no ar num cartão só */
+.homeNow{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);padding:0;overflow:hidden}
+.homeNow>div{padding:16px 18px;display:flex;flex-direction:column;gap:8px;min-width:0}
+.homeNow .hnEv{border-left:1px solid var(--line2)}
+.hnTop{display:flex;justify-content:space-between;align-items:baseline;gap:10px}
+.hnTop h3{margin:0;font:600 13px var(--body);color:var(--muted)}
+.hnT{font:600 17px/1.35 var(--body);color:var(--ink)}
+.hnMeta{margin:auto 0 0;display:flex;flex-wrap:wrap;align-items:center;gap:6px 14px;font-size:14px}
+.hnMeta .linkBtn{margin-left:auto;padding:0}
+.hnEv .hLive li{padding:6px 0}
+.hnEv .linkBtn{align-self:flex-start;padding:0}
+@media (max-width:760px){.homeNow{grid-template-columns:minmax(0,1fr)}.homeNow .hnEv{border-left:0;border-top:1px solid var(--line2)}}

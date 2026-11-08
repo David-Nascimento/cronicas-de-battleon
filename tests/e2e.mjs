@@ -179,8 +179,8 @@ try {
   /* eventos: lista no Hoje, aba Eventos com o Event Hub, busca e o link das Sazonais */
   {
     const p = await page();
-    check((await p.locator("#homeWeek .hLive li").count()) > 0, "página Hoje lista o que está no ar");
-    await p.click('#homeWeek [data-goview="eventos"]'); await wait(p);
+    check((await p.locator("#homeNow .hLive li").count()) > 0, "página Hoje lista o que está no ar");
+    await p.click('#homeNow [data-goview="eventos"]'); await wait(p);
     check((await hash(p)) === "#eventos" && (await p.locator('#evBody code.jn[data-j="eventhub"]').count()) >= 1, "Abrir Eventos mostra o Event Hub");
     check((await p.locator("#evBody .evBar").count()) > 0, "Eventos: linha do tempo do mês");
     const soon = await p.locator("#evBody .evCard").count(), bd = p.locator('#sideNav [data-sec="eventos"] .navBdg');
