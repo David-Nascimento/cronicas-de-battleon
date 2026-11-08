@@ -6,6 +6,6 @@
      storageBucket: "seu-projeto.appspot.com", messagingSenderId: "...", appId: "..."}; */
 export const firebaseConfig: Record<string, string> | null = null;
 
-/* Endereço da leitura da charpage. "" = o mesmo site (o npm run dev responde em /api/char).
-   No site no ar, coloque o endereço do Cloudflare Worker, ex.: "https://cdb-charpage.SEU-USUARIO.workers.dev". */
-export const API_BASE = "";
+/* Endereço da leitura da charpage no site publicado: o Cloudflare Worker (server/worker.mjs).
+   No computador (localhost) o portal usa a rota /api/char do próprio npm run dev. */
+export const API_BASE = "https://cdb-charpage.cronicas-battleon.workers.dev";

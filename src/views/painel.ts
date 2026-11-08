@@ -165,11 +165,13 @@ function questsTab() {
 /* ---------- personagem ---------- */
 async function link(name: string) {
   if (location.protocol === "file:" && !API_BASE) { toast("!", L("pn_need_server")); return; }
+  /* no computador (npm run dev e testes) a rota /api/char é do próprio servidor; no site publicado, é o Cloudflare Worker */
+  const local = /^(localhost|127\.0\.0\.1|\[::1\])$/.test(location.hostname), base = local ? "" : API_BASE;
   /* sem o endereço do Worker, o site publicado não tem /api/char (o GitHub Pages devolve uma página 404 em HTML) */
-  if (!API_BASE && !/^(localhost|127\.0\.0\.1|\[::1\])$/.test(location.hostname)) { toast("!", L("pn_no_api")); return; }
+  if (!local && !API_BASE) { toast("!", L("pn_no_api")); return; }
   busy = true; renderPainel();
   try {
-    const res = await fetch(API_BASE + "/api/char?name=" + encodeURIComponent(name));
+    const res = await fetch(base + "/api/char?name=" + encodeURIComponent(name));
     if (!(res.headers.get("content-type") || "").includes("json")) throw new Error(L("pn_api_down", {s: res.status}));
     const r = await res.json();
     if (!r.ok) throw new Error(r.error || L("pn_link_err"));
