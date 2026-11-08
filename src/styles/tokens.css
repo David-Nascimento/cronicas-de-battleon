@@ -1,18 +1,14 @@
 /* Tema Hollowborn: o ShadowRealm à noite. Fundo de tinta violeta, texto cor de osso e um único brilho,
    o "dos olhos", que a pessoa escolhe (como o equipamento Hollowborn, que muda junto com a cor dos olhos).
-   Tudo que brilha deriva de --eye; o tema claro é a luz da manhã sobre o mesmo mundo. */
+   Tudo que brilha deriva de --eye, fixo na cor Brasa; o tema claro é a luz da manhã sobre o mesmo mundo. */
 @property --eyeOn{syntax:"<number>";inherits:true;initial-value:1}
-:root{--eye:#5FE0CF}
-:root[data-eye="vazio"]{--eye:#B898FF}
-:root[data-eye="sangue"]{--eye:#FF6B7E}
-:root[data-eye="brasa"]{--eye:#FFB45A}
-:root[data-eye="osso"]{--eye:#E6DDC6}
+:root{--eye:#FFB45A}
 :root{
   --bg:#110D18; --bg2:#161120; --panel:#1B1526; --panel2:#231B31; --ink:#EFE9DF; --muted:#A99FB8; --line:#382C4B; --line2:#291F38;
   --glow:var(--eye); --glow-hi:color-mix(in oklab,var(--eye) 62%,#fff); --glow-dim:color-mix(in oklab,var(--eye) 40%,#110D18);
   --glow-soft:color-mix(in oklab,var(--eye) 12%,transparent); --on-glow:#0B0812; --scrim:rgba(7,4,12,.78);
   --blood:#FF5C72;
-  --free:#62D88E; --member:#F2BE4B; --rare:#FFD34D; --rareTx:#FFD34D; --warn:#E8B96A; --acs:#B392FF; --hero:#F47AB0; --cal:#69B7F7;
+  --free:#62D88E; --member:#F2BE4B; --rare:#FFD34D; --rareTx:#FFD34D; --warn:#FF8F7A; --acs:#B392FF; --hero:#F47AB0; --cal:#69B7F7;
   --tS:#E5533D; --tA:#D69222; --tB:#3FA56C; --tC:#5F86B0; --tN:#7C7290;
   --deco:"Texturina",Georgia,serif; --display:"Barlow",system-ui,-apple-system,"Segoe UI",sans-serif; --body:"Barlow",system-ui,-apple-system,"Segoe UI",sans-serif;
   --lift:inset 0 1px 0 rgba(255,255,255,.04); --halo:0 0 0 1px var(--glow-dim),0 8px 28px -14px var(--glow);
@@ -22,15 +18,15 @@
 }
 @media (prefers-color-scheme:light){:root:not([data-theme="dark"]){
   --bg:#F3F0F6; --bg2:#EAE5F0; --panel:#FFFFFF; --panel2:#F7F4FA; --ink:#1B1524; --muted:#5E5570; --line:#D6CEE1; --line2:#E5DFEC;
-  --glow:color-mix(in oklab,var(--eye) 45%,#1B1524); --glow-hi:color-mix(in oklab,var(--eye) 38%,#1B1524); --glow-dim:color-mix(in oklab,var(--eye) 52%,#fff);
+  --glow:#A65600; --glow-hi:#8C4700; --glow-dim:color-mix(in oklab,var(--eye) 52%,#fff);
   --glow-soft:color-mix(in oklab,var(--eye) 14%,transparent); --on-glow:#FFFFFF; --scrim:rgba(27,21,36,.48);
   --blood:#C2283F;
-  --free:#16804A; --member:#8A5E07; --rare:#B88400; --rareTx:#7A5600; --warn:#8A5E07; --acs:#6136C0; --hero:#B82F60; --cal:#15618F;
+  --free:#16804A; --member:#8A5E07; --rare:#B88400; --rareTx:#7A5600; --warn:#B3402B; --acs:#6136C0; --hero:#B82F60; --cal:#15618F;
   --tS:#C23A22; --tA:#A9700C; --tB:#2A7F47; --tC:#476A8E; --tN:#8A8198; --lift:none; --halo:0 0 0 1px var(--glow-dim),0 8px 24px -16px var(--glow); --crest-hood:#2A2236; color-scheme:light}}
 :root[data-theme="light"]{
   --bg:#F3F0F6; --bg2:#EAE5F0; --panel:#FFFFFF; --panel2:#F7F4FA; --ink:#1B1524; --muted:#5E5570; --line:#D6CEE1; --line2:#E5DFEC;
-  --glow:color-mix(in oklab,var(--eye) 45%,#1B1524); --glow-hi:color-mix(in oklab,var(--eye) 38%,#1B1524); --glow-dim:color-mix(in oklab,var(--eye) 52%,#fff);
+  --glow:#A65600; --glow-hi:#8C4700; --glow-dim:color-mix(in oklab,var(--eye) 52%,#fff);
   --glow-soft:color-mix(in oklab,var(--eye) 14%,transparent); --on-glow:#FFFFFF; --scrim:rgba(27,21,36,.48);
   --blood:#C2283F;
-  --free:#16804A; --member:#8A5E07; --rare:#B88400; --rareTx:#7A5600; --warn:#8A5E07; --acs:#6136C0; --hero:#B82F60; --cal:#15618F;
+  --free:#16804A; --member:#8A5E07; --rare:#B88400; --rareTx:#7A5600; --warn:#B3402B; --acs:#6136C0; --hero:#B82F60; --cal:#15618F;
   --tS:#C23A22; --tA:#A9700C; --tB:#2A7F47; --tC:#476A8E; --tN:#8A8198; --lift:none; --halo:0 0 0 1px var(--glow-dim),0 8px 24px -16px var(--glow); --crest-hood:#2A2236; color-scheme:light}

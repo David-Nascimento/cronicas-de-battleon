@@ -4,7 +4,7 @@ import type {State, UiState} from "./types.js";
 /* estado de interface que muda ao longo do uso (antes: variáveis soltas) */
 export const ui:UiState={curView:"inicio",feedSeen:null,ALERTS:[],curClass:null,eIdx:null,eCat:"all"};
 
-export const st:State={cat:"free",mode:"geral",all:"todas",lang:"pt",nf:"all",bcat:"all",eslot:"all",fk:"all",eye:"espectral",subs:{},rt:"all"};
+export const st:State={cat:"free",mode:"geral",all:"todas",lang:"pt",nf:"all",bcat:"all",eslot:"all",fk:"all",subs:{},rt:"all"};
 try{Object.assign(st,JSON.parse(localStorage.getItem("aqwTier")||"{}"))}catch(e){}
 if(st.lang!=="pt"&&st.lang!=="en")st.lang="pt";
 /* depois de salvar no navegador, a conta (se houver login) também recebe a mudança: veja features/account.ts */

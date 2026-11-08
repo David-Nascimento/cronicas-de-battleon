@@ -13,7 +13,6 @@ import "./views/agenda.js";
 import "./features/news.js";
 import "./features/alerts.js";
 import "./features/toasts.js";
-import "./features/eye.js";
 import "./views/compare.js";
 import "./views/teams.js";
 import "./views/cards.js";

@@ -38,7 +38,7 @@ export async function tierLink(t: Shared): Promise<string> {
 /* imagem: fundo do tema, uma faixa por tier com o nome das classes em etiquetas */
 export async function tierImage(t: Shared, title: string, sub: string, foot: string): Promise<Blob> {
   const cs = getComputedStyle(document.documentElement), v = (k: string, d: string) => cs.getPropertyValue(k).trim() || d;
-  const bg = v("--bg", "#151020"), panel = v("--panel", "#201a2c"), ink = v("--ink", "#ece4d4"), muted = v("--muted", "#a99fb6"), glow = v("--glow", "#5FE0CF"), line = v("--line2", "#352c44");
+  const bg = v("--bg", "#151020"), panel = v("--panel", "#201a2c"), ink = v("--ink", "#ece4d4"), muted = v("--muted", "#a99fb6"), glow = v("--glow", "#FFB45A"), line = v("--line2", "#352c44");
   try { await (document as any).fonts?.ready; } catch (_) {}
   const W = 1200, P = 40, LW = 96, GAP = 8, CH = 36, font = "600 17px Barlow, 'Segoe UI', system-ui, sans-serif";
   const cv = document.createElement("canvas"), x = cv.getContext("2d");

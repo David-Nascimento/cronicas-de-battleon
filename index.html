@@ -6,13 +6,12 @@
 <title>Crônicas de Battleon</title>
 <meta name="color-scheme" content="dark light">
 <meta name="theme-color" content="#110D18">
-<link rel="icon" id="favicon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 92 104'%3E%3Cpath d='M46 4L82 18V56C82 78 66 93 46 100C26 93 10 78 10 56V18Z' fill='%23231B31' stroke='%235FE0CF' stroke-width='5' stroke-linejoin='round'/%3E%3Cpath d='M46 21C32 21 24 32 24 47V75L31 71L35 78L40 72L46 80L52 72L57 78L61 71L68 75V47C68 32 60 21 46 21Z' fill='%230C0912'/%3E%3Cpath d='M46 33C37.5 33 33 40.5 33 49C33 58 39 64.5 46 66.5C53 64.5 59 58 59 49C59 40.5 54.5 33 46 33Z' fill='%2305030A'/%3E%3Cpath d='M34 46.6C38 44.6 42.4 45.6 45 49.6C41.6 51.8 37.2 51.2 34 46.6ZM58 46.6C54 44.6 49.6 45.6 47 49.6C50.4 51.8 54.8 51.2 58 46.6Z' fill='%235FE0CF'/%3E%3C/svg%3E">
+<link rel="icon" id="favicon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 92 104'%3E%3Cpath d='M46 4L82 18V56C82 78 66 93 46 100C26 93 10 78 10 56V18Z' fill='%23231B31' stroke='%23FFB45A' stroke-width='5' stroke-linejoin='round'/%3E%3Cpath d='M46 21C32 21 24 32 24 47V75L31 71L35 78L40 72L46 80L52 72L57 78L61 71L68 75V47C68 32 60 21 46 21Z' fill='%230C0912'/%3E%3Cpath d='M46 33C37.5 33 33 40.5 33 49C33 58 39 64.5 46 66.5C53 64.5 59 58 59 49C59 40.5 54.5 33 46 33Z' fill='%2305030A'/%3E%3Cpath d='M34 46.6C38 44.6 42.4 45.6 45 49.6C41.6 51.8 37.2 51.2 34 46.6ZM58 46.6C54 44.6 49.6 45.6 47 49.6C50.4 51.8 54.8 51.2 58 46.6Z' fill='%23FFB45A'/%3E%3C/svg%3E">
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Texturina:opsz,wght@12..72,600..800&display=swap">
-<script>try{var s=JSON.parse(localStorage.getItem("aqwTier")||"{}");if(s.eye)document.documentElement.dataset.eye=s.eye}catch(e){}</script>
 <link rel="stylesheet" href="app.css">
 </head>
 <body>
@@ -30,7 +29,6 @@
       <g fill="var(--eye-core)"><path d="M36 47.2 C38.8 45.9 41.9 46.5 43.8 49.2 C41.4 50.8 38.3 50.5 36 47.2 Z"/><path d="M56 47.2 C53.2 45.9 50.1 46.5 48.2 49.2 C50.6 50.8 53.7 50.5 56 47.2 Z"/></g>
     </g>
   </symbol>
-  <symbol id="eyeIc" viewBox="0 0 24 24"><path fill-rule="evenodd" fill="currentColor" d="M12 5C6.5 5 2.7 9.2 1.5 12c1.2 2.8 5 7 10.5 7s9.3-4.2 10.5-7C21.3 9.2 17.5 5 12 5zm0 2.2a4.8 4.8 0 1 1 0 9.6 4.8 4.8 0 0 1 0-9.6zm0 2.6a2.2 2.2 0 1 0 0 4.4 2.2 2.2 0 0 0 0-4.4z"/></symbol>
 </defs></svg>
 
 <div class="shell">
@@ -49,10 +47,6 @@
       </div>
       <span class="sp"></span>
       <button class="acctBtn" id="acctBtn" data-goview="painel"></button>
-      <div class="eyeWrap">
-        <button class="eyeBtn" id="eyeBtn" aria-haspopup="true" aria-expanded="false" aria-controls="eyePanel"><svg aria-hidden="true"><use href="#eyeIc"/></svg></button>
-        <div class="eyePanel" id="eyePanel" role="group" hidden></div>
-      </div>
       <div class="bellWrap">
         <button class="bell" id="bell" aria-haspopup="true" aria-expanded="false" aria-controls="notifPanel">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a6 6 0 0 0-6 6v3.6L4.3 15.4A1 1 0 0 0 5.2 17h13.6a1 1 0 0 0 .9-1.6L18 12.6V9a6 6 0 0 0-6-6zm0 19a2.6 2.6 0 0 0 2.5-2h-5a2.6 2.6 0 0 0 2.5 2z" fill="currentColor"/></svg>

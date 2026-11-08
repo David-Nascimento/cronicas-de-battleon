@@ -17,7 +17,6 @@ import {renderTeams} from "./views/teams.js";
 import {renderTiers} from "./views/tiers.js";
 import {renderReleases} from "./views/releases.js";
 import {renderEvents} from "./views/events.js";
-import {renderEye} from "./features/eye.js";
 import {renderAcct as renderAcctOnly, renderPainel} from "./views/painel.js";
 
 /* Cada aba só é montada quando aparece. Trocar de idioma marca todas como "sujas" e redesenha só a aberta;
@@ -36,7 +35,7 @@ export function renderAll(){
   seg("bCat",[["all",L("all")],...cats.map(k=>[k,catName(k)])],"bcat",renderBuilder);
   seg("segAll",[["todas",L("all")],...cats.map(k=>[k,catName(k)])],"all",renderCards);
   Object.keys(VIEWR).forEach(k=>dirty.add(k));
-  renderView(ui.curView);renderEye();refreshNotif();renderAcctOnly();
+  renderView(ui.curView);refreshNotif();renderAcctOnly();
   if(dlg.open&&ui.curClass!=null)openClass(ui.curClass);
   if(dlgE.open&&ui.eIdx!=null)openEnh(ui.eIdx);
 }

@@ -206,8 +206,7 @@ try {
     const p = await page();
     await p.click('#segLang button[data-v="en"]'); await wait(p, 250);
     check((await p.locator("#sideNav").innerText()).includes("What's new"), "troca para inglês");
-    await p.click("#eyeBtn"); await p.click('#eyePanel [data-eye="sangue"]');
-    check((await p.evaluate(() => document.documentElement.dataset.eye)) === "sangue", "cor dos olhos muda o tema");
+    check((await p.locator("#eyeBtn").count()) === 0 && (await p.evaluate(() => getComputedStyle(document.documentElement).getPropertyValue("--eye").trim().toUpperCase())) === "#FFB45A", "cor fixa Brasa, sem botão de cor dos olhos");
     const m = await page({ viewport: { width: 390, height: 844 } });
     for (const v of ["inicio", "eventos", "lancamentos", "tier", "diarias"]) {
       await go(m, v);

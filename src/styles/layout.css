@@ -38,18 +38,6 @@
 .gr .sigI{width:34px;height:34px;flex:none;padding:7px;border-radius:9px;background:var(--bg2);border:1px solid var(--line2);color:var(--glow)}
 .gr b{display:block;font-weight:600}.gr small{color:var(--muted);font-size:12px}
 /* cor dos olhos */
-.eyeWrap{position:relative}
-.eyeBtn{width:42px;height:42px;border-radius:var(--r-md);border:1px solid var(--line2);background:var(--panel);color:var(--glow);cursor:pointer;display:flex;align-items:center;justify-content:center;padding:0}
-.eyeBtn svg{width:22px;height:22px;filter:drop-shadow(0 0 5px var(--glow-dim))}
-.eyeBtn:hover,.eyeBtn[aria-expanded="true"]{border-color:var(--glow-dim)}
-.eyePanel{position:absolute;z-index:40;top:calc(100% + 8px);right:0;width:300px;padding:14px;border-radius:var(--r-lg);border:1px solid var(--glow-dim);background:var(--panel);box-shadow:0 24px 60px rgba(0,0,0,.5);display:flex;flex-direction:column;gap:6px}
-.eyePanel b{font:700 15px var(--display)}
-.eyePanel p{margin:0 0 6px;font-size:13px;color:var(--muted);line-height:1.45}
-.eyeOpts{display:grid;grid-template-columns:1fr 1fr;gap:6px}
-.eyeOpts button{display:flex;align-items:center;gap:8px;padding:7px 9px;border-radius:var(--r-sm);border:1px solid var(--line2);background:var(--bg2);color:var(--ink);font:600 13px var(--body);cursor:pointer;text-align:left}
-.eyeOpts button i{width:16px;height:16px;border-radius:50%;flex:none;box-shadow:0 0 10px currentColor}
-.eyeOpts button[aria-pressed="true"]{border-color:var(--glow);box-shadow:inset 0 0 0 1px var(--glow-dim)}
-@media (max-width:520px){.eyePanel{position:fixed;top:calc(env(safe-area-inset-top,0px) + 64px);left:max(16px,env(safe-area-inset-left,0px));right:max(16px,env(safe-area-inset-right,0px));width:auto}}
 /* abas do destino: no computador ficam na lateral; no celular, nesta fileira */
 .subnav{display:none}
 .subnav button{flex:none;font:600 13px var(--body);padding:8px 14px;border-radius:999px;border:1px solid var(--line);background:var(--panel);color:var(--muted);cursor:pointer;white-space:nowrap}
@@ -71,7 +59,7 @@
   body .toasts{bottom:calc(84px + env(safe-area-inset-bottom,0px))}
 }
 @media (max-width:899px){.topbar .seg button{padding:6px 9px}.topbar{gap:8px}}
-@media (max-width:420px){.topbar .seg button{padding:6px 7px}.eyeBtn,.bell{width:38px;height:38px}.topbar{gap:6px}}
+@media (max-width:420px){.topbar .seg button{padding:6px 7px}.bell{width:38px;height:38px}.topbar{gap:6px}}
 @media (max-width:360px){.bnav .nv{font-size:10px}}
 /* celular: o seletor de idioma vira um botão só, com o outro idioma */
 @media (max-width:520px){#segLang{padding:3px}#segLang button[aria-pressed="true"]{display:none}#segLang button{padding:6px 9px}}

@@ -91,11 +91,11 @@ Agenda de ultras (semanais, sazonais e outras), times de 4 classes com a funçã
 
 ### Visual Hollowborn, tema claro e celular
 
-O visual segue o tema Hollowborn do AQW: fundo violeta escuro, texto cor de osso e um brilho que segue a **cor dos olhos** escolhida no botão de olho do topo (Espectral, Vazio, Sangue, Brasa ou Osso), como o equipamento Hollowborn. O ícone da aba muda junto. O tema claro acompanha o sistema, e no celular o menu vai para baixo.
+O visual segue o tema Hollowborn do AQW: fundo violeta escuro, texto cor de osso e um brilho na cor **Brasa** (âmbar), usada só no que está ativo e nos links. O tema claro acompanha o sistema, e no celular o menu vai para baixo.
 
-| Cor dos olhos "Vazio" | Tema claro |
-|---|---|
-| ![Cor dos olhos Vazio](docs/screenshots/cor-dos-olhos.png) | ![Tema claro](docs/screenshots/tema-claro.png) |
+| Tema claro |
+|---|
+| ![Tema claro](docs/screenshots/tema-claro.png) |
 
 | Celular: Hoje | Celular: Diárias |
 |---|---|
@@ -158,7 +158,7 @@ Depois, `npm run build` e `bash tools/publish-pages.sh`.
 index.html            estrutura da página (menus, seções, diálogos)
 src/                  TypeScript; tipos dos dados e do estado em types.ts
   main.ts             ponto de entrada: carrega tudo e inicia a página
-  config.ts           categorias, modos, destinos e abas (SECS, SUBS, SEC), ícones, cores dos olhos
+  config.ts           categorias, modos, destinos e abas (SECS, SUBS, SEC), ícones
   state.ts            estado salvo no navegador, idioma (L, T) e estado da interface (ui)
   render-all.ts       monta cada aba só quando ela aparece; redesenha ao trocar de idioma
   events.ts           cliques globais (abrir ficha, comparar, navegação...)
@@ -169,7 +169,7 @@ src/                  TypeScript; tipos dos dados e do estado em types.ts
   components/         pedaços de interface reutilizados
   views/              uma por aba: home, tiers (e Minha tier list), cards, compare, agenda, teams, builder,
                       enhancements, farms (HardFarm), dailies, releases (itens novos), painel (Meu painel), nav
-  features/           notícias, alertas e notificações, avisos na tela, busca global, cor dos olhos, conta (account.ts)
+  features/           notícias, alertas e notificações, avisos na tela, busca global, conta (account.ts)
   firebase-config.ts  configuração do Firebase e endereço da leitura da charpage
   styles/             CSS por área; tokens.css tem as cores e main.css define a ordem (a ordem importa)
 public/               manifest e ícones do app instalável
