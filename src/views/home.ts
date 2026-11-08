@@ -11,7 +11,7 @@ import {fmtDay, jn, relCounts} from "./releases.js";
    uma vez só, o que está no ar por ordem de fim, os melhores e as notícias. Cada informação aparece num lugar. */
 export function renderHome(){
   const now=new Date(),d=new Date(now.getFullYear(),now.getMonth(),now.getDate());
-  const diff=(5-d.getDay()+7)%7,fri=new Date(d);fri.setDate(d.getDate()+diff);
+  const diff=(5-d.getDay()+7)%7;
   const p=dailyProgress(),r=REL[0],evs=liveEvents(),soon=endingSoon(),l=st.lang==="en"?"en":"pt";
   const hd=document.getElementById("homeDate");if(hd)hd.textContent=now.toLocaleDateString(loc(),{weekday:"long",day:"numeric",month:"long"});
   /* "Seu dia no {Battleon}": o que está entre chaves ganha a fonte mono e a cor de destaque */
@@ -23,10 +23,10 @@ export function renderHome(){
   const tiles=[
     ["diarias",L("go_daily"),L("hs_n_of",{n:p.done,t:p.total}),L("hs_daily_x"),""],
     ["eventos",L("sec_events"),soon.length?L("hs_ev_soon",{n:soon.length}):L("hs_ev_live",{n:evs.length}),first?L("hs_ev_x",{d:fmtDay(first.until)}):"",soon.length?"warn":""],
-    ["ultras",L("hs_reset"),relDays(diff),fri.toLocaleDateString(loc(),{weekday:"long",day:"numeric",month:"short"}).replace(/\./g,""),""],
     ["lancamentos",L("tab_releases"),r?String(relCounts(r).total):"0",r?L("hs_rel_x",{d:fmtDay(r.from)}):"",""]];
   const it=document.getElementById("intents");it.setAttribute("aria-label",L("intents"));
   it.innerHTML=tiles.map(([v,h,b,x,c])=>`<button class="intent stat t-${v}" data-goview="${v}"><span class="tile"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="${IC[v]}" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="stx"><small>${esc(h)}</small><b class="${c}">${esc(b)}</b><span>${esc(x)}</span></span></button>`).join("");
+  renderRing(diff,evs.find(e=>e.until&&e.from));
   /* um cartão só: a última atualização numa linha e os eventos que acabam primeiro */
   let h="";
   if(r){const c=relCounts(r),all=Object.values(r.items).flat() as string[][],rares=all.filter(i=>(i[1]||"").includes("r")).length,j=r.maps.find(m=>m.j);
@@ -44,3 +44,27 @@ export function renderHome(){
 }
 const fmtNewsDate=(s:string,approx?:number)=>{const [y,m,d]=s.split("-").map(Number);
   return approx?new Date(y,m-1,d).toLocaleDateString(loc(),{month:"short",year:"numeric"}).replace(/\./g,""):fmtDay(s)};
+
+/* Anel do dia (arte do topo): o de fora é a semana até o reset de sexta, o de dentro é quanto já passou
+   do evento que acaba primeiro. No centro, quantos dias faltam para o reset. */
+function renderRing(diff:number,ev?:{name:string;from?:string;until?:string}){
+  const box=document.getElementById("dayRing");if(!box)return;
+  const C=(r:number)=>2*Math.PI*r,R1=124,R2=98,week=diff===0?1:(7-diff)/7;
+  const day=(s:string)=>{const [y,m,d]=s.split("-").map(Number);return new Date(y,m-1,d).getTime()};
+  const t0=new Date(),today=new Date(t0.getFullYear(),t0.getMonth(),t0.getDate()).getTime();
+  let evp=0,evLeft=0;
+  if(ev&&ev.from&&ev.until){const a=day(ev.from),b=day(ev.until);evp=Math.min(1,Math.max(0,(today-a)/Math.max(1,b-a)));evLeft=Math.round((b-today)/864e5)}
+  /* rótulos dos dias, começando pela sexta no topo e seguindo no sentido do relógio */
+  const fri=new Date(today);fri.setDate(fri.getDate()+diff-7);
+  const labels=Array.from({length:7},(_,k)=>{const d=new Date(fri);d.setDate(fri.getDate()+k);const ang=(k/7)*2*Math.PI-Math.PI/2;
+    return `<text x="${(160+148*Math.cos(ang)).toFixed(1)}" y="${(160+148*Math.sin(ang)+4).toFixed(1)}">${esc(d.toLocaleDateString(loc(),{weekday:"short"}).replace(/\./g,"").slice(0,3).toUpperCase())}</text>`}).join("");
+  const arc=(r:number,f:number,cls:string)=>`<circle class="trk" cx="160" cy="160" r="${r}"/>${f>0?`<circle class="${cls}" cx="160" cy="160" r="${r}" stroke-dasharray="${(C(r)*f).toFixed(1)} ${C(r).toFixed(1)}" transform="rotate(-90 160 160)"/>`:""}`;
+  const center=diff===0?L("ring_today"):L(diff===1?"ring_day":"ring_days",{n:diff});
+  box.innerHTML=`<div class="ringFig"><svg viewBox="0 0 320 320" role="img" aria-label="${esc(L("ring_aria",{d:center}))}">
+      <g class="r1">${arc(R1,week,"wk")}</g>${ev&&evp>0?`<g class="r2">${arc(R2,evp,"ev")}</g>`:""}<g class="lbl" aria-hidden="true">${labels}</g></svg>
+      <div class="ringC"><b>${esc(center)}</b><span>${L("ring_sub")}</span></div></div>
+    <ul class="ringKey">
+      <li><i class="wk"></i><span><b>${L("ring_week")}</b><small>${L("ring_week_x",{n:diff===0?7:7-diff})}</small></span></li>
+      ${ev&&evp>0?`<li><i class="ev"></i><span><b>${esc(ev.name)}</b><small>${evLeft<=0?L("m_last"):L("ring_ev_x",{d:relDays(evLeft)})}</small></span></li>`:""}
+    </ul>`;
+}
