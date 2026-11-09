@@ -53,7 +53,7 @@ try {
     await p.click('#sideNav [data-sec="classes"]'); await wait(p);
     check((await hash(p)) === "#tier", "destino Classes abre a tier list");
     const sel = { inicio: "#modes .rank", tier: "#tiers .tc", todas: "#cards .card", comparar: "#cmpPick input", enh: "#enh .ec", ultras: "#teams .team",
-      montador: "#pkGrid .pk", diarias: "#dList .dItem, #dList .dIntro", itens: "#farms .fcard", drops: "#drops .dp, #drops .dpEmpty", lancamentos: "#relList .ri", novidades: "#feed .post", eventos: "#evBody .evSum" };
+      montador: "#pkGrid .pk", diarias: "#dList .dItem, #dList .dIntro", itens: "#farms .fcard", drops: "#dropList .dp, #dropList .dpEmpty", lancamentos: "#relList .ri", novidades: "#feed .post", eventos: "#evBody .evSum" };
     for (const [v, s] of Object.entries(sel)) { await go(p, v); check((await p.locator(s).count()) > 0, `aba ${v} monta conteúdo`); }
     await p.click('#sideNav [data-sec="classes"]'); await wait(p);
     await p.click('#sideNav [data-sub="enh"]'); await wait(p);
@@ -273,20 +273,21 @@ try {
     p.on("pageerror", e => errors.push(e.message));
     await p.goto(pathToFileURL(tmp + "/index.html").href); await wait(p, 400);
     await go(p, "drops");
-    check((await p.locator("#drops .dp").count()) === 3, "drops: mostra os 3 itens de teste");
-    check((await p.locator("#drops .relGrp").count()) === 2, "drops: agrupa por quem dropa");
+    check((await p.evaluate(() => window.scrollY)) === 0, "drops: abre no topo, sem o endereço rolar a página até a lista");
+    check((await p.locator("#dropList .dp").count()) === 3, "drops: mostra os 3 itens de teste");
+    check((await p.locator("#dropList .relGrp").count()) === 2, "drops: agrupa por quem dropa");
     await p.click('#segDrops button[data-v="weapon"]'); await wait(p);
-    check((await p.locator("#drops .dp").count()) === 1, "drops: filtro de armas (a espada entra no grupo Armas)");
+    check((await p.locator("#dropList .dp").count()) === 1, "drops: filtro de armas (a espada entra no grupo Armas)");
     await p.click('#segDrops button[data-v="all"]'); await p.fill("#dropQ", "hood"); await wait(p);
-    check((await p.locator("#drops .dp").count()) === 1, "drops: busca por nome");
+    check((await p.locator("#dropList .dp").count()) === 1, "drops: busca por nome");
     await p.fill("#dropQ", "testwood"); await wait(p);
-    check((await p.locator("#drops .dp").count()) === 1, "drops: busca por mapa");
+    check((await p.locator("#dropList .dp").count()) === 1, "drops: busca por mapa");
     await p.fill("#dropQ", ""); await wait(p);
-    check((await p.locator("#drops code.jn").count()) > 0, "drops: /join para copiar");
+    check((await p.locator("#dropList code.jn").count()) > 0, "drops: /join para copiar");
     await p.click("#gq"); await p.fill("#gq", "cloak"); await wait(p);
     check((await p.locator("#gres [data-gdrop]").count()) === 1, "busca global acha drop 0 AC");
     await p.click("#gres [data-gdrop]"); await wait(p);
-    check((await hash(p)) === "#drops" && (await p.locator("#drops .dp").count()) === 1, "busca global abre o drop na aba Drops 0 AC");
+    check((await hash(p)) === "#drops" && (await p.locator("#dropList .dp").count()) === 1, "busca global abre o drop na aba Drops 0 AC");
   }
 } finally {
   await browser.close();

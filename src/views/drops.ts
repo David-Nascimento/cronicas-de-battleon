@@ -16,7 +16,7 @@ export function renderDrops(){
   seg("segDrops",[["all",`${L("all")} <b>${n("all")}</b>`],...DROP_GROUPS.filter(g=>n(g)).map(g=>[g,`${L("drops_g_"+g)} <b>${n(g)}</b>`])],"dc",renderDrops);
   const inp=document.getElementById("dropQ") as HTMLInputElement;
   inp.placeholder=L("drops_q");inp.setAttribute("aria-label",L("drops_q"));if(inp.value!==q)inp.value=ui.dropQ||"";
-  const meta=document.getElementById("dropMeta"),box=document.getElementById("drops");
+  const meta=document.getElementById("dropMeta"),box=document.getElementById("dropList");
   if(!all.length){meta.textContent="";box.innerHTML=`<p class="relEmpty dpEmpty">${L("drops_none")}</p>`;return}
   meta.textContent=DROPDATA.updated?L("drops_upd",{d:DROPDATA.updated.split("-").reverse().join("/")}):"";
   const rows=all.filter(i=>(f==="all"||grp(i.c)===f)&&(has(i.n,q)||has(i.by||"",q)||i.loc.some(l=>has(l.n,q))));
@@ -31,5 +31,5 @@ export function renderDrops(){
 }
 export function focusDrop(name:string){st.dc="all";ui.dropQ=name;renderDrops()}
 document.addEventListener("input",e=>{if((e.target as HTMLElement).id==="dropQ"){ui.dropQ=(e.target as HTMLInputElement).value;renderDrops()}});
-document.addEventListener("click",e=>{const c=(e.target as HTMLElement).closest&&(e.target as HTMLElement).closest<HTMLElement>("#drops code.jn");if(!c)return;
+document.addEventListener("click",e=>{const c=(e.target as HTMLElement).closest&&(e.target as HTMLElement).closest<HTMLElement>("#dropList code.jn");if(!c)return;
   const t="/join "+c.dataset.j;try{const w=navigator.clipboard&&navigator.clipboard.writeText(t);if(w&&w.catch)w.catch(()=>{})}catch(_){}toast("✓",t,L("farm_copied"))});
