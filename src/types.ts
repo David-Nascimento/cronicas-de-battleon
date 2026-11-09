@@ -35,6 +35,9 @@ export interface Release {
   shops: string[]; srcs: Record<string, Txt & { j?: string }>; src: { n: string; u: string }[];
   items: Partial<Record<string, RelItem[]>>;
 }
+/* drops.json: drops de 0 AC lidos do AQW Wiki por tools/drops/aqw_scraper.py. c = categoria (armor, sword...), t = tipo, by = quem dropa, loc = mapas (j = join) */
+export interface Drop { n: string; c: string; t?: string | null; by?: string | null; loc: { n: string; j?: string }[] }
+export interface DropData { updated: string | null; items: Drop[] }
 export type UiStrings = Record<Lang, Record<string, string>>;
 
 /* estado salvo no navegador (localStorage "aqwTier") */
@@ -49,5 +52,5 @@ export interface State {
 }
 export interface Alert { id: string; ic: string; lvl: "now" | "soon"; t: string; x: string; go: { tab?: string; cls?: string; team?: number } }
 export interface UiState {
-  curView: string; feedSeen: string | null; ALERTS: Alert[]; curClass: number | null; eIdx: number | null; eCat: string; relQ?: string;
+  curView: string; feedSeen: string | null; ALERTS: Alert[]; curClass: number | null; eIdx: number | null; eCat: string; relQ?: string; dropQ?: string;
 }

@@ -17,8 +17,8 @@ export const ICO={inicio:"M12 3 L2.5 11.2 H5 V20 H10.2 V14 H13.8 V20 H19 V11.2 H
   farm:"M6 2 H18 V6 C18 9 15.5 10.6 14 12 C15.5 13.4 18 15 18 18 V22 H6 V18 C6 15 8.5 13.4 10 12 C8.5 10.6 6 9 6 6 Z",
   conta:"M12 12a4.5 4.5 0 1 0 0-9 4.5 4.5 0 0 0 0 9zm0 2c-4.4 0-8 2.2-8 5v2h16v-2c0-2.8-3.6-5-8-5z"};
 export const SECS=[["inicio","sec_inicio"],["eventos","sec_events"],["classes","sec_classes"],["ultras","sec_ultras"],["farm","sec_farm"],["novidades","sec_news"]];
-export const SUBS={classes:[["tier","tab_tier"],["todas","tab_all"],["comparar","tab_cmp"],["enh","sec_enh"]],ultras:[["ultras","sub_teams"],["montador","tab_builder"]],farm:[["diarias","sec_daily"],["itens","sec_items"]],novidades:[["lancamentos","tab_releases"],["novidades","tab_news"]]};
-export const SEC={conta:["painel"],inicio:["inicio"],eventos:["eventos"],classes:["tier","todas","comparar","enh"],ultras:["ultras","montador"],farm:["diarias","itens"],novidades:["lancamentos","novidades"]};
+export const SUBS={classes:[["tier","tab_tier"],["todas","tab_all"],["comparar","tab_cmp"],["enh","sec_enh"]],ultras:[["ultras","sub_teams"],["montador","tab_builder"]],farm:[["diarias","sec_daily"],["itens","sec_items"],["drops","tab_drops"]],novidades:[["lancamentos","tab_releases"],["novidades","tab_news"]]};
+export const SEC={conta:["painel"],inicio:["inicio"],eventos:["eventos"],classes:["tier","todas","comparar","enh"],ultras:["ultras","montador"],farm:["diarias","itens","drops"],novidades:["lancamentos","novidades"]};
 /* tipos de item da aba Itens novos, na ordem em que aparecem */
 export const RTYPES=["class","armor","helm","cape","weapon","pet","ground","house","misc"];
 export const RICO={class:"M12 2.5 L20 5.6 V12 C20 16.6 16.6 20 12 21.5 C7.4 20 4 16.6 4 12 V5.6 Z",
@@ -32,3 +32,6 @@ export const RICO={class:"M12 2.5 L20 5.6 V12 C20 16.6 16.6 20 12 21.5 C7.4 20 4
   misc:"M9 3h6l-1.5 3h-3zM7 7h10c2.5 2.5 4 5.5 4 8.5C21 19 18 21 12 21S3 19 3 15.5C3 12.5 4.5 9.5 7 7z"};
 export const DN="https://www.aq.com/gamedesignnotes/";
 export const TYIC={new:"✦",rework:"⚒",balance:"⚖",skin:"✧",event:"⏳"};
+/* Drops 0 AC: grupos do filtro; as armas (machado, espada...) ficam juntas em "weapon" e a espécie vira etiqueta */
+export const DROP_GROUPS=["armor","helm","cape","weapon","pet","house"];
+export const DROP_GROUP_OF=(c:string)=>DROP_GROUPS.includes(c)?c:"weapon";

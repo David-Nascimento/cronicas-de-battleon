@@ -15,8 +15,9 @@ import SCHED_ from "./ultra-schedule.json";
 import NEWS_ from "./news.json";
 import RELDATA_ from "./releases.json";
 import ALIAS_ from "./class-aliases.json";
+import DROPS_ from "./drops.json";
 import {HUB} from "../config.js";
-import type {ClassExtra, ClassType, Daily, Farm, Klass, News, RawClass, Release, Team, UiStrings} from "../types.js";
+import type {ClassExtra, ClassType, Daily, DropData, Farm, Klass, News, RawClass, Release, Team, UiStrings} from "../types.js";
 const TYPES = TYPES_ as unknown as Record<string, ClassType>;
 const RAW = RAW_ as unknown as RawClass[];
 const FAMS = FAMS_ as unknown as string[][];
@@ -37,6 +38,8 @@ const RELDATA = RELDATA_ as unknown as {updated: string; list: Release[]};
 export {TYPES, RAW, FAMS, CALYR, OBTAIN, CONS, TEAMS, ITEMS, ENH, UI, EN, DAILIES, FARMS, SCHED, NEWS};
 /* itens novos: uma entrada por atualização, a mais recente primeiro */
 export const REL=RELDATA.list;
+/* drops de 0 AC (aba Farm > Drops 0 AC) */
+export const DROPDATA=DROPS_ as unknown as DropData;
 
 export const RAWBY:Record<string,RawClass>=Object.fromEntries(RAW.map(r=>[r[0],r]));
 export const D:Klass[]=RAW.map(r=>{const t=TYPES[r[5]];let o:ClassExtra=r[7]||{};

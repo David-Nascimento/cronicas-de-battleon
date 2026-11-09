@@ -5,6 +5,7 @@ import "./features/theme.js";
 import "./views/static.js";
 import "./views/nav.js";
 import "./views/farms.js";
+import "./views/drops.js";
 import "./views/dailies.js";
 import "./views/releases.js";
 import "./views/builder.js";

@@ -75,6 +75,18 @@ Na aba **Sazonais** aparece o evento que está no ar, com a data de fim e os map
 
 ![HardFarm](docs/screenshots/hardfarm.png)
 
+### Drops 0 AC
+
+Em **Farm > Drops 0 AC**: equipamentos que caem de monstros e saem por 0 AC (armaduras, elmos, capas, armas, pets e casas), agrupados por quem dropa, com o mapa e o `/join` para copiar. Dá para filtrar por tipo e buscar por item, monstro ou mapa; a busca do topo também acha esses itens. Os dados ficam em `src/data/drops.json` e são lidos do AQW Wiki por `tools/drops/aqw_scraper.py`:
+
+```
+pip install requests beautifulsoup4
+python3 tools/drops/aqw_scraper.py              # todas as categorias (use --with-join para trazer o /join de cada mapa)
+npm run build
+```
+
+O scraper pede uma página a cada 1,5 s e guarda tudo em `.aqw_cache/` (fora do git), então rodar de novo é rápido e não sobrecarrega o wiki. Enquanto o arquivo estiver vazio, a aba mostra como preenchê-lo.
+
 ### Classes novas
 
 Quando uma atualização traz uma classe que o portal ainda não analisou, ela entra sozinha, a partir dos Itens novos: aparece na loja **Novas** da tier list (numa faixa "?", sem tier), na Minha tier list (em Sem tier), em Todas as classes e na busca, com a marca de nova e um aviso na ficha. Itens que são cópia de uma classe que já existe (como "PaladinSlayer (2)") ficam ligados a ela em `class-aliases.json`. Nos Itens novos, cada classe tem o botão **Ver ficha**. Quando a classe ganha tier e guia em `classes.json`, ela sai de "Novas" sozinha.
@@ -168,14 +180,14 @@ src/                  TypeScript; tipos dos dados e do estado em types.ts
   lib/util.ts         funções pequenas (escape de HTML, busca sem acento, brasão da classe, link do wiki)
   components/         pedaços de interface reutilizados
   views/              uma por aba: home, tiers (e Minha tier list), cards, compare, agenda, teams, builder,
-                      enhancements, farms (HardFarm), dailies, releases (itens novos), painel (Meu painel), nav
+                      enhancements, farms (HardFarm), drops (Drops 0 AC), dailies, releases (itens novos), painel (Meu painel), nav
   features/           notícias, alertas e notificações, avisos na tela, busca global, conta (account.ts)
   firebase-config.ts  configuração do Firebase e endereço da leitura da charpage
   styles/             CSS por área; tokens.css tem as cores e main.css define a ordem (a ordem importa)
 public/               manifest e ícones do app instalável
 server/               leitura da charpage: charpage.mjs (lê a página), api.mjs (rota do npm run dev), worker.mjs e wrangler.toml (Cloudflare)
 firestore.rules       regras do banco: cada pessoa só lê e grava o próprio documento
-tools/                build com esbuild (e o servidor do npm run dev), modelo do service worker, publish-pages.sh, where/ (onde conseguir e quests do HardFarm)
+tools/                build com esbuild (e o servidor do npm run dev), modelo do service worker, publish-pages.sh, where/ (onde conseguir e quests do HardFarm), drops/ (scraper dos Drops 0 AC)
 docs/screenshots/     as capturas deste README
 legacy/               a versão anterior (index.html + css + js), para comparar
 ```
@@ -190,6 +202,7 @@ Edite os arquivos em `src/data/` e rode `npm run build`:
 | `month.json` | Aba Eventos e lista "No ar" do Hoje: Event Hub e o que está no ar com data de fim (`list`: `t`, `x`, `j`, `from`, `until`, `src`) |
 | `dailies.json` | Diárias |
 | `hardfarm.json` | HardFarm |
+| `drops.json` | Farm > Drops 0 AC (gerado por `tools/drops/aqw_scraper.py`, não edite à mão) |
 | `news.json` | Notícias de classes e o sino |
 | `classes.json`, `class-types.json`, `obtain.json` | Tier list, fichas das classes |
 | `class-aliases.json` | Itens de classe que são cópia de uma classe existente (nome do item → classe) |

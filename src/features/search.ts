@@ -1,6 +1,6 @@
 import {catName} from "../components/shared.js";
 import {ICO, RTYPES} from "../config.js";
-import {D, DAILIES, FARMS, REL} from "../data/index.js";
+import {D, DAILIES, DROPDATA, FARMS, REL} from "../data/index.js";
 import {esc, idx, nrm, sigil, total, has, skey} from "../lib/util.js";
 import {L, save, st} from "../state.js";
 import {renderBuilder} from "../views/builder.js";
@@ -9,11 +9,12 @@ import {dlg, openClass} from "../views/class-dialog.js";
 import {renderDailies} from "../views/dailies.js";
 import {renderEnh} from "../views/enhancements.js";
 import {renderFarms} from "../views/farms.js";
+import {focusDrop} from "../views/drops.js";
 import {renderTiers} from "../views/tiers.js";
 import {show} from "../views/nav.js";
 import {fmtRange, focusItem, ricon} from "../views/releases.js";
 
-/* Uma busca só para tudo: classes, itens novos, diárias e HardFarm. Quem chega pela primeira vez não precisa saber em que aba está cada coisa. */
+/* Uma busca só para tudo: classes, itens novos, drops 0 AC, diárias e HardFarm. Quem chega pela primeira vez não precisa saber em que aba está cada coisa. */
 export const gq=document.getElementById("gq") as HTMLInputElement,gres=document.getElementById("gres");
 const ico=k=>`<svg class="sigI" viewBox="0 0 24 24" aria-hidden="true"><path d="${ICO[k]}" fill="currentColor"/></svg>`;
 const flash=el=>{if(!el)return;el.scrollIntoView({behavior:"smooth",block:"center"});el.classList.add("flash");setTimeout(()=>el.classList.remove("flash"),1800)};
@@ -31,6 +32,7 @@ const PAGES:[string,string,string,string,string][]=[
   ["diarias","sec_daily","sec_farm","diarias","diarias|diárias|diaria|daily|dailies|quests diarias|reset"],
   ["mydaily","daily_g_mine","sec_farm","diarias","minhas diarias|minhas diárias|my dailies|escolher diarias|lembrete"],
   ["itens","sec_items","sec_farm","farm","hardfarm|hard farm|farm|farmar|grind|reputação|reputacao|rep"],
+  ["drops","tab_drops","sec_farm","farm","drops 0 ac|drops|drop|0 ac|0ac|drop gratis|free drop"],
   ["hub","sec_events","sec_inicio","eventos","event hub|eventhub|evento do mes|evento do mês|eventos|sazonal|sazonais|seasonal|neste mes|this month"],
   ["lancamentos","tab_releases","sec_news","novidades","itens novos|new items|lançamentos|lancamentos|atualização|atualizacao|update|evento|event|release"],
   ["novidades","tab_news","sec_news","novidades","notícias|noticias|news|design notes|rework|novidades"]];
@@ -41,6 +43,7 @@ export function runSearch(){const q=nrm(gq.value.trim());if(!q){gres.hidden=true
   const cls=D.filter(c=>has(c.name,q)).sort((a,b)=>rank(a.name)-rank(b.name)||total(b)-total(a)).slice(0,5);
   const its=[];REL.forEach(r=>RTYPES.forEach(t=>(r.items[t]||[]).forEach(it=>{if(has(it[0],q))its.push({r,t,n:it[0]})})));
   its.sort((a,b)=>rank(a.n)-rank(b.n));
+  const dr=DROPDATA.items.filter(i=>has(i.n,q)).sort((a,b)=>rank(a.n)-rank(b.n));
   const dn=x=>l==="en"&&x.ne?x.ne:x.n;
   const dl=DAILIES.filter(x=>has(x.n,q)||(x.ne&&has(x.ne,q))).slice(0,3);
   const fm=FARMS.filter(x=>has(x.n,q)||(x.ne&&has(x.ne,q))).slice(0,3);
@@ -48,6 +51,7 @@ export function runSearch(){const q=nrm(gq.value.trim());if(!q){gres.hidden=true
   let h=pg.length?`<div class="gsec">${L("g_goto")}</div>`+pg.map(p=>`<button class="gr" data-gpage="${p[0]}">${ico(p[3])}<span><b>${L(p[1])}</b><small>${p[2]?L(p[2]):L("g_page")}</small></span></button>`).join(""):"";
   if(cls.length)h+=`<div class="gsec">${L("g_classes")}</div>`+cls.map(c=>`<button class="open gr" data-i="${idx(c)}">${sigil(c)}<span><b>${esc(c.name)}</b><small>${catName(c.cat)}, ${c.fresh?L("nw"):`Farm ${c.farm}, Solo ${c.solo}, Ultra ${c.ultra}`}</small></span></button>`).join("");
   if(its.length)h+=`<div class="gsec">${L("g_items",{n:its.length})}</div>`+its.slice(0,5).map(x=>`<button class="gr" data-gitem="${esc(x.r.id)}" data-gname="${esc(x.n)}">${ricon(x.t,"sigI")}<span><b>${esc(x.n)}</b><small>${L("rel_t_"+x.t)}, ${fmtRange(x.r)}</small></span></button>`).join("");
+  if(dr.length)h+=`<div class="gsec">${L("g_drops",{n:dr.length})}</div>`+dr.slice(0,4).map(x=>`<button class="gr" data-gdrop="${esc(x.n)}">${ricon(["armor","helm","cape","pet","house"].includes(x.c)?x.c:"weapon","sigI")}<span><b>${esc(x.n)}</b><small>${esc(x.by||L("drops_unknown"))}${x.loc.length?", "+esc(x.loc[0].n):""}</small></span></button>`).join("");
   if(dl.length)h+=`<div class="gsec">${L("sec_daily")}</div>`+dl.map(x=>`<button class="gr" data-gdaily="${esc(x.id)}">${ico("diarias")}<span><b>${esc(dn(x))}</b><small>${esc(x.who?x.who[l]:L("daily_g_"+x.g))}</small></span></button>`).join("");
   if(fm.length)h+=`<div class="gsec">HardFarm</div>`+fm.map(x=>`<button class="gr" data-gfarm="${FARMS.indexOf(x)}">${ico("farm")}<span><b>${esc(dn(x))}</b><small>${L("farm_"+x.k)}</small></span></button>`).join("");
   gres.innerHTML=h||`<div class="npEmpty">${L("gnores")}</div>`;
@@ -60,6 +64,7 @@ function pick(b:HTMLElement){gres.hidden=true;gq.value="";gq.blur();
     if(v==="tier"&&st.tsrc==="shared"){st.tsrc="portal";save()}
     show(v);return true}
   if(b.dataset.gitem){show("lancamentos");focusItem(b.dataset.gitem,b.dataset.gname);return true}
+  if(b.dataset.gdrop){show("drops");focusDrop(b.dataset.gdrop);return true}
   if(b.dataset.gdaily){const id=b.dataset.gdaily,x=DAILIES.find(d=>d.id===id);
     if(x){if(x.g==="old"||x.g==="season"||x.g==="rep")st.df=x.g;else if(st.df!=="all"&&st.df!==x.g)st.df="all";
       if((st.dhide||[]).includes(id))st.dsh=true;save()}
