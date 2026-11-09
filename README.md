@@ -87,7 +87,7 @@ python3 tools/drops/aqw_scraper.py              # todas as categorias (use --wit
 npm run build
 ```
 
-O scraper pede uma página a cada 1,5 s e guarda tudo em `.aqw_cache/` (fora do git), então rodar de novo é rápido e não sobrecarrega o wiki.
+Cada drop guarda o monstro (com o nível, quando o wiki informa), a raridade (por exemplo "Boss Drop") e os mapas. O parser é conferido com trechos reais do wiki: `python3 -m unittest tools/drops/test_scraper.py`. O scraper pede uma página a cada 1,5 s e guarda tudo em `.aqw_cache/` (fora do git), então rodar de novo é rápido e não sobrecarrega o wiki.
 
 ### Classes novas
 

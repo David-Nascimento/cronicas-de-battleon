@@ -39,7 +39,6 @@ CATEGORIES = {
     "polearm": "Polearms", "staff": "Staffs", "sword": "Swords", "wand": "Wands", "house": "Houses",
 }
 TAGS = "+0ac +drop +freeplayer -rare -pseudo-rare -seasonal -specialoffer -_index -_redirect"
-SKIP_TYPES = {"Item", "Quest Item", "Resource"}  # não são equipamento
 
 
 class Fetcher:
@@ -71,28 +70,61 @@ def total_pages(soup):
     return int(m.group(1)) if m else 1
 
 
+def _clean_loc(t):
+    return re.sub(r"\s*\((?:Location)\)$", "", t).strip()
+
+
+def _monsters(price_el):
+    """Monstros do 'Dropped by' (links dentro da linha de preço): nome limpo e nível, se o wiki informar."""
+    out = []
+    for a in price_el:
+        txt = a.get_text(strip=True)
+        lv = re.search(r"\(Level (\d+)\)", txt)
+        name = re.split(r"\s*\((?:Monster|NPC)\)|\s*\(Level \d+\)", txt)[0].strip()
+        out.append((name, int(lv.group(1)) if lv else None))
+    return out
+
+
 def parse_item(node, key):
+    """Lê um div.list-pages-item. Só devolve drops de 0 AC ('Price: N/A (Dropped by ...)' e 'Sellback: 0 AC')."""
     a = node.select_one("p strong a")
-    if not a:
-        return None
-    lines = [l.strip() for l in node.get_text("\n").split("\n") if l.strip()]
-
-    def field(prefix):
-        return next((l[len(prefix):].strip() for l in lines if l.startswith(prefix)), None)
-
-    price = field("Price:") or ""
-    if "Dropped by" not in price or field("Sellback:") != "0 AC":
-        return None  # só drops de verdade, que vendem por 0 AC
-    typ = field("Type:")
-    if typ in SKIP_TYPES:
-        return None
-    m = re.search(r"Dropped by\s*(.*?)\)?$", price)
-    locs = []
     box = node.select_one("div.item-content")
-    if box:
-        for l in box.select("a"):
-            locs.append({"n": l.get_text(strip=True), "u": urljoin(BASE, l.get("href", ""))})
-    return {"n": a.get_text(strip=True), "c": key, "t": typ, "by": m.group(1).strip() if m else None, "loc": locs}
+    if not a or not box:
+        return None
+    # os rótulos são <strong>; o valor é o que vem depois, até o próximo <br>/<p>
+    price = sellback = rarity = None
+    price_links, locs, on_loc = [], [], False
+    for el in box.descendants:
+        nm = getattr(el, "name", None)
+        if nm == "strong":
+            lab = el.get_text(strip=True)
+            if lab.startswith("Location"):
+                on_loc = True
+            elif lab.startswith("Price"):
+                on_loc = False
+                price = ""
+                for sib in el.next_siblings:
+                    if getattr(sib, "name", None) == "br":
+                        break
+                    price += sib.get_text() if hasattr(sib, "get_text") else str(sib)
+                    if getattr(sib, "name", None) == "a":
+                        price_links.append(sib)
+                price = price.strip()
+            elif lab.startswith("Sellback"):
+                sellback = (el.next_sibling or "").strip()
+            elif lab.startswith("Rarity"):
+                rarity = (el.next_sibling or "").strip()
+        elif nm == "a" and on_loc and el.get("href"):
+            locs.append({"n": _clean_loc(el.get_text(strip=True)), "u": urljoin(BASE, el["href"])})
+    if not price or not price.startswith("N/A (Dropped by") or sellback != "0 AC":
+        return None  # loja, quest, merge...: só drops de monstro
+    mons = _monsters(price_links)
+    it = {"n": a.get_text(strip=True), "c": key, "by": mons[0][0] if mons else None, "loc": locs}
+    if mons and mons[0][1]:
+        it["lv"] = mons[0][1]  # nível do monstro, quando o wiki informa
+    if rarity:
+        it["r"] = re.sub(r"\s*Rarity$", "", rarity)  # "Boss Drop", "Awesome"...
+    return it
 
 
 def get_join(fetcher, url):
