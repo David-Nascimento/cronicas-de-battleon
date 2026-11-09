@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-07",
+ "updated": "2026-11-09",
  "hub": {
   "j": "eventhub",
   "x": {
@@ -29,6 +29,13 @@
    "x": {"pt": "Hero Hunter e Lycan Stalker, com elmos, capas e armas: com o Garek, em Battleon (AC), ou no pacote do site.", "en": "Hero Hunter and Lycan Stalker, with helms, capes and weapons: from Garek in Battleon (AC), or the website pack."},
    "j": "battleon", "from": "2026-11-01", "until": "2026-11-30",
    "src": "https://www.aq.com/gamedesignnotes/aqw-seasonalset-november-9037"
+  },
+  {
+   "t": {"pt": "Drop em dobro de metais do Mine Crafting e Spirit Orb", "en": "Double drop quantity on Mine Crafting metals and Spirit Orb"},
+   "x": {"pt": "Quantidade em dobro nas recompensas de metal da quest Mine Crafting e no recurso Spirit Orb.", "en": "Double quantity on the metal rewards from the Mine Crafting quest and on the Spirit Orb resource."},
+   "from": "2026-11-05",
+   "until": "2026-11-12",
+   "src": "https://aqwwiki.wikidot.com/releases-2026"
   }
  ]
 }
