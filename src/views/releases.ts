@@ -1,6 +1,6 @@
 import {seg} from "../components/shared.js";
 import {RICO, RTYPES} from "../config.js";
-import {REL, byName, relClassAny} from "../data/index.js";
+import {REL, byName, dropFor, relClassAny} from "../data/index.js";
 import {unreadNews} from "../features/news.js";
 import {esc, nrm, wiki, has} from "../lib/util.js";
 import {L, loc, save, st, ui} from "../state.js";
@@ -32,7 +32,8 @@ function tags(n,f){let h="";
   if(f.includes("r"))h+=`<i class="tg rare" title="${esc(L("rel_rare"))}">Rare</i>`;
   return h?`<span class="riTags">${h}</span>`:""}
 function row(r,t,it,bySrc?:boolean){const [n,f="",s="",sub=""]=it,src=!bySrc&&s&&r.srcs[s],l=st.lang;
-  const meta=[bySrc?L("rel_t1_"+t):"",t==="weapon"&&sub?L("w_"+sub):"",src?src[l]:""].filter(Boolean);
+  const dp=!src&&dropFor(n),dpTx=dp?[dp.by,dp.loc[0]&&dp.loc[0].n].filter(Boolean).join(" · "):"";
+  const meta=[bySrc?L("rel_t1_"+t):"",t==="weapon"&&sub?L("w_"+sub):"",src?src[l]:dpTx].filter(Boolean);
   return `<div class="ri" data-ri="${esc(n)}">${ricon(t)}<div class="riTx"><a href="${wiki(n)}" target="_blank" rel="noopener">${esc(n)}</a>${meta.length?`<span class="riMeta">${meta.map((m,i)=>`<span${src&&i===meta.length-1?` class="from"`:""}>${esc(m)}</span>`).join("")}</span>`:""}</div>${tags(n,f||"")}${cardBtn(t,n)}</div>`}
 /* item de classe: botão para a ficha da classe no portal (PaladinSlayer (2) abre a ficha do PaladinSlayer) */
 function cardBtn(t,n){if(t!=="class")return "";const c=relClassAny(n);if(c==null||byName[c]==null)return "";

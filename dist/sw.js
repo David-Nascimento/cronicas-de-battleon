@@ -1,7 +1,7 @@
 /* Service worker do Crônicas de Battleon: deixa o portal abrir sem internet.
    Arquivos do portal: tenta a rede primeiro (para pegar a atualização da semana) e cai no cache se estiver offline.
    Fontes do Google: usa o cache e renova em segundo plano. A versão muda a cada build. */
-const VERSION = "c51b6baf1d92";
+const VERSION = "ee527c655401";
 const CACHE = "battleon-" + VERSION;
 const CORE = ["./", "index.html", "app.js", "app.css", "manifest.webmanifest", "icons/icon-192.png", "icons/icon-512.png"];
 

@@ -1,5 +1,5 @@
 import {seg} from "../components/shared.js";
-import {D, FARMS, byName} from "../data/index.js";
+import {D, FARMS, byName, dropJoin} from "../data/index.js";
 import {toast} from "../features/toasts.js";
 import {esc, idx, sigil} from "../lib/util.js";
 import {L, save, st} from "../state.js";
@@ -20,7 +20,7 @@ const quests=(r,lg)=>{const qs=r.q||[];if(!qs.length)return "";
 const mj=m=>`<code class="jn s" data-j="${esc(m)}" title="${esc(L("farm_copy_j",{m}))}">/${esc(m)}</code>`;
 /* "Onde conseguir": a fonte de cada item da etapa, com o join (r.w, de tools/where) */
 const where=(r,lg)=>{const ws=r.w||[];if(!ws.length)return "";
-  return `<details class="fwhere"><summary>${L("farm_where",{n:ws.length})}</summary><dl>${ws.map(w=>`<div><dt>${esc(w.i)}</dt><dd>${esc(w.o[lg])}${w.j?" "+mj(w.j):""}</dd></div>`).join("")}</dl></details>`};
+  return `<details class="fwhere"><summary>${L("farm_where",{n:ws.length})}</summary><dl>${ws.map(w=>`<div><dt>${esc(w.i)}</dt><dd>${esc(w.o[lg])}${(w.j||dropJoin(w.i))?" "+mj(w.j||dropJoin(w.i)):""}</dd></div>`).join("")}</dl></details>`};
 export function renderFarms(){
   const started=FARMS.filter(x=>prog(x.n).size).length;if(st.fk==="prog"&&!started)st.fk="all";
   seg("segFarm",[["all",L("farm_all")],...(started?[["prog",`${L("farm_started")} <b>${started}</b>`]]:[]),["class",L("farm_class")],["gear",L("farm_gear")],["mat",L("farm_mat")],["rep",L("farm_rep")],["daily",L("farm_daily")],["season",L("farm_season")]],"fk",renderFarms);

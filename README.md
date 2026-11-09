@@ -77,7 +77,9 @@ Na aba **Sazonais** aparece o evento que está no ar, com a data de fim e os map
 
 ### Drops 0 AC
 
-Em **Farm > Drops 0 AC**: equipamentos que caem de monstros e saem por 0 AC (armaduras, elmos, capas, armas, pets e casas), agrupados por quem dropa, com o mapa e o `/join` para copiar. Dá para filtrar por tipo e buscar por item, monstro ou mapa; a busca do topo também acha esses itens. Os dados ficam em `src/data/drops.json` e são lidos do AQW Wiki por `tools/drops/aqw_scraper.py`:
+Sem aba própria, para não pesar o portal: os drops que saem por 0 AC (lidos do AQW Wiki) aparecem onde a pessoa já está. Na **busca do topo**, o item mostra quem dropa e o mapa, e tocar nele copia o `/join` (sem join, abre o wiki). No **HardFarm**, o "Onde conseguir" de um item ganha o `/join` do drop quando a fonte da etapa não tinha. Nos **Itens novos**, o item que é drop mostra quem dropa e o mapa. Sem dado, nada muda na tela.
+
+Os dados ficam em `src/data/drops.json`, gerado por `tools/drops/aqw_scraper.py`:
 
 ```
 pip install requests beautifulsoup4
@@ -85,7 +87,7 @@ python3 tools/drops/aqw_scraper.py              # todas as categorias (use --wit
 npm run build
 ```
 
-O scraper pede uma página a cada 1,5 s e guarda tudo em `.aqw_cache/` (fora do git), então rodar de novo é rápido e não sobrecarrega o wiki. Enquanto o arquivo estiver vazio, a aba mostra como preenchê-lo.
+O scraper pede uma página a cada 1,5 s e guarda tudo em `.aqw_cache/` (fora do git), então rodar de novo é rápido e não sobrecarrega o wiki.
 
 ### Classes novas
 
@@ -180,7 +182,7 @@ src/                  TypeScript; tipos dos dados e do estado em types.ts
   lib/util.ts         funções pequenas (escape de HTML, busca sem acento, brasão da classe, link do wiki)
   components/         pedaços de interface reutilizados
   views/              uma por aba: home, tiers (e Minha tier list), cards, compare, agenda, teams, builder,
-                      enhancements, farms (HardFarm), drops (Drops 0 AC), dailies, releases (itens novos), painel (Meu painel), nav
+                      enhancements, farms (HardFarm), dailies, releases (itens novos), painel (Meu painel), nav
   features/           notícias, alertas e notificações, avisos na tela, busca global, conta (account.ts)
   firebase-config.ts  configuração do Firebase e endereço da leitura da charpage
   styles/             CSS por área; tokens.css tem as cores e main.css define a ordem (a ordem importa)
@@ -202,7 +204,7 @@ Edite os arquivos em `src/data/` e rode `npm run build`:
 | `month.json` | Aba Eventos e lista "No ar" do Hoje: Event Hub e o que está no ar com data de fim (`list`: `t`, `x`, `j`, `from`, `until`, `src`) |
 | `dailies.json` | Diárias |
 | `hardfarm.json` | HardFarm |
-| `drops.json` | Farm > Drops 0 AC (gerado por `tools/drops/aqw_scraper.py`, não edite à mão) |
+| `drops.json` | Busca, HardFarm e Itens novos: quem dropa e o `/join` (gerado por `tools/drops/aqw_scraper.py`, não edite à mão) |
 | `news.json` | Notícias de classes e o sino |
 | `classes.json`, `class-types.json`, `obtain.json` | Tier list, fichas das classes |
 | `class-aliases.json` | Itens de classe que são cópia de uma classe existente (nome do item → classe) |

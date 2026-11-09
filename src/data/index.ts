@@ -70,4 +70,8 @@ fresh.forEach((from,n)=>{const t=TYPES.new;D.push({name:n,cat:"nova",store:"nova
   b:{farm:t.farm,solo:t.solo,ultra:t.ultra},awe:t.awe,rot:t.rot,generic:true,skills:null,src:null,inherited:null,ob:null,cons:null,cal:false,yr:null,fam:[],fresh:from,wk:freshWk.get(n)} as Klass)});
 export const byName:Record<string,number>=Object.fromEntries(D.map((c,i)=>[c.name,i]));
 /* volta a ligar os itens às classes já com as novas incluídas */
+/* drops 0 AC: acha de onde cai um item pelo nome (sem "(0 AC)" etc.); null se não estiver em drops.json */
+const dropBy=new Map(DROPDATA.items.map(i=>[ckey(baseName(i.n)),i]));
+export const dropFor=(item:string)=>dropBy.get(ckey(baseName(item)))||null;
+export const dropJoin=(item:string)=>dropFor(item)?.loc.find(l=>l.j)?.j||null;
 export const relClassAny=(item:string)=>relClass(item)||(byName[baseName(item)]!=null?baseName(item):null);

@@ -52,5 +52,5 @@ export interface State {
 }
 export interface Alert { id: string; ic: string; lvl: "now" | "soon"; t: string; x: string; go: { tab?: string; cls?: string; team?: number } }
 export interface UiState {
-  curView: string; feedSeen: string | null; ALERTS: Alert[]; curClass: number | null; eIdx: number | null; eCat: string; relQ?: string; dropQ?: string;
+  curView: string; feedSeen: string | null; ALERTS: Alert[]; curClass: number | null; eIdx: number | null; eCat: string; relQ?: string;
 }

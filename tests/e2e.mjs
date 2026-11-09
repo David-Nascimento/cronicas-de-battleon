@@ -53,7 +53,7 @@ try {
     await p.click('#sideNav [data-sec="classes"]'); await wait(p);
     check((await hash(p)) === "#tier", "destino Classes abre a tier list");
     const sel = { inicio: "#modes .rank", tier: "#tiers .tc", todas: "#cards .card", comparar: "#cmpPick input", enh: "#enh .ec", ultras: "#teams .team",
-      montador: "#pkGrid .pk", diarias: "#dList .dItem, #dList .dIntro", itens: "#farms .fcard", drops: "#dropList .dp, #dropList .dpEmpty", lancamentos: "#relList .ri", novidades: "#feed .post", eventos: "#evBody .evSum" };
+      montador: "#pkGrid .pk", diarias: "#dList .dItem, #dList .dIntro", itens: "#farms .fcard", lancamentos: "#relList .ri", novidades: "#feed .post", eventos: "#evBody .evSum" };
     for (const [v, s] of Object.entries(sel)) { await go(p, v); check((await p.locator(s).count()) > 0, `aba ${v} monta conteúdo`); }
     await p.click('#sideNav [data-sec="classes"]'); await wait(p);
     await p.click('#sideNav [data-sub="enh"]'); await wait(p);
@@ -260,34 +260,37 @@ try {
       check(await m.evaluate(() => document.documentElement.scrollWidth) <= 390, "celular: login sem rolagem lateral");
     } finally { srv.close(); }
   }
-  /* Drops 0 AC: o portal real lê src/data/drops.json (pode estar vazio); aqui um bundle à parte usa tests/fixtures/drops.json */
+  /* Drops 0 AC: sem aba própria; aparecem na busca, no "Onde conseguir" do HardFarm e nos Itens novos.
+     O portal real lê src/data/drops.json (pode estar vazio); aqui um bundle à parte usa dados de teste. */
   {
     const esbuild = await import("esbuild");
-    const { mkdtempSync, copyFileSync } = await import("node:fs");
+    const { mkdtempSync, copyFileSync, writeFileSync } = await import("node:fs");
     const { tmpdir } = await import("node:os");
+    const farms = JSON.parse(readFileSync(root + "src/data/hardfarm.json", "utf8"));
+    const wh = farms.flatMap(f => f.req.flatMap(r => r.w || [])).find(w => !w.j);
+    const relName = REL[0].items[Object.keys(REL[0].items)[0]][0][0];
     const tmp = mkdtempSync(tmpdir() + "/cdb-drops-");
+    writeFileSync(tmp + "/drops.json", JSON.stringify({ updated: "2026-11-09", items: [
+      { n: "Test Cloak of Examples", c: "cape", t: "Cape", by: "Test Slime", loc: [{ n: "Testville", j: "testville" }] },
+      { n: wh.i, c: "sword", t: "Sword", by: "Test Slime", loc: [{ n: "Testville", j: "testville" }] },
+      { n: relName, c: "armor", t: "Armor", by: "Test Wolf", loc: [{ n: "Testwood" }] }] }));
     await esbuild.build({ entryPoints: { app: root + "src/main.ts" }, bundle: true, format: "iife", outdir: tmp, loader: { ".json": "json" }, logLevel: "silent",
-      plugins: [{ name: "fx", setup(b) { b.onResolve({ filter: /drops\.json$/ }, () => ({ path: root + "tests/fixtures/drops.json" })); } }] });
+      plugins: [{ name: "fx", setup(b) { b.onResolve({ filter: /drops\.json$/ }, () => ({ path: tmp + "/drops.json" })); } }] });
     copyFileSync(root + "index.html", tmp + "/index.html");
     const p = await (await browser.newContext({ viewport: { width: 1280, height: 900 }, colorScheme: "dark" })).newPage();
     p.on("pageerror", e => errors.push(e.message));
     await p.goto(pathToFileURL(tmp + "/index.html").href); await wait(p, 400);
-    await go(p, "drops");
-    check((await p.evaluate(() => window.scrollY)) === 0, "drops: abre no topo, sem o endereço rolar a página até a lista");
-    check((await p.locator("#dropList .dp").count()) === 3, "drops: mostra os 3 itens de teste");
-    check((await p.locator("#dropList .relGrp").count()) === 2, "drops: agrupa por quem dropa");
-    await p.click('#segDrops button[data-v="weapon"]'); await wait(p);
-    check((await p.locator("#dropList .dp").count()) === 1, "drops: filtro de armas (a espada entra no grupo Armas)");
-    await p.click('#segDrops button[data-v="all"]'); await p.fill("#dropQ", "hood"); await wait(p);
-    check((await p.locator("#dropList .dp").count()) === 1, "drops: busca por nome");
-    await p.fill("#dropQ", "testwood"); await wait(p);
-    check((await p.locator("#dropList .dp").count()) === 1, "drops: busca por mapa");
-    await p.fill("#dropQ", ""); await wait(p);
-    check((await p.locator("#dropList code.jn").count()) > 0, "drops: /join para copiar");
+    check(!(await p.locator("#sideNav").innerText()).includes("Drops"), "drops: não tem aba própria no menu");
     await p.click("#gq"); await p.fill("#gq", "cloak"); await wait(p);
-    check((await p.locator("#gres [data-gdrop]").count()) === 1, "busca global acha drop 0 AC");
-    await p.click("#gres [data-gdrop]"); await wait(p);
-    check((await hash(p)) === "#drops" && (await p.locator("#dropList .dp").count()) === 1, "busca global abre o drop na aba Drops 0 AC");
+    const r = p.locator("#gres [data-gdrop]");
+    check((await r.count()) === 1 && (await r.innerText()).includes("Test Slime") && (await r.innerText()).includes("/testville"), "busca global mostra o drop com quem dropa, o mapa e o /join");
+    await r.click(); await wait(p);
+    check((await p.locator(".toast").filter({ hasText: "/join testville" }).count()) === 1, "tocar no drop copia o /join");
+    check((await hash(p)) !== "#drops", "tocar no drop não leva a outra página");
+    await go(p, "itens");
+    check((await p.locator('#farms .fwhere dd code.jn[data-j="testville"]').count()) > 0, "HardFarm: item sem join no 'Onde conseguir' ganha o /join do drop");
+    await go(p, "lancamentos");
+    check((await p.locator(".ri").filter({ hasText: relName }).first().locator(".riMeta").innerText()).includes("Test Wolf"), "Itens novos: item que é drop mostra quem dropa");
   }
 } finally {
   await browser.close();
