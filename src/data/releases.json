@@ -1,6 +1,177 @@
 {
-  "updated": "2026-11-07",
+  "updated": "2026-11-14",
   "list": [
+    {
+      "id": "2026-11-13",
+      "from": "2026-11-13",
+      "to": "2026-11-13",
+      "t": {
+        "pt": "Cursed Harvest: o banquete de caridade da Serenity em Charity Feast e os raros de sexta-feira 13",
+        "en": "Cursed Harvest: Serenity's charity feast in Charity Feast and the Friday the 13th rares"
+      },
+      "x": {
+        "pt": "O Harvest Fest se junta à sexta-feira 13: fale com o Hans em Charity Feast e ajude a Serenity a fazer o banquete enquanto forças sombrias agem por trás. A história (10 quests, até derrotar o Sluagh King) libera os drops dos sets Bone Harvester e Rogue Executioner e a Harvest Menu, loja merge com Gold Voucher 25k e Hans' Chore Voucher (da quest United Unseelie). Os sets Misfortune Weaver e Bean Sidhe Musician estão na Featured Gear Shop. No fim de semana há chefes diários (DoomKitten no sábado, Sleep Paralysis em GothicDream no domingo) e boost de reputação em dobro; o Aurelio Voltaire volta e /voltairetown reúne as sextas-feiras 13 antigas.",
+        "en": "Harvest Fest meets Friday the 13th: talk to Hans in Charity Feast and help Serenity host the feast while dark forces work behind the scenes. The story (10 quests, ending with the Sluagh King) unlocks the Bone Harvester and Rogue Executioner drops and the Harvest Menu, a merge shop using Gold Voucher 25k and Hans' Chore Vouchers (from the United Unseelie quest). The Misfortune Weaver and Bean Sidhe Musician sets are in the Featured Gear Shop. Over the weekend there are daily bosses (DoomKitten on Saturday, Sleep Paralysis in GothicDream on Sunday) and a double reputation boost; Aurelio Voltaire returns and /voltairetown gathers past Friday the 13th events."
+      },
+      "maps": [
+        {
+          "j": "charityfeast",
+          "n": "Charity Feast",
+          "w": {
+            "pt": "Quests do Hans, drops do Sluagh King e da Fall Fae Queen e a Harvest Menu (merge)",
+            "en": "Hans' quests, Sluagh King and Fall Fae Queen drops and the Harvest Menu (merge)"
+          },
+          "v": "wiki"
+        },
+        {
+          "j": "doomkitten",
+          "n": "DoomKitten",
+          "w": {
+            "pt": "Chefe do sábado (recompensa: gatinhos)",
+            "en": "Saturday boss (rewards: kittens)"
+          },
+          "v": "dn"
+        },
+        {
+          "j": "gothicdream",
+          "n": "GothicDream",
+          "w": {
+            "pt": "Chefe do domingo, Sleep Paralysis (recompensa: olhos especiais)",
+            "en": "Sunday boss, Sleep Paralysis (rewards: special eyes)"
+          },
+          "v": "dn"
+        },
+        {
+          "j": "voltairetown",
+          "n": "Voltairetown",
+          "w": {
+            "pt": "Eventos antigos de sexta-feira 13",
+            "en": "Past Friday the 13th events"
+          },
+          "v": "dn"
+        },
+        {
+          "j": "lichwar",
+          "n": "Lich War",
+          "w": {
+            "pt": "Briga entre dois liches",
+            "en": "A clash between two bickering liches"
+          },
+          "v": "dn"
+        }
+      ],
+      "shops": ["Harvest Menu","Featured Gear Shop"],
+      "srcs": {
+        "sk": {
+          "pt": "Drop do Sluagh King em Charity Feast",
+          "en": "Sluagh King drop in Charity Feast",
+          "j": "charityfeast"
+        },
+        "fq": {
+          "pt": "Drop da Fall Fae Queen em Charity Feast",
+          "en": "Fall Fae Queen drop in Charity Feast",
+          "j": "charityfeast"
+        },
+        "cf": {
+          "pt": "Drop da história em Charity Feast",
+          "en": "Story drop in Charity Feast",
+          "j": "charityfeast"
+        },
+        "hm": {
+          "pt": "Harvest Menu (merge), com o Hans em Charity Feast, depois da quest King Mellori",
+          "en": "Harvest Menu (merge), from Hans in Charity Feast, after the King Mellori quest",
+          "j": "charityfeast"
+        },
+        "fgs": {
+          "pt": "Featured Gear Shop (novembro de 2026)",
+          "en": "Featured Gear Shop (November 2026)"
+        }
+      },
+      "src": [
+        {
+          "n": "Design Notes: Cursed Harvest x Friday the 13th, Pt 1",
+          "u": "https://www.aq.com/gamedesignnotes/aqw-cursedharvest26-13nov26-10514"
+        },
+        {
+          "n": "Design Notes: Cursed Harvest Rares",
+          "u": "https://www.aq.com/gamedesignnotes/aqw-cursedharvest26rares-13nov26-10513"
+        },
+        {
+          "n": "AQW Wiki: Charity Feast",
+          "u": "https://aqwwiki.wikidot.com/charity-feast"
+        },
+        {
+          "n": "AQW Wiki: Hans' Quests",
+          "u": "https://aqwwiki.wikidot.com/hans-quests"
+        },
+        {
+          "n": "AQW Wiki: Harvest Menu",
+          "u": "https://aqwwiki.wikidot.com/harvest-menu"
+        },
+        {
+          "n": "AQW Wiki: Sluagh King",
+          "u": "https://aqwwiki.wikidot.com/sluagh-king"
+        },
+        {
+          "n": "AQW Wiki: Featured Gear Shop",
+          "u": "https://aqwwiki.wikidot.com/featured-gear-shop"
+        }
+      ],
+      "items": {
+        "armor": [
+          ["Bean Sidhe Musician","ar","fgs"],
+          ["Misfortune Weaver","a","fgs"],
+          ["Bone Harvester","a","hm"],
+          ["Rogue Executioner","a","hm"]
+        ],
+        "helm": [
+          ["Bean Sidhe Morph","ar","fgs"],
+          ["Bean Sidhe Visage","a","fgs"],
+          ["Bean Sidhe Skull","a","fgs"],
+          ["Bean Sidhe Hair","","fgs"],
+          ["Bean Sidhe Locks","","fgs"],
+          ["Black Cat's Scratching Post","a","fgs"],
+          ["Misfortune's Scratching Post","a","fgs"],
+          ["Misfortune Weaver Hair","","fgs"],
+          ["Misfortune Weaver Locks","","fgs"],
+          ["Bone Harvester Hair","a","fq"],
+          ["Bone Harvester Morph","a","fq"],
+          ["Bone Harvester Locks","a","sk"],
+          ["Bone Harvester Visage","a","sk"],
+          ["Rogue Executioner Balaclava","a","sk"],
+          ["Bone Harvester Eye","","cf"],
+          ["Bone Harvester Mask","a","hm"],
+          ["Bone Harvester Skull","a","hm"],
+          ["Rogue Executioner Mask","a","hm"],
+          ["Rogue Executioner Helm","a","hm"]
+        ],
+        "cape": [
+          ["Banshee's Spare Guitar","ar","fgs"],
+          ["Banshee's Fog","a","fgs"],
+          ["Reflections of Misfortune","a","fgs"],
+          ["Executioner's Spare Mace","a","hm"]
+        ],
+        "weapon": [
+          ["Banshee's Guitar","ar","fgs","mace"],
+          ["Banshee's Bass Guitar","a","fgs"],
+          ["Bean Sidhe's Flare","ar","fgs","gauntlet"],
+          ["Bean Sidhe's Chains","ar","fgs","gauntlet"],
+          ["Bean Sidhe's Ember","a","fgs"],
+          ["Unfortunate Soul Claw","a","fgs"],
+          ["Unfortunate Soul Claws","a","fgs"],
+          ["Executioner's Knuckle Duster","a","sk","mace"],
+          ["Executioner's Knuckle Dusters","a","sk","dagger"],
+          ["Bone Harvester Havester","","cf"],
+          ["Bone Meridian","a","hm","axe"],
+          ["Bone Meridians","a","hm","dagger"],
+          ["Executioner's Mace","a","hm","mace"],
+          ["Executioner's Maces","a","hm","dagger"]
+        ],
+        "misc": [
+          ["Gold Voucher 25k","","hm"]
+        ]
+      }
+    },
     {
       "id": "2026-11-06",
       "from": "2026-11-06",

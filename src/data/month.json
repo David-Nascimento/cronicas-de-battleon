@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-09",
+ "updated": "2026-11-14",
  "hub": {
   "j": "eventhub",
   "x": {
@@ -20,9 +20,9 @@
   },
   {
    "t": {"pt": "18th Birthday Collection", "en": "18th Birthday Collection"},
-   "x": {"pt": "Coleção de aniversário de 18 anos do jogo.", "en": "The game's 18th birthday collection."},
-   "from": "2026-10-16", "until": "2026-11-13",
-   "src": "https://www.aq.com/gamedesignnotes/aqw-16oct26-18thbirthdaycollection-10494"
+   "x": {"pt": "Coleção de aniversário de 18 anos do jogo (Safiria's Collection of Darkness). Sai em 20/11.", "en": "The game's 18th birthday collection (Safiria's Collection of Darkness). Leaves on Nov 20."},
+   "from": "2026-10-16", "until": "2026-11-20",
+   "src": "https://www.aq.com/gamedesignnotes/aqw-cursedharvest26-13nov26-10514"
   },
   {
    "t": {"pt": "Set sazonal Harvest Hunters", "en": "Harvest Hunters seasonal set"},
