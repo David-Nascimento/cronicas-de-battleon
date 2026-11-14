@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Crônicas de Battleon</title>
+<meta name="color-scheme" content="dark light">
+<meta name="theme-color" content="#F6F5F8">
+<link rel="icon" id="favicon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 92 104'%3E%3Cpath d='M46 4L82 18V56C82 78 66 93 46 100C26 93 10 78 10 56V18Z' fill='%23231B31' stroke='%23FFB45A' stroke-width='5' stroke-linejoin='round'/%3E%3Cpath d='M46 21C32 21 24 32 24 47V75L31 71L35 78L40 72L46 80L52 72L57 78L61 71L68 75V47C68 32 60 21 46 21Z' fill='%230C0912'/%3E%3Cpath d='M46 33C37.5 33 33 40.5 33 49C33 58 39 64.5 46 66.5C53 64.5 59 58 59 49C59 40.5 54.5 33 46 33Z' fill='%2305030A'/%3E%3Cpath d='M34 46.6C38 44.6 42.4 45.6 45 49.6C41.6 51.8 37.2 51.2 34 46.6ZM58 46.6C54 44.6 49.6 45.6 47 49.6C50.4 51.8 54.8 51.2 58 46.6Z' fill='%23FFB45A'/%3E%3C/svg%3E">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap">
+<script>try{var s=JSON.parse(localStorage.getItem("aqwTier")||"{}");document.documentElement.dataset.theme=s.theme==="dark"?"dark":"light"}catch(e){document.documentElement.dataset.theme="light"}</script>
+<link rel="stylesheet" href="app.css">
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+  <filter id="eyeBlur" x="-60%" y="-120%" width="220%" height="340%"><feGaussianBlur stdDeviation="2.4"/></filter>
+  <symbol id="crest" viewBox="0 0 92 104">
+    <path d="M46 4 L82 18 L82 56 C82 78 66 93 46 100 C26 93 10 78 10 56 L10 18 Z" fill="var(--panel2)" stroke="var(--glow-dim)" stroke-width="2.5" stroke-linejoin="round"/>
+    <path d="M46 10.5 L76 22 L76 56 C76 74 63 86.5 46 93 C29 86.5 16 74 16 56 L16 22 Z" fill="none" stroke="var(--line)" stroke-width="1"/>
+    <path d="M46 9.5 L49.2 13.5 L46 17.5 L42.8 13.5 Z" fill="var(--eye)"/>
+    <path d="M46 21 C32 21 24 32 24 47 L24 75 L31 71 L35 78 L40 72 L46 80 L52 72 L57 78 L61 71 L68 75 L68 47 C68 32 60 21 46 21 Z" fill="var(--crest-hood)" stroke="var(--glow-dim)" stroke-width="1.6" stroke-linejoin="round"/>
+    <path d="M46 33 C37.5 33 33 40.5 33 49 C33 58 39 64.5 46 66.5 C53 64.5 59 58 59 49 C59 40.5 54.5 33 46 33 Z" fill="#05030A"/>
+    <g style="opacity:var(--eyeOn,1)">
+      <g fill="var(--eye)" filter="url(#eyeBlur)"><path d="M36 47.2 C38.8 45.9 41.9 46.5 43.8 49.2 C41.4 50.8 38.3 50.5 36 47.2 Z"/><path d="M56 47.2 C53.2 45.9 50.1 46.5 48.2 49.2 C50.6 50.8 53.7 50.5 56 47.2 Z"/></g>
+      <g fill="var(--eye-core)"><path d="M36 47.2 C38.8 45.9 41.9 46.5 43.8 49.2 C41.4 50.8 38.3 50.5 36 47.2 Z"/><path d="M56 47.2 C53.2 45.9 50.1 46.5 48.2 49.2 C50.6 50.8 53.7 50.5 56 47.2 Z"/></g>
+    </g>
+  </symbol>
+</defs></svg>
+
+<div class="shell">
+  <aside class="side">
+    <button class="brand" data-goview="inicio"><svg aria-hidden="true"><use href="#crest"/></svg><b data-i18n="title"></b></button>
+    <nav class="sideNav" id="sideNav"></nav>
+  </aside>
+
+  <div class="main">
+    <div class="topbar">
+      <button class="brand mini" data-goview="inicio" aria-label="Início"><svg aria-hidden="true"><use href="#crest"/></svg><b data-i18n="title"></b></button>
+      <div class="gsearch">
+        <svg class="mg" viewBox="0 0 24 24" aria-hidden="true"><path d="M10.5 3a7.5 7.5 0 0 1 5.9 12.1l4.3 4.3-1.4 1.4-4.3-4.3A7.5 7.5 0 1 1 10.5 3zm0 2a5.5 5.5 0 1 0 0 11 5.5 5.5 0 0 0 0-11z" fill="currentColor"/></svg>
+        <input type="search" id="gq" autocomplete="off" spellcheck="false" aria-controls="gres"><kbd aria-hidden="true">/</kbd>
+        <div class="gres" id="gres" hidden></div>
+      </div>
+      <span class="sp"></span>
+      <button class="acctBtn" id="acctBtn" data-goview="painel"></button>
+      <button class="themeBtn" id="themeBtn"></button>
+      <div class="bellWrap">
+        <button class="bell" id="bell" aria-haspopup="true" aria-expanded="false" aria-controls="notifPanel">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a6 6 0 0 0-6 6v3.6L4.3 15.4A1 1 0 0 0 5.2 17h13.6a1 1 0 0 0 .9-1.6L18 12.6V9a6 6 0 0 0-6-6zm0 19a2.6 2.6 0 0 0 2.5-2h-5a2.6 2.6 0 0 0 2.5 2z" fill="currentColor"/></svg>
+          <span class="bdg" id="bellBadge" hidden></span><span class="vh" id="bellLabel"></span>
+        </button>
+        <div class="notifPanel" id="notifPanel" role="dialog" aria-label="Notificações" hidden></div>
+      </div>
+      <div class="seg" id="segLang" role="group" aria-label="Idioma / Language"></div>
+    </div>
+
+    <nav class="subnav" id="subnav" hidden></nav>
+
+  <section id="v-painel" hidden><div id="pnl"></div></section>
+  <section id="v-inicio">
+    <div id="banner"></div>
+    <header class="hello hero">
+      <div class="heroTx">
+        <p id="homeDate" class="eyebrow"></p>
+        <h1 data-i18n="home_h">Hoje</h1>
+        <p class="heroTag" id="homeTag"></p>
+        <div class="heroCta"><button class="pillBtn" data-relt="all" data-i18n="home_cta_rel"></button><button class="pillBtn ghost" data-goview="eventos" data-i18n="home_cta_ev"></button></div>
+      </div>
+      <div class="dayRing" id="dayRing"></div>
+    </header>
+    <nav class="intents" id="intents"></nav>
+    <section class="frame homeNow" id="homeNow"></section>
+    <div class="secH"><h2 data-i18n="home_top"></h2><p class="sub" data-i18n="home_top_sub"></p></div>
+    <div class="modes" id="modes"></div>
+    <section class="homeNews" id="homeNews"></section>
+    <p class="stats" id="stats"></p>
+  </section>
+
+  <section id="v-eventos" hidden>
+    <div class="head"><div><h2 data-i18n="ev_h"></h2><p class="sub" data-i18n="ev_sub"></p></div></div>
+    <div id="evBody"></div>
+  </section>
+
+  <section id="v-lancamentos" hidden>
+    <div class="head">
+      <div><h2 data-i18n="rel_h"></h2><p class="sub" data-i18n="rel_sub"></p></div>
+      <div class="controls"><div class="seg" id="segRel"></div></div>
+    </div>
+    <div id="relBody"></div>
+  </section>
+
+  <section id="v-novidades" hidden>
+    <div class="head">
+      <div><h2 data-i18n="tab_news"></h2><p class="sub" data-i18n="news_sub"></p></div>
+      <div class="controls"><div class="seg" id="segNews"></div></div>
+    </div>
+    <div id="alertsNow"></div>
+    <div class="feed" id="feed"></div>
+  </section>
+
+  <section id="v-tier" hidden>
+    <div class="head">
+      <div><h2 data-i18n="tab_tier"></h2><p class="sub" data-i18n="tier_sub"></p></div>
+      <div class="controls"><div class="seg" id="segTsrc"></div><div class="seg" id="segCat"></div><div class="seg" id="segMode"></div></div>
+    </div>
+    <div id="tierTools"></div>
+    <div id="tiers"></div>
+    <div class="pool frame" id="tierPool" data-trow="N" hidden>
+      <div class="poolH"><h3 id="poolT"></h3><input type="search" id="tierQ" autocomplete="off" spellcheck="false"></div>
+      <div class="tr" id="poolList"></div>
+    </div>
+  </section>
+
+  <section id="v-ultras" hidden>
+    <div class="head"><div><h2 data-i18n="ag_h"></h2><p class="sub" id="agReset"></p></div></div>
+    <div class="agenda" id="agenda"></div>
+    <div class="orn" style="margin:26px 0 14px"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2 L15 9 L22 12 L15 15 L12 22 L9 15 L2 12 L9 9 Z" fill="currentColor"/></svg></div>
+    <div class="head"><div><h2 data-i18n="tab_ultras"></h2><p class="sub" data-i18n="ultras_sub"></p></div></div>
+    <div class="teams" id="teams"></div>
+    <div class="orn" style="margin:26px 0 14px"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2 L15 9 L22 12 L15 15 L12 22 L9 15 L2 12 L9 9 Z" fill="currentColor"/></svg></div>
+    <div class="head" style="margin-bottom:6px"><div><h2 data-i18n="items_h"></h2><p class="sub" data-i18n="items_sub"></p></div></div>
+    <div class="items" id="items"></div>
+  </section>
+
+  <section id="v-itens" hidden>
+    <div class="head"><div><h2 data-i18n="farm_h"></h2><p class="sub" data-i18n="farm_sub"></p></div><div class="controls"><div class="seg" id="segFarm"></div></div></div>
+    <div class="farmGrid" id="farms"></div>
+  </section>
+
+  <section id="v-diarias" hidden>
+    <div class="head">
+      <div><h2 data-i18n="daily_h"></h2><p class="sub" data-i18n="daily_sub"></p></div>
+      <div class="controls"><div class="seg" id="segDaily"></div></div>
+    </div>
+    <div class="frame dBar" id="dBar"></div>
+    <div class="dList" id="dList"></div>
+  </section>
+
+  <section id="v-montador" hidden>
+    <div class="head"><div><h2 data-i18n="tab_builder"></h2><p class="sub" data-i18n="bld_sub"></p></div></div>
+    <div class="frame bpick">
+      <div class="bpickH"><b id="bCount"></b><div class="controls"><input type="search" id="bq"><span class="seg" id="bCat"></span><span class="seg" id="bActs"></span></div></div>
+      <div class="pkGrid" id="pkGrid"></div>
+    </div>
+    <div class="bres" id="bres"></div>
+  </section>
+
+  <section id="v-todas" hidden>
+    <div class="head">
+      <div><h2 data-i18n="tab_all"></h2><p class="sub" id="countAll"></p></div>
+      <div class="controls"><input type="search" id="q"><div class="seg" id="segAll"></div></div>
+    </div>
+    <div class="cards" id="cards"></div>
+  </section>
+
+  <section id="v-comparar" hidden>
+    <div class="head">
+      <div><h2 data-i18n="tab_cmp"></h2><p class="sub" data-i18n="cmp_sub"></p></div>
+    </div>
+    <div class="cmpPick" id="cmpPick"></div>
+    <datalist id="classList"></datalist>
+    <div id="cmpOut"></div>
+  </section>
+
+  <section id="v-enh" hidden>
+    <div class="head"><div><h2 data-i18n="enh_h"></h2><p class="sub" data-i18n="enh_sub"></p></div><div class="controls"><input type="search" id="enq" autocomplete="off"><div class="seg" id="segSlot"></div></div></div>
+    <div class="enhWrap" id="enh"></div>
+  </section>
+
+  <footer class="foot">
+    <svg class="fmark" aria-hidden="true"><use href="#crest"/></svg>
+    <div>
+      <p class="fline" data-i18n="foot_1"></p>
+      <p data-i18n="foot_2"></p>
+      <p data-i18n="foot_3"></p>
+      <details class="fnote"><summary data-i18n="note_h"></summary><p data-i18n-html="note"></p></details>
+    </div>
+  </footer>
+  </div>
+</div>
+<nav class="bnav" id="bNav"></nav>
+
+<dialog id="dlg" aria-labelledby="dName"><div id="dBody"></div></dialog>
+<dialog id="dlgE" aria-labelledby="eName"><div id="eBody"></div></dialog>
+<dialog id="dlgPick" class="pkDlg"></dialog>
+<div class="toasts" id="toasts" role="status" aria-live="polite"></div>
+<script src="app.js" charset="utf-8"></script>
+</body>
+</html>
